@@ -13,7 +13,13 @@ end
 
 function d4FireThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','DIPPED_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE','BURNING'}, {}, {}, entity)
+	return HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
+end
+
+-- Non-magical variant of d4FireThrow
+function d4FireThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'DIPPED_FIRE','BURNING'}, {}, {}, entity)
 end
 
 function d4ColdThrow(entity)
@@ -38,7 +44,13 @@ end
 
 function d4PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'MAG_POISON_THROW','DIPPED_POISON','ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
+	return HasAnyStatus({'MAG_POISON_THROW'}, {}, {}, entity)
+end
+
+-- Non-magical variant of d4PoisThrow
+function d4PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'DIPPED_POISON','ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
 end
 
 function d4NecroticThrow(entity)
@@ -98,20 +110,26 @@ end
 
 -- Poisons
 
--- Serpent Fang Toxin & Venomous Revenge
+-- Serpent Fang Toxin
+function d6PoisThrowReg(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'TOXIN_SERPENTVENOM_DIPPED'}, {}, {}, entity)
+end
+
+-- Magical variant for Venomous Revenge and weapon statuses
 function d6PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'TOXIN_SERPENTVENOM_DIPPED','MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON'}, {}, {}, entity)
+	return HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON'}, {}, {}, entity)
 end
 
 -- Wyvern Toxin
-function d8PoisThrow(entity)
+function d8PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'TOXIN_WYVERN_DIPPED'}, {}, {}, entity)
 end
 
 -- Purple Worm Toxin
-function d10PoisThrow(entity)
+function d10PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'TOXIN_PURPLEWORM_DIPPED'}, {}, {}, entity)
 end
