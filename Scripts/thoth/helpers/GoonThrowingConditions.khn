@@ -8,7 +8,7 @@ end
 -- 'MAG_THE_THORNS_WEAPON_BOND' for vanilla weapon
 function NyrulnaThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, {}, entity)
+	return HasAnyStatus({'GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, {}, entity)
 end
 
 function d4FireThrow(entity)
@@ -81,7 +81,7 @@ end
 
 -- Larger than d4 bonuses (and not poison)
 
-function d8ThunderThrow(entity)
+function d6ThunderThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'MAG_THUNDER_GREATER_THUNDER_WEAPON'}, {}, {}, entity)
 end
