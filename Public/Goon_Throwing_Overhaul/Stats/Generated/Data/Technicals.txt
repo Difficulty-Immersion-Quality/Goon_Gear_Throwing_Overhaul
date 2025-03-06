@@ -22,6 +22,8 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyFunctors" "IF((Tagged('BEHOLDER') or Tagged('SPIDER') or Tagged('SPIDER_PHASE') or Tagged('ETTERCAP'))):WeaponDamage(2d6, Piercing,,,0,,true)"
+data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, 11)"
+data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
 
 // ==================================== Coatings ====================================
 
