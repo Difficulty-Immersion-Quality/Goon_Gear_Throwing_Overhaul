@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
+	<!--Nyrulna toggle-->
 	<content contentuid="h654b96b4geadfg46aag99c2g2af9f15cd5b6" version="1">Nyrulna: Zephyr Connection</content>
 	<content contentuid="h5a6ea039g2dc0g46cfga6efg8e64f862c6f4" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, the weapon creates an explosion that deals [1] in a [2] blast centred on the target.
 &lt;br&gt;You may toggle this feature on and off. If toggled off the weapon will deal [1] to the target instead of exploding.</content>
+
+	<!--Sussur weapons-->
+	<content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
 </contentList>

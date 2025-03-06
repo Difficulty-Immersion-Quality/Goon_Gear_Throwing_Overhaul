@@ -5,7 +5,7 @@ function SlingShoesThrow(entity)
 	return HasAnyStatus({'MAG_PROJECTILE_SHOES_TECHNICAL'}, {}, {}, entity)
 end
 
--- 'MAG_THE_THORNS_WEAPON_BOND' for vanilla weapon
+-- // 'MAG_THE_THORNS_WEAPON_BOND' for vanilla weapon
 function NyrulnaThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, {}, entity)
@@ -16,7 +16,7 @@ function d4FireThrow(entity)
 	return HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
 end
 
--- Non-magical variant of d4FireThrow
+-- // Non-magical variant of d4FireThrow
 function d4FireThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'DIPPED_FIRE','BURNING'}, {}, {}, entity)
@@ -47,7 +47,7 @@ function d4PoisThrow(entity)
 	return HasAnyStatus({'MAG_POISON_THROW'}, {}, {}, entity)
 end
 
--- Non-magical variant of d4PoisThrow
+-- // Non-magical variant of d4PoisThrow
 function d4PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'DIPPED_POISON','ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
@@ -73,8 +73,21 @@ function BurnThrow(entity)
 	return HasAnyStatus({'BURNING','FLAMING_SPHERE_AURA'}, {}, {}, entity)
 end
 
--- Custom stuff from here on
+-- CUSTOM STUFF BELOW
 
+-- // Sussur Weapons
+function SussurThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'GOON_SUSSUR_WEAPON_THROW'}, {}, {}, entity)
+end
+
+-- // Vison of the Absolute spear
+function VisionAbsoluteThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'TRUE_SOUL_SPEAR_WEAPON_BOOST'}, {}, {}, entity)
+end
+
+-- // Dwarven Thrower shortening
 function IsDwarf(entity)
 	local entity = entity or context.Source
 	return Tagged('DWARF',entity)
@@ -85,14 +98,13 @@ function IsDwarvenThrower(entity)
 	return HasAnyStatus({'MAG_DWARVEN_THROWER_TECHNICAL'}, {}, {}, entity)
 end
 
--- Radiant not covered in vanilla
+-- // Radiant not covered in vanilla for d4 bonuses
 function d4RadiantThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON'}, {}, {}, entity)
 end
 
--- Larger than d4 bonuses (and not poison)
-
+-- // Larger than d4 bonuses (and not poison)
 function d6ThunderThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'MAG_THUNDER_GREATER_THUNDER_WEAPON'}, {}, {}, entity)
@@ -108,107 +120,107 @@ function d6ForceThrow(entity)
 	return HasAnyStatus({'MAG_FORCE_FORCE_WEAPON'}, {}, {}, entity)
 end
 
--- Poisons
+-- POISONS
 
--- Serpent Fang Toxin
+-- // Serpent Fang Toxin
 function d6PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'TOXIN_SERPENTVENOM_DIPPED'}, {}, {}, entity)
 end
 
--- Magical variant for Venomous Revenge and weapon statuses
+-- // Magical variant for Venomous Revenge and weapon statuses
 function d6PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON'}, {}, {}, entity)
 end
 
--- Wyvern Toxin
+-- // Wyvern Toxin
 function d8PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'TOXIN_WYVERN_DIPPED'}, {}, {}, entity)
 end
 
--- Purple Worm Toxin
+-- // Purple Worm Toxin
 function d10PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'TOXIN_PURPLEWORM_DIPPED'}, {}, {}, entity)
 end
 
--- Basic Poison
+-- // Basic Poison
 function BPoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'POISON_SIMPLE_DIPPED'}, {}, {}, entity)
 end
 
--- Drow Poison
+-- // Drow Poison
 function DPoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'POISON_DROW_DIPPED'}, {}, {}, entity)
 end
 
--- Crawler Mucus - Also covers "Karabasan's Poison"
+-- // Crawler Mucus - Also covers "Karabasan's Poison"
 function CMPoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'POISON_CRAWLER_MUCUS_DIPPED'}, {}, {}, entity)
 end
 
--- Malice
+-- // Malice
 function MPoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'POISON_MALICE_DIPPED'}, {}, {}, entity)
 end
 
--- Simple Toxin
+-- // Simple Toxin
 function SToxThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
 end
 
--- Thisobald's Brewed-Up Bellyglummer
+-- // Thisobald's Brewed-Up Bellyglummer
 function BGPoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'UNI_POISON_BREWER_DIPPED'}, {}, {}, entity)
 end
 
--- Oils
+-- OILS
 
--- Arsonist's Oil
+-- // Arsonist's Oil
 function AOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_REMOVERESISTANCEFIRE_DIPPED'}, {}, {}, entity)
 end
 
--- Oil of Bane
+-- // Oil of Bane
 function BOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_BANE_DIPPED'}, {}, {}, entity)
 end
 
--- Diluted Oil of Sharpness
+-- // Diluted Oil of Sharpness
 function DSOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_DAMAGEATTACKBUFF_DIPPED'}, {}, {}, entity)
 end
 
--- Oil of Diminution
+-- // Oil of Diminution
 function DOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_REDUCE_DIPPED'}, {}, {}, entity)
 end
 
--- Oil of Combustion
+-- // Oil of Combustion
 function COilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_COMBUSTION_DIPPED'}, {}, {}, entity)
 end
 
--- Wizardsbane Oil
+-- // Wizardsbane Oil
 function WBOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_WIZARDSBANE_DIPPED'}, {}, {}, entity)
 end
 
--- Oil of Freezing
+-- // Oil of Freezing
 function FOilThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'ALCH_OIL_FROST_DIPPED'}, {}, {}, entity)
