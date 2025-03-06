@@ -48,12 +48,16 @@ data "Description" "h704c163cg9274g44c7g8a69g7f210ef0e37b;1"
 data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack);CriticalHitExtraDice(1,MeleeOffHandWeaponAttack);CriticalHitExtraDice(1,MeleeUnarmedAttack);CriticalHitExtraDice(1,RangedUnarmedAttack)"
 
 // Brutal Critical - Level 9 Barbarian feature
-//                 ↳ Adapted as it's written in the description instead of RAW
+//                 ↳ Adapted as pseudo RAW, just no offhands or ranged weapons
 new entry "BrutalCritical"
 type "PassiveData"
 using "BrutalCritical"
+// You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, you roll an extra damage die as well as the normal additional critical dice.
+// data "Description" "h853b555ege835g49e1g9e27g74680e24aef4;4"
+// You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.
+data "Description" "h42b6f824ge50cg45c7gaaa4ga454fc3e8486;1"
 // data "Boosts" "CriticalHitExtraDice(1, MeleeWeaponAttack);CriticalHitExtraDice(1, MeleeUnarmedAttack);"
-data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack);CriticalHitExtraDice(1,MeleeOffHandWeaponAttack);CriticalHitExtraDice(1,MeleeUnarmedAttack);CriticalHitExtraDice(1,RangedUnarmedAttack);CriticalHitExtraDice(1,RangedWeaponAttack);CriticalHitExtraDice(1,RangedOffHandWeaponAttack)"
+data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack);CriticalHitExtraDice(1,MeleeUnarmedAttack);CriticalHitExtraDice(1,RangedUnarmedAttack)"
 
 // ==================================== Item entries ====================================
 

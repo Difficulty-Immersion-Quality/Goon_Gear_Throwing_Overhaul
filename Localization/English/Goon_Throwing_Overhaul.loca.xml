@@ -14,12 +14,15 @@
 	<!--Half-Orc racial - Savage Attacks-->
 	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack, you deal an extra dice of weapon damage.</content>
 
-	<!--Half-Orc racial - Savage Attacks-->
-	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack, you deal an extra dice of weapon damage.</content>
-
 	<!--Wrath-->
 	<content contentuid="h2d9e2f62g409ag4b93g90f3g62b7c5c31a29" version="1">You have a +1 bonus to damage with melee and thrown weapons for every turn this condition has remaining.</content>
 
 	<!--Band of the Mystic Scoundrel - Illusion Quickening-->
 	<content contentuid="h4ef7fcd3g137ag4adagabbagb5f6bbd3b7b9" version="1">After a successful attack with a weapon, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
+
+	<!--Half-Orc racial - Savage Attacks-->
+	<content contentuid="h42b6f824ge50cg45c7gaaa4ga454fc3e8486" version="1">You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.</content>
+
+// You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.
+data "Description" "h42b6f824ge50cg45c7gaaa4ga454fc3e8486;1"
 </contentList>
