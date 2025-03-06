@@ -1,3 +1,7 @@
+// ==================================== Is this SpellFlag relevant when we have a whole "Trajectories" field? ====================================
+
+// data "SpellFlags" "TrajectoryRules"
+
 // ==================================== Finesse throwing for all, to an extent ====================================
 
 // It's the best I can do with stats I believe
@@ -11,3 +15,21 @@ data "Boosts" "MonkWeaponAttackOverride()"
 
 // Vanilla: data "Trajectories" "rules:861d0046-1858-401e-b97b-28f7b3e3e89a,d5e54f29-f80f-4105-96b2-23b5af9321c7,bac38aab-dfa7-4a5a-9c2a-552b0b626ee3"
 // Other ranged weapons: data "Trajectories" "ff93ba9c-124c-454e-ac8c-436c136bcef2,75d615be-9277-6e22-6c17-fa51981d7560,8c00238b-549d-dc71-8fcb-42ba68bae142"
+
+// ==================================== Seemingly redundant adjustments to Sneak Attack ====================================
+
+// new entry "Interrupt_SneakAttack"
+// type "InterruptData"
+// using "Interrupt_SneakAttack"
+// data "Conditions" "Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and ((WieldingFinesseWeaponInSpecificHand(context.Observer,false) and IsMainHandAttack()) or (WieldingFinesseWeaponInSpecificHand(context.Observer,true) and IsOffHandAttack()) or IsThrowAttackRoll() or (WieldingWeapon('Ammunition', false, true, context.Observer) and IsRangedWeaponAttack())) and not IsCritical() and not IsKillingBlow() and (HasDamageEffectFlag(DamageFlags.AttackAdvantage) or HasAllyWithinRange('SG_Incapacitated',1.5)) and not HasDamageEffectFlag(DamageFlags.AttackDisadvantage) and not (SpellId('Projectile_SneakAttack') or SpellId('Target_SneakAttack')) and not AnyEntityIsItem()"
+// data "Conditions" "Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and ((WieldingFinesseWeaponInSpecificHand(context.Observer,false) and IsMainHandAttack()) or (WieldingFinesseWeaponInSpecificHand(context.Observer,true) and IsOffHandAttack()) or IsThrowAttackRoll() or (WieldingWeapon('Ammunition', false, true, context.Observer) and IsRangedWeaponAttack())) and not IsCritical() and not IsKillingBlow() and (HasDamageEffectFlag(DamageFlags.AttackAdvantage) or HasAllyWithinRange('SG_Incapacitated',1.5)) and not HasDamageEffectFlag(DamageFlags.AttackDisadvantage) and not (SpellId('Projectile_SneakAttack') or SpellId('Target_SneakAttack')) and not AnyEntityIsItem()"
+// or (HasWeaponProperty(WeaponProperties.Finesse,context.HitDescription.ThrownObject) and IsRangedUnarmedAttack())
+
+// new entry "Interrupt_SneakAttack_Critical"
+// type "InterruptData"
+// using "Interrupt_SneakAttack"
+// using "Interrupt_SneakAttack_Critical"
+// data "Conditions" "Self(context.Source,context.Observer) and ((WieldingFinesseWeaponInSpecificHand(context.Observer,false) and IsMainHandAttack()) or (WieldingFinesseWeaponInSpecificHand(context.Observer,true) and IsOffHandAttack()) or IsThrowAttackRoll() or (WieldingWeapon('Ammunition', false, true, context.Observer) and IsRangedWeaponAttack())) and HasDamageEffectFlag(DamageFlags.Hit) and IsCritical() and not IsKillingBlow() and (HasDamageEffectFlag(DamageFlags.AttackAdvantage) or HasAllyWithinRange('SG_Incapacitated',1.5)) and not HasDamageEffectFlag(DamageFlags.AttackDisadvantage) and not (SpellId('Projectile_SneakAttack') or SpellId('Target_SneakAttack')) and not AnyEntityIsItem()"
+// data "Conditions" "Self(context.Source,context.Observer) and ((WieldingFinesseWeaponInSpecificHand(context.Observer,false) and IsMainHandAttack()) or (WieldingFinesseWeaponInSpecificHand(context.Observer,true) and IsOffHandAttack()) or IsThrowAttackRoll() or (WieldingWeapon('Ammunition', false, true, context.Observer) and IsRangedWeaponAttack())) and HasDamageEffectFlag(DamageFlags.Hit) and IsCritical() and not IsKillingBlow() and (HasDamageEffectFlag(DamageFlags.AttackAdvantage) or HasAllyWithinRange('SG_Incapacitated',1.5)) and not HasDamageEffectFlag(DamageFlags.AttackDisadvantage) and not (SpellId('Projectile_SneakAttack') or SpellId('Target_SneakAttack')) and not AnyEntityIsItem()"
+// or (HasWeaponProperty(WeaponProperties.Finesse,context.HitDescription.ThrownObject) and IsRangedUnarmedAttack())
+
