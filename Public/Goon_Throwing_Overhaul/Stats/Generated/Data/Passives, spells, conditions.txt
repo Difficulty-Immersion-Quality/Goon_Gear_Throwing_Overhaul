@@ -10,6 +10,7 @@ data "Description" "h33da1120g3c94g48d1g9a65g60d95da01749;1"
 
 new entry "Interrupt_Smite_Divine"
 type "InterruptData"
+using "Interrupt_Smite_Divine"
 // data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and not IsDivineSmite() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and not IsCritical() and not IsKillingBlow() and not AnyEntityIsItem()"
 data "Conditions" "IsAbleToReact(context.Observer) and not Item() and (IsMeleeAttack() or IsRangedUnarmedAttack()) and not IsDivineSmite() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and (IsWeaponAttack() or HasWeaponProperty(WeaponProperties.Thrown, context.HitDescription.ThrownObject)) and not IsCritical() and not IsKillingBlow() and not AnyEntityIsItem()"
 
