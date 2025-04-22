@@ -13,7 +13,7 @@ data "OnApplyFail" ""
 new entry "GOON_SUSSUR_WEAPON_THROW"
 type "StatusData"
 data "StatusType" "BOOST"
-data "Properties" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 
 // Condense multiple effects from Trident of the Waves
 new entry "GOON_WAVE_TRIDENT_TECHNICAL"
