@@ -120,6 +120,11 @@ function d6ForceThrow(entity)
 	return HasAnyStatus({'MAG_FORCE_FORCE_WEAPON'}, {}, {}, entity)
 end
 
+function d6LightningThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'MAG_CHARGED_LIGHTNING_LIGHTNING_GREATER_WEAPON'}, {}, {}, entity)
+end
+
 -- POISONS
 
 -- // Serpent Fang Toxin
