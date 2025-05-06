@@ -73,3 +73,44 @@ data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 11)"
 data "OnApplySuccess" "ApplyStatus(ALCH_TOXIN_BASIC_CONDITION,100,1, AdvantageOnPoisoned())"
 data "OnApplyFail" ""
 
+// Serpent Venom Toxin
+new entry "GOON_TOXIN_SERPENT_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Serpent Venom Toxin
+data "DisplayName" "h7531476bgfb94g4e9cg8ab0gd28654b257ed;2"
+// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
+data "Description" "h43726bacg78aeg4095g9bdega832a889aa6a;4"
+data "DescriptionParams" "DealDamage(1d6,Poison)"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 13)"
+data "OnApplySuccess" "ApplyStatus(ALCH_TOXIN_SERPENTVENOM_CONDITION,100,1, AdvantageOnPoisoned())"
+data "OnApplyFail" ""
+
+// Wyvern Toxin
+new entry "GOON_TOXIN_WYVERN_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Wyvern Toxin
+data "DisplayName" "h8756c9d0gdbdeg459egbee0g61ea46ed9b4f;1"
+// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
+data "Description" "h6ecf93d6gab2fg4f96gb2f9gc6139b281b70;3"
+data "DescriptionParams" "DealDamage(1d8,Poison)"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 15)"
+data "OnApplySuccess" "ApplyStatus(ALCH_TOXIN_WYVERN_CONDITION,100,1, AdvantageOnPoisoned())"
+data "OnApplyFail" ""
+
+// Purple Worm Toxin
+new entry "GOON_TOXIN_PURPLEWORM_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Purple Worm Toxin
+data "DisplayName" "hdc5a159eg5cbbg4466gac36gf63b48e8acb6;2"
+// Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
+data "Description" "h25913176g1788g4a81g8990g411aa91f55b5;3
+data "DescriptionParams" "DealDamage(1d10,Poison)"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 19)"
+data "OnApplySuccess" "ApplyStatus(ALCH_TOXIN_PURPLEWORM_CONDITION,100,1, AdvantageOnPoisoned())"
+data "OnApplyFail" ""

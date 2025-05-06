@@ -50,7 +50,7 @@ end
 -- // Non-magical variant of d4PoisThrow
 function d4PoisThrowReg(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'DIPPED_POISON','ALCH_TOXIN_BASIC_DIPPED'}, {}, {}, entity)
+	return HasAnyStatus({'DIPPED_POISON'}, {}, {}, entity)
 end
 
 function d4NecroticThrow(entity)
