@@ -76,6 +76,7 @@ data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack()"
 // Band of the Mystic Scoundrel - Illusion Quickening
 new entry "MAG_ArcaneTrickster_Ring_Passive"
 type "PassiveData"
+using "MAG_ArcaneTrickster_Ring_Passive"
 // After hitting a creature with a weapon attack, you can cast illusion or enchantment spells as a <LSTag Type="ActionResource" Tooltip="BonusActionPoint">bonus action</LSTag>.
 // data "Description" "hf3fe1d3cgb568g4420ga71dg10c48187f73c;1"
 // After a successful attack with a weapon, you can cast illusion or enchantment spells as a <LSTag Type="ActionResource" Tooltip="BonusActionPoint">bonus action</LSTag>.
