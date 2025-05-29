@@ -105,6 +105,8 @@ function d4RadiantThrow(entity)
 end
 
 -- // Larger than d4 bonuses (and not poison)
+
+-- Decomissioned this one 
 function d6ThunderThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'MAG_THUNDER_GREATER_THUNDER_WEAPON'}, {}, {}, entity)
