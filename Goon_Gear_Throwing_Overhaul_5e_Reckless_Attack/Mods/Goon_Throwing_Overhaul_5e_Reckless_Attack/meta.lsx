@@ -9,13 +9,13 @@
           <attribute id="Author" type="LSString" value="Goonsack and Sumradagnoth" />
           <attribute id="CharacterCreationLevelName" type="FixedString" value="" />
           <attribute id="Description" type="LSString" value="ye" />
-          <attribute id="Folder" type="LSString" value="Goon_Throwing_Overhaul_5e_Reckless_Attack" />
+          <attribute id="Folder" type="LSString" value="Goon_Gear_Throwing_Overhaul_5e_Reckless_Attack" />
           <attribute id="GMTemplate" type="FixedString" value="" />
           <attribute id="LobbyLevelName" type="FixedString" value="" />
           <attribute id="MD5" type="LSString" value="" />
           <attribute id="MainMenuBackgroundVideo" type="FixedString" value="" />
           <attribute id="MenuLevelName" type="FixedString" value="" />
-          <attribute id="Name" type="FixedString" value="Goon's Throwing Overhaul - 5e Reckless Attack" />
+          <attribute id="Name" type="FixedString" value="Goon's Gear &amp; Throwing Overhaul - 5e Reckless Attack" />
           <attribute id="NumPlayers" type="uint8" value="4" />
           <attribute id="PhotoBooth" type="FixedString" value="" />
           <attribute id="StartupLevelName" type="FixedString" value="" />
