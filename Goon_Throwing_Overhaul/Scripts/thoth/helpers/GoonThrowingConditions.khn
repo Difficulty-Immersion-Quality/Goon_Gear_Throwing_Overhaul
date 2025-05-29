@@ -5,6 +5,8 @@ function SlingShoesThrow(entity)
 	return HasAnyStatus({'MAG_PROJECTILE_SHOES_TECHNICAL'}, {}, {}, entity)
 end
 
+cock
+
 -- // 'MAG_THE_THORNS_WEAPON_BOND' for vanilla weapon
 function NyrulnaThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
