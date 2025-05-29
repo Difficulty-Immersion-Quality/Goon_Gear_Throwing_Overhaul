@@ -5,6 +5,7 @@
 		<node id="PhysicsBank">
 			<children>
 				<node id="Resource">
+					<!-- Restored the physics template for the sussur dagger so it doesn't fall through the map when thrown lmao -->
 					<attribute id="ID" type="FixedString" value="8ac37274-b0d9-484b-e10d-c7780f674d9f" />
 					<!-- <attribute id="Localized" type="bool" value="" /> -->
 					<attribute id="Localized" type="bool" value="False" />
