@@ -1,44 +1,29 @@
-new entry "Longsword_TwoHands"
-type "PassiveData
-data "DisplayName" "h12423612g4475g11eegbe56g0242ac120002;1"
-data "Description" "h12423766g4475g11eegbe56g0242ac120002;1"
-data "StatsFunctorContext" "OnCreate;OnEquip;OnUnequip;OnInventoryChanged"
-data "StatsFunctors" "IF(HasVersatileTwoHanded()):ApplyEquipmentStatus(MeleeMainHand,LONGSWORD_FINESSE,100,-1);IF(HasVersatileOneHanded() or not IsOffHandSlotEmpty()):ApplyEquipmentStatus(MeleeMainHand,LONGSWORD_FINESSE_REMOVER,100,0)"
+// ========================== WIP Versatile toggle shit ==========================
+// TODO: Add unlocker passive to all players via SE. Apply status based on equipped weapons and eligability. 
 
-new entry LONGSWORD_FINESSE"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
-data "Boosts" "WeaponProperty(Versatile)"
-
-new entry LONGSWORD_FINESSE_REMOVER
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-data "OnApplyFunctors" "RemoveStatus(LONGSWORD_FINESSE)"
-
-
-new entry "MAG_OfAutomaton_Gloves_Passive"
+new entry "Goon_Versatile_Toggle_Unlocker"
 type "PassiveData"
-// Circuitry Interface
-data "DisplayName" "h536ae5c9ge48dg40a7g90f8g9d29ec12fa26;3"
-// You are considered a Construct type creature.
-data "Description" "h9abfccb8gba92g4825g9a09g7d90d28342cb;4"
+data "Properties" "IsHidden"
+data "Conditions" ""
+data "StatsFunctorContext" ""
+data "StatsFunctors" ""
+
+new entry "GOON_VERSATILE_TOGGLE_UNLOCK"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "GOON_VERSATILE_TOGGLE_UNLOCK"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+type "Passives" "Goon_Versatile_Toggle"
+
+new entry "Goon_Versatile_Toggle"
+type "PassiveData"
+data "DisplayName" ";1"
+data "Description" ";1"
 // You may toggle this feature on and off.
 data "ExtraDescription" "h71374fc8g784cg41e3ga5f0g9cc48ba14c84;2"
 data "Properties" "IsToggled"
-data "ToggleOnFunctors" "ApplyStatus(MAG_CONSTRUCT_MODE, 100, -1)"
-data "ToggleOffFunctors" "RemoveStatus(MAG_CONSTRUCT_MODE)"
+data "ToggleOnFunctors" "ApplyStatus(GOON_VERSATILE_DISABLE_TECHNICAL, 100, -1)"
+data "ToggleOffFunctors" "RemoveStatus(GOON_VERSATILE_DISABLE_TECHNICAL)"
 
-function FightingStyle_Dueling(entity)
-	-- Default to Target, like cpp functions
-    entity = entity or context.Target
-    local hasNonVersatileWeapon = WieldingWeapon('Melee', false, false, entity) & ~WieldingWeapon('Versatile', false, false, entity) & ~WieldingWeapon('Twohanded', false, false, entity) & ~WieldingWeapon('Melee', true, false, entity) & ~WieldingWeapon('Ammunition', true, false, entity)
-    local hasVersatileWeapon = WieldingWeapon('Versatile', false, false, entity) & WieldingWeapon('Melee', false, false, entity) & HasShieldEquipped(entity)
-    return hasNonVersatileWeapon | hasVersatileWeapon
-end
-
-function d4FireThrow(entity)
-    local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
-end
+data "ToggleOnFunctors" "IF(HasWeaponProperty(WeaponProperties.Versatile), GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)):ApplyEquipmentStatus(MeleeMainHand, GOON_VERSATILE_DISABLE_TECHNICAL, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_ON_CHARACTER,100,0)"
+data "ToggleOffFunctors" "IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER,100,-1)"

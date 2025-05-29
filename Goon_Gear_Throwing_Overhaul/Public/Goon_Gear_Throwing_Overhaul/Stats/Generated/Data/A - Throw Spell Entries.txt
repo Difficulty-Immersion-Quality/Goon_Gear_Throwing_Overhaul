@@ -1,6 +1,5 @@
 // ==================================== Throw overhaul ====================================
 
-// Mine
 new entry "Throw_Throw"
 type "SpellData"
 data "SpellType" "Throw"
