@@ -1,0 +1,44 @@
+new entry "Longsword_TwoHands"
+type "PassiveData
+data "DisplayName" "h12423612g4475g11eegbe56g0242ac120002;1"
+data "Description" "h12423766g4475g11eegbe56g0242ac120002;1"
+data "StatsFunctorContext" "OnCreate;OnEquip;OnUnequip;OnInventoryChanged"
+data "StatsFunctors" "IF(HasVersatileTwoHanded()):ApplyEquipmentStatus(MeleeMainHand,LONGSWORD_FINESSE,100,-1);IF(HasVersatileOneHanded() or not IsOffHandSlotEmpty()):ApplyEquipmentStatus(MeleeMainHand,LONGSWORD_FINESSE_REMOVER,100,0)"
+
+new entry LONGSWORD_FINESSE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+data "Boosts" "WeaponProperty(Versatile)"
+
+new entry LONGSWORD_FINESSE_REMOVER
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "RemoveStatus(LONGSWORD_FINESSE)"
+
+
+new entry "MAG_OfAutomaton_Gloves_Passive"
+type "PassiveData"
+// Circuitry Interface
+data "DisplayName" "h536ae5c9ge48dg40a7g90f8g9d29ec12fa26;3"
+// You are considered a Construct type creature.
+data "Description" "h9abfccb8gba92g4825g9a09g7d90d28342cb;4"
+// You may toggle this feature on and off.
+data "ExtraDescription" "h71374fc8g784cg41e3ga5f0g9cc48ba14c84;2"
+data "Properties" "IsToggled"
+data "ToggleOnFunctors" "ApplyStatus(MAG_CONSTRUCT_MODE, 100, -1)"
+data "ToggleOffFunctors" "RemoveStatus(MAG_CONSTRUCT_MODE)"
+
+function FightingStyle_Dueling(entity)
+	-- Default to Target, like cpp functions
+    entity = entity or context.Target
+    local hasNonVersatileWeapon = WieldingWeapon('Melee', false, false, entity) & ~WieldingWeapon('Versatile', false, false, entity) & ~WieldingWeapon('Twohanded', false, false, entity) & ~WieldingWeapon('Melee', true, false, entity) & ~WieldingWeapon('Ammunition', true, false, entity)
+    local hasVersatileWeapon = WieldingWeapon('Versatile', false, false, entity) & WieldingWeapon('Melee', false, false, entity) & HasShieldEquipped(entity)
+    return hasNonVersatileWeapon | hasVersatileWeapon
+end
+
+function d4FireThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
+end

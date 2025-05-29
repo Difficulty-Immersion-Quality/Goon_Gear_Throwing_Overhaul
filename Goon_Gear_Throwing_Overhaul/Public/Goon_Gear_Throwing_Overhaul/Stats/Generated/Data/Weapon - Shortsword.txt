@@ -1,0 +1,10 @@
+// ==================================== Crimson Mischief ====================================
+// Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
+
+new entry "MAG_TheCrimson_Shortsword"
+type "Weapon"
+// using "WPN_Shortsword_2"
+using "MAG_TheCrimson_Shortsword"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing)"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"

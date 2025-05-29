@@ -1,0 +1,10 @@
+// ==================================== Sentient Amulet ====================================
+// Bug Fix: Shatter is now shown as a level 3 spell.
+
+new entry "Target_WYR_SentientAmulet_AmuletAfterCombat"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Shatter_3"
+using "Target_WYR_SentientAmulet_AmuletAfterCombat"
+// data "Level" "2"
+data "Level" "3"

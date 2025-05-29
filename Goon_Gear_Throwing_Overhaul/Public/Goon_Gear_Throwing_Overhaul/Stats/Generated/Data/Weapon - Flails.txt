@@ -1,0 +1,88 @@
+// ==================================== Base entry ====================================
+
+new entry "WPN_Flail"
+type "Weapon"
+// using "_BaseWeapon"
+using "WPN_Flail"
+// data "RootTemplate" "9eadef92-5dd0-408e-9b55-1cf791cafe9d"
+// data "Damage Type" "Bludgeoning"
+// data "Damage" "1d8"
+// data "ValueLevel" "3"
+// data "Weight" "0.9"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HinderingSmash_Offhand)"
+// data "PassivesMainHand" "Overwhelm"
+data "PassivesOffHand" "Goon_Overwhelm_Offhand"
+// data "Weapon Group" "MartialMeleeWeapon"
+data "VersatileDamage" "1d10"
+data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Weapon Properties" "Melee;Dippable"
+// data "Proficiency Group" "Flails;MartialWeapons"
+
+// ==================================== Magical variants ====================================
+
+new entry "WPN_Flail_1"
+type "Weapon"
+// using "WPN_Flail"
+using "WPN_Flail_1"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+new entry "WPN_Flail_2"
+type "Weapon"
+// using "WPN_Flail"
+using "WPN_Flail_2"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Flail of Myrkul ====================================
+
+// new entry "WPN_SkullFlail"
+
+// ==================================== Myrkulite Scourge ====================================
+
+new entry "WPN_SkullFlail_1"
+type "Weapon"
+// using "WPN_Flail_1"
+using "WPN_SkullFlail_1"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d6, Necrotic)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d6, Necrotic);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Flail of the Vortex ====================================
+
+new entry "WPN_Flail_Air_Myrmidon"
+type "Weapon"
+// using "WPN_Flail"
+using "WPN_Flail_Air_Myrmidon"
+data "Boosts" "UnlockSpell(Target_LightningStrike_Myrmidon_Air)"
+// data "BoostsOnEquipMainHand" ""
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
+
+new entry "WPN_Flail_Air_Myrmidon_Wildshape"
+type "Weapon"
+// using "WPN_Flail_Air_Myrmidon"
+using "WPN_Flail_Air_Myrmidon_Wildshape"
+// data "DefaultBoosts" "WeaponDamage(1d8,Lightning,Magical);WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponDamage(1d8,Lightning,Magical);WeaponEnchantment(3);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+new entry "WPN_Flail_Air_Myrmidon_ConjureElemental"
+type "Weapon"
+// using "WPN_Flail_Air_Myrmidon"
+using "WPN_Flail_Air_Myrmidon_ConjureElemental"
+// data "DefaultBoosts" "WeaponDamage(1d8,Lightning);WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponDamage(1d8,Lightning,Magical);WeaponEnchantment(3);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Pactbound Flail ====================================
+
+// new entry "WPN_Flail_Pact"
+
+// ==================================== Corrosive Flail ====================================
+
+
+
+// ==================================== Defender Flail ====================================
+
+
+
+// ==================================== Flail of Ages ====================================
+

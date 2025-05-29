@@ -1,0 +1,494 @@
+// ==================================== Generic and template abilities ====================================
+// Changes: Swapped from short rest cooldowns to per-combat cooldowns.
+
+// Base melee
+new entry "Target_AdvancedMeleeWeaponAction"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_MainHandAttack"
+using "Target_AdvancedMeleeWeaponAction"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "TargetConditions" "(Character() or Item()) and not Self() and not Dead()"
+data "TargetConditions" "(Character() or Item()) and not Self()"
+
+// Base ranged
+new entry "Projectile_AdvancedProjectileWeaponAction"
+type "SpellData"
+data "SpellType" "Projectile"
+// using "Projectile_MainHandAttack"
+using "Projectile_AdvancedProjectileWeaponAction"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "TargetConditions" "(Character() or Item()) and not Self() and not Dead()"
+data "TargetConditions" "(Character() or Item()) and not Self()"
+
+new entry "Projectile_HamstringShot"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_HamstringShot"
+data "Cooldown" "OncePerCombat"
+
+new entry "Projectile_PiercingShot"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_PiercingShot"
+data "Cooldown" "OncePerCombat"
+
+new entry "Projectile_MobileShooting"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_MobileShooting"
+data "Cooldown" "OncePerCombat"
+
+new entry "Projectile_Headcrack"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Headcrack"
+data "Cooldown" "OncePerCombat"
+
+// ==================================== Backbreaker ====================================
+// Changes: Can target corpses.
+
+new entry "Target_PostureBreaker"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+using "Target_PostureBreaker"
+// data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large) and not Dead()"
+data "TargetConditions" "(Character() or Item()) and not Self() and TargetSizeEqualOrSmaller(Size.Large)"
+
+// Custom offhand version
+new entry "Goon_Target_PostureBreaker_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_PostureBreaker"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Strength, ManeuverSaveDC())):ApplyStatus(PRONE,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+// Backbreaker (Offhand)
+data "DisplayName" "haad96815g5d0dg4285ga31eg0da094df82d1;1"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Brace (Melee) ====================================
+// TODO: It's a two-hander thing, maybe do something with it later
+
+new entry "Shout_Steady"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Steady"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+
+// ==================================== Cleave ====================================
+
+new entry "Zone_Cleave"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Cleave"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+
+// Custom offhand version
+new entry "Goon_Zone_Cleave_Offhand"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Cleave"
+data "SpellProperties" "GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+// Cleave (Offhand)
+data "DisplayName" "h046d806egc13fg403fgb220g8cdbd04778c0;1"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "a09de2c8-ec46-4c27-a502-bc92cf293fe5,,;711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46,711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46,711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46;a17a7bf3-7381-4191-83f4-304d37c738e0,a17a7bf3-7381-4191-83f4-304d37c738e0,a17a7bf3-7381-4191-83f4-304d37c738e0;1172e0b6-08d1-4f28-a651-a01681b84ee6,1172e0b6-08d1-4f28-a651-a01681b84ee6,1172e0b6-08d1-4f28-a651-a01681b84ee6;244b53cb-dc0f-4932-afd0-ab19c6df1b34,,;0002afee-5ad9-4109-ae64-9b2571601226,0002afee-5ad9-4109-ae64-9b2571601226,0002afee-5ad9-4109-ae64-9b2571601226;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Concussive Smash ====================================
+// Changes: No longer uses HybridCasterWeaponActionDC, instead using ManeuverSaveDC consistent with other weapon actions.
+// TODO: Potentially look at using this check for specific weapons, and for more weapon actions.
+
+new entry "Target_ConcussiveSmash"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+using "Target_ConcussiveSmash"
+// data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, HybridCasterWeaponActionDC())):ApplyStatus(DAZED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(DAZED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+
+// Custom offhand version
+new entry "Goon_Target_ConcussiveSmash_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ConcussiveSmash"
+// Concussive Smash (Offhand)
+data "DisplayName" "h90771cb4g5136g4cd4g8236g2f2cf39bbe25;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(DAZED,100,2);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Maiming Strike ====================================
+
+// new entry "Target_CripplingStrike"
+
+// Custom offhand version
+new entry "Goon_Target_CripplingStrike_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_CripplingStrike"
+// Maiming Strike (Offhand)
+data "DisplayName" "h36bca418g0d3dg47b0g9a9agdeb235538cd9;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(CRIPPLED,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Disarming Strike ====================================
+
+// new entry "Target_DisarmingStrike"
+
+new entry "Goon_Target_DisarmingStrike_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DisarmingStrike"
+// Disarming Strike (Offhand)
+data "DisplayName" "he6091780g9697g48fag972egdd47b8df7cd3;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(DISARM,100,0);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Flourish ====================================
+
+// new entry "Target_OpeningAttack"
+
+new entry "Goon_Target_OpeningAttack_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_OpeningAttack"
+// Flourish (Offhand)
+data "DisplayName" "h25288e12gdec4g47c0g97e7g2a7a3f41eae5;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Dexterity, ManeuverSaveDC()+2)):ApplyStatus(OFF_BALANCED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon, Bludgeoning);ExecuteWeaponFunctors(OffHand)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Heartstopper ====================================
+
+// new entry "Target_HeartStopper"
+
+new entry "Goon_Target_HeartStopper_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HeartStopper"
+// Heartstopper (Offhand)
+data "DisplayName" "hebf45cd6g6e31g4367gbbe0ge38bc0a69a51;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(CHEST_TRAUMA,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType); ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Lacerate ====================================
+// Doesn't inherit from "Target_AdvancedMeleeWeaponAction"
+
+new entry "Target_Slash_New"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_MainHandAttack"
+using "Target_Slash_New"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "TargetConditions" "(Character() or Item()) and not Self() and not Dead()"
+data "TargetConditions" "(Character() or Item()) and not Self()"
+
+new entry "Goon_Target_Slash_New_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Slash_New"
+// Lacerate (Offhand)
+data "DisplayName" "h8905cdc4ge4bag4c98gbc19g6bf26f3ff04e;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType); ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Piercing Strike ====================================
+
+// new entry "Target_PiercingThrust"
+
+new entry "Goon_Target_PiercingThrust_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_PiercingThrust"
+// Piercing Strike (Offhand)
+data "DisplayName" "h54451bd7g3d3ag4e08g900cg6b9c5b1d564e;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(GAPING_WOUND,100,2);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Pommel Strike ====================================
+// Didn't change animations here
+
+new entry "Target_PommelStrike"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_AdvancedMeleeWeaponAction"
+using "Target_PommelStrike"
+// data "TargetConditions" "(Character() or Item()) and not Self() and not Dead() and not (not Player(context.Source) and HasStatus('DAZED'))"
+data "TargetConditions" "(Character() or Item()) and not Self() and not (not Player(context.Source) and HasStatus('DAZED'))"
+
+new entry "Goon_Target_PommelStrike_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_PommelStrike"
+// Pommel Strike (Offhand)
+data "DisplayName" "h7d939ee7g1211g48c0g9553g4627e522095a;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "CastTextEvent" "CastOffhand"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Prepare ====================================
+// Changes: The main weapon action now only buffs main hand weapon attacks.
+// The custom offhand version only consumes 3m of movement speed for a theoretical scenario where someone is dual wielding weapons with Prepare and Prepare (Offhand), allowing both to be used in a turn with default movement speed of 9m.
+
+new entry "Shout_FullSwing"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_FullSwing"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your melee weapon this turn.
+// data "Description" "hec9b71f9g1faeg487fgaa2eg85b0b9444976;7"
+// Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your main hand melee weapon this turn.
+data "Description" "h08bcf205ge623g4d53g982cgaffb9817751e;1"
+
+new entry "FULL_SWING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "FULL_SWING"
+// Deals an additional [1] with melee attacks.
+// data "Description" "h2acaaedcg6333g4ff5g9dfag520ba5ad1fd1;4"
+// Deals an additional [1] with main hand melee attacks.
+data "Description" "he6838708g2ae8g48aeg83d6g53e606108898;1"
+
+new entry "FullSwing_Passive"
+type "PassiveData"
+using "FullSwing_Passive"
+// Deal an additional [1] with melee attacks.
+// data "Description" "h37f8464fg36e3g4fa3g927ag2e5995f28de6;1"
+// Deal an additional [1] with main hand melee attacks.
+data "Description" "h1984b3e7g92a6g4936gb4ceg0576d36c6b53;1"
+// data "Boosts" "IF(IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+data "Boosts" "IF(Attack(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+
+// Custom offhand version
+new entry "Goon_Shout_FullSwing_Offhand"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_FullSwing"
+// Prepare (Offhand)
+data "DisplayName" "h5b290079g0b06g401fg86d2g8a3f7cf21b87;1"
+// Sacrifice [1] <LSTag Tooltip="MovementSpeed">movement speed</LSTag> to deal an additional [2] with your off-hand melee weapon this turn.
+data "Description" "hec9b71f9g1faeg487fgaa2eg85b0b9444976;7"
+data "SpellProperties" "ApplyStatus(GOON_FULL_SWING_OFFHAND,100,1)"
+data "TooltipStatusApply" "ApplyStatus(GOON_FULL_SWING_OFFHAND,100,1)"
+data "DescriptionParams" "Distance(3);DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "RequirementConditions" "CanAttack(context.Target) and not HasStatus('ENCUMBERED_LIGHT') and not HasStatus('ENCUMBERED_HEAVY') and not HasStatus('ENCUMBERED_MAX') and not Immobilized() and CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "UseCosts" "Movement:3"
+
+new entry "GOON_FULL_SWING_OFFHAND"
+type "StatusData"
+data "StatusType" "BOOST"
+using "FULL_SWING"
+// Prepared (Offhand)
+data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
+// Deals an additional [1] with off-hand melee attacks.
+data "Description" "h754c5775g1a4fg400eg9d49gc1f607bd146c;1"
+data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "StackId" "GOON_FULL_SWING_OFFHAND"
+data "Passives" "Goon_FullSwing_Passive_Offhand"
+
+new entry "Goon_FullSwing_Passive_Offhand"
+type "PassiveData"
+using "FullSwing_Passive"
+// Prepared (Offhand)
+data "DisplayName" "hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5;1"
+// Deal an additional [1] with off-hand melee attacks.
+data "Description" "h40c656acg09e5g48b3g84d1g05e61ec090c4;1"
+// data "Boosts" "IF(IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+data "Boosts" "IF(Attack(AttackType.MeleeOffHandWeaponAttack) and IsProficientWithEquippedWeapon()):CharacterWeaponDamage(max(1,StrengthModifier))"
+
+// ==================================== Rush Attack ====================================
+// Changes: You can charge anywhere and don't have to declare a target.
+// TODO: Make this change to all/most rushes.
+
+new entry "Rush_SpringAttack"
+type "SpellData"
+data "SpellType" "Rush"
+using "Rush_SpringAttack"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "TargetConditions" "(Character() and not Ally() and not Dead()) or Item()"
+data "TargetConditions" ""
+data "CombatAIOverrideSpell" "Rush_SpringAttack_AI"
+
+new entry "Rush_SpringAttack_AI"
+type "SpellData"
+data "SpellType" "Rush"
+using "Rush_SpringAttack"
+// data "TargetConditions" ""
+data "TargetConditions" "(Character() and not Ally() and not Dead()) or Item()"
+// data "CombatAIOverrideSpell" "Rush_SpringAttack_AI"
+data "CombatAIOverrideSpell" ""
+
+new entry "Goon_Rush_SpringAttack_Offhand"
+type "SpellData"
+data "SpellType" "Rush"
+using "Rush_SpringAttack"
+// Rush Attack (Offhand)
+data "DisplayName" "h9a7d334bg91a3g4f0eg8244gf6806e2c75ca;1"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Strength, ManeuverSaveDC())):ApplyStatus(OFF_BALANCED,100,2);DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), Piercing);ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "CastTextEvent" "CastOffhand"
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "CombatAIOverrideSpell" "Goon_Rush_SpringAttack_Offhand_AI"
+
+new entry "Goon_Rush_SpringAttack_Offhand_AI"
+type "SpellData"
+data "SpellType" "Rush"
+using "Goon_Rush_SpringAttack_Offhand"
+// data "TargetConditions" ""
+data "TargetConditions" "(Character() and not Ally() and not Dead()) or Item()"
+// data "CombatAIOverrideSpell" "Goon_Rush_SpringAttack_Offhand_AI"
+data "CombatAIOverrideSpell" ""
+
+// ==================================== Tenacity ====================================
+// Bug Fix: Now works with Druid's Air Myrmidon form without the need to use Disguise Self first, as it has a mace. Expansion's "Beast Spells" forms included.
+// Changes: Now uses the weapon's damage type instead of being fixed to Bludgeoning.
+
+new entry "Overwhelm"
+type "PassiveData"
+using "Overwhelm"
+// When you miss an attack, you deal [1] anyway.
+// data "Description" "hee4cc52cg793cg4dc6g81fbgead2a4da91b5;3"
+// When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
+data "Description" "h3ff15630ga20cg4697gabaeg7909acd8b811;1"
+// data "DescriptionParams" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
+data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+
+new entry "Interrupt_Overwhelm"
+type "InterruptData"
+using "Interrupt_Overwhelm"
+// When you miss an attack, deal [1] anyway.
+// data "Description" "h26f3759bg82c2g4f58g915fg893ad148c5f1;1"
+// When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
+data "Description" "h3ff15630ga20cg4697gabaeg7909acd8b811;1"
+// data "DescriptionParams" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
+data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
+data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
+// data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
+data "Properties" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER','WILDSHAPE_MYRMIDON_AIR_PLAYER','WILDSHAPE_MYRMIDON_AIR_PLAYER_12','WILDSHAPE_MYRMIDON_AIR_PLAYER_BEASTSPELLS','WILDSHAPE_MYRMIDON_AIR_PLAYER_12_BEASTSPELLS'})"
+
+// Custom offhand version
+new entry "Goon_Overwhelm_Offhand"
+type "PassiveData"
+using "Overwhelm"
+// Tenacity (Offhand)
+data "DisplayName" "h3a82ba6cgea61g4c98g8abcg07ef3cd2b315;1"
+// When you miss an offhand weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
+data "Description" "h1110423cg3acfg4207ga238ga0770520477f;1"
+data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "Boosts" "UnlockInterrupt(Goon_Interrupt_Overwhelm_Offhand)"
+
+new entry "Goon_Interrupt_Overwhelm_Offhand"
+type "InterruptData"
+using "Interrupt_Overwhelm"
+// Tenacity (Offhand)
+data "DisplayName" "h3a82ba6cgea61g4c98g8abcg07ef3cd2b315;1"
+// When you miss an offhand weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.
+data "Description" "h1110423cg3acfg4207ga238ga0770520477f;1"
+data "DescriptionParams" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeOffHandWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
+// data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
+data "Properties" "DealDamage(max(1,StrengthModifier), OffhandMeleeWeaponDamageType)"
+
+// ==================================== Topple ====================================
+
+new entry "Target_Topple"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_MainHandAttack"
+using "Target_Topple"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack);CastOffhand[Attack(AttackType.MeleeOffHandWeaponAttack)]"
+data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+
+new entry "Goon_Target_Topple_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Topple"
+// Topple (Offhand)
+data "DisplayName" "h8be29bd0g39acg460cgad99g48cfd27e2941;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Weakening Strike ====================================
+
+// new entry "Target_HinderingSmash"
+
+new entry "Goon_Target_HinderingSmash_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HinderingSmash"
+// Weakening Strike (Offhand)
+data "DisplayName" "h028fa086g4c49g4408ga471g456a695559df;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"

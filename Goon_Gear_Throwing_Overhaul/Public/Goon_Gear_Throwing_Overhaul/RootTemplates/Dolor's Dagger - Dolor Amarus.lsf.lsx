@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="8" revision="0" build="10" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="CanClickThrough" type="bool" value="False" />
+					<attribute id="CanClimbOn" type="bool" value="False" />
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="CoverAmount" type="uint8" value="0" />
+					<attribute id="Description" type="TranslatedString" handle="hb54f07f1g581fg436fg8eceg0599170e41d4" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hf4cbdab5ga75bg461bg870cg95f7556f7c41" version="2" />
+					<attribute id="EquipmentTypeID" type="guid" value="2d85d633-d496-44a1-a643-0e95ef879a6d" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_DROW_Dagger_Dolor_A" />
+					<attribute id="IsPointerBlocker" type="bool" value="False" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LoopSound" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="e8df5166-5a68-42ec-b71f-4dfb754f7aa4" />
+					<attribute id="Name" type="LSString" value="WPN_DROW_Dagger_Dolor_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="f44c9c6f-bc71-42ad-9cad-2dae306e750e" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="b35643b5-6ecb-9477-9438-a87825a80e92" />
+					<attribute id="SoundAttenuation" type="int16" value="-1" />
+					<attribute id="SoundInitEvent" type="FixedString" value="" />
+					<attribute id="Stats" type="FixedString" value="WPN_Dagger" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f20422c3-5ff2-0ef0-02a2-dade286845a5" />
+					<attribute id="Wadable" type="bool" value="False" />
+					<attribute id="WalkOn" type="bool" value="False" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209022" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.064131506 0.03481796 0.19796574" />
+									<attribute id="Min" type="fvec3" value="-0.064131506 0.0029590614 -0.36400455" />
+									<attribute id="Radius" type="float" value="0.0833395" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.064131506 0.03481796 0.19796574" />
+									<attribute id="Min" type="fvec3" value="-0.064131506 0.0029590614 -0.36400455" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.064131506 0.03481796 0.19796574" />
+									<attribute id="Min" type="fvec3" value="-0.064131506 0.0029590614 -0.36400455" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+					<children>
+						<node id="Tags">
+							<children>
+								<!-- Changes: Now tagged as a dagger. I don't know if this inherits so putting it in both -->
+								<node id="Tag">
+									<attribute id="Object" type="guid" value="7490e5d0-d346-4b0e-80c6-04e977160863" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="d3e121fb-09c0-4478-84f1-f4f3e28cd50f" />
+					<attribute id="Name" type="LSString" value="MAG_Vicious_Dagger" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="ParentTemplateId" type="FixedString" value="e8df5166-5a68-42ec-b71f-4dfb754f7aa4" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hd638af66g5d9dg4ccfgb66bg3ce4232505e5" version="3" />
+					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Dagger" />
+					<attribute id="Description" type="TranslatedString" handle="h629ea019gf042g4bdfgaf9bge94ce0872293" version="3" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+								<!-- Changes: Now tagged as a dagger. I don't know if this inherits so putting it in both -->
+								<node id="Tag">
+									<attribute id="Object" type="guid" value="7490e5d0-d346-4b0e-80c6-04e977160863" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

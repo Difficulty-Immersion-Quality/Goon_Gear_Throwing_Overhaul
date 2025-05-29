@@ -1,0 +1,331 @@
+Refer to Elemental weapon
+
+data "MaximumTargets" "1"
+
+data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_ACID,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_ACID,100,-1)"
+
+Make it only target self and look for weapon slot?
+
+// ==================================== Pact Blade ====================================
+
+new entry "PactOfTheBlade"
+type "PassiveData"
+using "PactOfTheBlade"
+// Pact of the Blade
+// data "DisplayName" "ha3bef4ccgd1dfg46d2ga453g49e67df2361c;2"
+// You can Summon a pact weapon, or Bind the one you are wielding, making it magical.
+// data "Description" "he0dbb48dg6fe3g4bc5g8118gb2000252a7ef;2"
+// Pact weapons use the wielder's Spellcasting Ability Modifier instead of Strength or Dexterity.
+// data "ExtraDescription" "h74a01e25gb442g45b7g899fg6846bcdbbd9b;1"
+// data "Icon" "PassiveFeature_PactOfTheBlade"
+// data "Properties" "Highlighted"
+// data "Boosts" "UnlockSpell(Shout_PactOfTheBlade);UnlockSpell(Shout_PactOfTheBlade_Bind)"
+data "Boosts" "UnlockSpell(Shout_PactOfTheBlade);UnlockSpell(Goon_PactOfTheBlade_Bind_Container);UnlockSpell(Shout_PactOfTheBlade_Bind);UnlockSpell(Goon_Shout_PactOfTheBlade_Bind_MeleeOffhand);UnlockSpell(Goon_Shout_PactOfTheBlade_Bind_RangedMainhand);UnlockSpell(Goon_Shout_PactOfTheBlade_Bind_RangedOffhand);"
+// data "Boosts" "UnlockSpell(Shout_PactOfTheBlade);UnlockSpell(Goon_PactOfTheBlade_Bind_Container)"
+
+new entry "Shout_PactOfTheBlade"
+type "SpellData"
+data "SpellType" "Shout"
+data "ContainerSpells" "Shout_PactOfTheBlade_Battleaxe;Shout_PactOfTheBlade_Glaive;Shout_PactOfTheBlade_Greatsword;Shout_PactOfTheBlade_Rapier;Shout_PactOfTheBlade_Trident;Shout_PactOfTheBlade_Warhammer"
+data "Cooldown" "OncePerCombat"
+data "TargetConditions" "Self()"
+data "Icon" "Skill_Warlock_PactOfTheBlade_BoundWeapon"
+// Pact of the Blade
+data "DisplayName" "h89f0b838g285fg4e72g8ce4gaf1e8ec5ac2c;2"
+// Summon a weapon to your hand. It uses the wielder's Spellcasting Ability Modifier, and its damage is magical.
+data "Description" "h277c9a64g8300g419egbda7g62763b24ba72;6"
+// You are Proficient with the weapon. You can only have one at a time. The weapon disappears if you are more than [1] away from it for more than 10 rounds.
+data "ExtraDescription" "h1ab7befbg47b0g4503g8bc7g6c5f736d2784;3"
+data "ExtraDescriptionParams" "Distance(1.5)"
+data "CastSound" "Action_Cast_PactOfTheBlade"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1"
+data "SpellAnimation" "f489d217-b699-4e8e-bf22-6ef539c5d65b,,;,,;7a343ea7-1330-428a-b0b1-9f6dc7f2a91c,,;0f872585-3c6e-4493-a0b5-5acc882b7aaf,,;f9414915-2da7-4f40-bcbd-90e956461246,,;,,;f2a62277-c87a-4ec7-b4f2-c3c37e6e30ae,,;,,;,,"
+data "VerbalIntent" "Summon"
+data "SpellStyleGroup" "Class"
+data "SpellFlags" "IsLinkedSpellContainer"
+data "SpellAnimationIntentType" "Aggressive"
+data "PrepareEffect" "d9038b21-f4cc-4c8a-99c1-6168e1fe46ba"
+data "CastEffect" "135cb448-04f9-4543-b670-7bebea4ae21d"
+data "Sheathing" "Sheathed"
+
+new entry "Shout_PactOfTheBlade_Bind"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_PactOfTheBlade_Bind"
+// data "SpellProperties" "ApplyEquipmentStatus(MainHand, PACT_BLADE,100, -1)"
+data "SpellProperties" "ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE,100, -1);ApplyStatus(SELF,GOON_PACT_BLADE_OWNER,100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+// data "TargetConditions" "Self()"
+// data "Icon" "Skill_Warlock_BindPactWeapon"
+// Bind Pact Weapon
+// data "DisplayName" "h3b3b7fcbg4167g4f90gb900g842334ea59c8;2"
+// Bind to your main hand weapon. Its damage becomes magical, you cannot drop or throw it, and you become Proficient with it if you weren't already.
+// data "Description" "h65110eecgba48g4172g8b63g84426af8b77c;4"
+// You can only have 1 pact weapon at any time. The weapon returns to its previous state if you are more than [1] away from it for more than 10 rounds.
+// data "ExtraDescription" "h43fde86cg5e3eg4e3bg893cg1f8ca8f52969;2"
+// data "ExtraDescriptionParams" "Distance(1.5)"
+data "ExtraDescriptionParams" "Distance(2.0)"
+// data "TooltipStatusApply" "ApplyStatus(PACT_BLADE,100, -1)"
+data "TooltipStatusApply" "ApplyStatus(GOON_PACT_BLADE,100, -1)"
+// data "CastSound" "Action_Cast_BindPactWeapon"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;,,;35b644cf-5c13-4407-9dc1-23bf4309216e,,;823e3ddf-c670-41ef-b7b4-9f4a4e38300b,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "VerbalIntent" "Utility"
+// data "SpellAnimationIntentType" "Aggressive"
+// data "Requirements" "!Combat"
+data "Requirements" ""
+// data "RequirementConditions" "not Unarmed() and not Tagged('PACT_OF_THE_BLADE',GetActiveWeapon())"
+data "RequirementConditions" "not Unarmed()"
+// data "PrepareEffect" "8e9914c9-7008-4252-ab31-a9776c444194"
+// data "CastEffect" "fc23a5a6-f05b-40c3-8e0f-99377cfb04cc"
+// data "Sheathing" "Melee"
+data "SpellContainerID" "Goon_PactOfTheBlade_Bind_Container"
+
+// ==================================== Pact Blade - Custom bind spells ====================================
+
+new entry "Goon_PactOfTheBlade_Bind_Container"
+type "SpellData"
+data "SpellType" "Shout"
+data "DisplayName" ""
+data "Description" ""
+data "ExtraDescription" ""
+data "Icon" "Skill_Warlock_BindPactWeapon"
+//
+data "ContainerSpells" "Shout_PactOfTheBlade_Bind;Goon_Shout_PactOfTheBlade_Bind_MeleeOffhand;Goon_Shout_PactOfTheBlade_Bind_RangedMainhand;Goon_Shout_PactOfTheBlade_Bind_RangedOffhand"
+//data "TargetConditions" "Self()"
+//data "UseCosts" ""
+//data "SpellFlags" "IsLinkedSpellContainer"
+//
+//data "SpellAnimation" ""
+//data "VerbalIntent" "Utility"
+
+new entry "Goon_Shout_PactOfTheBlade_Bind_MeleeOffhand"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_PactOfTheBlade_Bind"
+data "SpellProperties" "ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE,100, -1);ApplyStatus(SELF,GOON_PACT_BLADE_OWNER,100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "Goon_Shout_PactOfTheBlade_Bind_RangedMainhand"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_PactOfTheBlade_Bind"
+data "SpellProperties" "ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE,100, -1);ApplyStatus(SELF,GOON_PACT_BLADE_OWNER,100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "Goon_Shout_PactOfTheBlade_Bind_RangedOffhand"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_PactOfTheBlade_Bind"
+data "SpellProperties" "ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE,100, -1);ApplyStatus(SELF,GOON_PACT_BLADE_OWNER,100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+// ==================================== Pact Blade - Duplicate binding removal system ====================================
+
+// Technical
+new entry "GOON_PACT_BLADE_REMOVE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "OnApplyFunctors" "RemoveStatus(GOON_PACT_BLADE)"
+
+// GOON_PACT_BLADE_OWNER passive
+new entry "Goon_Pact_Blade_Check_For_Duplicates_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE_NOT_MAINHAND, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source)) and not HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+data "StatsFunctorContext" "OnAttack"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+
+new entry "GOON_PACT_BLADE_REMOVE_NOT_MAINHAND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "OnApplyFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "GOON_PACT_BLADE_REMOVE_NOT_RANGEDMAINHAND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "OnApplyFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "GOON_PACT_BLADE_REMOVE_NOT_OFFHAND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "OnApplyFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "GOON_PACT_BLADE_REMOVE_NOT_RANGEDOFFHAND"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "OnApplyFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+
+new entry "Goon_Pact_Blade_Check_For_Owner_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+//data "StatsFunctors" "IF(GoonPactBladeCheckMain()):ApplyEquipmentStatus(MeleeMainHand,GOON_PACT_BLADE_IN_RANGE,100,-1);IF(GoonPactBladeCheckOff()):ApplyEquipmentStatus(MeleeOffHand,GOON_PACT_BLADE_IN_RANGE,100,-1)"
+data "StatsFunctors" "IF(not IsEquipped() and not HasStatus('GOON_PACT_BLADE_OWNER')):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(not IsEquipped() and not HasStatus('GOON_PACT_BLADE_OWNER')):ApplyEquipmentStatus(MeleeOffHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(not IsEquipped() and not HasStatus('GOON_PACT_BLADE_OWNER')):ApplyEquipmentStatus(RangedMainHand, GOON_PACT_BLADE_REMOVE, 100, 0);IF(not IsEquipped() and not HasStatus('GOON_PACT_BLADE_OWNER')):ApplyEquipmentStatus(RangedOffHand, GOON_PACT_BLADE_REMOVE, 100, 0)"
+data "StatsFunctorContext" "OnEquip;OnAttack;OnTurn"
+data "Conditions" ""
+
+// ==================================== Pact Blade - Statuses ====================================
+
+// new entry "PACT_BLADE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Pact Weapon
+// data "DisplayName" "h7ac40bcag9679g46f0gb54fg093c562a9b66;2"
+// The warlock bound to this weapon is always Proficient with it. The weapon's damage is magical.
+// data "Description" "hb5821feag2ff1g4781gbae9g883a69741d6a;3"
+// data "Icon" "Skill_Warlock_BindPactWeapon"
+// data "StackId" "PACT_BLADE"
+// data "Boosts" "WeaponProperty(Magical);IntrinsicSummonerProficiency();IntrinsicSourceProficiency();ItemReturnToOwner();Attribute(InventoryBound);WeaponAttackRollAbilityOverride(Charisma);CannotBeDisarmed()"
+// data "StatusPropertyFlags" "IgnoreResting"
+// data "StatusGroups" "SG_RemoveOnRespec"
+// data "IsUnique" "1"
+// data "ApplyEffect" "63760e78-ec10-4c41-a097-173a6f1fe536"
+
+// New custom PACT_BLADE with blackjack and hookers
+new entry "GOON_PACT_BLADE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Pact Weapon
+data "DisplayName" "h7ac40bcag9679g46f0gb54fg093c562a9b66;2"
+// The warlock bound to this weapon is always Proficient with it. The weapon's damage is magical.
+data "Description" "hb5821feag2ff1g4781gbae9g883a69741d6a;3"
+data "Icon" "Skill_Warlock_BindPactWeapon"
+//
+data "StackId" "PACT_BLADE"
+// data "Boosts" "WeaponProperty(Magical);IntrinsicSummonerProficiency();IntrinsicSourceProficiency();ItemReturnToOwner();Attribute(InventoryBound);WeaponAttackRollAbilityOverride(Charisma);CannotBeDisarmed()"
+data "Boosts" "WeaponProperty(Magical);IntrinsicSummonerProficiency();IntrinsicSourceProficiency();ItemReturnToOwner();WeaponAttackRollAbilityOverride(Charisma);CannotBeDisarmed()"
+data "RemoveConditions" "HasStatus('GOON_PACT_BLADE_OUT_OF_RANGE_10')"
+data "RemoveEvents" "OnStatusApplied"
+data "AuraRadius" "2"
+data "AuraStatuses" "IF(HasStatus('GOON_PACT_BLADE_OWNER')):ApplyStatus(GOON_PACT_BLADE_IN_RANGE)"
+data "StatusPropertyFlags" "IgnoreResting"
+data "StatusGroups" "SG_RemoveOnRespec"
+//data "IsUnique" "1"
+data "Passives" "Goon_Pact_Blade_Check_For_Duplicates_Passive;Goon_Pact_Blade_Check_For_Owner_Passive"
+//
+data "ApplyEffect" "63760e78-ec10-4c41-a097-173a6f1fe536"
+
+// Applied to caster same time as GOON_PACT_BLADE is applied to weapon
+new entry "GOON_PACT_BLADE_OWNER"
+type "StatusData"
+data "StatusType" "BOOST"
+//data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+//
+data "StackId" "GOON_PACT_BLADE_OWNER"
+data "StackType" "Overwrite"
+data "RemoveConditions" "HasStatus('GOON_PACT_BLADE_OUT_OF_RANGE_10')"
+data "RemoveEvents" "OnStatusApplied"
+//data "IsUnique" "1"
+data "Passives" "Goon_Pact_Blade_Out_Of_Range_Passive"
+
+// ==================================== Pact Blade - Range functionality ====================================
+
+// Technical used by both the weapon and the owner to track aura interactions
+// When exiting range it applies the turn tracker
+new entry "GOON_PACT_BLADE_IN_RANGE"
+type "StatusData"
+data "StatusType" "BOOST"
+//data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+//
+data "StackId" "GOON_PACT_BLADE_RANGE"
+data "StackType" "Overwrite"
+data "StackPriority" "11"
+data "AuraRadius" "2"
+data "AuraStatuses" "IF(HasStatus('GOON_PACT_BLADE')):ApplyStatus(GOON_PACT_BLADE_IN_RANGE)"
+data "RemoveConditions" "HasStatus('GOON_PACT_BLADE_OUT_OF_RANGE_10')"
+data "RemoveEvents" "OnStatusApplied"
+//data "OnRemoveFunctors" "IF(HasStatus('GOON_PACT_BLADE') or HasStatus('GOON_PACT_BLADE_OWNER') and not HasStatus('GOON_PACT_BLADE_OUT_OF_RANGE_10')):ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_1,100,1)"
+data "OnRemoveFunctors" "IF(HasStatus('GOON_PACT_BLADE') or HasStatus('GOON_PACT_BLADE_OWNER') and not HasStatus('GOON_PACT_BLADE_OUT_OF_RANGE_10')):ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_1,100,1)"
+
+// Passive to handle forcing the GOON_PACT_BLADE_IN_RANGE status to apply to the weapon while it's equipped
+// No solution for a pact bound weapon being in the inventory yet
+new entry "Goon_Pact_Blade_Out_Of_Range_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+//data "StatsFunctors" "IF(GoonPactBladeCheckMain()):ApplyEquipmentStatus(MeleeMainHand,GOON_PACT_BLADE_IN_RANGE,100,-1);IF(GoonPactBladeCheckOff()):ApplyEquipmentStatus(MeleeOffHand,GOON_PACT_BLADE_IN_RANGE,100,-1)"
+data "StatsFunctors" "IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and not HasStatus('GOON_PACT_BLADE_IN_RANGE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_IN_RANGE, 100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source)) and not HasStatus('GOON_PACT_BLADE_IN_RANGE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_IN_RANGE, 100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source)) and not HasStatus('GOON_PACT_BLADE_IN_RANGE', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_IN_RANGE, 100, -1);IF(HasStatus('GOON_PACT_BLADE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source)) and not HasStatus('GOON_PACT_BLADE_IN_RANGE', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_PACT_BLADE_IN_RANGE, 100, -1)"
+data "StatsFunctorContext" "OnTurn;OnRound;OnEquip;OnCast;OnAttacked;OnHeal;OnStatusApplied;OnStatusRemoved;OnInventoryChanged;OnMovedDistance;OnActionResourcesChanged;OnAbilityCheck"
+data "Conditions" ""
+
+// Track turns out of range
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+type "StatusData"
+data "StatusType" "BOOST"
+//data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+//
+data "StackId" "GOON_PACT_BLADE_RANGE"
+data "StackType" "Overwrite"
+data "RemoveConditions" "not HasStatus('GOON_PACT_BLADE') and not HasStatus('GOON_PACT_BLADE_OWNER') or HasStatus('GOON_PACT_BLADE_IN_RANGE')"
+data "RemoveEvents" "OnStatusRemoved;OnStatusApplied"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_1"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "1"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_2,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_2"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "2"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_3,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "3"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_4,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "4"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_5,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "5"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_6,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "6"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_7,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "7"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_8,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "8"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_9,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "9"
+data "OnRemoveFunctors" "ApplyStatus(GOON_PACT_BLADE_OUT_OF_RANGE_10,100, 1)"
+
+new entry "GOON_PACT_BLADE_OUT_OF_RANGE_10"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_PACT_BLADE_OUT_OF_RANGE_TEMPLATE"
+data "StackPriority" "10"

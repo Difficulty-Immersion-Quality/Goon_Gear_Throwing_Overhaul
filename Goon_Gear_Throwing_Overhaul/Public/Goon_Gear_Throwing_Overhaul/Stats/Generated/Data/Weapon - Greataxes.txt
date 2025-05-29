@@ -1,0 +1,19 @@
+// ==================================== Exterminator's Axe ====================================
+// Bug Fix: Scourge of Insects no longer specifies that is deals additional damage to insects when it's not actually something the functionality checks for.
+// Changes: Now specifies spiders instead of insects, and checks for the "SPIDER" tag in the functionality. 
+// TODO: If there's other fitting creature types add them to the functionality. 
+
+new entry "UND_DuergarRaft_PestKillerAxe"
+type "Weapon"
+// using "WPN_Greataxe_1"
+using "UND_DuergarRaft_PestKillerAxe"
+// data "DefaultBoosts" "WeaponProperty(Magical);IF(TargetSizeEqualOrSmaller(Size.Small) or Tagged('PLANT',context.Target) or Tagged('MYCONID',context.Target)):WeaponDamage(1d6, Fire)"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(TargetSizeEqualOrSmaller(Size.Small) or Tagged('PLANT',context.Target) or Tagged('MYCONID',context.Target) or Tagged('SPIDER',context.Target)):WeaponDamage(1d6, Fire)"
+
+new entry "UND_DuergarRaft_PestKillerAxe_Passive"
+type "PassiveData"
+using "UND_DuergarRaft_PestKillerAxe_Passive"
+// Deals an additional [1] to Plants, Insects or Small creatures.
+// data "Description" "h756389c9g6148g4fa7g90fbg449a3fac7dbc;3"
+// Deals an additional [1] to Plants, Spiders or small creatures.
+data "Description" "h1a63b3cdge895g484agb702g3b5c616e13dd;1"

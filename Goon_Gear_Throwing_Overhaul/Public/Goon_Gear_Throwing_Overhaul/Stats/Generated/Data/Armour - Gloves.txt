@@ -1,0 +1,28 @@
+// ==================================== Gloves of Battlemage's Power ====================================
+// Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
+// Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks. 
+
+new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+type "PassiveData"
+using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "hbae6c94bg09c9g45e6ga267gef7984d501be;11"
+// When you hit a target with a melee spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
+// data "Conditions" "ArcaneAcuityGlovesCondition();"
+data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack)"
+
+// ==================================== The Reviving Hands ====================================
+// Bug Fix: Aegis Palms now applies Death Ward to revived targets.
+
+new entry "MAG_Revivify_Gloves_Passive"
+type "PassiveData"
+// using "ARM_Gloves_Metal"
+using "MAG_Revivify_Gloves_Passive"
+// When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt;. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt;.
+// data "Description" "ha1f9a714g92c3g4d83g8092gf281102e6794;2"
+// When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] turns. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] turns.
+data "Description" "h30f1a9acg7a77g46e0g824bg8037eb98bf98;1"
+data "DescriptionParams" "2"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"

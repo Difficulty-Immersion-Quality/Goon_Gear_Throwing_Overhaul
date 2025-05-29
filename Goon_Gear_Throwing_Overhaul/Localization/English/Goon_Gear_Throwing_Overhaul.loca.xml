@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentList>
+	<!--Nyrulna toggle-->
+	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="h654b96b4geadfg46aag99c2g2af9f15cd5b6" version="1">Nyrulna: Zephyr Connection</content>
+	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="he5c48cdcg3690g4ec2ga8cbgd453b402bc17" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, Nyrulna's additional [1] explodes outward in a [2] blast centred on the target.</content>
+	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="hb466f4f5g631cg4443g9a89g1485aad5a8a8" version="1">You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.</content>
+
+	<!--Sussur weapons-->
+	<content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
+
+	<!--Smites-->
+	<content contentuid="h33da1120g3c94g48d1g9a65g60d95da01749" version="1">Automatically cast &lt;LSTag Type="Spell" Tooltip="Target_Smite_Divine"&gt;Divine Smite&lt;/LSTag&gt; when you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack. &lt;br&gt;&lt;Br&gt;The highest available &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; will be used to maximise damage.</content>
+
+	<!--Half-Orc racial - Savage Attacks-->
+	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack, you deal an extra dice of weapon damage.</content>
+
+	<!--Wrath-->
+	<content contentuid="h2d9e2f62g409ag4b93g90f3g62b7c5c31a29" version="1">You have a +1 bonus to damage with melee and thrown weapons for every turn this condition has remaining.</content>
+
+	<!--Band of the Mystic Scoundrel - Illusion Quickening-->
+	<content contentuid="h4ef7fcd3g137ag4adagabbagb5f6bbd3b7b9" version="1">After a successful attack with a weapon, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
+
+	<!--Barbarian - Brutal Critical-->
+	<content contentuid="h42b6f824ge50cg45c7gaaa4ga454fc3e8486" version="1">You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.</content>
+
+	<!-- WEAPON ACTIONS -->
+
+	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
+	<!-- "Goon_Zone_Cleave_Offhand" --> <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
+	<!-- "Interrupt_Overwhelm", "Overwhelm" --> <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
+	<!-- "Goon_Interrupt_Overwhelm_Offhand", "Goon_Overwhelm_Offhand" --> <content contentuid="h3a82ba6cgea61g4c98g8abcg07ef3cd2b315" version="1">Tenacity (Offhand)</content>
+	<!-- "Goon_Interrupt_Overwhelm_Offhand", "Goon_Overwhelm_Offhand" --> <content contentuid="h1110423cg3acfg4207ga238ga0770520477f" version="1">When you miss an offhand weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
+	<!-- "Goon_Target_ConcussiveSmash_Offhand" --> <content contentuid="h90771cb4g5136g4cd4g8236g2f2cf39bbe25" version="1">Concussive Smash (Offhand)</content>
+	<!-- "Goon_Target_CripplingStrike_Offhand" --> <content contentuid="h99b3c2f0g0c43g4b6cgb77dg2f806ca992a5" version="1">Maiming Strike (Offhand)</content>
+	<!-- "Goon_Target_CripplingStrike_Offhand" --> <content contentuid="h36bca418g0d3dg47b0g9a9agdeb235538cd9" version="1">Maiming Strike (Offhand)</content>
+	<!-- "Goon_Target_DisarmingStrike_Offhand" --> <content contentuid="he6091780g9697g48fag972egdd47b8df7cd3" version="1">Disarming Strike (Offhand)</content>
+	<!-- "Goon_Target_OpeningAttack_Offhand" --> <content contentuid="h25288e12gdec4g47c0g97e7g2a7a3f41eae5" version="1">Flourish (Offhand)</content>
+	<!-- "Goon_Target_HeartStopper_Offhand" --> <content contentuid="hebf45cd6g6e31g4367gbbe0ge38bc0a69a51" version="1">Heartstopper (Offhand)</content>
+	<!-- "Goon_Target_Slash_New_Offhand" --> <content contentuid="h8905cdc4ge4bag4c98gbc19g6bf26f3ff04e" version="1">Lacerate (Offhand)</content>
+	<!-- "Goon_Target_PiercingThrust_Offhand" --> <content contentuid="h54451bd7g3d3ag4e08g900cg6b9c5b1d564e" version="1">Piercing Strike (Offhand)</content>
+	<!-- "Goon_Target_PommelStrike_Offhand" --> <content contentuid="h7d939ee7g1211g48c0g9553g4627e522095a" version="1">Pommel Strike (Offhand)</content>
+	<!-- "Shout_FullSwing" --> <content contentuid="h08bcf205ge623g4d53g982cgaffb9817751e" version="1">Sacrifice [1] &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to deal an additional [2] with your main hand melee weapon this turn.</content>
+	<!-- "FULL_SWING" --> <content contentuid="he6838708g2ae8g48aeg83d6g53e606108898" version="1">Deals an additional [1] with main hand melee attacks.</content>
+	<!-- "FullSwing_Passive" --> <content contentuid="h1984b3e7g92a6g4936gb4ceg0576d36c6b53" version="1">Deal an additional [1] with main hand melee attacks.</content>
+	<!-- "Goon_Shout_FullSwing_Offhand" --> <content contentuid="h5b290079g0b06g401fg86d2g8a3f7cf21b87" version="1">Prepare (Offhand)</content>
+	<!-- "Goon_Shout_FullSwing_Offhand" --> <content contentuid="h754c5775g1a4fg400eg9d49gc1f607bd146c" version="1">Deals an additional [1] with off-hand melee attacks.</content>
+	<!-- "GOON_FULL_SWING_OFFHAND", "Goon_FullSwing_Passive_Offhand" --> <content contentuid="hc25d74e4gff4bg4ac1g8c59g71ba8dcfafb5" version="1">Prepared (Offhand)</content>
+	<!-- "Goon_FullSwing_Passive_Offhand" --> <content contentuid="h40c656acg09e5g48b3g84d1g05e61ec090c4" version="1">Deal an additional [1] with off-hand melee attacks.</content>
+	<!-- "Goon_Rush_SpringAttack_Offhand" --> <content contentuid="h9a7d334bg91a3g4f0eg8244gf6806e2c75ca" version="1">Rush Attack (Offhand)</content>
+	<!-- "Goon_Target_Topple_Offhand" --> <content contentuid="h8be29bd0g39acg460cgad99g48cfd27e2941" version="1">Topple (Offhand)</content>
+	<!-- "Goon_Target_HinderingSmash_Offhand" --> <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
+
+	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
+	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
+
+	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for 3 turns.</content>
+
+	<!-- GEAR -->
+
+	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
+	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
+	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
+	<!-- "MAG_Revivify_Gloves_Passive" --> <content contentuid="h30f1a9acg7a77g46e0g824bg8037eb98bf98" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for [1] turns. When you &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revive&lt;/LSTag&gt; a creature it gains the effect of &lt;LSTag Type="Status" Tooltip="DEATH_WARD"&gt;Death Ward&lt;/LSTag&gt; for [1] turns.</content>
+	<!-- "MAG_Druid_Wildshape_TempHP_Passive" --> <content contentuid="hade54759gd9d3g414bg9afdg4dc995574cea" version="1">You gain [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; after casting &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Archer"&gt;Starry Form: Archer&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Chalice"&gt;Starry Form: Chalice&lt;/LSTag&gt;, or &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Dragon"&gt;Starry Form: Dragon&lt;/LSTag&gt;. While those temporary hit points are active reduce all incoming damage by [2].</content>
+	<!-- "MAG_Druid_Wildshape_SpellResistance_Passive" --> <content contentuid="h96b20d85gadc0g4416gbd8eg12a712ad4bf9" version="1">You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Archer"&gt;Starry Form: Archer&lt;/LSTag&gt;, &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Chalice"&gt;Starry Form: Chalice&lt;/LSTag&gt;, or &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Star_Dragon"&gt;Starry Form: Dragon&lt;/LSTag&gt;.</content>
+	<!-- "MAG_Gish_ArcaneAcuity_Gloves_Passive" --> <content contentuid="hf583b6a7g93e9g4024g849fge9c76241e0ab" version="1">When you hit a target with a melee spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
+	<!-- "UNI_MassHealRing_Passive" --> <content contentuid="h1585ed41g588ag4ff4gad07gb09acc5e3792" version="1">Whenever you heal a creature it becomes &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] turns.</content>
+	<!-- "GOB_PainPriest_Axe_Passive" --> <content contentuid="h5695a236g1ba7g4577gb2dcg5c7631abe8da" version="1">Attacks with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns, if the target is afflicted with &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; already increase the duration by [2]. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [3].</content>
+	<!-- "MAG_StaffOFRam_KnockStun_Passive", "GOON_STAFFOFRAM_STUN_TECHNICAL" --> <content contentuid="h891a0892ga83fg4a5egb6fag36fb3e6ec70c" version="1">Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.</content>
+	<!-- "UND_DuergarRaft_PestKillerAxe_Passive" --> <content contentuid="h1a63b3cdge895g484agb702g3b5c616e13dd" version="1">Deals an additional [1] to Plants, Spiders or small creatures.</content>
+	<!-- Sussur weapon templates --> <content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+</contentList>

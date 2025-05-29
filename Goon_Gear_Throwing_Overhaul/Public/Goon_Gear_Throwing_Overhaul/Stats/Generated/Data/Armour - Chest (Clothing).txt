@@ -1,0 +1,17 @@
+// ==================================== The Mighty Cloth ====================================
+// Bug Fix: Tooltip is no longer filled with misinformation inherited from Primal Stampede.
+// Note: Reference fields do not reflect otherwise changes to Primal Stampede in Goon's Spell Overhaul.
+
+new entry "Rush_MAG_Barbarian_Armor_Trample"
+type "SpellData"
+data "SpellType" "Rush"
+// using "Rush_Primal_Stampede"
+using "Rush_MAG_Barbarian_Armor_Trample"
+// Available only when Raging.
+// data "ExtraDescription" "hcb74ea6eg4a48g4668g9436g24e53a98b02b;1"
+data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(1d4+StrengthModifier, Bludgeoning)"
+data "TooltipDamageList" ""
+// data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
+data "TooltipStatusApply" ""
+

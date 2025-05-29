@@ -1,0 +1,16 @@
+// ==================================== Base entry ====================================
+
+new entry "_Instruments"
+type "Armor"
+using "_Instruments"
+// data "Level" "1"
+// data "Slot" "MusicalInstrument"
+// data "UseCosts" "ActionPoint:1"
+// data "ValueLevel" "1"
+// data "ValueUUID" "4c5217d8-0232-4592-9e32-2fd729123f53"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "Proficiency Group" "MusicalInstrument"
+data "DefaultBoosts" "HiddenDuringCinematic()"
+
+// ==================================== Something ====================================

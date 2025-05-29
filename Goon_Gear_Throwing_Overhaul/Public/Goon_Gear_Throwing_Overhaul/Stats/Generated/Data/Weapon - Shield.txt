@@ -1,0 +1,35 @@
+// ==================================== Base entry ====================================
+
+new entry "_Shield"
+type "Armor"
+// using "_Body"
+using "_Shield"
+// data "Level" "1"
+// data "Slot" "Melee Offhand Weapon"
+// data "ValueLevel" "1"
+// data "ValueUUID" "53cd3b64-3988-4e5d-a4f5-d4b4ec7ba0e9"
+// data "Weight" "2"
+// data "Flags" "InvulnerableAndInteractive"
+// data "PersonalStatusImmunities" "DIPPED_FIRE;DIPPED_POISON"
+// data "ComboCategory" ""
+// data "InventoryTab" "Equipment"
+// data "ItemColor" "DefaultGray"
+// data "Shield" "Yes"
+// data "Armor Class Ability" "None"
+// data "Proficiency Group" "Shields"
+data "DefaultBoosts" "HiddenDuringCinematic()"
+
+// ==================================== Shield of Scorching Reprisal ====================================
+// Bug Fix: Blazing Retaliation is removed when the shield is unequipped.
+
+new entry "MAG_FlamingFist_Flaming_Shield"
+type "Armor"
+// using "_Shield_Magic"
+using "MAG_FlamingFist_Flaming_Shield"
+data "StatusOnEquip" "GOON_FLAMINGFIST_FLAMINGSHIELD_TECHNICAL"
+
+new entry "GOON_FLAMINGFIST_FLAMINGSHIELD_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(MAG_FLAMING_FIST_BLAZING_RETALIATION)"

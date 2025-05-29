@@ -1,0 +1,92 @@
+// ==================================== After Death Do Us Part ====================================
+// Bug Fix: Shadow Possession no longer clears itself instantly upon exiting the downed state.
+
+new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
+type "StatusData"
+data "StatusType" "DOWNED"
+// using "DOWNED"
+using "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
+// data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SG_Condition);StatusImmunity(SHOCKWAVE)"
+data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SHOCKWAVE)"
+// data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
+data "OnApplyFunctors" "RemoveStatus(SG_Rage);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
+
+// ==================================== Band of the Mystic Scoundrel ====================================
+// Bug Fix: Illusion Quickening no longer triggers when attacking items.
+// TODO: Make the bonus action cost for Illusion spells a temporary passive toggle unlocked via status
+
+new entry "MAG_ArcaneTrickster_Ring_Passive"
+type "PassiveData"
+using "MAG_ArcaneTrickster_Ring_Passive"
+// data "Conditions" "IsWeaponAttack()"
+data "Conditions" "IsWeaponAttack() and not Item()"
+
+// ==================================== Ring of Feywild Sparks ====================================
+// Bug Fix: The +1 Spell Save DC is now visible.
+
+new entry "MAG_OfFeywildSparks_Ring"
+type "Armor"
+// using "_Ring_Magic"
+using "MAG_OfFeywildSparks_Ring"
+// data "Boosts" "SpellSaveDC(1)"
+data "Boosts" ""
+// data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive"
+data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+
+// ==================================== Shadow Blade Ring ====================================
+// Bug Fix: Shadow Blade Ring no longer needlessly breaks concentration when unequipped.
+
+new entry "MAG_SHADOW_BLADE_RING_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_SHADOW_BLADE_RING_TECHNICAL"
+// data "OnRemoveFunctors" "IF(HasStatus('MAG_SHADOW_BLADE_OWNER')):BreakConcentration()"
+data "OnRemoveFunctors" ""
+
+// ==================================== Shapeshifter's Boon Ring ====================================
+// Bug Fix: Mark of the Shifter is removed when the ring is unequipped.
+// Bug Fix: Mark of the Shifter is applied when the ring is equipped while the character is already shapeshifted.
+
+new entry "MAG_ShapeshiftersBurgeon_Ring"
+type "Armor"
+// using "ARM_Ring_B_Gold_A"
+using "MAG_ShapeshiftersBurgeon_Ring"
+data "StatusOnEquip" "GOON_SHAPESHIFTERS_BURGEON_TECHNICAL"
+
+new entry "MAG_ShapeshiftersBurgeon_Passive"
+type "PassiveData"
+using "MAG_ShapeshiftersBurgeon_Passive"
+data "Conditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph') or StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape')"
+// data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph') or StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape')):ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
+data "StatsFunctors" "ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
+
+new entry "GOON_SHAPESHIFTERS_BURGEON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnApplyFunctors" "IF(HasStatus('SG_Polymorph') or HasStatus('SG_Polymorph_BeastShape')):ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
+data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
+
+// ==================================== "Tarnished Ring" > "Magic Ring" ====================================
+// Bug Fix: Now uses its appropriate template, recieving its proper name "Magic Ring".
+// Changes: Now provides a +1 to Spell Save DC instead of just being vendor fodder.
+
+new entry "QUEST_WYR_RestoredMagicRing"
+type "Armor"
+using "QUEST_WYR_RestoredMagicRing"
+// data "RootTemplate" "ecf4a8a4-7859-4a82-8c08-0c9526f29500"
+data "RootTemplate" "9030e638-b086-4e0d-aeb9-365b03470679"
+data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+
+// ==================================== The Whispering Promise ====================================
+// Bug Fix: Blessed Mercy now specifies that it applies Bless, instead of describing the functionality of Bless.
+
+new entry "UNI_MassHealRing_Passive"
+type "PassiveData"
+using "UNI_MassHealRing_Passive"
+// When you heal a creature, it gains a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; for [2] turns.
+// data "Description" "h7f97b95egd796g4422ga863g38ab6d4a2604;8"
+// Whenever you heal a creature it becomes &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [1] turns.
+data "Description" "h1585ed41g588ag4ff4gad07gb09acc5e3792;1"
+// data "DescriptionParams" "1d4;2"
+data "DescriptionParams" "2"

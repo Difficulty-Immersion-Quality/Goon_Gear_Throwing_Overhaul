@@ -1,0 +1,9 @@
+// ==================================== Everburn Blade ====================================
+// Changes: The sword is now visible in cutscenes.
+
+new entry "MAG_Fire_AlwaysDippedInFire_Greatsword"
+type "Weapon"
+// using "WPN_Greatsword_1"
+using "MAG_Fire_AlwaysDippedInFire_Greatsword"
+// data "DefaultBoosts" "HiddenDuringCinematic();WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponProperty(Magical)"

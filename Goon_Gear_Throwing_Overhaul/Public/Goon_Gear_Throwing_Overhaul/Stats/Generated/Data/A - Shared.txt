@@ -1,0 +1,14 @@
+// ==================================== Custom entries for Shadow Blade effects on weapons ====================================
+// Bug Fix: Advantage against obscured targets is only applied to attacks with Shadow Blade itself.
+
+new entry "Goon_ShadowBlade_Passive_Mainhand"
+type "PassiveData"
+using "ShadowBlade_Passive"
+data "Properties" "IsHidden"
+data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"
+
+new entry "Goon_ShadowBlade_Passive_Offhand"
+type "PassiveData"
+using "ShadowBlade_Passive"
+data "Properties" "IsHidden"
+data "Boosts" "IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"

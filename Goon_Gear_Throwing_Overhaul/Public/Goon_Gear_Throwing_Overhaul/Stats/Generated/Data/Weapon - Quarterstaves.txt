@@ -1,0 +1,64 @@
+// ==================================== Gold Wyrmling Staff ====================================
+// Changes: The staff is now visible in cutscenes.
+
+new entry "MAG_Fire_FireDamage_Quarterstaff"
+type "Weapon"
+// using "WPN_Quarterstaff_1"
+using "MAG_Fire_FireDamage_Quarterstaff"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);HiddenDuringCinematic()"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+
+// ==================================== Staff of the Ram ====================================
+// Bug Fix: Missing 1d6 Force damage is now present.
+// Bug Fix: Saving Throws for the knockback now only triggered on hits and not misses.
+// Changes: Added adjustable push trajectory. Split the stun from the push, when you successfully push a target they will get to roll an additional saving throw to avoid the stun. To account for it now being 2 save DCs they're both ManeuverSaveDC +2 instead of a fixed DC of 8, as they both have to be failed to stun.
+
+new entry "MAG_LC_OfTheRam_Quarterstaff"
+type "Weapon"
+// using "WPN_Quarterstaff_2"
+using "MAG_LC_OfTheRam_Quarterstaff"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6,Force)"
+
+new entry "MAG_StaffOFRam_KnockStun_Passive"
+type "PassiveData"
+using "MAG_StaffOFRam_KnockStun_Passive"
+data "TooltipSave" "Constitution"
+// Once per turn, the blow possibly knocks a foe back [1] and &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; them. This has no effect on dragons or Huge creatures.
+// data "Description" "h30031d03gc514g4b3bgbe22g85ef148cc2e7;6"
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
+// data "DescriptionParams" "Distance(2)"
+data "DescriptionParams" "Distance(2);1"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON');"
+// data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
+data "StatsFunctors" "IF(not Ally() and not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):Force(2,OriginToTarget,Aggressive);IF(Ally()):Force(2,OriginToTarget,Friendly);ApplyStatus(STUNNED, 100, 1)"
+
+new entry "GOON_STAFFOFRAM_STUN_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// Staff of the Ram
+data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
+// Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
+data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
+data "DescriptionParams" "Distance(2);1"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(STUNNED, 100, 1)""
+
+// ==================================== Staff of Interruption ====================================
+// Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
+
+new entry "Interrupt_MAG_Counterspell"
+type "InterruptData"
+// using "Interrupt_Counterspell"
+using "Interrupt_Counterspell_5"
+// Counterspell
+data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
+// data "Success" "Counterspell();UseSpell(OBSERVER_SOURCE,Target_MAG_CounterSpell_Success,true,true,true)"
+data "Cost" "ReactionActionPoint:1;Interrupt_MAG_Counterspell:1"
+data "Cooldown" "OncePerRestPerItem"
+// data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source)"
+data "EnableCondition" "(HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and not HasStatus('SG_Polymorph')) or (HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'}))"
+// data "EnableContext" "OnActionResourcesChanged"
+data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"

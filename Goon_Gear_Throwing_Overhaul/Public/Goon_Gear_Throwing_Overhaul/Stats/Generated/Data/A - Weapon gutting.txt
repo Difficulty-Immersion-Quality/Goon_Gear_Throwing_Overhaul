@@ -1,0 +1,192 @@
+// A bunch of shit included in my throwing overhaul
+
+// ==================================== MAG_THUNDER_GREATER_THUNDER_WEAPON - 1d6 Thunder ====================================
+
+// new entry "MAG_THUNDER_GREATER_THUNDER_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_THUNDER_GREATER_THUNDER_WEAPON"
+// data "Boosts" ""
+
+// Nyrulna
+// new entry "MAG_TheThorns_Trident"
+// type "Weapon"
+// using "WPN_Trident_2"
+// using "MAG_TheThorns_Trident"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d6,Thunder)"
+
+// ==================================== MAG_RADIANT_STRONG_RADIANCE_WEAPON - 1d8 Radiant ====================================
+
+// new entry "MAG_RADIANT_STRONG_RADIANCE_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_RADIANT_STRONG_RADIANCE_WEAPON"
+// data "Boosts" ""
+
+// Devotee's Mace
+// new entry "MAG_Cleric_Devotees_Mace"
+// type "Weapon"
+// using "MAG_Cleric_Devotees_Mace"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d8,Radiant)"
+
+// ==================================== MAG_RADIANT_RADIANCE_WEAPON - 1d4 Radiant ====================================
+
+// new entry "MAG_RADIANT_RADIANCE_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_RADIANT_RADIANCE_WEAPON"
+// data "Boosts" ""
+
+// Torch of Revocation - Torch of True Revocation?
+// new entry "LOW_OskarsBeloved_TorchOfTrueRevocation"
+// type "Weapon"
+// using "LOW_OskarsBeloved_TorchOfTrueRevocation"
+// data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// Shining Staver-of-Skulls
+// new entry "MAG_Radiant_Radiating_Hammer"
+// type "Weapon"
+// using "MAG_Radiant_Radiating_Hammer"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// The Sacred Star
+// new entry "MAG_RadiantLight_Morningstar"
+// type "Weapon"
+// using "MAG_RadiantLight_Morningstar"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// Pelorsun Blade
+// new entry "MAG_LC_RadiantLight_Rapier"
+// type "Weapon"
+// using "MAG_LC_RadiantLight_Rapier"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// Hammer of the Just
+// new entry "MAG_Tyrrant_Warhammer"
+// type "Weapon"
+// using "MAG_Tyrrant_Warhammer"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// ==================================== MAG_THUNDER_THUNDER_WEAPON - 1d4 Thunder ====================================
+
+// new entry "MAG_THUNDER_THUNDER_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_THUNDER_THUNDER_WEAPON"
+// data "Boosts" ""
+
+// Corpsegrinder
+// new entry "MAG_SWA_Roaring_Maul"
+// type "Weapon"
+// using "MAG_SWA_Roaring_Maul"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Thunder)"
+
+// Cacophony
+// new entry "MAG_Thunder_ThunderClap_Quarterstaff"
+// type "Weapon"
+// using "MAG_Thunder_ThunderClap_Quarterstaff"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Thunder)"
+
+// ==================================== MAG_FROST_FROST_WEAPON - 1d4 Cold ====================================
+
+// Cold Snap has its own status with different VFX "MAG_FROST_FROST_SMALL_WEAPON", but inherits the following for functionality
+// new entry "MAG_FROST_FROST_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_FROST_FROST_WEAPON"
+// data "Boosts" ""
+
+// Cold Snap
+// new entry "MAG_Frost_Offhand_Dagger"
+// type "Weapon"
+// using "MAG_Frost_Offhand_Dagger"
+// data "DefaultBoosts" "WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+
+// Allandra's Whelm
+// new entry "MAG_LC_Frigid_Trident"
+// type "Weapon"
+// using "MAG_LC_Frigid_Trident"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+
+// Trident of the Waves
+// new entry "MAG_LC_Wave_Trident"
+// type "Weapon"
+// using "MAG_LC_Wave_Trident"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+
+// Mourning Frost
+// new entry "MAG_Cold_IncreaseColdDamageOnCast_Staff"
+// type "Weapon"
+// using "MAG_Cold_IncreaseColdDamageOnCast_Staff"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+
+// ==================================== MAG_NECROTIC_NECROTIC_WEAPON - 1d4 Necrotic ====================================
+
+// Torch of Revocation has its own status "MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION" that inherits from the following:
+// new entry "MAG_NECROTIC_NECROTIC_WEAPON"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_NECROTIC_NECROTIC_WEAPON"
+// data "Boosts" ""
+
+// Ritual Dagger of Shar
+// new entry "TWN_SharDagger"
+// type "Weapon"
+// using "TWN_SharDagger"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Bloodthirst
+// new entry "MAG_WYR_Orin_Bhaalist_Dagger"
+// type "Weapon"
+// using "MAG_WYR_Orin_Bhaalist_Dagger"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Duellist's Prerogative
+// new entry "MAG_TheDueller_Rapier"
+// type "Weapon"
+// using "MAG_TheDueller_Rapier"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Crimson Mischief - included "Fix to 'Prey Upon the Weak' not functioning in Honour mode"
+// new entry "MAG_TheCrimson_Shortsword"
+// type "Weapon"
+// using "MAG_TheCrimson_Shortsword"
+// // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing);WeaponDamage(1d4,Necrotic)"
+
+// Sword of Chaos
+// new entry "MAG_BG_Sarevok_OfChaos_Greatsword"
+// type "Weapon"
+// using "MAG_BG_Sarevok_OfChaos_Greatsword"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Shadow Battleaxe
+// new entry "MAG_Shadow_Battleaxe"
+// type "Weapon"
+// using "MAG_Shadow_Battleaxe"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Staff of Cherished Necromancy
+// new entry "MAG_GreaterNecromancy_Staff"
+// type "Weapon"
+// using "MAG_GreaterNecromancy_Staff"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Render of Scrumptious Flesh
+// new entry "MAG_LC_Fleshred_Longsword"
+// type "Weapon"
+// using "MAG_LC_Fleshred_Longsword"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Blackguard's Sword
+// new entry "MAG_OB_Paladin_DeathKnight_Longsword"
+// type "Weapon"
+// using "MAG_OB_Paladin_DeathKnight_Longsword"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
+
+// Torch of Revocation
+// new entry "LOW_OskarsBeloved_TorchOfRevocation"
+// type "Weapon"
+// using "LOW_OskarsBeloved_TorchOfRevocation"
+// data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Necrotic)"
