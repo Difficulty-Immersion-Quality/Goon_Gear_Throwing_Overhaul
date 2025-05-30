@@ -68,14 +68,13 @@
 	<!-- "GOB_PainPriest_Axe_Passive" --> <content contentuid="h5695a236g1ba7g4577gb2dcg5c7631abe8da" version="1">Attacks with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns, if the target is afflicted with &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; already increase the duration by [2]. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [3].</content>
 	<!-- "MAG_StaffOFRam_KnockStun_Passive", "GOON_STAFFOFRAM_STUN_TECHNICAL" --> <content contentuid="h891a0892ga83fg4a5egb6fag36fb3e6ec70c" version="1">Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.</content>
 	<!-- "UND_DuergarRaft_PestKillerAxe_Passive" --> <content contentuid="h1a63b3cdge895g484agb702g3b5c616e13dd" version="1">Deals an additional [1] to Plants, Spiders or small creatures.</content>
-	<!-- Sussur weapon templates --> <content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- Sussur weapon templates --> <content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
+	<!-- "Goon_HellfireGreataxe_Heat" --> <content contentuid="hbadb0982g1593g457fg9cdegc3af5eca4fe8" version="1">Heat of the Hells</content>
+	<!-- "MAG_Fire_HeatOnWeaponDamage_Passive" --> <content contentuid="hae8a37afg8320g46a6gaae1g476dcb302828" version="1">This effect can only trigger once per attack.</content>
+	<!-- "ShadowBlade_Passive" --> <content contentuid="h1eec2cd1gc17dg48cdg8982g879f95483b05" version="1">Your &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this blade have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Lightly or Heavily Obscured targets.</content>
+	<!-- "Goon_HellfireGreataxe_Ignore_Fire_Resistance" --> <content contentuid="h04df3d99g0a07g4d1eg9e8fg252de8e6f1d5" version="1">Imbued with Hellfire</content>
+	<!-- ""Goon_HellfireGreataxe_Ignore_Fire_Resistance"" --> <content contentuid="hfe535863g017cg4643g9febg92f7e1e34df4" version="1">Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; and &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; to[1].</content>
+	<!-- "GOON_SUSSUR_TECHNICAL_APPLIER" --> <content contentuid="h9546f680ge839g4e56g8c66g7c4497ebc1a1" version="1">Sussur Silence</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

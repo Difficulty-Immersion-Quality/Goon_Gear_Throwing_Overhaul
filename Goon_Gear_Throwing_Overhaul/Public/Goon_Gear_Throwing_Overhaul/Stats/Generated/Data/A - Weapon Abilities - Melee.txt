@@ -158,7 +158,13 @@ data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquipped
 
 // ==================================== Disarming Strike ====================================
 
-// new entry "Target_DisarmingStrike"
+new entry "Target_DisarmingStrike"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_DisarmingAttack"
+using "Target_DisarmingStrike"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
 
 new entry "Goon_Target_DisarmingStrike_Offhand"
 type "SpellData"
@@ -424,7 +430,7 @@ data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() o
 // data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "Properties" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
 // data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER','WILDSHAPE_MYRMIDON_AIR_PLAYER','WILDSHAPE_MYRMIDON_AIR_PLAYER_12','WILDSHAPE_MYRMIDON_AIR_PLAYER_BEASTSPELLS','WILDSHAPE_MYRMIDON_AIR_PLAYER_12_BEASTSPELLS'})"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'}) or (Tagged('MYRMIDON_AIR'))"
 
 // Custom offhand version
 new entry "Goon_Overwhelm_Offhand"

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Thermodynamo Axe -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h172d710dg2d86g454bga607g6dc0ae46380f" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb3a26b0fg1fb8g47b1gbaa5gddbd838e0bb0" version="3" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="b8f28da8-f8f5-4679-8c5f-ecc505811208" />
+					<attribute id="Name" type="LSString" value="MAG_Fire_HeatOnWeaponDamage_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7faff867-9cb3-432b-aa27-8de281b7428e" />
+					<attribute id="Stats" type="FixedString" value="MAG_Fire_HeatOnWeaponDamage_Battleaxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="1d180e5a-c7c8-20dc-5083-c22c86368513" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Hellfire Greataxe -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hd4cb8d54g494cg44b5g92bcg683dc59f3177" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hdd74d694g4366g43fcg8f04g9b7e914b9e82" version="4" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="dd0e9fa2-e012-454d-9f2d-53c0a0776015" />
+					<attribute id="Name" type="LSString" value="MAG_WATCHER_Human_Greataxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="ce8a894c-3dc6-48dc-bb8f-af5390890d43" />
+					<attribute id="Stats" type="FixedString" value="MAG_WATCHER_Human_Greataxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="30899fe4-0047-6456-f981-06c5634f8c29" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_FIRE_DIPPED_HELLFIRE" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

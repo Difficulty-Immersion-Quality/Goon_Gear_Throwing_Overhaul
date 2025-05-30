@@ -1,14 +1,13 @@
-// ==================================== Custom entries for Shadow Blade effects on weapons ====================================
+// ==================================== Shadow Blade ====================================
 // Bug Fix: Advantage against obscured targets is only applied to attacks with Shadow Blade itself.
+// Note: Necessary to include here as it's a passive used by multiple weapons and not just the summon itself.
 
-new entry "Goon_ShadowBlade_Passive_Mainhand"
+new entry "ShadowBlade_Passive"
 type "PassiveData"
 using "ShadowBlade_Passive"
-data "Properties" "IsHidden"
-data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"
-
-new entry "Goon_ShadowBlade_Passive_Offhand"
-type "PassiveData"
-using "ShadowBlade_Passive"
-data "Properties" "IsHidden"
-data "Boosts" "IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"
+// You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against Lightly or Heavily Obscured targets when using this blade.
+// data "Description" "ha672fd65g0fe4g4596g9529gce372c013ca1;6"
+// Your &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this blade have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Lightly or Heavily Obscured targets.
+data "Description" "h1eec2cd1gc17dg48cdg8982g879f95483b05;1"
+// data "Boosts" "IF(not HasObscuredState(ObscuredState.Clear) and IsMeleeAttack() and IsWeaponAttack()):Advantage(AttackRoll);"
+data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll)"

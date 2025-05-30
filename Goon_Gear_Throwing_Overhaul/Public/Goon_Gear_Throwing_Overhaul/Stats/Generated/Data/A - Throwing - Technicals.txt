@@ -1,35 +1,56 @@
-// ==================================== Weapons ====================================
+// ==================================== Shared Weapon Technicals ====================================
 
 // Sussur weapons
+new entry "GOON_SUSSUR_WEAPON_THROW_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "GOON_SUSSUR_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
+// Sussur Silence
+data "DisplayName" "h9546f680ge839g4e56g8c66g7c4497ebc1a1;1"
+// Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.
+data "Description" "hb51441aag0602g4421g8b9cg27b31a9a781c;1"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 // data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 12)"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
 data "OnApplySuccess" "ApplyStatus(SILENCED,100, 2)"
 data "OnApplyFail" ""
 
-new entry "GOON_SUSSUR_WEAPON_THROW"
+// The Sparky Points & The Jolt Shooter
+new entry "GOON_CHARGEDLIGHTNING_WEAPON_THROW_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// Condense multiple effects from Trident of the Waves
-new entry "GOON_WAVE_TRIDENT_TECHNICAL"
+new entry "GOON_CHARGEDLIGHTNING_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyFunctors" "ApplyStatus(WET,100,3);GROUND:CreateSurface(2,0,Water)"
+// Electric Blood
+data "DisplayName" "hefe38517g8993g4b98g94ccgb6a7d7274d76;2"
+// When the wielder deals damage using this weapon, they gain [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;.
+data "Description" "hfceeb862gbcb0g49cag8b9bgdeb29686304f;4"
+// data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_CHARGED_LIGHTNING', context.Source)):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_LIGHTNING_DAMAGE_ONCE_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_GENERATE_CHARGE_FX, 100, 0);IF(Character() and not IsDischargingLightning(context.Source)):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING,100, 2);IF(Character()):ApplyStatus(SWAP, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
 
-// Vision of the Absolute race check
-new entry "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
+// Thermodynamo Axe & Hellfire Greataxe
+new entry "GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOON_THERMODYNAMO_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Thermodynamo
+data "DisplayName" "h6d7bd506g0399g40d8g9ccbgf2cbb415a1d1;2"
+// Whenever you deal damage with this weapon, you gain [1] turns of  &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.
+data "Description" "h000d4a79ge387g43d7ga7eeg22c52d2fc408;4"
+data "DescriptionParams" "2"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyFunctors" "IF((Tagged('BEHOLDER') or Tagged('SPIDER') or Tagged('SPIDER_PHASE') or Tagged('ETTERCAP'))):WeaponDamage(2d6, Piercing,,,0,,true)"
-data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, 11)"
-data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
+data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL', context.Source)):ApplyStatus(SWAP, MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT, 100, 2);IF(Character()):ApplyStatus(SWAP,MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== Coatings ====================================
 
@@ -108,7 +129,7 @@ data "StatusType" "BOOST"
 // Purple Worm Toxin
 data "DisplayName" "hdc5a159eg5cbbg4466gac36gf63b48e8acb6;2"
 // Affected entity takes [1] at the end of their turn, or half that damage if it succeeds a Constitution <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>.
-data "Description" "h25913176g1788g4a81g8990g411aa91f55b5;3
+data "Description" "h25913176g1788g4a81g8990g411aa91f55b5;3"
 data "DescriptionParams" "DealDamage(1d10,Poison)"
 data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 19)"

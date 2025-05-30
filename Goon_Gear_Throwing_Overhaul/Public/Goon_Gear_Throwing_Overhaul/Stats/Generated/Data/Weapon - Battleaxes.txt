@@ -1,0 +1,18 @@
+// ==================================== Thermodynamo Axe ====================================
+// TODO: Is removing the cooldown gonna be cooked af or what?
+
+new entry "MAG_Fire_HeatOnWeaponDamage_Battleaxe"
+type "Weapon"
+// using "WPN_Battleaxe_1"
+using "MAG_Fire_HeatOnWeaponDamage_Battleaxe"
+data "RootTemplate" "b8f28da8-f8f5-4679-8c5f-ecc505811208"
+data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+data "Rarity" "Rare"
+data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
+data "Unique" "1"
+
+new entry "MAG_Fire_HeatOnWeaponDamage_Passive"
+type "PassiveData"
+using "MAG_Fire_HeatOnWeaponDamage_Passive"
+// data "Properties" "OncePerAttack"
+data "Properties" ""

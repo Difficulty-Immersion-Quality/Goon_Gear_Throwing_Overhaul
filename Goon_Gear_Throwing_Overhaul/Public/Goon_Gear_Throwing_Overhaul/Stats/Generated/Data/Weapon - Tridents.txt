@@ -2,28 +2,120 @@
 
 new entry "WPN_Trident"
 type "Weapon"
-//using "_BaseWeapon"
+// using "_BaseWeapon"
 using "WPN_Trident"
-//data "RootTemplate" "d3807461-7c32-44ae-9aba-49ef4d3bf35e"
-//data "Damage Type" "Piercing"
-//data "Damage" "1d6"
+// data "RootTemplate" "d3807461-7c32-44ae-9aba-49ef4d3bf35e"
+// data "Damage Type" "Piercing"
+// data "Damage" "1d6"
 data "Damage" "1d8"
-//data "ValueLevel" "2"
-//data "Weight" "1.8"
-//data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike)"
-//data "Weapon Group" "MartialMeleeWeapon"
-//data "VersatileDamage" "1d8"
+// data "ValueLevel" "2"
+// data "Weight" "1.8"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike)"
+// data "Weapon Group" "MartialMeleeWeapon"
+// data "VersatileDamage" "1d8"
 data "VersatileDamage" "1d10"
-//data "Weapon Properties" "Thrown;Melee;Dippable;Versatile"
-//data "Proficiency Group" "Tridents;MartialWeapons"
+data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Weapon Properties" "Thrown;Melee;Dippable;Versatile"
+data "Weapon Properties" "Thrown;Melee;Dippable"
+// data "Proficiency Group" "Tridents;MartialWeapons"
 
-// ==================================== Non-Magical Variants ====================================
+// ==================================== Magical variants ====================================
 
-//new entry "WPN_Trident_Rusty"
-//type "Weapon"
-//using "WPN_Trident"
-//data "RootTemplate" "27ef84b1-ea40-4f06-a013-f6281511f0e9"
-//data "ValueScale" "0.1"
+new entry "WPN_Trident_1"
+type "Weapon"
+// using "WPN_Trident"
+using "WPN_Trident_1"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Weapon Properties" "Thrown;Melee;Dippable;Versatile;Magical"
+data "Weapon Properties" "Thrown;Melee;Dippable;Magical"
+
+new entry "WPN_Trident_2"
+type "Weapon"
+// using "WPN_Trident"
+using "WPN_Trident_2"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Weapon Properties" "Thrown;Melee;Dippable;Versatile;Magical"
+data "Weapon Properties" "Thrown;Melee;Dippable;Magical"
+
+// ==================================== Rusty Trident ====================================
+
+// new entry "WPN_Trident_Rusty"
+// type "Weapon"
+// using "WPN_Trident"
+// data "RootTemplate" "27ef84b1-ea40-4f06-a013-f6281511f0e9"
+// data "ValueScale" "0.1"
+
+// ==================================== Pactbound Trident ====================================
+
+new entry "WPN_Trident_Pact"
+type "Weapon"
+// using "WPN_Trident"
+using "WPN_Trident_Pact"
+data "Boosts" "Proficiency(Tridents)"
+// data "Weapon Properties" "Thrown;Melee;Dippable;Versatile;Magical"
+data "Weapon Properties" "Thrown;Melee;Dippable;Magical"
+
+// ==================================== Trident of the Depths ====================================
+// Changes: Basic weapon actions added. The 1d6 bonus damage for the Conjure Elemental variant is now magical.
+// TODO: Create an offhand version of Hiemal Strike (Target_FreezingStrike_Myrmidon_Water) and replace the static DC.
+// TODO: Create variants of basic weapon actions with functional animations for Myrmidon forms.
+
+new entry "WPN_Trident_Water_Myrmidon"
+type "Weapon"
+// using "WPN_Trident"
+using "WPN_Trident_Water_Myrmidon"
+data "Boosts" "UnlockSpell(Target_FreezingStrike_Myrmidon_Water)"
+// data "Weapon Properties" "Melee;NoDualWield;Versatile"
+data "Weapon Properties" "Thrown;Melee;Dippable;Magical"
+
+new entry "WPN_Trident_Water_Myrmidon_ConjureElemental"
+type "Weapon"
+// using "WPN_Trident_Water_Myrmidon"
+using "WPN_Trident_Water_Myrmidon_ConjureElemental"
+// data "DefaultBoosts" "WeaponDamage(1d6,Cold);WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponDamage(1d6,Cold,Magical);WeaponEnchantment(3);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+new entry "WPN_Trident_Water_Myrmidon_WildShape"
+type "Weapon"
+// using "WPN_Trident_Water_Myrmidon"
+using "WPN_Trident_Water_Myrmidon_WildShape"
+// data "DefaultBoosts" "WeaponDamage(1d6,Cold,Magical);WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponDamage(1d6,Cold,Magical);WeaponEnchantment(3);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== The Sparky Points ====================================
+// Changes: Added a +1 enchantment. Electric Blood works with throwing.
+
+new entry "MAG_ChargedLightning_Trident"
+type "Weapon"
+// using "WPN_Trident_1"
+using "MAG_ChargedLightning_Trident"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Trident of the Waves ====================================
+// Changes: The Water Caller now functions with throwing.
+
+// new entry "MAG_LC_Wave_Trident"
+// type "Weapon"
+// using "WPN_Trident_1"
+// data "RootTemplate" "657678f2-5924-4d8e-b8ce-a2079154c91b"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_LC_Wave_Trident_Passive"
+// data "Unique" "1"
+
+// Status applied to target when thrown
+new entry "GOON_WAVE_TRIDENT_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// The Water Caller
+data "DisplayName" "h1f8a1eb5gf249g4ff0gb449g0917279d6c1a;2"
+// On a hit, create a [1] water surface centred around the target. 
+data "Description" "h54d28573g3180g43bfgbcbcg0a85b8c97e05;2"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "ApplyStatus(WET,100,3);GROUND:CreateSurface(2,0,Water)"
 
 // ==================================== Nyrulna ====================================
 // Changes: Added Disarming Strike, as it's a base weapon action. Turned the explosion into a toggle, with a single target damage alternative.
@@ -32,6 +124,8 @@ new entry "MAG_TheThorns_Trident"
 type "Weapon"
 // using "WPN_Trident_2"
 using "MAG_TheThorns_Trident"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
 data "BoostsOnEquipMainHand" "UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Target_CripplingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
 
@@ -54,16 +148,16 @@ data "Properties" "IsToggled;ToggledDefaultOn"
 data "ToggleOnFunctors" "IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_ON_CHARACTER,100,0)"
 data "ToggleOffFunctors" "IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER,100,-1)"
 
-// Melee only damage
+// Remove this as functionality is replaced by "GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER"
 new entry "MAG_THUNDER_GREATER_THUNDER_WEAPON"
 type "StatusData"
 data "StatusType" "BOOST"
 // using "MAG_THUNDER_THUNDER_WEAPON"
 using "MAG_THUNDER_GREATER_THUNDER_WEAPON"
 // data "DescriptionParams" "DealDamage(1d6, Thunder)"
-data "DescriptionParams" "DealDamage(3d4, Thunder)"
+data "DescriptionParams" "DealDamage(3d4,Thunder)"
 // data "Boosts" "WeaponDamage(1d6,Thunder)"
-data "Boosts" "WeaponDamage(3d4,Thunder)"
+data "Boosts" "WeaponDamage(3d4,Thunder,Magical)"
 
 // Technicals
 new entry "GOON_NYRULNA_EXPLOSION_TOGGLE_ON"
@@ -90,7 +184,19 @@ data "StackType" "Overwrite"
 new entry "GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER"
 type "StatusData"
 data "StatusType" "BOOST"
+// Nyrulna
+data "DisplayName" "h9abafab1g7844g4ac7gaf1fgdf984991d934;1"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 data "StackId" "GOON_NYRULNA_EXPLOSION_TOGGLE"
 data "StackType" "Overwrite"
 data "Boosts" "IF(IsRangedUnarmedAttack()):DamageBonus(3d4,Thunder,Magical)"
+
+// ==================================== Allandra's Whelm (Cut content) ====================================
+// Changes: Swapped Piercing Strike for Disarming, as it is with other Tridents.
+
+new entry "MAG_LC_Frigid_Trident"
+type "Weapon"
+// using "WPN_Trident_2"
+using "MAG_LC_Frigid_Trident"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
