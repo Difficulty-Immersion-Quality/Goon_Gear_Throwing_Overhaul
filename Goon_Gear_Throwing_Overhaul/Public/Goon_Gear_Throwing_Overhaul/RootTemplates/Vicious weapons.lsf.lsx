@@ -105,6 +105,14 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_VICIOUS_WEAPON_THROW_TECHNICAL" />
+								</node>
+							</children>
+						</node>
 					</children>
 				</node>
 			</children>

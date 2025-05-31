@@ -90,7 +90,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Thermodynamo Axe ====================================
-// TODO: Is removing the cooldown gonna be cooked af or what? Don't want it applying for all the damage riders.
+// TODO: Is removing the cooldown gonna be cooked af or what? Don't want it applying for all the damage riders. (Applies to Hellfire Greataxe too)
 
 // new entry "MAG_Fire_HeatOnWeaponDamage_Battleaxe"
 // type "Weapon"
