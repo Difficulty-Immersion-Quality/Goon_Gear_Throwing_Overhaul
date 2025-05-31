@@ -102,6 +102,12 @@ function VisionAbsoluteThrow(entity)
 	return HasAnyStatus({'TRUE_SOUL_SPEAR_WEAPON_BOOST'}, {}, {}, entity)
 end
 
+-- Combination Axe (Cut content)
+function CriticalComboThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'GOON_CRITICALCOMBO_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+end
+
 -- Dwarven Thrower shortening
 function IsDwarf(entity)
 	local entity = entity or context.Source

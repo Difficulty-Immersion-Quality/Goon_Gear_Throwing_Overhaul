@@ -49,11 +49,16 @@
 	<!-- "Goon_Rush_SpringAttack_Offhand" --> <content contentuid="h9a7d334bg91a3g4f0eg8244gf6806e2c75ca" version="1">Rush Attack (Offhand)</content>
 	<!-- "Goon_Target_Topple_Offhand" --> <content contentuid="h8be29bd0g39acg460cgad99g48cfd27e2941" version="1">Topple (Offhand)</content>
 	<!-- "Goon_Target_HinderingSmash_Offhand" --> <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand" --> <content contentuid="ha9df0dbdgf610g4b0cgb14eg2a74de61c04c" version="1">Hush You! (Offhand)</content>
 
 	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
 	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 
 	<!-- "Target_MAG_WeaponAction_FlashingDawn" --> <content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for 3 turns.</content>
+
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 
 	<!-- GEAR -->
 
@@ -75,7 +80,7 @@
 	<!-- "Goon_HellfireGreataxe_Ignore_Fire_Resistance" --> <content contentuid="h04df3d99g0a07g4d1eg9e8fg252de8e6f1d5" version="1">Imbued with Hellfire</content>
 	<!-- ""Goon_HellfireGreataxe_Ignore_Fire_Resistance"" --> <content contentuid="hfe535863g017cg4643g9febg92f7e1e34df4" version="1">Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; and &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; to[1].</content>
 	<!-- "GOON_SUSSUR_TECHNICAL_APPLIER" --> <content contentuid="h9546f680ge839g4e56g8c66g7c4497ebc1a1" version="1">Sussur Silence</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_Vicious_Weapon_Passive" --> <content contentuid="hc6c42992g8252g42bdg98d0ge95b7eebf1f9" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, it deals an additional [1] damage.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 </contentList>

@@ -11,3 +11,18 @@ using "ShadowBlade_Passive"
 data "Description" "h1eec2cd1gc17dg48cdg8982g879f95483b05;1"
 // data "Boosts" "IF(not HasObscuredState(ObscuredState.Clear) and IsMeleeAttack() and IsWeaponAttack()):Advantage(AttackRoll);"
 data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll)"
+
+// ==================================== Vicious weapons "Dolor Amarus" ====================================
+// Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
+// Bug Fix: The Dolor Amarus passive applies when throwing the weapon.
+// Changes: The additional damage only applies to attacking with or throwing the weapon itself.
+
+new entry "MAG_Vicious_Weapon_Passive"
+type "PassiveData"
+using "MAG_Vicious_Weapon_Passive"
+// When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a weapon or unarmed attack, it deals an additional [1] damage.
+// data "Description" "hbea31881gb41cg4adagbd4cg6fc6bd561bf2;4"
+// When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, it deals an additional [1] damage.
+data "Description" "hc6c42992g8252g42bdg98d0ge95b7eebf1f9;1"
+data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
+
