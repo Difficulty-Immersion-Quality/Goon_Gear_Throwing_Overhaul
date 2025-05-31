@@ -15,6 +15,7 @@
 					<attribute id="ParentTemplateId" type="FixedString" value="ecfb9f69-5bc3-402e-acd8-c91d57e28403" />
 					<attribute id="PhysicsTemplate" type="FixedString" value="74eb44d4-f1a9-c08c-fd8a-4cc98285f2c2" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurGreatsword" />
+					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
 					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="h17383768g7570g4082g80a0g075a77c7661b" version="1" />-->
 					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -49,7 +50,7 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Gale can eat it -->
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -63,6 +64,18 @@
 											<attribute id="StatusDuration" type="int32" value="0" />
 										</node>
 									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>
@@ -88,6 +101,7 @@
 					<attribute id="PhysicsTemplate" type="FixedString" value="653a28d0-111c-be3d-78d0-3a21f5ed6988" />
 					<attribute id="ReadinessFlags" type="uint32" value="16" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurSickle" />
+					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
 					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="hee463fd8g6dedg4d6aga45cgf81509b49ca8" version="1" />-->
 					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -122,7 +136,7 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Gale can eat it -->
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -136,6 +150,18 @@
 											<attribute id="StatusDuration" type="int32" value="0" />
 										</node>
 									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>
@@ -162,7 +188,7 @@
 					<attribute id="PhysicsTemplate" type="FixedString" value="8ac37274-b0d9-484b-e10d-c7780f674d9f" />
 					<attribute id="PickupSound" type="FixedString" value="28ea7a9f-b66a-3410-7985-d7cd5cb896f0" />
 					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurDagger" />
-					<!-- Changes:  -->
+					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
 					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="h1c4249a3gb72dg4f30g8ce2gb48f01e7a2c0" version="1" />-->
 					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -197,7 +223,7 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Gale can eat it -->
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -211,6 +237,18 @@
 											<attribute id="StatusDuration" type="int32" value="0" />
 										</node>
 									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>

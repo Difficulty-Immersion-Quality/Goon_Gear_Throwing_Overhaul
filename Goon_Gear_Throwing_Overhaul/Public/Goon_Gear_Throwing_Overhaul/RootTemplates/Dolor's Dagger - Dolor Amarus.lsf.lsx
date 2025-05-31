@@ -19,7 +19,9 @@
 					<attribute id="LoopSound" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="e8df5166-5a68-42ec-b71f-4dfb754f7aa4" />
 					<attribute id="Name" type="LSString" value="WPN_DROW_Dagger_Dolor_A" />
-					<attribute id="ParentTemplateId" type="FixedString" value="f44c9c6f-bc71-42ad-9cad-2dae306e750e" />
+					<!-- Bug Fix: Swapped parent template from BASE_WEAPON to BASE_WEAPON_Daggers -->
+					<!-- <attribute id="ParentTemplateId" type="FixedString" value="f44c9c6f-bc71-42ad-9cad-2dae306e750e" /> -->
+					<attribute id="ParentTemplateId" type="FixedString" value="97be1f14-e49a-45fe-89c7-99c04653599d" />
 					<attribute id="PhysicsTemplate" type="FixedString" value="b35643b5-6ecb-9477-9438-a87825a80e92" />
 					<attribute id="SoundAttenuation" type="int16" value="-1" />
 					<attribute id="SoundInitEvent" type="FixedString" value="" />
@@ -59,6 +61,21 @@
 								</node>
 							</children>
 						</node>
+					</children>
+				</node>
+				<!-- Dolor Amarus -->
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="d3e121fb-09c0-4478-84f1-f4f3e28cd50f" />
+					<attribute id="Name" type="LSString" value="MAG_Vicious_Dagger" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="ParentTemplateId" type="FixedString" value="e8df5166-5a68-42ec-b71f-4dfb754f7aa4" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hd638af66g5d9dg4ccfgb66bg3ce4232505e5" version="3" />
+					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Dagger" />
+					<attribute id="Description" type="TranslatedString" handle="h629ea019gf042g4bdfgaf9bge94ce0872293" version="3" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
+					<children>
 						<!-- Changes: Gale can eat it -->
 						<node id="OnUsePeaceActions">
 							<children>
@@ -78,35 +95,13 @@
 						</node>
 						<node id="Tags">
 							<children>
-								<!-- Changes: Now tagged as a dagger. I don't know if this inherits so putting it in both -->
 								<node id="Tag">
-									<attribute id="Object" type="guid" value="7490e5d0-d346-4b0e-80c6-04e977160863" />
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
 								</node>
-							</children>
-						</node>
-					</children>
-				</node>
-				<!-- Dolor Amarus -->
-				<node id="GameObjects">
-					<attribute id="MapKey" type="FixedString" value="d3e121fb-09c0-4478-84f1-f4f3e28cd50f" />
-					<attribute id="Name" type="LSString" value="MAG_Vicious_Dagger" />
-					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="ParentTemplateId" type="FixedString" value="e8df5166-5a68-42ec-b71f-4dfb754f7aa4" />
-					<attribute id="DisplayName" type="TranslatedString" handle="hd638af66g5d9dg4ccfgb66bg3ce4232505e5" version="3" />
-					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Dagger" />
-					<attribute id="Description" type="TranslatedString" handle="h629ea019gf042g4bdfgaf9bge94ce0872293" version="3" />
-					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
-					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
-					<children>
-						<node id="Tags">
-							<children>
 								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
 									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
-								</node>
-								<!-- Changes: Now tagged as a dagger. I don't know if this inherits so putting it in both -->
-								<node id="Tag">
-									<attribute id="Object" type="guid" value="7490e5d0-d346-4b0e-80c6-04e977160863" />
 								</node>
 							</children>
 						</node>

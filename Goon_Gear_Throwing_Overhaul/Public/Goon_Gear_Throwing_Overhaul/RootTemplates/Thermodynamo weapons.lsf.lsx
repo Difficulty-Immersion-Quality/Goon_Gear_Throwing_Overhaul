@@ -17,13 +17,6 @@
 					<attribute id="VisualTemplate" type="FixedString" value="1d180e5a-c7c8-20dc-5083-c22c86368513" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
 					<children>
-						<node id="Tags">
-							<children>
-								<node id="Tag">
-									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
-								</node>
-							</children>
-						</node>
 						<!-- Changes: Gale can eat it -->
 						<node id="OnUsePeaceActions">
 							<children>
@@ -38,6 +31,18 @@
 											<attribute id="StatusDuration" type="int32" value="0" />
 										</node>
 									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>
@@ -64,7 +69,7 @@
 					<attribute id="VisualTemplate" type="FixedString" value="30899fe4-0047-6456-f981-06c5634f8c29" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
 					<children>
-						<!-- Changes: Gale can eat it -->
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -78,6 +83,18 @@
 											<attribute id="StatusDuration" type="int32" value="0" />
 										</node>
 									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>

@@ -20,7 +20,6 @@
 					<attribute id="VisualTemplate" type="FixedString" value="609ac808-647f-05ea-3ebc-592b09ebd6d0" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
 					<children>
-						<!-- Changes: Gale can eat it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -40,9 +39,11 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
 									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
 								</node>
 								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
 									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
@@ -73,7 +74,6 @@
 					<attribute id="VisualTemplate" type="FixedString" value="f22175a4-5047-57df-3e33-365da9593488" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
 					<children>
-						<!-- Changes: Gale can eat it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -93,9 +93,11 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
 									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
 								</node>
 								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
 									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
