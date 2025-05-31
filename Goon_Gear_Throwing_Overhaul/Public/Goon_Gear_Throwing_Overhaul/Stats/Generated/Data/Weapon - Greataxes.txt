@@ -33,6 +33,20 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Heavy;Twohanded;Melee;Dippable;Magical"
 
+// ==================================== Cultist Brand ====================================
+// Is this thing in the game?
+
+// new entry "WPN_Goblin_BrandingTool"
+// type "Weapon"
+// using "WPN_Greataxe"
+// data "ItemGroup" "BrandingTool"
+// data "Damage Type" "Bludgeoning"
+// data "Damage" "1d8"
+// data "Boosts" ""
+// data "BoostsOnEquipMainHand" ""
+// data "Weapon Group" "SimpleMeleeWeapon"
+// data "Weapon Properties" "Twohanded;Melee;Dippable"
+
 // ==================================== Exterminator's Axe ====================================
 // Bug Fix: Scourge of Insects no longer specifies that is deals additional damage to insects when it's not actually something the functionality checks for.
 // Changes: Now specifies spiders instead of insects, and checks for the "SPIDER" tag in the functionality. +1 weapon enchantment added. Conditional 1d6 Fire damage is now magical.

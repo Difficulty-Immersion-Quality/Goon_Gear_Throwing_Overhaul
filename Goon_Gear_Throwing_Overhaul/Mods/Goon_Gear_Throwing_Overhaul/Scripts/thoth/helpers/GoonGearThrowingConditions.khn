@@ -270,5 +270,5 @@ end
 
 function GoonActivateVersatile(entity)
     entity = entity or context.Source
-    return ~HasWeaponProperty(WeaponProperties.Light,entity) & ~HasWeaponProperty(WeaponProperties.Twohanded,entity) & ~HasAnyStatus({'GOON_VERSATILE_DISABLE_TECHNICAL'}, {}, {}, entity)
+    return ~HasWeaponProperty(WeaponProperties.Light,entity) & ~HasWeaponProperty(WeaponProperties.Twohanded,entity) | IsOfProficiencyGroup('Clubs', entity) & ~HasAnyStatus({'GOON_VERSATILE_DISABLE_TECHNICAL'}, {}, {}, entity) | ~IsOfProficiencyGroup('Clubs', entity) & ~HasAnyStatus({'GOON_VERSATILE_DISABLE_TECHNICAL'}, {}, {}, entity)
 end

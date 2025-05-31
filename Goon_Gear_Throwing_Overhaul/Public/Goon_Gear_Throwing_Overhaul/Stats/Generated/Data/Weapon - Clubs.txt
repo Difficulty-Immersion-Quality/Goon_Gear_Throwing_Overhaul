@@ -1,0 +1,154 @@
+// ==================================== Base entry ====================================
+// Cultist Brand and Broken Club use the base entry.
+
+new entry "WPN_Club"
+type "Weapon"
+// using "_BaseWeapon"
+using "WPN_Club"
+// data "RootTemplate" "d9c87013-1f41-4c17-b71d-f353ec0d64e8"
+// data "Damage Type" "Bludgeoning"
+// data "Damage" "1d4"
+// data "ValueScale" "0.3"
+// data "Weight" "0.9"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
+// data "Weapon Group" "SimpleMeleeWeapon"
+// data "Weapon Properties" "Light;Melee;Dippable"
+data "VersatileDamage" "1d6"
+data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Proficiency Group" "Clubs;SimpleWeapons"
+
+// ==================================== Magical variants ====================================
+
+new entry "WPN_Club_1"
+type "Weapon"
+// using "WPN_Club"
+using "WPN_Club_1"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Torches ====================================
+// TODO: What if the burning status wasn't permanent and could be fucked with by the wielder getting wet etc? But unlike other weapons, dipping it in fire again is indefinite until put out.
+
+new entry "WPN_Torch"
+type "Weapon"
+// using "WPN_Club"
+using "WPN_Torch"
+// data "DefaultBoosts" "HiddenDuringCinematic()"
+data "DefaultBoosts" "HiddenDuringCinematic();IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "BoostsOnEquipMainHand" ""
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+
+// Cemetery-Blue Torch
+// new entry "WPN_Torch_Blue"
+// type "Weapon"
+// using "WPN_Torch"
+// data "RootTemplate" "4668297e-7fc8-4384-af34-165813e9abe1"
+
+// Drunk-Purple Torch
+// new entry "WPN_Torch_Purple"
+// type "Weapon"
+// using "WPN_Torch"
+// data "RootTemplate" "f7c72034-b7ed-459f-9f2f-3c42144271ef"
+
+// Lantern
+// new entry "WPN_Lantern"
+// type "Weapon"
+// using "WPN_Torch"
+// data "RootTemplate" "81705db9-5b32-4ccd-91be-f8bad863ec48"
+
+// Plague-Green Torch
+// new entry "WPN_Torch_Green"
+// type "Weapon"
+// using "WPN_Torch"
+// data "RootTemplate" "fabf8b48-9c73-498a-a4ad-f9bf07024f19"
+
+// ==================================== Twisting Branch ====================================
+// TODO: Check animations for Wood Woads using weapon actions create functional variants if needed.
+
+new entry "WPN_Club_WoodWoad_Conjure"
+type "Weapon"
+// using "WPN_WoodWoad_Club"
+using "WPN_Club_WoodWoad_Conjure"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
+data "BoostsOnEquipOffHand" ""
+
+// ==================================== Whipping Cane ====================================
+
+// new entry "WPN_WhippingCane"
+// type "Weapon"
+// using "WPN_Club"
+// data "RootTemplate" "3a9e4e60-9f58-4fb9-8a16-4cf784ad6f0d"
+
+// ==================================== Salami ====================================
+// Can't let salami be versatile lmao.
+
+new entry "WPN_Salami"
+type "Weapon"
+// using "WPN_Club"
+using "WPN_Salami"
+// data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+data "DefaultBoosts" ""
+
+// ==================================== Club of Hill Giant Strength ====================================
+// Changes: Rarity is now Rare instead of Uncommon.
+// TODO: Like other items that set a minimum ability score, adjust them to require a minimum ability score to recieve the boost, and if they do not meet the criteria apply a debuff.
+
+new entry "UND_StrengthChair_Leg"
+type "Weapon"
+// using "WPN_Club_1"
+using "UND_StrengthChair_Leg"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Ironwood Clubs ====================================
+// Changes: Backbreaker removed in place of Heartstopper, which is a base weapon ability for all clubs now.
+
+new entry "MAG_Druid_IronWood_Club"
+type "Weapon"
+// using "WPN_Club_1"
+using "MAG_Druid_IronWood_Club"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_PostureBreaker)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+
+// ==================================== Moonlantern ====================================
+
+new entry "Quest_GLO_Moonlantern"
+type "Weapon"
+// using "WPN_Torch"
+using "Quest_GLO_Moonlantern"
+// data "Weapon Properties" "Melee;Light;AddToHotbar;Versatile;Unstowable;Torch"
+data "Weapon Properties" "Melee;Light;AddToHotbar;Unstowable;Torch"
+
+new entry "Quest_SCL_MoonlanternWithPixie"
+type "Weapon"
+// using "Quest_GLO_Moonlantern"
+using "Quest_SCL_MoonlanternWithPixie"
+// data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(Unstowable);"
+data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(Unstowable);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// ==================================== Shadow Lantern ====================================
+
+// new entry "Quest_GLO_Moonlantern_Gale"
+// type "Weapon"
+// using "Quest_GLO_Moonlantern"
+// data "RootTemplate" "c9ebcfae-8c9a-4acc-8a30-da7830b32121"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Target_ORI_Gale_ShadowSummon)"
+
+// ==================================== Torch of Revocation ====================================
+
+new entry "LOW_OskarsBeloved_TorchOfRevocation"
+type "Weapon"
+// using "WPN_Torch"
+using "LOW_OskarsBeloved_TorchOfRevocation"
+// data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+
+// new entry "LOW_OskarsBeloved_TorchOfTrueRevocation"
+// type "Weapon"
+// using "LOW_OskarsBeloved_TorchOfRevocation"
+// data "RootTemplate" "e88dd9ea-1b8b-4edc-9fee-3c7ec286ba60"
