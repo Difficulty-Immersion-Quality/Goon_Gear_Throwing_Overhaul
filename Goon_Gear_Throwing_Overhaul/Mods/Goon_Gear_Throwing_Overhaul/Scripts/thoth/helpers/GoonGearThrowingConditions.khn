@@ -69,9 +69,10 @@ function d4PsychicThrow(entity)
 	return HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC'}, {}, {}, entity)
 end
 
+-- TODO: Confirm that this actually sets the thrower on fire with non-light objects
 function BurnThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasAnyStatus({'BURNING','FLAMING_SPHERE_AURA'}, {}, {}, entity)
+	return IsLightThrownObject(thrown, false) & HasAnyStatus({'BURNING','FLAMING_SPHERE_AURA'}, {}, {}, entity)
 end
 
 -- ==================================== Custom throw stuff beyond this point ====================================

@@ -140,6 +140,7 @@ data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(
 // data "Boosts" "UnlockSpell(Target_ORI_Gale_ShadowSummon)"
 
 // ==================================== Torch of Revocation ====================================
+// Bug Fix: Additional 1d4 Necrotic damage works with throwing.
 
 new entry "LOW_OskarsBeloved_TorchOfRevocation"
 type "Weapon"
