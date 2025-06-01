@@ -4,6 +4,7 @@
 new entry "Target_MAG_WeaponAction_FlashingDawn"
 type "SpellData"
 data "SpellType" "Target"
+// using "Target_HeartStopper"
 using "Target_MAG_WeaponAction_FlashingDawn"
 // data "AreaRadius" "3"
 data "AreaRadius" ""

@@ -50,6 +50,7 @@
 	<!-- "Goon_Target_Topple_Offhand" --> <content contentuid="h8be29bd0g39acg460cgad99g48cfd27e2941" version="1">Topple (Offhand)</content>
 	<!-- "Goon_Target_HinderingSmash_Offhand" --> <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
 	<!-- "Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand" --> <content contentuid="ha9df0dbdgf610g4b0cgb14eg2a74de61c04c" version="1">Hush You! (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_CorrosiveStrike_Offhand" --> <content contentuid="h43ed6f6bgdaa1g4c3dga7deg7406ee9a12e1" version="1">Corrosive Strike (Offhand)</content>
 
 	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
 	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
@@ -78,7 +79,7 @@
 	<!-- "MAG_Fire_HeatOnWeaponDamage_Passive" --> <content contentuid="hae8a37afg8320g46a6gaae1g476dcb302828" version="1">This effect can only trigger once per attack.</content>
 	<!-- "ShadowBlade_Passive" --> <content contentuid="h1eec2cd1gc17dg48cdg8982g879f95483b05" version="1">Your &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this blade have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Lightly or Heavily Obscured targets.</content>
 	<!-- "Goon_HellfireGreataxe_Ignore_Fire_Resistance" --> <content contentuid="h04df3d99g0a07g4d1eg9e8fg252de8e6f1d5" version="1">Imbued with Hellfire</content>
-	<!-- ""Goon_HellfireGreataxe_Ignore_Fire_Resistance"" --> <content contentuid="hfe535863g017cg4643g9febg92f7e1e34df4" version="1">Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; and &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; to[1].</content>
+	<!-- "Goon_HellfireGreataxe_Ignore_Fire_Resistance" --> <content contentuid="hfe535863g017cg4643g9febg92f7e1e34df4" version="1">Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; and &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; to[1].</content>
 	<!-- "GOON_SUSSUR_TECHNICAL_APPLIER" --> <content contentuid="h9546f680ge839g4e56g8c66g7c4497ebc1a1" version="1">Sussur Silence</content>
 	<!-- "MAG_Vicious_Weapon_Passive" --> <content contentuid="hc6c42992g8252g42bdg98d0ge95b7eebf1f9" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, it deals an additional [1] damage.</content>
 	<!-- "MAG_OfTheDuelist_Gloves_Passive" --> <content contentuid="h8cd36b47g1094g48d9g8783g2684b3dca6ab" version="1">When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
@@ -89,7 +90,7 @@
 	<!-- "GOON_VERSATILE_TOGGLE_DISABLED" --> <content contentuid="ha10708b6g871fg40bbga6f3g06f851ac17d2" version="1">Versatile Disabled</content>
 	<!-- "GOON_VERSATILE_TOGGLE_DISABLED" --> <content contentuid="h8d652febg3098g4f7fg8efag67b4399e0869" version="1">This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is disabled.</content>
 	<!-- "FOR_TrueSoul_SpearPassive", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER_MELEE" --> <content contentuid="h5a6da78fged78g49f3gbf86g13874a151320" version="1">&lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="hc6b5cac7g7c3bg433ega63fge3d40cec5ccf" version="1">Defender of Easthaven</content>
+	<!-- "" --> <content contentuid="h6af7fa47g660dg4433ga045g91c420bf9357" version="1">Reduce incoming Bludgeoning, Piercing, and Slashing damage by 1d4.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 </contentList>

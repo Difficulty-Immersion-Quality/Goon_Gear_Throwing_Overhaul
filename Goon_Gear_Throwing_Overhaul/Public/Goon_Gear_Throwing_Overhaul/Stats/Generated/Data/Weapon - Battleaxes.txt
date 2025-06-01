@@ -13,31 +13,29 @@ using "WPN_Battleaxe"
 data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Zone_Cleave_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Target_CripplingStrike_Offhand)"
 // data "Weapon Group" "MartialMeleeWeapon"
 // data "VersatileDamage" "1d10"
-data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
 // data "Weapon Properties" "Versatile;Melee;Dippable"
-data "Weapon Properties" "Melee;Dippable"
 // data "Proficiency Group" "Battleaxes;MartialWeapons"
 
 // ==================================== Magical variants ====================================
 // Ceremonial Battleaxe uses "WPN_Battleaxe_1"
 
-new entry "WPN_Battleaxe_1"
-type "Weapon"
+// new entry "WPN_Battleaxe_1"
+// type "Weapon"
 // using "WPN_Battleaxe"
-using "WPN_Battleaxe_1"
+// data "RootTemplate" "c17ee133-cbb5-418f-88be-5ef27991cf50"
+// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+// data "Rarity" "Uncommon"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
 // data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
-data "Weapon Properties" "Melee;Dippable;Magical"
 
-new entry "WPN_Battleaxe_2"
-type "Weapon"
+// new entry "WPN_Battleaxe_2"
+// type "Weapon"
 // using "WPN_Battleaxe"
-using "WPN_Battleaxe_2"
+// data "RootTemplate" "7faff867-9cb3-432b-aa27-8de281b7428e"
+// data "ValueUUID" "71191c11-966f-4c19-b4ee-eb36d31c4944"
+// data "Rarity" "Rare"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
 // data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
-data "Weapon Properties" "Melee;Dippable;Magical"
 
 // ==================================== Pactbound Battleaxe ====================================
 // Bug Fix: No longer gives proficiency with the weapon type, the Pact Blade status on the weapon provides intrinsic proficiency already.
@@ -48,8 +46,6 @@ type "Weapon"
 using "WPN_Battleaxe_Pact"
 // data "Boosts" "Proficiency(Battleaxes)"
 data "Boosts" ""
-// data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
-data "Weapon Properties" "Melee;Dippable;Magical"
 
 // ==================================== Witchbreaker ====================================
 // Hush You! now does additional strength damage instead of proficiency bonus.
@@ -147,7 +143,7 @@ data "DisplayName" "hf8dadcb7g63c2g4375g9ffegc6d708b90486;1"
 // When you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; you can spend a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt; to make an additional attack.
 data "Description" "hd9e40e95g719eg460cgb3aagd1db8725b8ab;1"
 data "DescriptionParams" "2"
-data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
 data "OnApplyFunctors" "IF(IsCritical()):ApplyStatus(SWAP, MAG_CRITICAL_DONE_CRITICAL, 100, 1)"
 
 // ==================================== Rebound Battleaxe (Inaccessible/Cut content) ====================================

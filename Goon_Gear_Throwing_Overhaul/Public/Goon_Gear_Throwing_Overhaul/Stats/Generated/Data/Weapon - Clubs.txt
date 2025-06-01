@@ -15,8 +15,8 @@ data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Ta
 data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
 // data "Weapon Group" "SimpleMeleeWeapon"
 // data "Weapon Properties" "Light;Melee;Dippable"
+data "Weapon Properties" "Versatile;Light;Melee;Dippable"
 data "VersatileDamage" "1d6"
-data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
 // data "Proficiency Group" "Clubs;SimpleWeapons"
 
 // ==================================== Magical variants ====================================
@@ -25,7 +25,13 @@ new entry "WPN_Club_1"
 type "Weapon"
 // using "WPN_Club"
 using "WPN_Club_1"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "RootTemplate" "b30dca22-22bc-496e-b3b6-dd5744b73869"
+// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+// data "ValueScale" "1"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Weapon Properties" "Light;Melee;Dippable;Magical"
+data "Weapon Properties" "Versatile;Light;Melee;Dippable;Magical"
 
 // ==================================== Torches ====================================
 // TODO: What if the burning status wasn't permanent and could be fucked with by the wielder getting wet etc? But unlike other weapons, dipping it in fire again is indefinite until put out.
@@ -34,10 +40,17 @@ new entry "WPN_Torch"
 type "Weapon"
 // using "WPN_Club"
 using "WPN_Torch"
+// data "RootTemplate" "50c43f27-a12e-412c-88f0-56e15eba692a"
+// data "ItemGroup" "Torch"
+// data "WeaponFunctors" "GROUND:IF(HasStatus('BURNING',context.Source)):SurfaceChange(Ignite)"
+// data "Flags" "Torch;InvulnerableAndInteractive"
 // data "DefaultBoosts" "HiddenDuringCinematic()"
-data "DefaultBoosts" "HiddenDuringCinematic();IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "PersonalStatusImmunities" "SILENCED;SG_Condition;BLEEDING"
+// data "Boosts" ""
 // data "BoostsOnEquipMainHand" ""
 data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+// data "Weapon Properties" "Melee;Dippable;Light;AddToHotbar;Torch"
+data "Weapon Properties" "Versatile;Light;Melee;Dippable;AddToHotbar;Torch"
 
 // Cemetery-Blue Torch
 // new entry "WPN_Torch_Blue"
@@ -70,8 +83,11 @@ new entry "WPN_Club_WoodWoad_Conjure"
 type "Weapon"
 // using "WPN_WoodWoad_Club"
 using "WPN_Club_WoodWoad_Conjure"
+// data "Boosts" ""
+// data "BoostsOnEquipMainHand" ""
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
 data "BoostsOnEquipOffHand" ""
+// data "PassivesOnEquip" "WoodWoad_MagicClub"
 
 // ==================================== Whipping Cane ====================================
 
@@ -81,14 +97,20 @@ data "BoostsOnEquipOffHand" ""
 // data "RootTemplate" "3a9e4e60-9f58-4fb9-8a16-4cf784ad6f0d"
 
 // ==================================== Salami ====================================
-// Can't let salami be versatile lmao.
+// Note: Can't let salami be versatile lmao.
 
 new entry "WPN_Salami"
 type "Weapon"
 // using "WPN_Club"
 using "WPN_Salami"
-// data "DefaultBoosts" "IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
-data "DefaultBoosts" ""
+// data "RootTemplate" "e082f373-81ec-4f4b-818b-9ee86952e2fa"
+// data "ObjectCategory" "FoodCooked"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "SupplyValue" "6"
+// data "Weapon Properties" "Versatile;Light;Melee;Dippable"
+data "Weapon Properties" "Light;Melee;Dippable"
 
 // ==================================== Club of Hill Giant Strength ====================================
 // Changes: Rarity is now Rare instead of Uncommon.
@@ -98,36 +120,47 @@ new entry "UND_StrengthChair_Leg"
 type "Weapon"
 // using "WPN_Club_1"
 using "UND_StrengthChair_Leg"
+// data "RootTemplate" "768010ce-dcfe-43bb-8398-2d681d4fa6eb"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
 // data "DefaultBoosts" "WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "PassivesOnEquip" "UND_StrengthChair_Leg_Passive"
+// data "Unique" "1"
 
 // ==================================== Ironwood Clubs ====================================
 // Changes: Backbreaker removed in place of Heartstopper, which is a base weapon ability for all clubs now.
+// TODO: Something cool.
 
 new entry "MAG_Druid_IronWood_Club"
 type "Weapon"
 // using "WPN_Club_1"
 using "MAG_Druid_IronWood_Club"
+// data "RootTemplate" "67ce5d1a-e0cd-48ce-94a9-9a17615e13d9"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_PostureBreaker)"
 data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+// data "Unique" "1"
 
 // ==================================== Moonlantern ====================================
 
-new entry "Quest_GLO_Moonlantern"
-type "Weapon"
+// new entry "Quest_GLO_Moonlantern"
+// type "Weapon"
 // using "WPN_Torch"
-using "Quest_GLO_Moonlantern"
+// data "RootTemplate" "9aca1109-a59d-47d3-8f35-f248b70518f9"
+// data "ValueScale" "1"
+// data "StatusOnEquip" "SCL_MOONLANTERN_TECHNICAL"
+// data "VersatileDamage" "1d6"
 // data "Weapon Properties" "Melee;Light;AddToHotbar;Versatile;Unstowable;Torch"
-data "Weapon Properties" "Melee;Light;AddToHotbar;Unstowable;Torch"
+// data "UniqueWeaponSoundSwitch" "MoonLantern"
 
-new entry "Quest_SCL_MoonlanternWithPixie"
-type "Weapon"
+// new entry "Quest_SCL_MoonlanternWithPixie"
+// type "Weapon"
 // using "Quest_GLO_Moonlantern"
-using "Quest_SCL_MoonlanternWithPixie"
+// data "RootTemplate" "04838ed0-5989-4dc3-a9f8-f76402371a8f"
 // data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(Unstowable);"
-data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(Unstowable);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Boosts" "UnlockSpell(Shout_GLO_Pixie_InspectMoonlantern);"
 
 // ==================================== Shadow Lantern ====================================
 
@@ -142,12 +175,15 @@ data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(
 // ==================================== Torch of Revocation ====================================
 // Bug Fix: Additional 1d4 Necrotic damage works with throwing.
 
-new entry "LOW_OskarsBeloved_TorchOfRevocation"
-type "Weapon"
+// new entry "LOW_OskarsBeloved_TorchOfRevocation"
+// type "Weapon"
 // using "WPN_Torch"
-using "LOW_OskarsBeloved_TorchOfRevocation"
+// data "RootTemplate" "88be0257-cd9a-4922-85c9-178ad8579af2"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "WeaponFunctors" "GROUND:IF(HasStatus('BURNING',context.Source)):SurfaceChange(Ignite);IF(HasStatus('LOW_OSKARSBELOVED_POSSESSEDPORTRAIT')):RemoveStatus(LOW_OSKARSBELOVED_POSSESSEDPORTRAIT)"
 // data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical);IF(GoonActivateVersatile()):WeaponProperty(Versatile)"
+// data "Unique" "1"
 
 // new entry "LOW_OskarsBeloved_TorchOfTrueRevocation"
 // type "Weapon"
