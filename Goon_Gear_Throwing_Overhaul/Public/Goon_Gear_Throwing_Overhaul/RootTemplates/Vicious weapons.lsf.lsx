@@ -122,7 +122,7 @@
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="0d3a133c-038c-48c6-a1a0-0faf22ce04cb" />
 					<attribute id="Name" type="LSString" value="MAG_Vicious_Shortsword" />
-					<!-- Darkblade (Unused) -->
+					<!-- Quest_SHA_Darkblade -->
 					<attribute id="ParentTemplateId" type="FixedString" value="a27b505a-ab5b-4714-bee1-5f0435014741" />
 					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Shortsword" />
 					<attribute id="Type" type="FixedString" value="item" />

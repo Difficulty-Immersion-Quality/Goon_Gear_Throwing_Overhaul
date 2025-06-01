@@ -81,6 +81,15 @@
 	<!-- ""Goon_HellfireGreataxe_Ignore_Fire_Resistance"" --> <content contentuid="hfe535863g017cg4643g9febg92f7e1e34df4" version="1">Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; and &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; to[1].</content>
 	<!-- "GOON_SUSSUR_TECHNICAL_APPLIER" --> <content contentuid="h9546f680ge839g4e56g8c66g7c4497ebc1a1" version="1">Sussur Silence</content>
 	<!-- "MAG_Vicious_Weapon_Passive" --> <content contentuid="hc6c42992g8252g42bdg98d0ge95b7eebf1f9" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, it deals an additional [1] damage.</content>
+	<!-- "MAG_OfTheDuelist_Gloves_Passive" --> <content contentuid="h8cd36b47g1094g48d9g8783g2684b3dca6ab" version="1">When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
+	<!-- "Goon_Versatile_Toggle" --> <content contentuid="h73b50a41gfb67g429agaa8fg8e8cf99ec7e2" version="1">Versatile</content>
+	<!-- "Goon_Versatile_Toggle" --> <content contentuid="h0277ffc1g60f3g442dgaa7dgefa33ec7ef70" version="1">This weapon has the &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property.</content>
+	<!-- "GOON_VERSATILE_TOGGLE_ENABLED" --> <content contentuid="h8f43d25eg39d1g4551g8193g777182d05750" version="1">Versatile Enabled</content>
+	<!-- "GOON_VERSATILE_TOGGLE_ENABLED" --> <content contentuid="he277cab8gba33g4fbbgad5bgeb6b98cb330d" version="1">This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is enabled.</content>
+	<!-- "GOON_VERSATILE_TOGGLE_DISABLED" --> <content contentuid="ha10708b6g871fg40bbga6f3g06f851ac17d2" version="1">Versatile Disabled</content>
+	<!-- "GOON_VERSATILE_TOGGLE_DISABLED" --> <content contentuid="h8d652febg3098g4f7fg8efag67b4399e0869" version="1">This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is disabled.</content>
+	<!-- "FOR_TrueSoul_SpearPassive", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER_MELEE" --> <content contentuid="h5a6da78fged78g49f3gbf86g13874a151320" version="1">&lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 </contentList>

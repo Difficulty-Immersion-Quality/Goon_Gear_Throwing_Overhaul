@@ -1,29 +1,41 @@
 // ========================== WIP Versatile toggle shit ==========================
-// TODO: Add unlocker passive to all players via SE. Apply status based on equipped weapons and eligability. 
 
-new entry "Goon_Versatile_Toggle_Unlocker"
-type "PassiveData"
-data "Properties" "IsHidden"
-data "Conditions" ""
-data "StatsFunctorContext" ""
-data "StatsFunctors" ""
+// new entry "Goon_Versatile_Toggle"
+// type "PassiveData"
+// // Versatile
+// data "DisplayName" "h73b50a41gfb67g429agaa8fg8e8cf99ec7e2;1"
+// // This weapon has the &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property. While you are wielding it in your in one hand, and no weapon in the other, it can be wielded with both hands.
+// data "Description" "h0277ffc1g60f3g442dgaa7dgefa33ec7ef70;1"
+// data "Icon" "PassiveFeature_FightingStyle_Duelling"
+// // You may toggle this feature on and off.
+// data "ExtraDescription" "h71374fc8g784cg41e3ga5f0g9cc48ba14c84;2"
+// data "Properties" "IsToggled;AddToHotbar"
+// data "ToggleOnFunctors" "ApplyEquipmentStatus(MeleeMainHand, GOON_VERSATILE_TOGGLE_ENABLED, 100, -1)"
+// data "ToggleOffFunctors" "ApplyEquipmentStatus(MeleeMainHand, GOON_VERSATILE_TOGGLE_DISABLED, 100, -1)"
 
-new entry "GOON_VERSATILE_TOGGLE_UNLOCK"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "GOON_VERSATILE_TOGGLE_UNLOCK"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
-type "Passives" "Goon_Versatile_Toggle"
+// new entry "GOON_VERSATILE_TOGGLE_ENABLED"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// // Versatile Enabled
+// data "DisplayName" "h8f43d25eg39d1g4551g8193g777182d05750;1"
+// // This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is enabled.
+// data "Description" "he277cab8gba33g4fbbgad5bgeb6b98cb330d;1"
+// data "Icon" "PassiveFeature_FightingStyle_Duelling"
+// data "StackId" "GOON_VERSATILE_TOGGLE"
+// data "StackType" "Overwrite"
+// data "StackPriority" "1"
+// data "Boosts" "WeaponProperty(Versatile)"
+// // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
-new entry "Goon_Versatile_Toggle"
-type "PassiveData"
-data "DisplayName" ";1"
-data "Description" ";1"
-// You may toggle this feature on and off.
-data "ExtraDescription" "h71374fc8g784cg41e3ga5f0g9cc48ba14c84;2"
-data "Properties" "IsToggled"
-data "ToggleOnFunctors" "ApplyStatus(GOON_VERSATILE_DISABLE_TECHNICAL, 100, -1)"
-data "ToggleOffFunctors" "RemoveStatus(GOON_VERSATILE_DISABLE_TECHNICAL)"
-
-data "ToggleOnFunctors" "IF(HasWeaponProperty(WeaponProperties.Versatile), GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)):ApplyEquipmentStatus(MeleeMainHand, GOON_VERSATILE_DISABLE_TECHNICAL, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_ON, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_ON_CHARACTER,100,0)"
-data "ToggleOffFunctors" "IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):ApplyEquipmentStatus(MeleeMainHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyEquipmentStatus(MeleeOffHand, GOON_NYRULNA_EXPLOSION_TOGGLE_OFF, 100, -1);IF(HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('MAG_THE_THORNS_WEAPON_BOND', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):ApplyStatus(GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER,100,-1)"
+// new entry "GOON_VERSATILE_TOGGLE_DISABLED"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// // Versatile Disabled
+// data "DisplayName" "ha10708b6g871fg40bbga6f3g06f851ac17d2;1"
+// // This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is disabled.
+// data "Description" "h8d652febg3098g4f7fg8efag67b4399e0869;1"
+// data "Icon" "PassiveFeature_FightingStyle_Duelling"
+// data "StackId" "GOON_VERSATILE_TOGGLE"
+// data "StackType" "Overwrite"
+// data "StackPriority" "1"
+// // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"

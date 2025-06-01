@@ -26,3 +26,18 @@ data "Description" "h30f1a9acg7a77g46e0g824bg8037eb98bf98;1"
 data "DescriptionParams" "2"
 // data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
+
+// ==================================== Duelling Gloves ====================================
+// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+
+new entry "MAG_OfTheDuelist_Gloves_Passive"
+type "PassiveData"
+using "MAG_OfTheDuelist_Gloves_Passive"
+// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
+// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
+// You can carry a shield in your free hand and still gain this bonus.
+data "ExtraDescription" "h5262c196g6de9g4462g9c9bg2c97d4ffe314;1"
+data "DescriptionParams" "2"
+data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"

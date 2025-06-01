@@ -1,3 +1,20 @@
+// ==================================== Base entry ====================================
+
+new entry "WPN_Shortsword"
+type "Weapon"
+// using "_BaseWeapon"
+using "WPN_Shortsword"
+// data "RootTemplate" "467ddb4f-6791-41fa-99f7-ee8620d63bbe"
+// data "Damage Type" "Piercing"
+// data "Damage" "1d6"
+// data "ValueScale" "0.5"
+// data "Weight" "0.9"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_PiercingThrust)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
+// data "Weapon Group" "MartialMeleeWeapon"
+// data "Weapon Properties" "Finesse;Light;Melee;Dippable"
+// data "Proficiency Group" "Shortswords;MartialWeapons"
+
 // ==================================== Crimson Mischief ====================================
 // Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
 
@@ -8,3 +25,15 @@ using "MAG_TheCrimson_Shortsword"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing)"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
 data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
+
+// ==================================== Knife of the Undermountain King ====================================
+// Bug Fix: 
+
+// new entry "MAG_Duergar_Sword_KingsKnife"
+// type "Weapon"
+// using "WPN_Shortsword_2"
+// data "RootTemplate" "025e162a-45ec-4f4c-89da-04d8e8dfe606"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_TheClover_Rearrangement_Passive;ShadowBlade_Passive"
+// data "Unique" "1"
