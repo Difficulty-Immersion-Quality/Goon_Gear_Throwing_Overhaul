@@ -160,7 +160,8 @@ data "DescriptionParams" "1"
 data "Boosts" "DamageReduction(Piercing, Flat, ProficiencyBonus);DamageReduction(Bludgeoning, Flat, ProficiencyBonus);DamageReduction(Slashing, Flat, ProficiencyBonus)"
 
 // ==================================== Flail of Ages ====================================
-// TODO: WIP
+// Bug Fix: Combat log output will show correctly, for the most part.
+// Changes: Lots.
 
 new entry "MAG_BG_OfAges_Flail"
 type "Weapon"
@@ -172,15 +173,14 @@ using "MAG_BG_OfAges_Flail"
 data "Rarity" "Legendary"
 // data "PersonalStatusImmunities" "SILENCED;SG_Condition;BLEEDING;BURNING"
 data "PersonalStatusImmunities" "SILENCED;SG_Condition;BLEEDING;BURNING;ELEMENTAL_WEAPON_ACID;ELEMENTAL_WEAPON_ACID_5;ELEMENTAL_WEAPON_ACID_7;ELEMENTAL_WEAPON_COLD;ELEMENTAL_WEAPON_COLD_5;ELEMENTAL_WEAPON_COLD_7;ELEMENTAL_WEAPON_FIRE;ELEMENTAL_WEAPON_FIRE_5;ELEMENTAL_WEAPON_FIRE_7;ELEMENTAL_WEAPON_LIGHTNING;ELEMENTAL_WEAPON_LIGHTNING_5;ELEMENTAL_WEAPON_LIGHTNING_7;ELEMENTAL_WEAPON_THUNDER;ELEMENTAL_WEAPON_THUNDER_5;ELEMENTAL_WEAPON_THUNDER_7"
-data "Boosts" "UnlockSpell(Shout_MAG_Self_ElementalWeapon)"
+// data "Boosts" "UnlockSpell(Shout_MAG_Self_ElementalWeapon)"
+data "Boosts" ""
 // data "PassivesOnEquip" "MAG_BG_OfAges_Flail_Passive"
-data "PassivesOnEquip" "MAG_BG_OfAges_Flail_Passive;Goon_FlailOfAges_Acid;Goon_FlailOfAges_Burning;Goon_FlailOfAges_Chilled"
+data "PassivesOnEquip" "MAG_BG_OfAges_Flail_Passive;Goon_FlailOfAges_Acid;Goon_FlailOfAges_Burning;Goon_FlailOfAges_Chilled;Goon_FlailOfAges_Slow;Goon_FlailOfAges_VFX"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d4,Acid);WeaponDamage(1d4,Cold);WeaponDamage(1d4,Fire)"
 // data "Unique" "1"
 
-// TODO: This thing is a bit weird for throwing, might need to look at those damage type taken technicals
-// TODO: loca
 new entry "MAG_BG_OfAges_Flail_Passive"
 type "PassiveData"
 using "MAG_BG_OfAges_Flail_Passive"
@@ -188,7 +188,7 @@ using "MAG_BG_OfAges_Flail_Passive"
 // data "DisplayName" "h114aac4dg8341g4b93gb7a1ge7e9345cd114;1"
 // Depending on what kind of damage this weapon does, it also inflicts: &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt; condition, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; condition.
 // data "Description" "h45c08211g5396g4a90gac00g81557321efd0;1"
-// Depending on what kind of damage this weapon does, it may also inflict: &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt; condition, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; condition [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
+// Depending on what kind of damage this weapon does, it may also inflict the &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slowed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; conditions for [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
 data "Description" "hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb;1"
 data "DescriptionParams" "2;1"
 // data "StatsFunctorContext" "OnDamage"
@@ -198,19 +198,11 @@ data "Conditions" ""
 // data "StatsFunctors" "IF(IsDamageTypeAcid()):ApplyStatus(ACID, 100, 2,,,,not SavingThrow(Ability.Constitution,13));IF(IsDamageTypeCold()):ApplyStatus(CHILLED, 100, 2,,,,not SavingThrow(Ability.Constitution,13));IF(IsDamageTypeFire()):ApplyStatus(BURNING, 100, 2,,,,not SavingThrow(Ability.Constitution,13))"
 data "StatsFunctors" ""
 
-new entry "Goon_FlailOfAges_Slow"
-type "PassiveData"
-data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
-data "Description" "h09de57fagc3a9g48f9g8c24gdb6be2d770b9;4"
-data "StatsFunctorContext" "OnDamage"
-data "Conditions" "AttackedWithPassiveSourceWeapon() and RollDieAgainstDC(DiceType.d6,5)"
-data "StatsFunctors" "ApplyStatus(SLOW,100,2)"
-
 new entry "Goon_FlailOfAges_Acid"
 type "PassiveData"
 // Elements of an Epoch
 data "DisplayName" "h114aac4dg8341g4b93gb7a1ge7e9345cd114;1"
-// Depending on what kind of damage this weapon does, it may also inflict: &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt; condition, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; condition [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
+// Depending on what kind of damage this weapon does, it may also inflict the &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slowed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; conditions for [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
 data "Description" "hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb;1"
 data "DescriptionParams" "2;1"
 data "Properties" "IsHidden"
@@ -228,17 +220,21 @@ type "PassiveData"
 using "Goon_FlailOfAges_Acid"
 data "StatsFunctors" "IF(IsDamageTypeCold() and HasStatus('BURNING',context.Target)):SetStatusDuration(BURNING,1,Add);IF(IsDamageTypeFire() and not HasStatus('BURNING',context.Target)):ApplyStatus(BURNING,100,2)"
 
+new entry "Goon_FlailOfAges_Slow"
+type "PassiveData"
+using "Goon_FlailOfAges_Acid"
+data "StatsFunctors" "IF(HasStatus('SLOW',context.Target)):SetStatusDuration(SLOW,1,Add);IF(HasStatus('SLOW',context.Target)):ApplyStatus(SLOW,100,2)"
 
 new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "GOON_FLAILOFAGES_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyFunctors" "ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID,100,0);ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_CHILLED,100,0);ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_BURNING,100,0)"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID,100,0);ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_CHILLED,100,0);ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_BURNING,100,0);ApplyStatus(GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_SLOW,100,0)"
 
 new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID"
 type "StatusData"
@@ -248,19 +244,56 @@ data "DisplayName" "h114aac4dg8341g4b93gb7a1ge7e9345cd114;1"
 // Depending on what kind of damage this weapon does, it may also inflict: &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt; condition, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; condition [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
 data "Description" "hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb;1"
 data "DescriptionParams" "2;1"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-// data "OnApplyRoll" "RollDieAgainstDC(DiceType.d6,5)"
-data "OnApplyRoll" "SavingThrow(Ability.Constitution,13)"
-data "OnApplySuccess" "IF(IsDamageTypeAcid() and HasStatus('ACID',context.Target)):SetStatusDuration(ACID,1,Add);IF(IsDamageTypeAcid() and not HasStatus('ACID',context.Target)):ApplyStatus(ACID,100,2)"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "RollDieAgainstDC(DiceType.d6,5)"
+data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(not HasStatus('ACID')):ApplyStatus(ACID,100,2)"
 
 new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_CHILLED"
 type "StatusData"
 data "StatusType" "BOOST"
 using "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID"
-data "OnApplySuccess" "IF(IsDamageTypeCold() and HasStatus('CHILLED',context.Target)):SetStatusDuration(CHILLED,1,Add);IF(IsDamageTypeCold() and not HasStatus('CHILLED',context.Target)):ApplyStatus(CHILLED,100,2)"
+data "OnApplySuccess" "IF(HasStatus('CHILLED')):SetStatusDuration(CHILLED,1,Add);IF(not HasStatus('CHILLED')):ApplyStatus(CHILLED,100,2)"
 
 new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_BURNING"
 type "StatusData"
 data "StatusType" "BOOST"
 using "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID"
-data "OnApplySuccess" "IF(IsDamageTypeCold() and HasStatus('BURNING',context.Target)):SetStatusDuration(BURNING,1,Add);IF(IsDamageTypeFire() and not HasStatus('BURNING',context.Target)):ApplyStatus(BURNING,100,2)"
+data "OnApplySuccess" "IF(HasStatus('BURNING')):SetStatusDuration(BURNING,1,Add);IF(not HasStatus('BURNING')):ApplyStatus(BURNING,100,2)"
+
+new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_SLOW"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL_ACID"
+data "OnApplySuccess" "IF(HasStatus('SLOW')):SetStatusDuration(SLOW,1,Add);IF(not HasStatus('SLOW')):ApplyStatus(SLOW,100,2)"
+
+// TODO: WIP VFX stuff, shouldn't be this hard to do what I want
+new entry "Goon_FlailOfAges_VFX"
+type "PassiveData"
+// data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnEquip;OnCreate;OnTurn"
+data "Conditions" ""
+data "StatsFunctors" "IF(HasStatus('GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand) and not HasStatus('GOON_FLAILOFAGES_ACID_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand)) and not HasStatus('GOON_FLAILOFAGES_FIRE_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand)) and not HasStatus('GOON_FLAILOFAGES_COLD_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand)))):ApplyEquipmentStatus(MeleeMainHand, GOON_FLAILOFAGES_TECHNICAL_VFX, 100, 1);IF(HasStatus('GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand) and not HasStatus('GOON_FLAILOFAGES_ACID_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand)) and not HasStatus('GOON_FLAILOFAGES_FIRE_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand)) and not HasStatus('GOON_FLAILOFAGES_COLD_VFX', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source)))):ApplyEquipmentStatus(MeleeOffHand, GOON_FLAILOFAGES_TECHNICAL_VFX, 100, 1)"
+
+new entry "GOON_FLAILOFAGES_ACID_VFX"
+type "StatusData"
+data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StackId" "GOON_FLAILOFAGES_VFX"
+data "OnRemoveFunctors" "ApplyStatus(GOON_FLAILOFAGES_FIRE_VFX,100,1)"
+data "StatusEffect" "3798c69d-e202-4323-b660-2e1778dafafc"
+
+new entry "GOON_FLAILOFAGES_FIRE_VFX"
+type "StatusData"
+data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StackId" "GOON_FLAILOFAGES_VFX"
+data "OnRemoveFunctors" "ApplyStatus(GOON_FLAILOFAGES_COLD_VFX,100,1)"
+data "StatusEffect" "8a4c7e6e-a629-4765-9c5d-d354838703d8"
+
+new entry "GOON_FLAILOFAGES_COLD_VFX"
+type "StatusData"
+data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "StackId" "GOON_FLAILOFAGES_VFX"
+data "OnRemoveFunctors" "ApplyStatus(GOON_FLAILOFAGES_ACID_VFX,100,1)"
+data "StatusEffect" "e92003cd-6622-4a82-a3c7-69d6222f0ba0"
