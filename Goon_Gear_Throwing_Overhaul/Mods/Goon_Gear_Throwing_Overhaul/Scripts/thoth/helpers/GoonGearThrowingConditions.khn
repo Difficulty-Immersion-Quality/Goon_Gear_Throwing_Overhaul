@@ -109,11 +109,16 @@ function CriticalComboThrow(entity)
 	return HasAnyStatus({'GOON_CRITICALCOMBO_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
 end
 
-
 -- Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow
 function ViciousThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return HasAnyStatus({'GOON_VICIOUS_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Flail of Ages
+function FlailOfAgesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Dwarven Thrower shortening

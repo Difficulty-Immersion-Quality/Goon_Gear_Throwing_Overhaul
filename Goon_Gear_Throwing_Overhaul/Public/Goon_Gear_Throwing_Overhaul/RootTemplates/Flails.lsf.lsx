@@ -222,6 +222,23 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical statuses for throwing -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_FIRE_THROW" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_ACID_THROW" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_COLD_THROW" />
+								</node>
+							</children>
+						</node>
 					</children>
 				</node>
 			</children>
