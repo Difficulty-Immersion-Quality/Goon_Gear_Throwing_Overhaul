@@ -67,6 +67,7 @@ data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 // data "RootTemplate" "4c86f6ac-5829-41f2-a3f0-d3e893334961"
 
 // ==================================== Myrkulite Scourge ====================================
+// Bug Fix: Additional 1d6 Necrotic damage works with throwing.
 
 // new entry "WPN_SkullFlail_1"
 // type "Weapon"
@@ -136,7 +137,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Defender Flail ====================================
-// Changes: Made a custom passive to replace Steel Physiology. The new passive Defender of Easthaven provides damage reduction equal to your Proficiency Bonus +1, instead of a flat 1.
+// Changes: Made a custom passive to replace Steel Physiology. The new passive Defender of Easthaven provides damage reduction equal to your Proficiency Bonus, instead of a flat 1.
 
 new entry "MAG_BG_OfEasthaven_Defender_Flail"
 type "Weapon"
@@ -156,7 +157,7 @@ data "DisplayName" "hc6b5cac7g7c3bg433ega63fge3d40cec5ccf;1"
 // Reduce incoming Bludgeoning, Piercing, and Slashing damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;+[1].
 data "Description" "h6af7fa47g660dg4433ga045g91c420bf9357;1"
 data "DescriptionParams" "1"
-data "Boosts" "DamageReduction(Piercing, Flat, 1+ProficiencyBonus);DamageReduction(Bludgeoning, Flat, 1+ProficiencyBonus);DamageReduction(Slashing, Flat, 1+ProficiencyBonus)"
+data "Boosts" "DamageReduction(Piercing, Flat, ProficiencyBonus);DamageReduction(Bludgeoning, Flat, ProficiencyBonus);DamageReduction(Slashing, Flat, ProficiencyBonus)"
 
 // ==================================== Flail of Ages ====================================
 // TODO: WIP

@@ -161,6 +161,11 @@ function d6HellfireFireThrow(entity)
 	return HasAnyStatus({'MAG_FIRE_DIPPED_HELLFIRE'}, {}, {}, entity)
 end
 
+function d6NecroticThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasAnyStatus({'GOON_NECROTIC_THROW_D6'}, {}, {}, entity)
+end
+
 -- ==================================== Poisons ====================================
 
 -- Serpent Fang Toxin

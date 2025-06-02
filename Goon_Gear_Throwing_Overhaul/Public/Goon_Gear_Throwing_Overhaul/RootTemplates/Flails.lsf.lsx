@@ -4,6 +4,87 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Myrkulite Scourge -->
+				<node id="GameObjects">
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="Description" type="TranslatedString" handle="h4c430f0dg3ea0g4bd0gb14ag8726215af138" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h27fcf680g86f5g43abg9fd1gb2ce4c18c289" version="2" />
+					<attribute id="EquipmentTypeID" type="guid" value="ccab7523-374c-49b4-96c7-8bf3e5b9c1ca" />
+					<attribute id="IsInspector" type="bool" value="True" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LevelOverride" type="int32" value="-1" />
+					<attribute id="MapKey" type="FixedString" value="05ca18da-41f4-4385-b370-0f75a989e119" />
+					<attribute id="Name" type="LSString" value="WPN_HUM_Flail_Myrkul_A_1" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9076abf1-1029-4be9-a7cf-428d2b6fdea5" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="a180e80e-e8cd-247d-0c98-057ad9799671" />
+					<attribute id="Race" type="int8" value="0" />
+					<attribute id="Stats" type="FixedString" value="WPN_SkullFlail_1" />
+					<attribute id="Tooltip" type="uint8" value="2" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="4d1356db-0b8f-86c9-79c1-2553f08acdbe" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="Max" type="fvec3" value="0.057680205 0.0538804 0.21987343" />
+									<attribute id="Min" type="fvec3" value="-0.0578482 -0.027680472 -0.36878538" />
+									<attribute id="Radius" type="float" value="0.0911205" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="Max" type="fvec3" value="0.057680205 0.0538804 0.21987349" />
+									<attribute id="Min" type="fvec3" value="-0.0578482 -0.027680479 -0.36756998" />
+									<attribute id="Radius" type="float" value="0.182241" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="Max" type="fvec3" value="0.057680205 0.0538804 0.21987346" />
+									<attribute id="Min" type="fvec3" value="-0.0578482 -0.027680479 -0.36863098" />
+									<attribute id="Radius" type="float" value="0.182241" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<node id="InventoryList">
+							<children>
+								<node id="InventoryItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="OnDestroyActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="26" />
+									<children>
+										<node id="Attributes">
+											<attribute id="ActivateSoundEvent" type="FixedString" value="3ea82655-5140-4287-9ab8-794559f182d3" />
+											<attribute id="Animation" type="FixedString" value="" />
+											<attribute id="Conditions" type="LSString" value="" />
+											<attribute id="PlayOnHUD" type="bool" value="False" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_NECROTIC_THROW_D6" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 				<!-- Corrosive Flail -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h529fc45bg3f9cg41e2gbfdfg271af6c4a38d" version="1" />
@@ -50,6 +131,94 @@
 							<children>
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="MAG_ACID_THROW" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Defender Flail -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h81bafe80g5c19g426bgbcdbg2b112fa91b96" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hf0a370a0g3a61g4372ga61dg6b63cb64ac18" version="1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="cf19058b-2be6-411c-9227-7058053fa37a" />
+					<attribute id="Name" type="LSString" value="MAG_BG_OfEasthaven_Defender_Flail" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9076abf1-1029-4be9-a7cf-428d2b6fdea5" />
+					<attribute id="Stats" type="FixedString" value="MAG_BG_OfEasthaven_Defender_Flail" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="acb1cf87-4134-52bb-b67c-cb79b5461a84" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Flail of Ages -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h1a806c47ge23dg4c77gb70bgaef3a9f2dd50" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h0962dffaga293g4ad3g998agc5805558059f" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="01338cbe-9ff6-485e-9052-838c82a2a753" />
+					<attribute id="Name" type="LSString" value="MAG_BG_OfAges_Flail" />
+					<attribute id="ParentTemplateId" type="FixedString" value="23ab9011-ef66-463e-a8ee-012321be6d1c" />
+					<attribute id="Stats" type="FixedString" value="MAG_BG_OfAges_Flail" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f0ae2d02-f979-3340-7f5f-9d096ecfaae0" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>
