@@ -129,7 +129,7 @@ data "Rarity" "Rare"
 // data "PassivesOnEquip" "UND_StrengthChair_Leg_Passive"
 // data "Unique" "1"
 
-// ==================================== Ironwood Clubs ====================================
+// ==================================== Ironwood Club ====================================
 // Changes: Backbreaker removed in place of Heartstopper, which is a base weapon ability for all clubs now.
 // TODO: Something cool.
 
