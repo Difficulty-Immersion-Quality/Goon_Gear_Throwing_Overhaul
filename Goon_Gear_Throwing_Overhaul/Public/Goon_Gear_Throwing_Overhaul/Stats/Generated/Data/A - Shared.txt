@@ -35,3 +35,35 @@ new entry "GOON_VICIOUS_WEAPON_THROW_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Infernal weapons - "Malebolge Stinger" ====================================
+
+// Infernal weapons - Hellbeard Halberd...
+new entry "MAG_Infernal_Weapon_Passive"
+type "PassiveData"
+using "MAG_Infernal_Weapon_Passive"
+// Malebolge Stinger
+// data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
+// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;.
+// data "Description" "h11a618a5g6bd5g4d48gaba1gfc7784d80d99;1"
+// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
+data "Description" "hc4d3de99ge275g4176gb149g91a4e61e5488;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Constitution"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(POISONED, 100, 2,,,,not SavingThrow(Ability.Constitution,12))"
+data "StatsFunctors" "ApplyStatus(GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Malebolge Stinger
+data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
+// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.
+data "Description" "hc4d3de99ge275g4176gb149g91a4e61e5488;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Constitution"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 13, AdvantageOnPoisoned())"
+data "OnApplySuccess" "ApplyStatus(POISONED, 100, 2)"

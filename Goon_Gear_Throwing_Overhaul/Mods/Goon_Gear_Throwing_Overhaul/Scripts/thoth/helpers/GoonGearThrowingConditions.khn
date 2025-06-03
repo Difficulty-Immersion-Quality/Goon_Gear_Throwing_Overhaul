@@ -121,6 +121,18 @@ function FlailOfAgesThrow(entity)
 	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
 end
 
+-- Handmaiden's Mace
+function HandmaidenThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_HANDMAIDENS_MACE_THROW_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Infernal Weapon
+function InfernalThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_INFERNAL_WEAPON'}, {}, {}, entity)
+end
+
 -- Dwarven Thrower shortening
 function IsDwarf(entity)
 	local entity = entity or context.Source
@@ -179,10 +191,10 @@ function d6PoisThrowReg(entity)
 	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'TOXIN_SERPENTVENOM_DIPPED'}, {}, {}, entity)
 end
 
--- Magical variant for Venomous Revenge and weapon statuses
+-- Magical variant for Venomous Revenge, Infernal Weapon & Handmaiden's Poison
 function d6PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_INFERNAL_WEAPON','GOON_HANDMAIDENS_MACE_THROW_TECHNICAL'}, {}, {} entity)
 end
 
 -- Wyvern Toxin
