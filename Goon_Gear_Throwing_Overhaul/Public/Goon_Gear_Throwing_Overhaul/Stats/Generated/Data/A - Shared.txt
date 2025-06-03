@@ -36,9 +36,39 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Infernal weapons - "Malebolge Stinger" ====================================
+// ==================================== Infernal weapons ====================================
+// Changes: Lesser infernal weapons deal 1d6 Poison damage instead of a flat 3. 
 
-// Infernal weapons - Hellbeard Halberd...
+new entry "MAG_LESSER_INFERNAL_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_INFERNAL_WEAPON"
+using "MAG_LESSER_INFERNAL_WEAPON"
+// data "DescriptionParams" "DealDamage(3,Poison)"
+data "DescriptionParams" "DealDamage(1d6,Poison)"
+// data "Boosts" "WeaponDamage(3, Poison)"
+data "Boosts" "WeaponDamage(1d6,Poison)"
+
+new entry "MAG_INFERNAL_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "DIPPED_POISON"
+using "MAG_INFERNAL_WEAPON"
+// Infernal Weapon
+// data "DisplayName" "h6816720eg3126g4738gabb9g87c8001186a6;2"
+// On a hit, the affected entity deals an additional [1] and can possibly <LSTag Type="Status" Tooltip="POISONED">Poison</LSTag> its target. 
+// data "Description" "h39186345gdb1eg4965g82ccg354ce3573fbd;3"
+// data "DescriptionParams" "DealDamage(6,Poison)"
+data "DescriptionParams" "DealDamage(1d10,Poison)"
+// data "Icon" "GenericIcon_DamageType_Poison"
+// data "StackId" "MAG_INFERNAL_WEAPON"
+// data "Boosts" "WeaponDamage(6, Poison)"
+data "Boosts" "WeaponDamage(1d10,Poison)"
+// data "Passives" "MAG_Infernal_Weapon_Passive"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+// data "StatusEffect" "11f94ff7-9c1b-431a-a26b-99e157026dee"
+
+// Hellbeard Halberd
 new entry "MAG_Infernal_Weapon_Passive"
 type "PassiveData"
 using "MAG_Infernal_Weapon_Passive"
