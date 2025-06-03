@@ -118,6 +118,7 @@ data "Properties" ""
 
 // ==================================== Combination Axe (Inaccessible/Cut content) ====================================
 // Bug Fix: Now applies to throwing criticals.
+// TODO: Split the spell into main/off-hand.
 
 // new entry "MAG_Critical_CriticalCombo_BattleAxe"
 // type "Weapon"

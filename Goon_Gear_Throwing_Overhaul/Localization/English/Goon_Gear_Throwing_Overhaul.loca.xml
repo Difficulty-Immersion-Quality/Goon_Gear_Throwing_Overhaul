@@ -51,6 +51,10 @@
 	<!-- "Goon_Target_HinderingSmash_Offhand" --> <content contentuid="h028fa086g4c49g4408ga471g456a695559df" version="1">Weakening Strike (Offhand)</content>
 	<!-- "Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand" --> <content contentuid="ha9df0dbdgf610g4b0cgb14eg2a74de61c04c" version="1">Hush You! (Offhand)</content>
 	<!-- "Goon_Target_MAG_WeaponAction_CorrosiveStrike_Offhand" --> <content contentuid="h43ed6f6bgdaa1g4c3dga7deg7406ee9a12e1" version="1">Corrosive Strike (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Leech_Offhand" --> <content contentuid="h6a9baabfg5744g4185g8084ga64e27aad1b8" version="1">Bloodletting (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Bonesaw_Offhand" --> <content contentuid="hf40bb9f2g2211g47a5gb358g8e55abda13fc" version="1">Incise Ligaments (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Syringe_Offhand" --> <content contentuid="hacc2246cg8b83g4f68g9788g99629e13d9db" version="1">Inject Nostrum (Offhand)</content>
+	<!-- "Goon_Target_MAG_WeaponAction_Trepan_Offhand" --> <content contentuid="hd01cd495gc084g4630gb8bdg0f45937bebff" version="1">Trephination (Offhand)</content>
 
 	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
 	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
