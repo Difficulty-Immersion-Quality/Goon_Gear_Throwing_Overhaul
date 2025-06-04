@@ -14,7 +14,7 @@ end
 
 function d4FireThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-    return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity) & HasDamageEffectFlag(DamageFlags.Hit)
+    return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
 end
 
 -- Non-magical variant of d4FireThrow
