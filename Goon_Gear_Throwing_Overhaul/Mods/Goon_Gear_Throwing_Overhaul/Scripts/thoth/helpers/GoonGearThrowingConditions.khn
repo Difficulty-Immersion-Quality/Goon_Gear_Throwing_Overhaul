@@ -14,7 +14,7 @@ end
 
 function d4FireThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-    return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE'}, {}, {}, entity)
+    return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_FIRE_THROW','ELEMENTAL_WEAPON_FIRE','MAG_FIRE_ALWAYS_DIPPED_FIRE','GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE'}, {}, {}, entity)
 end
 
 -- Non-magical variant of d4FireThrow
@@ -30,7 +30,7 @@ end
 
 function d4LightningThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_LIGHTNING_THROW','ELEMENTAL_WEAPON_LIGHTNING'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_LIGHTNING_THROW','ELEMENTAL_WEAPON_LIGHTNING','GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE'}, {}, {}, entity)
 end
 
 function d4ThunderThrow(entity)
@@ -40,7 +40,7 @@ end
 
 function d4AcidThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_ACID_THROW','ELEMENTAL_WEAPON_ACID'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_ACID_THROW','ELEMENTAL_WEAPON_ACID','GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE'}, {}, {}, entity)
 end
 
 function d4PoisThrow(entity)
@@ -56,7 +56,7 @@ end
 
 function d4NecroticThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_NECROTIC_THROW','ELEMENTAL_WEAPON_NECROTIC','MAG_NECROTIC_NECROTIC_WEAPON','MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_NECROTIC_THROW','ELEMENTAL_WEAPON_NECROTIC','MAG_NECROTIC_NECROTIC_WEAPON','MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION','GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE'}, {}, {}, entity)
 end
 
 function d4ForceThrow(entity)
@@ -147,7 +147,7 @@ end
 -- Radiant not covered in vanilla for d4 bonuses
 function d4RadiantThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON','GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE'}, {}, {}, entity)
 end
 
 -- ==================================== Larger than d4 bonuses (and not poison) ====================================

@@ -65,8 +65,7 @@ data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 
 // ==================================== Creation's Echo ====================================
 // Bug Fix: Damage resistances no longer share a stack with damage resistance elixirs.
-// TODO: WIP WIP WIP
-// TODO: The weapon gets a damage die buff matching the resistance gained by the wielder.
+// Changes: Added +1 weapon enchantment. The weapon gain 1d4 additional damage matching the resistance gained by the wielder; works with throwing.
 
 new entry "UND_SocietyOfBrilliance_ResonanceStaff"
 type "Weapon"
