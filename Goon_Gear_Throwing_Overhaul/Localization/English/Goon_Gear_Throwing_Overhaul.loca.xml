@@ -102,6 +102,19 @@
 	<!-- "Goon_Handmaidens_Mace_Poison", "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON" --> <content contentuid="hfcd23470g262egc00bg7ea1g1e61d525af6f" version="1">Spider Queen's Bite</content>
 	<!-- "Goon_Handmaidens_Mace_Frightened", "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED" --> <content contentuid="hf83a70f0gba55g4957gacfbgfd40404f8fe9" version="1">On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt; for [1] turns.</content>
 	<!-- "Goon_Handmaidens_Mace_Frightened", "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED" --> <content contentuid="hf3d49f82gedbdg43fbga01ag1ed05f3f0ee6" version="1">Spider Queen's Malice</content>
+	<!-- "UND_SocietyOfBrilliance_ResonanceStaff_Passive" --> <content contentuid="h1d9e54d9gd952g4e22g9c55g7ba2434a8aa6" version="1">If the wielder deals Acid, Fire, Lightning, Radiant or Necrotic damage, it becomes &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to that damage type for 2 turns. Creation's Echo gains an additional [1], matching the elemental resistance acquired by the wielder.</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_ACID_RESISTANCE", "GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE" --> <content contentuid="hd780109cg14a6g4fd6g889bg6e427aa20d57" version="1">Acid Resonance</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_FIRE_RESISTANCE", "GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE" --> <content contentuid="heafcdac6g1866g4b16g80ecgbb0231c853e4" version="1">Fire Resonance</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_LIGHTNING_RESISTANCE", "GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE" --> <content contentuid="h85fee4c4gfee3g4351ga925g9a31fd3f5c67" version="1">Lightning Resonance</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_NECROTIC_RESISTANCE", "GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE" --> <content contentuid="h3fe231eeg9b6ag47c6gb38egb4d69c3331b1" version="1">Necrotic Resonance</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_RADIANT_RESISTANCE", "GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE" --> <content contentuid="hef2a0732g9332g450fg8e78gfde7e421f114" version="1">Radiant Resonance</content>
+	<!-- "GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE", "GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE", "GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE", "GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE", "GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE", --> <content contentuid="h6c1412b2g9757g41f2gbe27g6092c2f4c790" version="1">Creation's Echo deals an additional [1].</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 </contentList>
