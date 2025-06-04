@@ -194,7 +194,7 @@ end
 -- Magical variant for Venomous Revenge and d6 poison weapons
 function d6PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_LESSER_INFERNAL_WEAPON'}, {}, {} entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_LESSER_INFERNAL_WEAPON'}, {}, {}, entity)
 end
 
 -- Wyvern Toxin
