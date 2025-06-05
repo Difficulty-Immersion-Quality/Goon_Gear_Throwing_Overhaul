@@ -249,7 +249,7 @@ new entry "Goon_FaithwardenStaff_Ensaring_Defence_Passive"
 type "PassiveData"
 // Ensaring Defence
 data "DisplayName" "habd70a09g3052g4020gb116g0ad574340dd5;1"
-// While shapeshifted into a druidic form or under the effects of &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns, if they are not a plant or a beast. This effect scales with your Druid level.
+// While under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, or other druidic forms including &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns if they are not a plant or a beast. This effect scales with your Druid level.
 data "Description" "he48b5f11geeaag4480g8762g5fb6513fc0c9;1"
 data "DescriptionParams" "2"
 data "Icon" "Spell_Conjuration_EnsnaringStrikeMelee"
@@ -261,7 +261,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 // Ensaring Defence
 data "DisplayName" "habd70a09g3052g4020gb116g0ad574340dd5;1"
-// While shapeshifted into a druidic form or under the effects of &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns, if they are not a plant or a beast. This effect scales with your Druid level.
+// While under the effects of &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, or other druidic forms including &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns if they are not a plant or a beast. This effect scales with your Druid level.
 data "Description" "he48b5f11geeaag4480g8762g5fb6513fc0c9;1"
 data "DescriptionParams" "2"
 data "Icon" "Spell_Conjuration_EnsnaringStrikeMelee"
