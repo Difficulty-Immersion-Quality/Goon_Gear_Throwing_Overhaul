@@ -5,6 +5,59 @@
 		<node id="Templates">
 			<children>
 				<node id="GameObjects">
+					<!-- Gold Wyrmling Staff -->
+					<attribute id="Description" type="TranslatedString" handle="hfa163cf5gcb3fg4fccga768gda427a266a25" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h1199863bgf5d1g4abag815egd19d9716182c" version="2" />
+					<attribute id="ExamineRotation" type="fvec3" value="75 180 0" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="8aaf86a8-c884-4368-bcc5-1f91fd210624" />
+					<attribute id="Name" type="LSString" value="MAG_Fire_FireDamage_Quarterstaff" />
+					<attribute id="ParentTemplateId" type="FixedString" value="2fa18ee4-92df-486f-97d2-dd0a720b6fad" />
+					<attribute id="Stats" type="FixedString" value="MAG_Fire_FireDamage_Quarterstaff" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f2c78f41-28c8-37c7-756c-c2071ede7d50" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_FIRE_ALWAYS_DIPPED_FIRE" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Creation's Echo -->
+				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="he741545cge204g45cbg8703gfcf0c3828f75" version="5" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h583e707ag0f85g4826g86a0g3a3471fd5aec" version="3" />
 					<attribute id="ExamineRotation" type="fvec3" value="65 18 0" />

@@ -1,3 +1,44 @@
+// ==================================== Base entry ====================================
+
+new entry "WPN_Quarterstaff"
+type "Weapon"
+// using "_BaseWeapon"
+using "WPN_Quarterstaff"
+// data "RootTemplate" "96e2abaf-78ff-4dcb-a6a3-a5f0c348bd9f"
+// data "Damage Type" "Bludgeoning"
+// data "Damage" "1d6"
+// data "ValueScale" "0.3"
+// data "Weight" "1.8"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_Topple)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_Topple_Offhand)"
+// data "Weapon Group" "SimpleMeleeWeapon"
+// data "VersatileDamage" "1d8"
+// data "Weapon Properties" "Melee;Dippable;Versatile"
+// data "Proficiency Group" "Quarterstaffs;SimpleWeapons"
+
+// ==================================== Magic variants ====================================
+
+// new entry "WPN_Quarterstaff_1"
+// type "Weapon"
+// using "WPN_Quarterstaff"
+// data "RootTemplate" "2fa18ee4-92df-486f-97d2-dd0a720b6fad"
+// data "ValueLevel" "3"
+// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+// data "ValueScale" "1"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
+
+// new entry "WPN_Quarterstaff_2"
+// type "Weapon"
+// using "WPN_Quarterstaff"
+// data "RootTemplate" "e1e112b2-5465-4e37-acdc-372666ec1521"
+// data "ValueUUID" "71191c11-966f-4c19-b4ee-eb36d31c4944"
+// data "ValueScale" "1"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
+
 // ==================================== Gold Wyrmling Staff ====================================
 // Changes: The staff is now visible in cutscenes.
 
@@ -5,31 +46,47 @@ new entry "MAG_Fire_FireDamage_Quarterstaff"
 type "Weapon"
 // using "WPN_Quarterstaff_1"
 using "MAG_Fire_FireDamage_Quarterstaff"
+// data "RootTemplate" "8aaf86a8-c884-4368-bcc5-1f91fd210624"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);HiddenDuringCinematic()"
 data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Projectile_MAG_FireBolt_Staff)"
+// data "Unique" "1"
+// data "Weapon Properties" "Melee;Versatile;Magical"
 
 // ==================================== Staff of the Ram ====================================
 // Bug Fix: Missing 1d6 Force damage is now present.
 // Bug Fix: Saving Throws for the knockback now only triggered on hits and not misses.
 // Changes: Added adjustable push trajectory. Split the stun from the push, when you successfully push a target they will get to roll an additional saving throw to avoid the stun. To account for it now being 2 save DCs they're both ManeuverSaveDC +2 instead of a fixed DC of 8, as they both have to be failed to stun.
+// TODO: Throwing
 
 new entry "MAG_LC_OfTheRam_Quarterstaff"
 type "Weapon"
 // using "WPN_Quarterstaff_2"
 using "MAG_LC_OfTheRam_Quarterstaff"
+// data "RootTemplate" "be48362b-f8f7-499d-ae64-156374852387"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6,Force)"
+// data "PassivesOnEquip" "MAG_StaffOFRam_KnockStun_Passive"
+// data "Unique" "1"
 
 new entry "MAG_StaffOFRam_KnockStun_Passive"
 type "PassiveData"
 using "MAG_StaffOFRam_KnockStun_Passive"
-data "TooltipSave" "Constitution"
+// Staff of the Ram
+// data "DisplayName" "hae01b6e8g91cfg4b88gbcfag30ed8a070ac8;2"
 // Once per turn, the blow possibly knocks a foe back [1] and &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; them. This has no effect on dragons or Huge creatures.
 // data "Description" "h30031d03gc514g4b3bgbe22g85ef148cc2e7;6"
 // Once per turn, the blow possibly knocks a foe back [1] unless they succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the target is knocked back they must succeed an additional &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stuns&lt;/LSTag&gt; for [2]. This has no effect on dragons or Huge creatures.
 data "Description" "h891a0892ga83fg4a5egb6fag36fb3e6ec70c;1"
 // data "DescriptionParams" "Distance(2)"
 data "DescriptionParams" "Distance(2);1"
+data "TooltipSave" "Constitution"
+// data "Properties" "OncePerTurn"
+// data "StatsFunctorContext" "OnAttack"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and not Ally() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON') and not SavingThrow(Ability.Constitution, 8, false, false, context.Target)"
 data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and TargetSizeEqualOrSmaller(Size.Large) and not Tagged('DRAGON')"
 // data "StatsFunctors" "IF(not Ally()):Force(2,OriginToEntity,Aggressive);IF(Ally()):Force(2,OriginToEntity,Friendly);ApplyStatus(STUNNED, 100, 1)"
