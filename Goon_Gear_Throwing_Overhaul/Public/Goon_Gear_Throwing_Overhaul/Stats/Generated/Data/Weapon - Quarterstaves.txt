@@ -39,6 +39,153 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_Topple_Offhand)"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
 
+// ==================================== Creation's Echo ====================================
+// Bug Fix: Damage resistances no longer share a stack with damage resistance elixirs.
+// Changes: Added +1 weapon enchantment. The weapon gain 1d4 additional damage matching the resistance gained by the wielder; works with throwing.
+
+new entry "UND_SocietyOfBrilliance_ResonanceStaff"
+type "Weapon"
+// using "WPN_Quarterstaff_1"
+using "UND_SocietyOfBrilliance_ResonanceStaff"
+// data "RootTemplate" "62da3651-f2e4-4371-b5f2-fd06dd705030"
+// data "ItemGroup" ""
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "PassivesOnEquip" "UND_SocietyOfBrilliance_ResonanceStaff_Passive"
+// data "Unique" "1"
+
+new entry "GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "UND_SocietyOfBrilliance_ResonanceStaff_Passive"
+type "PassiveData"
+using "UND_SocietyOfBrilliance_ResonanceStaff_Passive"
+// Elemental Resonance
+// data "DisplayName" "hc8c40c1fg9486g435cgac76g6849e2cd0002;2"
+// If the wielder deals Acid, Fire, Lightning, Radiant or Necrotic damage, it becomes resistant to that damage type for 2 turns.
+// data "Description" "h267003d7g6f6eg426cgabb6gdc1f95ae04e7;2"
+// If the wielder deals Acid, Fire, Lightning, Radiant or Necrotic damage, it becomes &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to that damage type for 2 turns. Creation's Echo gains an additional 1d4 damage, matching the elemental resistance acquired by the wielder.
+data "Description" "h1d9e54d9gd952g4e22g9c55g7ba2434a8aa6;1"
+// data "Properties" "OncePerAttack"
+data "Properties" ""
+// data "StatsFunctorContext" "OnDamage"
+data "Conditions" "Character() and (HasDamageDoneForType(DamageType.Acid) or HasDamageDoneForType(DamageType.Lightning) or HasDamageDoneForType(DamageType.Fire) or HasDamageDoneForType(DamageType.Necrotic) or HasDamageDoneForType(DamageType.Radiant))"
+data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Acid)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_ACID_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Lightning)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_LIGHTNING_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Fire)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_FIRE_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Necrotic)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_NECROTIC_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Radiant)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_RADIANT_RESISTANCE,100,2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_ACID_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RESISTANCE_ACID"
+// Acid Resonance
+data "DisplayName" "hd780109cg14a6g4fd6g889bg6e427aa20d57;1"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
+data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE, 100, 2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Acid Resonance
+data "DisplayName" "hd780109cg14a6g4fd6g889bg6e427aa20d57;1"
+// Creation's Echo deals an additional [1].
+data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
+data "DescriptionParams" "DealDamage(1d4,Acid)"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
+data "TickType" "StartTurn"
+data "Boosts" "WeaponDamage(1d4,Acid)"
+data "StatusEffect" "3798c69d-e202-4323-b660-2e1778dafafc"
+
+new entry "GOON_ELEMENTAL_RESONANCE_FIRE_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RESISTANCE_FIRE"
+// Fire Resonance
+data "DisplayName" "heafcdac6g1866g4b16g80ecgbb0231c853e4;1"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
+data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE, 100, 2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Fire Resonance
+data "DisplayName" "heafcdac6g1866g4b16g80ecgbb0231c853e4;1"
+// Creation's Echo deals an additional [1].
+data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
+data "DescriptionParams" "DealDamage(1d4,Fire)"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
+data "TickType" "StartTurn"
+data "Boosts" "WeaponDamage(1d4,Fire)"
+data "StatusEffect" "8a4c7e6e-a629-4765-9c5d-d354838703d8"
+
+new entry "GOON_ELEMENTAL_RESONANCE_LIGHTNING_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RESISTANCE_LIGHTNING"
+// Lightning Resonance
+data "DisplayName" "h85fee4c4gfee3g4351ga925g9a31fd3f5c67;1"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
+data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE, 100, 2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Lightning Resonance
+data "DisplayName" "h85fee4c4gfee3g4351ga925g9a31fd3f5c67;1"
+// Creation's Echo deals an additional [1].
+data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
+data "DescriptionParams" "DealDamage(1d4,Lightning)"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
+data "TickType" "StartTurn"
+data "Boosts" "WeaponDamage(1d4,Lightning)"
+data "StatusEffect" "e92003cd-6622-4a82-a3c7-69d6222f0ba0"
+
+new entry "GOON_ELEMENTAL_RESONANCE_NECROTIC_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RESISTANCE_NECROTIC"
+// Necrotic Resonance
+data "DisplayName" "h3fe231eeg9b6ag47c6gb38egb4d69c3331b1;1"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
+data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE, 100, 2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Necrotic Resonance
+data "DisplayName" "h3fe231eeg9b6ag47c6gb38egb4d69c3331b1;1"
+// Creation's Echo deals an additional [1].
+data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
+data "DescriptionParams" "DealDamage(1d4,Necrotic)"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
+data "TickType" "StartTurn"
+data "Boosts" "WeaponDamage(1d4,Necrotic)"
+data "StatusEffect" "3798c69d-e202-4323-b660-2e1778dafafc"
+
+new entry "GOON_ELEMENTAL_RESONANCE_RADIANT_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RESISTANCE_RADIANT"
+// Radiant Resonance
+data "DisplayName" "hef2a0732g9332g450fg8e78gfde7e421f114;1"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
+data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE, 100, 2)"
+
+new entry "GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Radiant Resonance
+data "DisplayName" "hef2a0732g9332g450fg8e78gfde7e421f114;1"
+// Creation's Echo deals an additional [1].
+data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
+data "DescriptionParams" "DealDamage(1d4,Radiant)"
+data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
+data "TickType" "StartTurn"
+data "Boosts" "WeaponDamage(1d4,Radiant)"
+data "StatusEffect" "8a4c7e6e-a629-4765-9c5d-d354838703d8"
+
 // ==================================== Gold Wyrmling Staff ====================================
 // Changes: The staff is now visible in cutscenes.
 
@@ -54,6 +201,86 @@ data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Boosts" "UnlockSpell(Projectile_MAG_FireBolt_Staff)"
 // data "Unique" "1"
 // data "Weapon Properties" "Melee;Versatile;Magical"
+
+// ==================================== Pale Oak ====================================
+// Changes: Added immunity to Ensnaring Strike.
+
+new entry "DEN_FaithwardenStaff"
+type "Weapon"
+// using "WPN_Quarterstaff_1"
+using "DEN_FaithwardenStaff"
+// data "RootTemplate" "13f6ff0c-08c4-4e9f-a624-511389b68dc2"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueOverride" "600"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Target_DEN_Entangle_Staff,,,,Wisdom)"
+// data "PassivesOnEquip" "DEN_FaithwardenStaff_Passive"
+data "PassivesOnEquip" "DEN_FaithwardenStaff_Passive;Goon_FaithwardenStaff_Ensaring_Defence_Passive"
+data "PassivesMainHand" ""
+// data "Unique" "1"
+
+new entry "DEN_FaithwardenStaff_Passive"
+type "PassiveData"
+using "DEN_FaithwardenStaff_Passive"
+// Faithwarden's Stride
+// data "DisplayName" "h39b3f860gfb4dg49acg91fcgfa414c132e1e;2"
+// Druidic vines cannot Ensnare you and do not count as difficult terrain.
+// data "Description" "h0d3e0cffg4fbbg47c9gb755g63935e913cd5;3"
+// data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES)"
+data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(ENSNARED_VINES);StatusImmunity(ENSNARING_STRIKE);StatusImmunity(ENSNARING_STRIKE_2);StatusImmunity(ENSNARING_STRIKE_3);StatusImmunity(ENSNARING_STRIKE_4);StatusImmunity(ENSNARING_STRIKE_5);StatusImmunity(ENSNARING_STRIKE_6);StatusImmunity(ENSNARING_STRIKE_7);StatusImmunity(ENSNARING_STRIKE_8);StatusImmunity(ENSNARING_STRIKE_9)"
+
+new entry "Target_DEN_Entangle_Staff"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Entangle"
+using "Target_DEN_Entangle_Staff"
+// data "Cooldown" "OncePerRestPerItem"
+data "Cooldown" "OncePerShortRestPerItem"
+// Faithwarden's Vines
+// data "DisplayName" "h37e76ae4g5865g422cg9058g5288286181ce;2"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration;IsHarmful"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsHarmful"
+
+new entry "Goon_FaithwardenStaff_Ensaring_Defence_Passive"
+type "PassiveData"
+// Ensaring Defence
+data "DisplayName" "habd70a09g3052g4020gb116g0ad574340dd5;1"
+// While shapeshifted into a druidic form or under the effects of &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns, if they are not a plant or a beast. This effect scales with your Druid level.
+data "Description" "he48b5f11geeaag4480g8762g5fb6513fc0c9;1"
+data "DescriptionParams" "2"
+data "Icon" "Spell_Conjuration_EnsnaringStrikeMelee"
+data "StatsFunctorContext" "OnStatusApplied"
+data "StatsFunctors" "IF(Goon_IsDruidFormOrStatus()):ApplyStatus(GOON_FAITHWARDENSTAFF_ENSARING_DEFENCE, 100, -1)"
+
+new entry "GOON_FAITHWARDENSTAFF_ENSARING_DEFENCE"
+type "StatusData"
+data "StatusType" "BOOST"
+// Ensaring Defence
+data "DisplayName" "habd70a09g3052g4020gb116g0ad574340dd5;1"
+// While shapeshifted into a druidic form or under the effects of &lt;LSTag Type="Status" Tooltip="SYMBIOTIC_ENTITY"&gt;Symbiotic Entity&lt;/LSTag&gt;, attackers may be &lt;LSTag Type="Status" Tooltip="ENSNARING_STRIKE"&gt;Ensnared&lt;/LSTag&gt; for [1] turns, if they are not a plant or a beast. This effect scales with your Druid level.
+data "Description" "he48b5f11geeaag4480g8762g5fb6513fc0c9;1"
+data "DescriptionParams" "2"
+data "Icon" "Spell_Conjuration_EnsnaringStrikeMelee"
+data "StackId" "GOON_FAITHWARDENSTAFF_ENSARING_DEFENCE"
+// data "RemoveConditions" "not HasStatus('SG_Polymorph_BeastShape') and not HasStatus('SG_Polymorph') and not HasStatus('WILDSHAPE_STARRY_ARCHER_PLAYER') and not HasStatus('WILDSHAPE_STARRY_CHALICE_PLAYER') and not HasStatus('WILDSHAPE_STARRY_DRAGON_PLAYER')"
+data "RemoveConditions" "not Goon_IsDruidFormOrStatus()"
+data "RemoveEvents" "OnStatusRemoved"
+data "StatusGroups" "SG_RemoveOnRespec"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "Passives" "Goon_FaithwardenStaff_Ensaring_Defence_Active_Passive"
+
+new entry "Goon_FaithwardenStaff_Ensaring_Defence_Active_Passive"
+type "PassiveData"
+using "Goon_FaithwardenStaff_Ensaring_Defence_Passive"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnAttacked"
+data "Properties" "OncePerTurn"
+data "Conditions" "HasDamageEffectFlag(DamageFlags.Hit) and RollDieAgainstDC(DiceType.d6,5)"
+data "StatsFunctors" "IF(not ClassLevelHigherOrEqualThan(3,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE,100,2);IF(ClassLevelHigherOrEqualThan(3,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(5,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_2,100,2);IF(ClassLevelHigherOrEqualThan(5,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(7,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_3,100,2);IF(ClassLevelHigherOrEqualThan(7,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(9,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_4,100,2);IF(ClassLevelHigherOrEqualThan(9,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(11,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_5,100,2);IF(ClassLevelHigherOrEqualThan(11,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(13,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_6,100,2);IF(ClassLevelHigherOrEqualThan(13,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(15,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_7,100,2);IF(ClassLevelHigherOrEqualThan(15,'Druid',context.Target) and not ClassLevelHigherOrEqualThan(17,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_8,100,2);IF(ClassLevelHigherOrEqualThan(17,'Druid',context.Target)):ApplyStatus(SWAP,ENSNARING_STRIKE_9,100,2)"
 
 // ==================================== Staff of the Ram ====================================
 // Bug Fix: Missing 1d6 Force damage is now present.
@@ -119,146 +346,3 @@ data "Cooldown" "OncePerRestPerItem"
 data "EnableCondition" "(HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and not HasStatus('SG_Polymorph')) or (HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'}))"
 // data "EnableContext" "OnActionResourcesChanged"
 data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
-
-// ==================================== Creation's Echo ====================================
-// Bug Fix: Damage resistances no longer share a stack with damage resistance elixirs.
-// Changes: Added +1 weapon enchantment. The weapon gain 1d4 additional damage matching the resistance gained by the wielder; works with throwing.
-
-new entry "UND_SocietyOfBrilliance_ResonanceStaff"
-type "Weapon"
-// using "WPN_Quarterstaff_1"
-using "UND_SocietyOfBrilliance_ResonanceStaff"
-// data "RootTemplate" "62da3651-f2e4-4371-b5f2-fd06dd705030"
-// data "ItemGroup" ""
-// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
-// data "Rarity" "Rare"
-// data "DefaultBoosts" "WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-// data "PassivesOnEquip" "UND_SocietyOfBrilliance_ResonanceStaff_Passive"
-// data "Unique" "1"
-
-new entry "GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-new entry "UND_SocietyOfBrilliance_ResonanceStaff_Passive"
-type "PassiveData"
-// Elemental Resonance
-data "DisplayName" "hc8c40c1fg9486g435cgac76g6849e2cd0002;2"
-// If the wielder deals Acid, Fire, Lightning, Radiant or Necrotic damage, it becomes resistant to that damage type for 2 turns.
-// data "Description" "h267003d7g6f6eg426cgabb6gdc1f95ae04e7;2"
-// If the wielder deals Acid, Fire, Lightning, Radiant or Necrotic damage, it becomes &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to that damage type for 2 turns. Creation's Echo gains an additional [1], matching the elemental resistance acquired by the wielder.
-data "Description" "h1d9e54d9gd952g4e22g9c55g7ba2434a8aa6;1"
-data "DescriptionParams" "DealDamage(1d4,)"
-data "Properties" "OncePerAttack"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "Character() and (HasDamageDoneForType(DamageType.Acid) or HasDamageDoneForType(DamageType.Lightning) or HasDamageDoneForType(DamageType.Fire) or HasDamageDoneForType(DamageType.Necrotic) or HasDamageDoneForType(DamageType.Radiant))"
-data "Conditions" "Character()"
-// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Acid)):ApplyStatus(SELF,RESISTANCE_ACID,100,2);IF(HasDamageDoneForType(DamageType.Lightning)):ApplyStatus(SELF,RESISTANCE_LIGHTNING,100,2);IF(HasDamageDoneForType(DamageType.Fire)):ApplyStatus(SELF,RESISTANCE_FIRE,100,2);IF(HasDamageDoneForType(DamageType.Necrotic)):ApplyStatus(SELF,RESISTANCE_NECROTIC,100,2);IF(HasDamageDoneForType(DamageType.Radiant)):ApplyStatus(SELF,RESISTANCE_RADIANT,100,2)"
-data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Acid,context.Target)):ApplyStatus(SELF,GOON_RESISTANCE_ACID_ELEMENTAL_RESONANCE,100,2);IF(HasDamageDoneForType(DamageType.Fire,context.Target)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_FIRE_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Lightning,context.Target)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_LIGHTNING_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Necrotic,context.Target)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_NECROTIC_RESISTANCE,100,2);IF(HasDamageDoneForType(DamageType.Radiant,context.Target)):ApplyStatus(SELF,GOON_ELEMENTAL_RESONANCE_RADIANT_RESISTANCE,100,2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_ACID_RESISTANCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RESISTANCE_ACID"
-// Acid Resonance
-data "DisplayName" "hd780109cg14a6g4fd6g889bg6e427aa20d57;1"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
-data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE, 100, 2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_ACID_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-// Acid Resonance
-data "DisplayName" "hd780109cg14a6g4fd6g889bg6e427aa20d57;1"
-// Creation's Echo deals an additional [1].
-data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
-data "DescriptionParams" "DealDamage(1d4,Acid)"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
-data "TickType" "StartTurn"
-data "Boosts" "WeaponDamage(1d4,Acid)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_FIRE_RESISTANCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RESISTANCE_FIRE"
-// Fire Resonance
-data "DisplayName" "heafcdac6g1866g4b16g80ecgbb0231c853e4;1"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
-data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE, 100, 2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_FIRE_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-// Fire Resonance
-data "DisplayName" "heafcdac6g1866g4b16g80ecgbb0231c853e4;1"
-// Creation's Echo deals an additional [1].
-data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
-data "DescriptionParams" "DealDamage(1d4,Fire)"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
-data "TickType" "StartTurn"
-data "Boosts" "WeaponDamage(1d4,Fire)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_LIGHTNING_RESISTANCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RESISTANCE_LIGHTNING"
-// Lightning Resonance
-data "DisplayName" "h85fee4c4gfee3g4351ga925g9a31fd3f5c67;1"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
-data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE, 100, 2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_LIGHTNING_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-// Lightning Resonance
-data "DisplayName" "h85fee4c4gfee3g4351ga925g9a31fd3f5c67;1"
-// Creation's Echo deals an additional [1].
-data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
-data "DescriptionParams" "DealDamage(1d4,Lightning)"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
-data "TickType" "StartTurn"
-data "Boosts" "WeaponDamage(1d4,Lightning)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_NECROTIC_RESISTANCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RESISTANCE_NECROTIC"
-// Necrotic Resonance
-data "DisplayName" "h3fe231eeg9b6ag47c6gb38egb4d69c3331b1;1"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
-data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE, 100, 2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_NECROTIC_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-// Necrotic Resonance
-data "DisplayName" "h3fe231eeg9b6ag47c6gb38egb4d69c3331b1;1"
-// Creation's Echo deals an additional [1].
-data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
-data "DescriptionParams" "DealDamage(1d4,Necrotic)"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
-data "TickType" "StartTurn"
-data "Boosts" "WeaponDamage(1d4,Necrotic)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_RADIANT_RESISTANCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RESISTANCE_RADIANT"
-// Radiant Resonance
-data "DisplayName" "hef2a0732g9332g450fg8e78gfde7e421f114;1"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_RESISTANCE"
-data "OnApplyFunctors" "IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Target))):ApplyEquipmentStatus(MeleeMainHand, GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE, 100, 2);IF(HasStatus('GOON_CREATIONSECHO_WEAPON_THROW_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Target))):ApplyEquipmentStatus(MeleeOffHand, GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE, 100, 2)"
-
-new entry "GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-// Radiant Resonance
-data "DisplayName" "hef2a0732g9332g450fg8e78gfde7e421f114;1"
-// Creation's Echo deals an additional [1].
-data "Description" "h6c1412b2g9757g41f2gbe27g6092c2f4c790;1"
-data "DescriptionParams" "DealDamage(1d4,Radiant)"
-data "StackId" "GOON_ELEMENTAL_RESONANCE_DAMAGE"
-data "TickType" "StartTurn"
-data "Boosts" "WeaponDamage(1d4,Radiant)"

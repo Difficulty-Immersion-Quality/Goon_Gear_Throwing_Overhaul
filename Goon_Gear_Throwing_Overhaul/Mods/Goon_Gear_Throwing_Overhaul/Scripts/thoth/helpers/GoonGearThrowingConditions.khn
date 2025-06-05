@@ -1,3 +1,11 @@
+-- ==================================== Other ====================================
+
+-- Check for any and all druid forms, only druid forms and not stinky disguise self etc
+function Goon_IsDruidFormOrStatus(entity)
+    entity = entity or context.Source
+    return HasStatus('SG_Polymorph_BeastShape', entity, context.Source) | HasStatus('SG_Polymorph', entity, context.Source) & Tagged('MYRMIDON_FIRE', entity) or Tagged('MYRMIDON_WATER', entity) or Tagged('MYRMIDON_AIR', entity) or Tagged('MYRMIDON_EARTH', entity) | HasStatus('WILDSHAPE_STARRY_ARCHER_PLAYER', entity, context.Source) | HasStatus('WILDSHAPE_STARRY_CHALICE_PLAYER', entity, context.Source) | HasStatus('WILDSHAPE_STARRY_DRAGON_PLAYER', entity, context.Source)
+end
+
 -- TODO: Check for throwing weapon property for most applications
 -- ==================================== Vanilla throw stuff ====================================
 
