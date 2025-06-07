@@ -7,3 +7,14 @@ type "Weapon"
 using "MAG_Fire_AlwaysDippedInFire_Greatsword"
 // data "DefaultBoosts" "HiddenDuringCinematic();WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponProperty(Magical)"
+
+// ========================== Balduran's Giantlayer ==========================
+// Changes: Giant Form now costs a Bonus Action instead of an Action.
+
+new entry "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_MAG_CombatStaff_Enlarge"
+using "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"

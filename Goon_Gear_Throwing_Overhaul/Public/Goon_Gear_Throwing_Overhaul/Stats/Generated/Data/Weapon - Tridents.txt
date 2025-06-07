@@ -126,7 +126,7 @@ data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisableP
 data "OnApplyFunctors" "ApplyStatus(WET,100,3);GROUND:CreateSurface(2,0,Water)"
 
 // ==================================== Nyrulna ====================================
-// Changes: Added Disarming Strike, as it's a base weapon action. Turned the explosion into a toggle, with a single target damage alternative.
+// Changes: Now uses typical Trident base weapon actions. Turned the explosion into a toggle, with a single target damage alternative.
 // TODO: Offhand Zephyr Break & Zephyr Flash
 
 new entry "MAG_TheThorns_Trident"
@@ -138,7 +138,7 @@ using "MAG_TheThorns_Trident"
 // data "Rarity" "Legendary"
 // data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
-data "BoostsOnEquipMainHand" "UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Target_CripplingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
 // data "PassivesOnEquip" "MAG_TheThorns_ExplosiveThrowing_Passive;MAG_TheThorns_VeilOfTheWind_Passive;MAG_Light_TheThorns_Passive"
 // data "Unique" "1"
 

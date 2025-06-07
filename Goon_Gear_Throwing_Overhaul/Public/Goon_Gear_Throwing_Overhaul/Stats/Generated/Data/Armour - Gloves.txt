@@ -1,16 +1,69 @@
+// ========================== Luminous Gloves ==========================
+// Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
+
+new entry "MAG_Radiant_RadiatingOrb_Gloves"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_Radiant_RadiatingOrb_Gloves"
+// data "RootTemplate" "e8a72355-b81f-484e-bc7d-945ec81c04a3"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+// data "Unique" "1"
+
+// ==================================== Duelling Gloves ====================================
+// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+
+// new entry "MAG_OfTheDuelist_Gloves"
+// type "Armor"
+// using "ARM_Gloves_Leather"
+// data "RootTemplate" "97e362b2-e2aa-4703-9840-6824d7068334"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_OfTheDuelist_Gloves_Passive"
+// data "Unique" "1"
+
+new entry "MAG_OfTheDuelist_Gloves_Passive"
+type "PassiveData"
+using "MAG_OfTheDuelist_Gloves_Passive"
+// Duelling Gloves
+// data "DisplayName" "hce96a4f3g52deg4a86gafb7g8bc85bb71c2c;2"
+// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
+// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
+// You can wield a shield and still receive this bonus.
+data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
+// data "DescriptionParams" "2"
+// data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"
+
 // ==================================== Gloves of Battlemage's Power ====================================
 // Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
 // Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks. 
 
+// new entry "MAG_Gish_ArcaneAcuity_Gloves"
+// type "Armor"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "15381544-e616-46e6-a881-0af793971863"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// data "Unique" "1"
+
 new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
 type "PassiveData"
 using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// Battlemage's Power
+// data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
 // When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 // data "Description" "hbae6c94bg09c9g45e6ga267gef7984d501be;11"
 // When you hit a target with a melee spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "ArcaneAcuityGlovesCondition();"
 data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== The Reviving Hands ====================================
 // Bug Fix: Aegis Palms now applies Death Ward to revived targets.
@@ -26,18 +79,3 @@ data "Description" "h30f1a9acg7a77g46e0g824bg8037eb98bf98;1"
 data "DescriptionParams" "2"
 // data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
-
-// ==================================== Duelling Gloves ====================================
-// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
-
-new entry "MAG_OfTheDuelist_Gloves_Passive"
-type "PassiveData"
-using "MAG_OfTheDuelist_Gloves_Passive"
-// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
-// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
-// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
-data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
-// You can carry a shield in your free hand and still gain this bonus.
-data "ExtraDescription" "h5262c196g6de9g4462g9c9bg2c97d4ffe314;1"
-data "DescriptionParams" "2"
-data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"
