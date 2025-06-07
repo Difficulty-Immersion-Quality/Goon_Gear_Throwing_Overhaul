@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Shining Staver-of-Skulls -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="ha8bcdfaeg7f89g4176g9dbfg6ad8bed3cc7a" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h12d23ca4g6d56g45a7gbdd7g929f25dbb562" version="3" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="b76baf78-5aaf-4c15-9468-6333a0eb4b92" />
+					<attribute id="Name" type="LSString" value="MAG_Radiant_Radiating_Hammer" />
+					<attribute id="ParentTemplateId" type="FixedString" value="d0419aaf-9e20-4029-b8e9-9e1a62661b13" />
+					<attribute id="Stats" type="FixedString" value="MAG_Radiant_Radiating_Hammer" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="266b17ec-4404-5883-ad5b-5bf39400a68b" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_RADIANT_RADIANCE_WEAPON" />
+								</node>
+								<node id="Status">
+									<!-- Changes: Give it a custom status that cannot be overwritten -->
+									<!-- <attribute id="Object" type="FixedString" value="LIGHT" /> -->
+									<attribute id="Object" type="FixedString" value="GOON_LIGHT_SHINING_STAVER_OF_SKULLS" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
