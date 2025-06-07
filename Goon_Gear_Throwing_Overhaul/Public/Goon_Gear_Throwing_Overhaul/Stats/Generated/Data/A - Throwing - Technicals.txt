@@ -142,3 +142,18 @@ data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisableP
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 19)"
 data "OnApplySuccess" "ApplyStatus(ALCH_TOXIN_PURPLEWORM_CONDITION,100,1, AdvantageOnPoisoned())"
 data "OnApplyFail" ""
+
+// ==================================== Enraged Throw ====================================
+// Add a saving throw to that OP sheet
+
+new entry "GOON_PRONE_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Enraged Throw
+data "DisplayName" "ha09dcb86gbe9eg4e61gb095g35147a8f75e1;4"
+// Pick up an item or creature and throw it at a target, dealing additional damage and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; unless the target succeeds a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "hca4be97fg0867g4346g8e2dg3c7d152047b0;1"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, 15)"
+data "OnApplySuccess" "ApplyStatus(PRONE,100,1)"
+data "OnApplyFail" ""
