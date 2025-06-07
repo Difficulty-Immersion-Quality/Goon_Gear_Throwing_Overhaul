@@ -24,7 +24,7 @@
 	<content contentuid="h42b6f824ge50cg45c7gaaa4ga454fc3e8486" version="1">You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.</content>
 
 	<!-- Barbarian - Enraged Throw -->
-	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt.</content>
+	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
 	<!-- WEAPON ACTIONS -->
 
