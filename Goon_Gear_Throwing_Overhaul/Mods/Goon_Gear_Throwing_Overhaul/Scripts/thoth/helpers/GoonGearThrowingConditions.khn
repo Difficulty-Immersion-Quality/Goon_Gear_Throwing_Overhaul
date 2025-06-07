@@ -1,19 +1,5 @@
--- ==================================== Other ====================================
-
--- Check for any and all druid forms, only druid forms and not stinky disguise self etc. 
--- Includes support for Circle of Storm Chasers, the old (pre-toolkit) Circle of Stars, 
-function Goon_IsDruidFormOrStatus(entity)
-    entity = entity or context.Source
-    return HasStatus('SG_Polymorph_BeastShape', entity, context.Source) | HasStatus('SG_Polymorph', entity, context.Source) & Tagged('MYRMIDON_FIRE', entity) or Tagged('MYRMIDON_WATER', entity) or Tagged('MYRMIDON_AIR', entity) or Tagged('MYRMIDON_EARTH', entity) | HasStatus('WILDSHAPE_STARRY_ARCHER_PLAYER', entity, context.Source) | HasStatus('WILDSHAPE_STARRY_CHALICE_PLAYER', entity, context.Source) | HasStatus('WILDSHAPE_STARRY_DRAGON_PLAYER', entity, context.Source) | HasStatus('STORM_SHIFTER', entity, context.Source) | HasStatus('STARRY_FORM_ARCHER', entity, context.Source) | HasStatus('STARRY_FORM_CHALICE', entity, context.Source) | HasStatus('STARRY_FORM_DRAGON', entity, context.Source)
-end
-
-function Goon_IsDruidForm(entity)
-    entity = entity or context.Source
-    return HasStatus('SG_Polymorph_BeastShape', entity, context.Source) | HasStatus('SG_Polymorph', entity, context.Source) & Tagged('MYRMIDON_FIRE', entity) or Tagged('MYRMIDON_WATER', entity) or Tagged('MYRMIDON_AIR', entity) or Tagged('MYRMIDON_EARTH', entity)
-end
-
--- TODO: Check for throwing weapon property for most applications
 -- ==================================== Vanilla throw stuff ====================================
+-- TODO: Check for throwing weapon property for most applications
 
 function SlingShoesThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
