@@ -1,3 +1,13 @@
+new entry "GOON_WAVE_TRIDENT_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// The Water Caller
+data "DisplayName" "h1f8a1eb5gf249g4ff0gb449g0917279d6c1a;2"
+// On a hit, create a [1] water surface centred around the target. 
+data "Description" "h54d28573g3180g43bfgbcbcg0a85b8c97e05;2"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "ApplyStatus(WET,100,3);GROUND:CreateSurface(2,0,Water)"
+
 new entry "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
