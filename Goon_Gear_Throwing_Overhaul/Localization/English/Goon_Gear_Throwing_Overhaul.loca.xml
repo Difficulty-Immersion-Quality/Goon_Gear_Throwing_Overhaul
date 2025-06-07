@@ -5,9 +5,6 @@
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="he5c48cdcg3690g4ec2ga8cbgd453b402bc17" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, Nyrulna's additional [1] explodes outward in a [2] blast centred on the target.</content>
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="hb466f4f5g631cg4443g9a89g1485aad5a8a8" version="1">You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.</content>
 
-	<!-- Sussur weapons -->
-	<content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
-
 	<!-- Smites -->
 	<content contentuid="h33da1120g3c94g48d1g9a65g60d95da01749" version="1">Automatically cast &lt;LSTag Type="Spell" Tooltip="Target_Smite_Divine"&gt;Divine Smite&lt;/LSTag&gt; when you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack. &lt;br&gt;&lt;Br&gt;The highest available &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; will be used to maximise damage.</content>
 
@@ -99,7 +96,7 @@
 	<!-- "GOON_VERSATILE_TOGGLE_DISABLED" --> <content contentuid="h8d652febg3098g4f7fg8efag67b4399e0869" version="1">This weapon's &lt;LSTag Tooltip="Versatile"&gt;Versatile&lt;/LSTag&gt; property is disabled.</content>
 	<!-- "FOR_TrueSoul_SpearPassive", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER", "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER_MELEE" --> <content contentuid="h5a6da78fged78g49f3gbf86g13874a151320" version="1">&lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.</content>
 	<!-- "Goon_DefenderOfEasthaven_Passive" --> <content contentuid="hc6b5cac7g7c3bg433ega63fge3d40cec5ccf" version="1">Defender of Easthaven</content>
-	<!-- "Goon_DefenderOfEasthaven_Passive" --> <content contentuid="h6af7fa47g660dg4433ga045g91c420bf9357" version="1">Reduce incoming Bludgeoning, Piercing, and Slashing damage by 1d4.</content>
+	<!-- "Goon_DefenderOfEasthaven_Passive" --> <content contentuid="h6af7fa47g660dg4433ga045g91c420bf9357" version="1">Reduce incoming Bludgeoning, Piercing, and Slashing damage by half your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; (rounded down).</content>
 	<!-- "MAG_BG_OfAges_Flail_Passive" --> <content contentuid="hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb" version="1">Depending on what kind of damage this weapon does, it may also inflict the &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slowed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; conditions for [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.</content>
 
 	<!-- "MAG_Infernal_Weapon_Passive", "GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER" --> <content contentuid="hc4d3de99ge275g4176gb149g91a4e61e5488" version="1">On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.</content>
