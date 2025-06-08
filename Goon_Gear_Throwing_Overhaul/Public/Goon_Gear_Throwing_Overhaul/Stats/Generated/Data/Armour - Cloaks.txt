@@ -7,3 +7,47 @@ type "Armor"
 using "MAG_EndGameCaster_Cloak"
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive"
 data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+
+// ==================================== Fleshmelter Cloak ====================================
+// Changes: Tooltip now specifies that damage is increased on a crit. The attacker no longer has to deal damage, instead the effects are triggered for landing a hit. In addition to the Acid damage, there's now a 50% chance for the attacker to be afflicted with the Acid condition for 1 turn, or have their existing Acid condition's duration increased by 1 turn.
+
+// new entry "MAG_Acid_AcidMeleeCounter_Cloak"
+// type "Armor"
+// using "_Back_Magic"
+// data "RootTemplate" "a927e273-3385-4a11-8941-e952d0ddfd38"
+// data "Rarity" "Uncommon"
+// data "PassivesOnEquip" "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
+// data "Unique" "1"
+
+new entry "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
+type "PassiveData"
+using "MAG_Acid_AcidMeleeCounter_Cloak_Passive"
+// Caustic Reprisal
+// data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
+// Whenever a creature deals melee damage to the wearer, that creature takes [1].
+// data "Description" "h4ce1ee75g0b87g4e07gb859gd18b27cede6d;3"
+// Whenever a creature lands a melee attack on the wearer, that creature takes [1] ([2] on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;) and may be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn. If the attacking creature already has the Acid condition, the duration is instead increased by [1].
+data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
+// data "DescriptionParams" "DealDamage(1d4, Acid)"
+data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid)"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamaged"
+data "StatsFunctorContext" "OnAttacked"
+// data "Conditions" "IsMeleeAttack() and not IsRedirectedDamage()"
+data "Conditions" "IsMeleeAttack() and not IsRedirectedDamage() and HasDamageEffectFlag(DamageFlags.Hit)"
+// data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical)"
+data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical);ApplyStatus(SWAP,GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID,100,0)"
+
+If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
+
+new entry "GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID"
+type "StatusData"
+data "StatusType" "BOOST"
+// Caustic Reprisal
+data "DisplayName" "hd28a7380g40ddg4b02gb51fg41c0d8605589;2"
+// Whenever a creature lands a melee attack on the wearer, that creature takes [1] ([2] on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;) and may be afflicted with the &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; condition for [3] turn. If the attacking creature already has the Acid condition, the duration is instead increased by [1].
+data "Description" "he96e9841g3c7fg479fga83bg1a766b65e545;1"
+data "DescriptionParams" "DealDamage(1d4, Acid);DealDamage(2d4, Acid);1"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyRoll" "RollDieAgainstDC(DiceType.d4,3)"
+data "OnApplySuccess" "IF(HasStatus('ACID')):SetStatusDuration(ACID,1,Add);IF(not HasStatus('ACID')):ApplyStatus(ACID,100,1)"
