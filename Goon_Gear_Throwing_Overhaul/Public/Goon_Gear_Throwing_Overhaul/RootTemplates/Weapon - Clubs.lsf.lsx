@@ -4,8 +4,181 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Torch -->
+				<node id="GameObjects">
+					<attribute id="ConstellationConfigName" type="FixedString" value="EquippableTorch" />
+					<attribute id="Description" type="TranslatedString" handle="hbe198b83g9135g44ceg9902g48175bdcc7b6" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h5bc1f975g438fg4a31gbe06gdd6b7be800d5" version="1" />
+					<!-- Swapped  "EquipmentTypeID" from Club to Moonlantern, to fix my introduction of versatile clubs. -->
+					<!-- <attribute id="EquipmentTypeID" type="guid" value="4135c6a5-78b6-4c6d-85df-f77df52ce775" /> -->
+					<attribute id="EquipmentTypeID" type="guid" value="08d178fa-97a1-421c-987f-ec8093405b7c" />
+					<attribute id="ExamineRotation" type="fvec3" value="75 180 0" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Torch_A" />
+					<attribute id="IgnoreGenerics" type="bool" value="True" />
+					<attribute id="IsPublicDomain" type="bool" value="True" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="50c43f27-a12e-412c-88f0-56e15eba692a" />
+					<attribute id="Name" type="LSString" value="WPN_HUM_Torch_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="54f4b97c-ede8-49e2-a5aa-50c6f15c232f" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="f0fc267a-4c63-87f4-9370-ba7746c52ebc" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="WPN_Torch" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="aceab797-d31f-0a7f-04a4-dd439ba138e6" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209029" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.0310075 0.0561398 0.180559" />
+									<attribute id="Min" type="fvec3" value="-0.0308737 -0.00601974 -0.721243" />
+									<attribute id="Radius" type="float" value="0.233461" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.0310075 0.0561398 0.180559" />
+									<attribute id="Min" type="fvec3" value="-0.0308737 -0.00601974 -0.721243" />
+									<attribute id="Radius" type="float" value="0.233461" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.01550375 0.0561398 0.0902795" />
+									<attribute id="Min" type="fvec3" value="-0.01543685 -0.00601974 -0.3606215" />
+									<attribute id="Radius" type="float" value="0.1167305" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+							</children>
+						</node>
+						<node id="ConstellationConfigGlobalParameters">
+							<children>
+								<node id="ConstellationConfigParameter">
+									<attribute id="Name" type="LSString" value="GameplayLight" />
+									<children>
+										<node id="Value">
+											<children>
+												<node id="Scalar">
+													<children>
+														<node id="Scalar">
+															<children>
+																<node id="bool">
+																	<attribute id="bool" type="bool" value="True" />
+																</node>
+															</children>
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="ConstellationConfigParameter">
+									<attribute id="Name" type="LSString" value="GameplayLightSharpness" />
+									<children>
+										<node id="Value">
+											<children>
+												<node id="Scalar">
+													<children>
+														<node id="Scalar">
+															<children>
+																<node id="double">
+																	<attribute id="double" type="double" value="0.10000000149011612" />
+																</node>
+															</children>
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="ConstellationConfigParameter">
+									<attribute id="Name" type="LSString" value="GameplayLightRadius" />
+									<children>
+										<node id="Value">
+											<children>
+												<node id="Scalar">
+													<children>
+														<node id="Scalar">
+															<children>
+																<node id="double">
+																	<attribute id="double" type="double" value="7.5" />
+																</node>
+															</children>
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="ConstellationConfigParameter">
+									<attribute id="Name" type="LSString" value="PreviewEffect" />
+									<children>
+										<node id="Value">
+											<children>
+												<node id="Scalar">
+													<children>
+														<node id="Scalar">
+															<children>
+																<node id="String">
+																	<attribute id="String" type="LSString" value="VFX_LightSources_WPN_Torch_A_01_b6314fa1-8ac0-7a52-5865-5a4e9f98ddad" />
+																</node>
+															</children>
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- TORCH -->
+									<attribute id="Object" type="guid" value="a8139e1a-c593-4e0b-88cd-f703f888db83" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Twisting Branch -->
+				<node id="GameObjects">
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="Description" type="TranslatedString" handle="h6bf83cb5gc790g49f3g83d6gb7f731b74f56" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h12667120g9573g4534g99d4g0ef140af8501" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_Wood_Woad_Club" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="c71e2798-31ae-4f57-8073-c6195c2e9d02" />
+					<attribute id="Name" type="LSString" value="WPN_Wood_Woad_Club" />
+					<attribute id="ParentTemplateId" type="FixedString" value="54f4b97c-ede8-49e2-a5aa-50c6f15c232f" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="bcfdb46c-4727-70ba-e5a4-d9ba17363469" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="ShootThroughType" type="int8" value="6" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="2cd07fa2-c9e1-2a54-c324-7e45fb657e94" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115203108241814" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" type="guid" value="21a90b16-03ab-43c3-b145-020eb9ccbef9" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 				<!-- Club of Hill Giant Strength -->
-				<!-- <node id="GameObjects">
+				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="ha8c1723fg6bb5g4affg9e93g43f18824d8e6" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="hb8091b51gc424g4bafgb4e7g6d47bde34a0f" version="1" />
 					<attribute id="LevelName" type="FixedString" value="" />
@@ -39,15 +212,25 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
 									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
 								</node>
 								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
 									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_CLUBOFHILLGIANTSTRENGTH_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
 					</children>
-				</node> -->
+				</node>
 				<!-- Ironwood Club -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h5fbdefeag037cg4412gab38gc4919118df76" version="1" />
@@ -90,10 +273,296 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_IRONWOODCLUB_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
 									<attribute id="Object" type="FixedString" value="MAG_DRUID_SHILLELAGH_SUPPORT" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Shadow Lantern -->
+				<node id="GameObjects">
+					<attribute id="AnubisConfigName" type="FixedString" value="" />
+					<attribute id="ConstellationConfigName" type="FixedString" value="WieldedOrDroppedStatus" />
+					<attribute id="Description" type="TranslatedString" handle="hf0380089g3d7bg4765gb4bbg2d454d4a218a" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h8f7b5fddg117cg4d7agb454g21f097f62491" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="c9ebcfae-8c9a-4acc-8a30-da7830b32121" />
+					<attribute id="Name" type="LSString" value="UNI_GLO_Moonlantern_Gale" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9aca1109-a59d-47d3-8f35-f248b70518f9" />
+					<attribute id="Stats" type="FixedString" value="Quest_GLO_Moonlantern_Gale" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="145100352641827216" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SHADOWLANTERN_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_SHADOW_SUMMON_MAGIC_ITEM" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Moonlantern -->
+				<node id="GameObjects">
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="ConstellationConfigName" type="FixedString" value="WieldedOrDroppedStatus" />
+					<attribute id="Description" type="TranslatedString" handle="h1350527cgce9cg402fga73ag2ab80dabc639" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h5af216cfg91fdg483fg974cg44243b0df98c" version="1" />
+					<attribute id="DropSound" type="FixedString" value="f55dc72a-13b8-6e3d-7500-559a5d1f3031" />
+					<attribute id="EquipSound" type="FixedString" value="da469251-95cf-5387-6295-5b1d5ce5a41f" />
+					<attribute id="EquipmentTypeID" type="guid" value="08d178fa-97a1-421c-987f-ec8093405b7c" />
+					<attribute id="Icon" type="FixedString" value="Item_QUEST_SCL_Moonlantern" />
+					<attribute id="ImpactSound" type="FixedString" value="0c130d61-2b03-3abb-2d1d-3ea22eb35034" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LoopSound" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="9aca1109-a59d-47d3-8f35-f248b70518f9" />
+					<attribute id="Name" type="LSString" value="UNI_GLO_Moonlantern" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50c43f27-a12e-412c-88f0-56e15eba692a" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="e86b809a-cbab-5afb-3292-7cfce1abf217" />
+					<attribute id="PickupSound" type="FixedString" value="28ea7a9f-b66a-3410-7985-d7cd5cb896f0" />
+					<attribute id="Stats" type="FixedString" value="Quest_GLO_Moonlantern" />
+					<attribute id="StoryItem" type="bool" value="True" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="UnequipSound" type="FixedString" value="503428af-9061-40a7-b9c4-64c8ec78fff3" />
+					<attribute id="VisualTemplate" type="FixedString" value="e8d80a63-b8a5-b419-fe0b-ed820c121429" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.23457229 0.21758665 -0.2153461" />
+									<attribute id="Min" type="fvec3" value="-0.040997535 -0.039519355 -1.3190073" />
+									<attribute id="Radius" type="float" value="0.1167305" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.23457229 0.21758665 -0.2153461" />
+									<attribute id="Min" type="fvec3" value="-0.040997535 -0.039519355 -1.3190073" />
+									<attribute id="Radius" type="float" value="0.233461" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.230058" />
+									<attribute id="Max" type="fvec3" value="0.23457229 0.21758665 -0.2153461" />
+									<attribute id="Min" type="fvec3" value="-0.040997535 -0.039519355 -1.3190073" />
+									<attribute id="Radius" type="float" value="0.233461" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<node id="ConstellationConfigGlobalParameters">
+							<children>
+								<node id="ConstellationConfigParameter">
+									<attribute id="Name" type="LSString" value="Status" />
+									<children>
+										<node id="Value">
+											<children>
+												<node id="Scalar">
+													<children>
+														<node id="Scalar">
+															<children>
+																<node id="String">
+																	<attribute id="String" type="LSString" value="SCL_MOONSHIELD_AURA" />
+																</node>
+															</children>
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- SCL_SHADOWCURSE_LANTERN -->
+									<attribute id="Object" type="guid" value="d40f0c3a-d95d-49fe-ae62-ca90ff2c2202" />
+								</node>
+							</children>
+						</node>
+						<node id="Scripts" />
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_MOONLANTERN_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="SCL_MOONLANTERN_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Torch of Revocation -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h9a1b775cg94deg41d7ga4c8gd8f7406eafe3" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h51a9b128g3d53g4118g950bg213555de3cbf" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_UNI_LOW_TorchOfRevocation" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="88be0257-cd9a-4922-85c9-178ad8579af2" />
+					<attribute id="Name" type="LSString" value="UNI_LOW_TorchOfRevocation" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50c43f27-a12e-412c-88f0-56e15eba692a" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="f177b30c-9bc7-720d-0886-74a7d66ae0c7" />
+					<attribute id="Stats" type="FixedString" value="LOW_OskarsBeloved_TorchOfRevocation" />
+					<attribute id="StoryItem" type="bool" value="True" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="835d0174-b7fd-9b31-5f0d-f9619c948176" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209021" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- TORCH_REVOCATION_FX -->
+									<attribute id="Object" type="guid" value="6374d29f-eaed-4f95-8e1b-a9912190714c" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_TORCHOFREVOCATION_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_NECROTIC_NECROTIC_WEAPON_REVOCATION" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Torch of Revocation -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hbac87353g8f14g4e7bga9b6g87aca76ed438" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h7ffa3da3g139fg4bacgb964g131f98669fbb" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_UNI_LOW_TorchOfRevocation" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="e88dd9ea-1b8b-4edc-9fee-3c7ec286ba60" />
+					<attribute id="Name" type="LSString" value="UNI_LOW_TorchOfTrueRevocation" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50c43f27-a12e-412c-88f0-56e15eba692a" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="f177b30c-9bc7-720d-0886-74a7d66ae0c7" />
+					<attribute id="Stats" type="FixedString" value="LOW_OskarsBeloved_TorchOfTrueRevocation" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="835d0174-b7fd-9b31-5f0d-f9619c948176" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- TORCH_GREEN_FX -->
+									<attribute id="Object" type="guid" value="e749196a-3564-4420-9293-847bc2ee7cd2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_TORCHOFTRUEREVOCATION_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_RADIANT_RADIANCE_WEAPON" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Enforcer Club -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h13e61a08g2cb7g43fdg95a1gaf422bf808a3" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h2bf35a33gef60g4a9cg8c1ag645c30ab98ea" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="d3cd1f93-64bb-4d57-bafc-19ee1cefc564" />
+					<attribute id="Name" type="LSString" value="MAG_Enforcer_NonLethalFright_Club" />
+					<attribute id="ParentTemplateId" type="FixedString" value="b30dca22-22bc-496e-b3b6-dd5744b73869" />
+					<attribute id="Stats" type="FixedString" value="MAG_Enforcer_NonLethalFright_Club" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="2f0d9a55-8215-0a62-65d4-e210ef8fd807" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_ENFORCERCLUB_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>

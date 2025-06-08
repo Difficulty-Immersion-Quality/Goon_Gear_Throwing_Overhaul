@@ -11,8 +11,8 @@ using "WPN_Club"
 // data "ValueScale" "0.3"
 // data "Weight" "0.9"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash)"
-data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
-data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HinderingSmash_Offhand)"
 // data "Weapon Group" "SimpleMeleeWeapon"
 // data "Weapon Properties" "Light;Melee;Dippable"
 data "Weapon Properties" "Versatile;Light;Melee;Dippable"
@@ -48,7 +48,7 @@ using "WPN_Torch"
 // data "PersonalStatusImmunities" "SILENCED;SG_Condition;BLEEDING"
 // data "Boosts" ""
 // data "BoostsOnEquipMainHand" ""
-data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
 // data "Weapon Properties" "Melee;Dippable;Light;AddToHotbar;Torch"
 data "Weapon Properties" "Versatile;Light;Melee;Dippable;AddToHotbar;Torch"
 
@@ -77,7 +77,15 @@ data "Weapon Properties" "Versatile;Light;Melee;Dippable;AddToHotbar;Torch"
 // data "RootTemplate" "fabf8b48-9c73-498a-a4ad-f9bf07024f19"
 
 // ==================================== Twisting Branch ====================================
+// Bug Fix: Magic Club damage is now magical, syntax errors in the entry fixed.
+// Bug Fix: Only creatures tagged WOODWOAD benefit from Magic Club.
 // TODO: Check animations for Wood Woads using weapon actions create functional variants if needed.
+// TODO: The model isn't very fit for Versatile, probably remove it for these ones.
+
+// new entry "WPN_WoodWoad_Club"
+// type "Weapon"
+// using "WPN_Club"
+// data "RootTemplate" "c71e2798-31ae-4f57-8073-c6195c2e9d02"
 
 new entry "WPN_Club_WoodWoad_Conjure"
 type "Weapon"
@@ -88,6 +96,23 @@ using "WPN_Club_WoodWoad_Conjure"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HeartStopper_Offhand)"
 data "BoostsOnEquipOffHand" ""
 // data "PassivesOnEquip" "WoodWoad_MagicClub"
+
+new entry "WoodWoad_MagicClub"
+type "PassiveData"
+using "WoodWoad_MagicClub"
+// // Magic Club
+// data "DisplayName" "h0b2951b3g1300g4e5cg8041gc6c0adf121f7;1"
+// // In the wood woad's hand, this common branch becomes magical and deals an additional [1].  
+// data "Description" "hd16cfed1g0f3dg4841g8888g3c7e7a4a6013;6"
+// data "DescriptionParams" "DealDamage(3d4,MainMeleeWeaponDamageType)"
+// data "TooltipConditionalDamage" "DealDamage(3d4, MainMeleeWeaponDamageType,true)"
+data "TooltipConditionalDamage" "DealDamage(3d4, MainMeleeWeaponDamageType)"
+// data "Icon" "PassiveFeature_Generic_Magical"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsMeleeAttack() and Tagged('WOODWOAD_CLUB',GetActiveWeapon())"
+data "Conditions" "IsMeleeAttack() and Tagged('WOODWOAD_CLUB',GetActiveWeapon()) and Tagged('WOODWOAD',context.Source)"
+// data "StatsFunctors" "DealDamage(3d4, MainMeleeWeaponDamageType,true)"
+data "StatsFunctors" "DealDamage(3d4, MainMeleeWeaponDamageType,Magical)"
 
 // ==================================== Whipping Cane ====================================
 
@@ -129,6 +154,11 @@ data "Rarity" "Rare"
 // data "PassivesOnEquip" "UND_StrengthChair_Leg_Passive"
 // data "Unique" "1"
 
+new entry "GOON_CLUBOFHILLGIANTSTRENGTH_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Ironwood Club ====================================
 // Changes: Backbreaker removed in place of Heartstopper, which is a base weapon ability for all clubs now.
 // TODO: Something cool.
@@ -140,8 +170,28 @@ using "MAG_Druid_IronWood_Club"
 // data "RootTemplate" "67ce5d1a-e0cd-48ce-94a9-9a17615e13d9"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_PostureBreaker)"
-data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HeartStopper)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
 // data "Unique" "1"
+
+new entry "GOON_IRONWOODCLUB_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shadow Lantern ====================================
+
+// new entry "Quest_GLO_Moonlantern_Gale"
+// type "Weapon"
+// using "Quest_GLO_Moonlantern"
+// data "RootTemplate" "c9ebcfae-8c9a-4acc-8a30-da7830b32121"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Target_ORI_Gale_ShadowSummon)"
+
+new entry "GOON_SHADOWLANTERN_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Moonlantern ====================================
 
@@ -162,15 +212,10 @@ data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Ta
 // data "DefaultBoosts" "IF(not Tagged('PLAYABLE', context.Target)):WeaponProperty(Unstowable);"
 // data "Boosts" "UnlockSpell(Shout_GLO_Pixie_InspectMoonlantern);"
 
-// ==================================== Shadow Lantern ====================================
-
-// new entry "Quest_GLO_Moonlantern_Gale"
-// type "Weapon"
-// using "Quest_GLO_Moonlantern"
-// data "RootTemplate" "c9ebcfae-8c9a-4acc-8a30-da7830b32121"
-// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
-// data "Rarity" "Rare"
-// data "Boosts" "UnlockSpell(Target_ORI_Gale_ShadowSummon)"
+new entry "GOON_MOONLANTERN_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Torch of Revocation ====================================
 // Bug Fix: Additional 1d4 Necrotic damage works with throwing.
@@ -185,7 +230,34 @@ data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Ta
 // data "DefaultBoosts" "HiddenDuringCinematic();WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Unique" "1"
 
+new entry "GOON_TORCHOFREVOCATION_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // new entry "LOW_OskarsBeloved_TorchOfTrueRevocation"
 // type "Weapon"
 // using "LOW_OskarsBeloved_TorchOfRevocation"
 // data "RootTemplate" "e88dd9ea-1b8b-4edc-9fee-3c7ec286ba60"
+
+new entry "GOON_TORCHOFTRUEREVOCATION_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Enforcer Club ====================================
+// TODO: When knocking people out frighten AOE or something
+
+// new entry "MAG_Enforcer_NonLethalFright_Club"
+// type "Weapon"
+// using "WPN_Club_1"
+// data "RootTemplate" "d3cd1f93-64bb-4d57-bafc-19ee1cefc564"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash);UnlockSpell(Target_PostureBreaker)"
+// data "PassivesOnEquip" "MAG_Enforcer_NonLethalFright_Club_Passive"
+// data "Unique" "1"
+
+new entry "GOON_ENFORCERCLUB_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
