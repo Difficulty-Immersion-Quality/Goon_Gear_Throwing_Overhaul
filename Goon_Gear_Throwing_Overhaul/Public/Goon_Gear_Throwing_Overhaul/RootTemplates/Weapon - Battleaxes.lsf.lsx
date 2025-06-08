@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Ceremonial Battleaxe - Local template -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="h91ee0e32ge7a2g434ag9b03gc03bc4811ade" version="1" />
+					<attribute id="Flag" type="int32" value="1" />
+					<attribute id="GravityType" type="uint8" value="2" />
+					<attribute id="LevelName" type="FixedString" value="CRE_Main_A" />
+					<attribute id="MapKey" type="FixedString" value="0698b266-b7f8-4593-9063-f1189082c6e1" />
+					<attribute id="Name" type="LSString" value="S_CRE_Abbot4_Weapon" />
+					<attribute id="Stats" type="FixedString" value="WPN_Battleaxe_1" />
+					<attribute id="TemplateName" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115209550692452" />
+					<children>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="FixedString" value="CRE_Main_A" />
+											<children>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="0cdf52f2-9453-df63-13c3-cfad8fbdbd2a" />
+												</node>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="384cefc7-c793-0ef6-7f8a-7d47946d212e" />
+												</node>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="e8c11f8f-d877-f699-58b2-4c01e7e0abeb" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Transform">
+							<attribute id="Position" type="fvec3" value="102.90276 22.53118 44.87052" />
+							<attribute id="RotationQuat" type="fvec4" value="-0.017188372 0.9358167 -0.01861382 -0.3515728" />
+							<attribute id="Scale" type="float" value="1" />
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_CEREMONIALBATTLEAXE_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GROUNDED" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Witchbreaker -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hefaabf96g54bcg4f3fg8da5g6396dfdcc4c4" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h199d321eg5008g47d9g81eag40b19398886f" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="c77553e2-f192-4835-baa9-bdfb63521532" />
+					<attribute id="Name" type="LSString" value="MAG_Spellbreaker_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
+					<attribute id="Stats" type="FixedString" value="MAG_Spellbreaker_Battleaxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="395226f6-ee73-2876-b95e-3df652495e62" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_WITCHBREAKER_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Thermodynamo Axe -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h172d710dg2d86g454bga607g6dc0ae46380f" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb3a26b0fg1fb8g47b1gbaa5gddbd838e0bb0" version="3" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="b8f28da8-f8f5-4679-8c5f-ecc505811208" />
+					<attribute id="Name" type="LSString" value="MAG_Fire_HeatOnWeaponDamage_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7faff867-9cb3-432b-aa27-8de281b7428e" />
+					<attribute id="Stats" type="FixedString" value="MAG_Fire_HeatOnWeaponDamage_Battleaxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="1d180e5a-c7c8-20dc-5083-c22c86368513" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Vicious Battleaxe -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="hfa55dd2cgde7eg4fd5g8d5ag898feae3d126" version="1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="3ff89075-1ef3-487e-b456-a1b536fd681a" />
+					<attribute id="Name" type="LSString" value="MAG_Vicious_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7faff867-9cb3-432b-aa27-8de281b7428e" />
+					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Battleaxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="2e0ef68d-5388-d48c-f138-2c2438477038" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_VICIOUS_WEAPON_THROW_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Combination Axe -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="h3ab27a39gb637g461eg8967gc3f31c4516fc" version="1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="35465a58-d21d-46b4-a429-64d187b0781f" />
+					<attribute id="Name" type="LSString" value="MAG_Critical_CriticalCombo_BattleAxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
+					<attribute id="Stats" type="FixedString" value="MAG_Critical_CriticalCombo_BattleAxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="f8f458ff-a4e3-4192-cac0-fad582f57d11" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_COMBINATIONAXE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Rebound Battleaxe -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hfd17c299g860dg447ag942agd81d152ce02d" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hfcccb8cbg2bdeg4245gb623g62b6d4f5b651" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="d2d5141a-9804-49b6-96e2-5738d85feffa" />
+					<attribute id="Name" type="LSString" value="MAG_Bonded_Throwing_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
+					<attribute id="Stats" type="FixedString" value="MAG_Bonded_Throwing_Battleaxe" />
+					<!-- This blade's magical powers only function if it's &lt;LSTag Type="Status" Tooltip="WEAPON_BOND"&gt;Bound&lt;/LSTag&gt; to an Eldritch Knight, a Warlock's &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt;, or a Hexblade's &lt;LSTag Type="Status" Tooltip="HEXBLADE_BIND"&gt;Hexed Weapon&lt;/LSTag&gt;. -->
+					<!-- <attribute id="TechnicalDescription" type="TranslatedString" handle="hd1b7e512g7c60g4cc8g9477ge1341b969de8" version="3" /> -->
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="h43a292f3gf9ffg4a30g99aagbc54c083419b" version="1" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="6f3779fa-555a-fa61-9cdc-794f890ef30d" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="145100352641826818" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_REBOUNDBATTLEAXE_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_BONDED_THROWING_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_ATTACK_ROLL_BONUS_ELDRITCHKNIGHT_BONDED_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Shadow Battleaxe -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hcfb81429g71eeg49a0gb331ge2fb114ae3a4" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="ha5623dedg690ag44cdgb2ceg1d8fd53ecd5c" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="6364a270-0ca4-45e2-aab2-7673bb5c156e" />
+					<attribute id="Name" type="LSString" value="MAG_Shadow_Battleaxe" />
+					<attribute id="ParentTemplateId" type="FixedString" value="64000dd2-aae4-41c4-a16f-dca738d9743a" />
+					<attribute id="Stats" type="FixedString" value="MAG_Shadow_Battleaxe" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SHADOWBATTLEAXE_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_NECROTIC_NECROTIC_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_WEAPON_BOND" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

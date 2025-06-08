@@ -94,7 +94,7 @@ end
 -- Thermodynamo Axe & Hellfire Greataxe
 function ThermodynamoThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Vison of the Absolute spear
@@ -104,15 +104,15 @@ function VisionAbsoluteThrow(entity)
 end
 
 -- Combination Axe (Cut content)
-function CriticalComboThrow(entity)
+function CriticalVirtuosoThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_CRITICALCOMBO_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_COMBINATIONAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow
 function ViciousThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_VICIOUS_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+	return HasDamageEffectFlag(DamageFlags.Hit) & IsCritical() & HasAnyStatus({'GOON_VICIOUS_WEAPON_THROW_TECHNICAL','GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Flail of Ages

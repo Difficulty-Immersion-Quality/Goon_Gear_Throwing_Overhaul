@@ -17,7 +17,6 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Zone_Cleave_Offhand);UnlockSpell(G
 // data "Proficiency Group" "Battleaxes;MartialWeapons"
 
 // ==================================== Magical variants ====================================
-// Ceremonial Battleaxe uses "WPN_Battleaxe_1"
 
 // new entry "WPN_Battleaxe_1"
 // type "Weapon"
@@ -47,8 +46,21 @@ using "WPN_Battleaxe_Pact"
 // data "Boosts" "Proficiency(Battleaxes)"
 data "Boosts" ""
 
+// ==================================== Ceremonial Battleaxe ====================================
+// Changes: Ceremonial Battleaxe uses the entry for generic +1 Battleaxe in vanilla, it now has its own.
+// TODO: Something cooler than a +1 weapon?
+
+new entry "Goon_Ceremonial_Battleaxe"
+type "Weapon"
+using "WPN_Battleaxe_1"
+
+new entry "GOON_CEREMONIALBATTLEAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Witchbreaker ====================================
-// Hush You! now does additional strength damage instead of proficiency bonus.
+// Changes: Hush You! now does additional strength damage instead of proficiency bonus.
 // TODO: Make the passive only work for attacks/throws with the weapon, but in exchange give it something like Mage slayer's reaction attack.
 
 new entry "MAG_Spellbreaker_Battleaxe"
@@ -58,6 +70,19 @@ using "MAG_Spellbreaker_Battleaxe"
 // data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Zone_Cleave_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Target_CripplingStrike_Offhand)"
 data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Zone_Cleave_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Target_CripplingStrike_Offhand);UnlockSpell(Goon_Target_MAG_WeaponAction_SilencingBlade_Offhand)"
 data "PassivesOnEquip" "MAG_Spellbreaker_Battleaxe_Passive"
+
+new entry "GOON_WITCHBREAKER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_Spellbreaker_Battleaxe_Passive"
+// type "PassiveData"
+// // Witchbreaker
+// data "DisplayName" "h5e85903bgd3e9g4f3egb807g9a2ea59456f0;2"
+// // You gain <LSTag Tooltip="Advantage">Advantage</LSTag> on <LSTag Tooltip="AttackRoll">Attack Rolls</LSTag> against <LSTag Tooltip="Concentration">concentrating</LSTag> creatures. 
+// data "Description" "ha0521bfcg71aeg437egacc1ga5d47f8a9ead;2"
+// data "Boosts" "IF(IsConcentrating(context.Target)):Advantage(AttackRoll)"
 
 new entry "Target_MAG_WeaponAction_SilencingBlade"
 type "SpellData"
@@ -86,6 +111,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Thermodynamo Axe ====================================
+// Changes: Thermodynamo works when thrown. Hidden once per-attack cooldown removed.
 // TODO: Is removing the cooldown gonna be cooked af or what? Don't want it applying for all the damage riders. (Applies to Hellfire Greataxe too)
 
 // new entry "MAG_Fire_HeatOnWeaponDamage_Battleaxe"
@@ -96,6 +122,11 @@ data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquipped
 // data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
 // data "Unique" "1"
+
+new entry "GOON_THERMODYNAMOAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_Fire_HeatOnWeaponDamage_Passive"
 type "PassiveData"
@@ -116,6 +147,11 @@ data "Properties" ""
 // data "PassivesOnEquip" "MAG_Vicious_Weapon_Passive"
 // data "Unique" "1"
 
+new entry "GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Combination Axe (Inaccessible/Cut content) ====================================
 // Bug Fix: Now applies to throwing criticals.
 // TODO: Split the spell into main/off-hand.
@@ -131,12 +167,22 @@ data "Properties" ""
 // data "Unique" "1"
 
 // Combination Axe throwing stuff
-new entry "GOON_CRITICALCOMBO_WEAPON_THROW_TECHNICAL"
+new entry "GOON_COMBINATIONAXE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "GOON_CRITICALCOMBO_TECHNICAL_APPLIER"
+// new entry "MAG_Critical_DoneCritical_Passive"
+// type "PassiveData"
+// // Critical Virtuoso
+// data "DisplayName" "hf8dadcb7g63c2g4375g9ffegc6d708b90486;1"
+// // When you score a <LSTag Tooltip="CriticalHit">Critical Hit</LSTag> you can spend a <LSTag Type="ActionResource" Tooltip="BonusActionPoint">bonus action</LSTag> to make an additional attack.
+// data "Description" "hd9e40e95g719eg460cgb3aagd1db8725b8ab;1"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "IF(IsCritical()):ApplyStatus(SELF, MAG_CRITICAL_DONE_CRITICAL, 100, 1)"
+
+new entry "GOON_CRITICALVIRTUOSO_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Critical Virtuoso
@@ -148,7 +194,8 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 data "OnApplyFunctors" "IF(IsCritical()):ApplyStatus(SWAP, MAG_CRITICAL_DONE_CRITICAL, 100, 1)"
 
 // ==================================== Rebound Battleaxe (Inaccessible/Cut content) ====================================
-// TODO: This weapon is a bit messy, and applying/removing statuses from weapons isn't something I've 100% got a great system for yet.
+// Bug Fix: When the weapon is not bound it loses the effects that would otherwise stay forever.
+// Bug Fix: Now also works for Hexblade's Hexed Weapon.
 
 // new entry "MAG_Bonded_Throwing_Battleaxe"
 // type "Weapon"
@@ -159,6 +206,43 @@ data "OnApplyFunctors" "IF(IsCritical()):ApplyStatus(SWAP, MAG_CRITICAL_DONE_CRI
 // data "PassivesOnEquip" "MAG_BoundToBeBonded_Passive;MAG_Bound_Throwing_Passive"
 // data "Unique" "1"
 
+new entry "GOON_REBOUNDBATTLEAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_BONDED_THROWING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_BONDED_THROWING"
+// // Vicious Throws
+// data "DisplayName" "ha9e74333gf347g41c6g946dgef11ee1eb9fe;1"
+// // This weapon deals an additional [1] when thrown.
+// data "Description" "h1d909eadgc7d2g47d4gafadge2ac48178e40;1"
+data "DescriptionParams" "DealDamage(1d4,Thunder)"
+// data "Icon" "GenericIcon_Intent_Utility"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// data "StackId" "MAG_BONDED_THROWING"
+// data "Boosts" "WeaponProperty(Thrown)"
+
+new entry "MAG_Bound_Throwing_Technical_Passive"
+type "PassiveData"
+// using "MAG_Bound_Throwing_Passive"
+using "MAG_Bound_Throwing_Technical_Passive"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "Conditions" "StatusId('WEAPON_BOND') or StatusId('PACT_BLADE')"
+data "Conditions" "StatusId('WEAPON_BOND') or StatusId('PACT_BLADE') or StatusId('HEXBLADE_BIND')"
+// data "StatsFunctors" "ApplyStatus(MAG_BONDED_THROWING, 100, -1);ApplyStatus(MAG_THUNDER_THROW, 100, -1)"
+data "StatsFunctors" "ApplyStatus(MAG_BONDED_THROWING, 100, -1);ApplyStatus(MAG_THUNDER_THROW, 100, -1);ApplyStatus(GOON_REBOUNDBATTLEAXE_CLEANER,100,-1)"
+
+new entry "GOON_REBOUNDBATTLEAXE_CLEANER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "RemoveConditions" "not HasStatus('WEAPON_BOND') and not HasStatus('PACT_BLADE') and not HasStatus('HEXBLADE_BIND')"
+data "RemoveEvents" "OnStatusRemoved"
+data "OnRemoveFunctors" "RemoveStatus(MAG_BONDED_THROWING);RemoveStatus(MAG_THUNDER_THROW)"
+
 // ==================================== Shadow Battleaxe (Inaccessible/Cut content) ====================================
 // Bug Fix: Additional 1d4 Necrotic damage works when throwing the weapon.
 
@@ -168,3 +252,8 @@ data "OnApplyFunctors" "IF(IsCritical()):ApplyStatus(SWAP, MAG_CRITICAL_DONE_CRI
 // data "RootTemplate" "6364a270-0ca4-45e2-aab2-7673bb5c156e"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "Unique" "1"
+
+new entry "GOON_SHADOWBATTLEAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

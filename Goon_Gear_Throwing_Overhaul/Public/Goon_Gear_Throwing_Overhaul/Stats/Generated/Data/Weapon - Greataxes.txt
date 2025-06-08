@@ -86,6 +86,11 @@ data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_
 // data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
 data "PassivesOnEquip" "Goon_HellfireGreataxe_Heat;Goon_HellfireGreataxe_Ignore_Fire_Resistance"
 
+new entry "GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Goon_HellfireGreataxe_Ignore_Fire_Resistance"
 type "PassiveData"
 // Imbued with Hellfire
