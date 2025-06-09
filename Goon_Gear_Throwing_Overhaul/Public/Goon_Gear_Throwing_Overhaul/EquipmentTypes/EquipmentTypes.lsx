@@ -90,14 +90,14 @@
                 </node>
                 <node id="EquipmentType">
                     <!-- <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/> -->
-                    <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
                     <attribute id="BoneMainUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
                     <!-- <attribute id="BoneOffHandSheathed" type="FixedString" value=""/> -->
-                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
+                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
                     <!-- <attribute id="BoneOffHandUnsheathed" type="FixedString" value=""/> -->
                     <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
                     <!-- <attribute id="BoneVersatileSheathed" type="FixedString" value=""/> -->
-                    <attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
                     <!-- <attribute id="BoneVersatileUnsheathed" type="FixedString" value=""/> -->
                     <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
                     <attribute id="Name" type="FixedString" value="Glaive"/>
@@ -823,6 +823,29 @@
                     <attribute id="UUID" type="guid" value="085e9e10-bf57-45de-86c2-63b830d7599b"/>
                     <attribute id="WeaponType_OneHanded" type="FixedString" value="Shield1H"/>
                     <attribute id="WeaponType_TwoHanded" type="FixedString" value="Shield1H"/>
+                </node>
+                <!-- Club variant because Twisting Branch is too wonky with any of the 2h animation sets -->
+                <node id="EquipmentType">
+                    <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <attribute id="BoneMainUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
+                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
+                    <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
+					<!-- <attribute id="BoneVersatileSheathed" type="FixedString" value=""/> -->
+					<attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <!-- <attribute id="BoneVersatileUnsheathed" type="FixedString" value=""/> -->
+                    <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
+                    <attribute id="Name" type="FixedString" value="TwistingBranch"/>
+                    <attribute id="SoundAttackType" type="FixedString" value="Bludgeoning"/>
+                    <attribute id="SoundEquipmentType" type="FixedString" value="Blunt"/>
+                    <attribute id="SourceBoneSheathed" type="FixedString" value="Dummy_Sheath"/>
+                    <!-- <attribute id="SourceBoneVersatileSheathed" type="FixedString" value="Dummy_Sheath"/> -->
+                    <attribute id="SourceBoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Versatile"/>
+                    <!-- <attribute id="SourceBoneVersatileUnsheathed" type="FixedString" value=""/> -->
+                    <attribute id="SourceBoneVersatileUnsheathed" type="FixedString" value="Dummy_Attachment_Versatile"/>
+                    <attribute id="UUID" type="guid" value="a172c4ef-76b4-4a84-b2b2-608c6055b361"/>
+                    <attribute id="WeaponType_OneHanded" type="FixedString" value="Slashing1H"/>
+                    <!-- <attribute id="WeaponType_TwoHanded" type="FixedString" value="Slashing1H"/> -->
+                    <attribute id="WeaponType_TwoHanded" type="FixedString" value="Slashing1H"/>
                 </node>
             </children>
         </node>

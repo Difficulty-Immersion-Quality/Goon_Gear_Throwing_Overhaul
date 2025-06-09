@@ -155,6 +155,9 @@
 					<attribute id="CanShootThrough" type="bool" value="True" />
 					<attribute id="Description" type="TranslatedString" handle="h6bf83cb5gc790g49f3g83d6gb7f731b74f56" version="1" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h12667120g9573g4534g99d4g0ef140af8501" version="1" />
+					<!-- Swap from Club to a custom entry that just uses 1h animations while wielding versatile -->
+					<!-- <attribute id="EquipmentTypeID" type="guid" value="4135c6a5-78b6-4c6d-85df-f77df52ce775" /> -->
+					<attribute id="EquipmentTypeID" type="guid" value="a172c4ef-76b4-4a84-b2b2-608c6055b361" />
 					<attribute id="Icon" type="FixedString" value="Item_WPN_Wood_Woad_Club" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="MapKey" type="FixedString" value="c71e2798-31ae-4f57-8073-c6195c2e9d02" />
@@ -171,6 +174,7 @@
 						<node id="Tags">
 							<children>
 								<node id="Tag">
+									<!-- WOODWOAD_CLUB -->
 									<attribute id="Object" type="guid" value="21a90b16-03ab-43c3-b145-020eb9ccbef9" />
 								</node>
 							</children>
