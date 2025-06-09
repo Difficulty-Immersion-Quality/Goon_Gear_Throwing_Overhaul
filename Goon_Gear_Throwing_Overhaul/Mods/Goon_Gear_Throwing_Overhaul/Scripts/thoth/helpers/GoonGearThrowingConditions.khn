@@ -121,6 +121,12 @@ function FlailOfAgesThrow(entity)
 	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
 end
 
+-- Assassin's Touch
+function AssassinsTouchThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return HasDamageEffectFlag(DamageFlags.Hit) & HasAnyStatus({'GOON_ASSASSINSTOUCH_WEAPON_TECHNICAL'}, {}, {}, entity) & HasAnyStatus({'SG_Unconscious','SG_Stunned','SG_Incapacitated'}, {}, {}, context.Target)
+end
+
 -- Handmaiden's Mace
 function HandmaidenThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject

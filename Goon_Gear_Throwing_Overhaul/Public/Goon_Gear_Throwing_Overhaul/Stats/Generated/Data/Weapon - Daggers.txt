@@ -37,6 +37,8 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PiercingThrust_Offhand)"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Finesse;Light;Thrown;Melee;Dippable;Magical"
 
+// TODO: Gather up all the mundane variants, especially Poo Scraper.
+
 // ==================================== Artificial Leech & Artificial Leech +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
@@ -71,6 +73,11 @@ data "BoostsOnEquipMainHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(
 data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_PiercingThrust_Offhand);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Goon_Target_MAG_WeaponAction_Leech_Offhand)"
 // data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 // data "Unique" "1"
+
+new entry "GOON_ARTIFICIALLEECHMAGICAL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "Goon_Target_MAG_WeaponAction_Leech_Offhand"
 type "SpellData"
@@ -121,6 +128,11 @@ data "BoostsOnEquipOffHand" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(G
 // data "PassivesOnEquip" "TWN_Hospital_Nurse_WeaponBoosts"
 // data "Unique" "1"
 
+new entry "GOON_SYRINGEMAGICAL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Goon_Target_MAG_WeaponAction_Syringe_Offhand"
 type "SpellData"
 data "SpellType" "Target"
@@ -135,3 +147,41 @@ data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Assassin's Touch ====================================
+// Changes: Additional Necrotic damage increased from 1d4 to 1d6. Conditions expanded to include every incapacitation, stun, or lack of consciousness.
+
+new entry "DEN_CapturedGoblin_MurderDagger"
+type "Weapon"
+// using "WPN_Dagger_1"
+using "DEN_CapturedGoblin_MurderDagger"
+// data "RootTemplate" "520d3f36-af72-4385-89af-f585c8edc9cf"
+// data "PassivesOnEquip" "DEN_CapturedGoblin_MurderDagger_Passive"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasStatus('SLEEPING', context.Target) or HasStatus('SLEEP', context.Target) or HasStatus('SG_Sleeping_Magical', context.Target) or HasStatus('KNOCKED_OUT', context.Target)):WeaponDamage(1d4, Necrotic)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasStatus('SG_Unconscious', context.Target) or HasStatus('SG_Incapacitated', context.Target) or HasStatus('SG_Stunned', context.Target)):WeaponDamage(1d6, Necrotic)"
+// data "Unique" "1"
+
+new entry "GOON_ASSASSINSTOUCH_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "DEN_CapturedGoblin_MurderDagger_Passive"
+type "PassiveData"
+using "DEN_CapturedGoblin_MurderDagger_Passive"
+// // Deathly Slumber
+// data "DisplayName" "h39f27485g1182g4e3fgb47cg5049bcf2dee2;2"
+// // Deals an additional [1] to creatures that are &lt;LSTag Type="Status" Tooltip="KNOCKED_OUT_TEMPORARILY"&gt;Knocked Out&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="SLEEPING"&gt;Sleeping&lt;/LSTag&gt;.
+// data "Description" "h7343bdcbg7159g4612gbb87g4e3ee66eafd8;5"
+// Deals an additional [1] to creatures that are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="UNCONSCIOUS"&gt;Unconscious&lt;/LSTag&gt;.
+data "Description" "h6588a557g31bcg45c4g95e0g7d32ebd9968a;1"
+// data "DescriptionParams" "DealDamage(1d4, Necrotic)"
+data "DescriptionParams" "DealDamage(1d6, Necrotic)"
+// data "TooltipConditionalDamage" "DealDamage(1d4, Necrotic)"
+data "TooltipConditionalDamage" "DealDamage(1d6, Necrotic)"
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and (HasStatus('SLEEPING') or HasStatus('SG_Sleeping_Magical') or HasStatus('SLEEP') or HasStatus('KNOCKED_OUT'))"
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d4, Necrotic,Magical)"
+data "StatsFunctors" ""
