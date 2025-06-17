@@ -1,0 +1,16 @@
+new treasuretable "ST_SimpleMeleeWeapons"
+CanMerge 1
+new subtable "1,1"
+object category "I_WPN_Dart",1,0,0,0,0,0,0,0
+
+new treasuretable "ST_SimpleMeleeWeapons_1"
+CanMerge 1
+new subtable "1,1"
+object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
+
+new treasuretable "ST_Finesse_MeleeWeapons_Magic"
+CanMerge 1
+new subtable "1,1"
+StartLevel "4"
+object category "I_WPN_Dart_1",1,0,0,0,0,0,0,0
+object category "I_WPN_Dart_2",1,0,0,0,0,0,0,0

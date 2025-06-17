@@ -847,6 +847,28 @@
                     <!-- <attribute id="WeaponType_TwoHanded" type="FixedString" value="Slashing1H"/> -->
                     <attribute id="WeaponType_TwoHanded" type="FixedString" value="Slashing1H"/>
                 </node>
+                <!-- Make Darts Great Again -->
+                <node id="EquipmentType">
+                    <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Hip_L"/>
+                    <attribute id="BoneMainUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
+                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Hip_R"/>
+                    <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
+					<!-- <attribute id="BoneVersatileSheathed" type="FixedString" value=""/> -->
+					<attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <!-- <attribute id="BoneVersatileUnsheathed" type="FixedString" value=""/> -->
+                    <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
+                    <attribute id="Name" type="FixedString" value="Dart"/>
+                    <attribute id="SoundAttackType" type="FixedString" value="Piercing"/>
+                    <attribute id="SoundEquipmentType" type="FixedString" value="Spear"/>
+                    <attribute id="SourceBoneSheathed" type="FixedString" value="Dummy_Sheath"/>
+                    <!-- <attribute id="SourceBoneVersatileSheathed" type="FixedString" value="Dummy_Sheath"/> -->
+                    <attribute id="SourceBoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Versatile"/>
+                    <!-- <attribute id="SourceBoneVersatileUnsheathed" type="FixedString" value=""/> -->
+                    <attribute id="SourceBoneVersatileUnsheathed" type="FixedString" value="Dummy_Attachment_Versatile"/>
+                    <attribute id="UUID" type="guid" value="bc9467d0-1b42-4fe5-a6ee-8b6cd5f1ec70"/>
+                    <attribute id="WeaponType_OneHanded" type="FixedString" value="Javelin1H"/>
+                    <attribute id="WeaponType_TwoHanded" type="FixedString" value="Spear2H"/>
+                </node>
             </children>
         </node>
     </region>
