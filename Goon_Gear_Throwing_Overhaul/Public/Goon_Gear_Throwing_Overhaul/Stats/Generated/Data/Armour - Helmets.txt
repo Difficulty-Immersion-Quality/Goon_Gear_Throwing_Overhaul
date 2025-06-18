@@ -1,0 +1,37 @@
+// ==================================== Haste Helm ====================================
+// Bug Fix: The wearer now gains Momentum when they enter combat, and not just at the start of the next round if they joined combat after it initially began.
+
+// new entry "MAG_Mobility_MomentumOnCombatStart_Helmet"
+// type "Armor"
+// using "_Head_Magic"
+// data "RootTemplate" "94cc605d-e407-408d-acb6-9e2e31dfb283"
+// data "ItemGroup" ""
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Mobility_MomentumOnCombatStart_Passive"
+// data "StatusOnEquip" "MAG_MOBILITY_ONCOMBATSTART_APPLIER_TECHNICAL"
+// data "Unique" "1"
+
+new entry "MAG_MOBILITY_ONCOMBATSTART_APPLIER_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_MOBILITY_ONCOMBATSTART_APPLIER_TECHNICAL"
+// %%% EMPTY
+// data "DisplayName" "h05d92105gb513g4111g9b38g4b5c1a178e0c;3"
+// data "StackId" "MAG_MOBILITY_ONCOMBATSTART_APPLIER_TECHNICAL"
+// data "TickType" "StartRound"
+data "TickType" ""
+// data "TickFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY_ONCOMBATSTART_DOONCE_TECHNICAL')):ApplyStatus(MAG_MOMENTUM, 100, 3); IF(not Dead() and Combat() and  not HasStatus('MAG_MOBILITY_ONCOMBATSTART_DOONCE_TECHNICAL')):ApplyStatus(MAG_MOBILITY_ONCOMBATSTART_DOONCE_TECHNICAL,100,-1)"
+data "TickFunctors" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "MAG_Mobility_MomentumOnCombatStart_Passive"
+type "PassiveData"
+using "MAG_Mobility_MomentumOnCombatStart_Passive"
+// // Smooth Start
+// data "DisplayName" "h2c94e99cge94fg41d4ga7ffgc1df8432cbab;2"
+// // At the start of combat, the wearer gains <LSTag Type="Status" Tooltip="MAG_MOMENTUM">Momentum</LSTag> for 3 turns.
+// data "Description" "hef86dc02gcd49g449cg8ff4g8f931d4babe9;3"
+data "Properties" "IsHidden;OncePerCombat"
+data "StatsFunctorContext" "OnTurn;OnRound;OnCombatStarted"
+data "StatsFunctors" "IF(not Dead() and Combat() and not HasStatus('MAG_MOBILITY_ONCOMBATSTART_DOONCE_TECHNICAL')):ApplyStatus(MAG_MOMENTUM, 100, 3)"
