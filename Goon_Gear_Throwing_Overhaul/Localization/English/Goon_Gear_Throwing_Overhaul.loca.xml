@@ -23,6 +23,12 @@
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
+	<!-- Barbarian - Reckless Attack -->
+	<!-- "RECKLESS_ATTACK" --> <content contentuid="haf358f05g511eg45d6gbe12ga887810e74b2" version="1">Attacking Recklessly</content>
+	<!-- "RecklessAttack", "Interrupt_RecklessAttack" --> <content contentuid="hfc92c4e0g549fg4e2cgbe0ega95a16d7e7d7" version="1">Gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Melee and Throwing &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; until the end of your turn, but enemies also have Advantage against you.</content>
+	<!-- "5eRecklessAttack_Toggle" --> <content contentuid="h165683bdgb77cg4e2bgb66dgfaf56a86f9e9" version="1">When you make your first &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt; on your turn, you can decide to attack recklessly. Doing so gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Melee and Throwing Attack Rolls during this turn, but Attack Rolls against you have Advantage until your next turn.</content>
+	<!-- "5E_RECKLESS_ATTACKED", "5E_RECKLESS_ATTACK_VISUALS" --> <content contentuid="hff0cda90gb8f0g426eg805bgc23a08bd440b" version="1">Affected entity has &lt;LSTag Tooltip="Advantage"&gt;advantage&lt;/LSTag&gt; on Melee and Throwing &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; on their turn, and any Attack Roll against them has Advantage.</content>
+
 	<!-- WEAPON ACTIONS -->
 
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
