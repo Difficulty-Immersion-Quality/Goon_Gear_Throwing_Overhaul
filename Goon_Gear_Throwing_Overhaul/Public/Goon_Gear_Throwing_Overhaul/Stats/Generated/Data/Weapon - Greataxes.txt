@@ -69,12 +69,25 @@ data "Description" "h1a63b3cdge895g484agb702g3b5c616e13dd;1"
 
 // ==================================== Hellfire Greataxe ====================================
 // Bug Fix: The weapon's sources of Fire damage now ignore resistance and/or immunity as was intended by Larian.
+// Bug Fix: Hellflame Cleave is no longer considered a spell with a somatic component.
 // Changes: Rarity swapped from Very Rare to Legendary. The bonus 1d6 Fire damage is increased to 2d6, is now magical, and ignores immunity to Fire damage in addition to resistance; as is befitting of hellfire.
 // Changes: 2d6 Fire damage works with throwing.
 // Changes: The passive feature "Thermodynamo" has been renamed to "Heat of the Hells". It's no longer restricted to applying a single turn of Heat in an attack, and will give multiple turns of Heat when cleaving etc.
 // TODO: Figure out the best means of correlating Hellfire status immunity to Fire damage immunity.
 // TODO: and not StatusImmunity('BURNING_HELLFIRE', context.Target) --- Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1], and also ignores &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; unless the target is otherwise immune to &lt;LSTag Type="Status" Tooltip="BURNING_HELLFIRE"&gt;Roiling Hellfire&lt;/LSTag&gt;.
 // Note: Due to the way the resistance ignore shit works this one is staying inside the Throw_Throw spell for its bonus damage.
+
+new entry "MAG_WATCHER_Human_Greataxe"
+type "Weapon"
+// using "WPN_Greataxe_2"
+using "MAG_WATCHER_Human_Greataxe"
+// data "RootTemplate" "dd0e9fa2-e012-454d-9f2d-53c0a0776015"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+data "Rarity" "Legendary"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing);UnlockSpell(Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave)"
+data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
+data "Unique" "1"
 
 new entry "MAG_WATCHER_Human_Greataxe"
 type "Weapon"
@@ -120,6 +133,8 @@ data "Cooldown" "OncePerCombat"
 data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(2d6, Fire,Magical,,0,,false,false,false,true);IF(not HasStatus('BURNING_HELLFIRE')):ApplyStatus(BURNING_HELLFIRE,100,1);"
 // data "SpellFail" "DealDamage((MainMeleeWeapon)/2, MainMeleeWeaponDamageType);DealDamage((2d6)/2, Fire,Magical)"
 data "SpellFail" "DealDamage((MainMeleeWeapon)/2, MainMeleeWeaponDamageType);DealDamage((2d6)/2, Fire,Magical,,0,,false,false,false,true)"
+// data "SpellFlags" "HasSomaticComponent;HasVerbalComponent;IsSpell;IsHarmful;CanAreaDamageEvade"
+data "SpellFlags" "HasSomaticComponent;IsHarmful;CanAreaDamageEvade"
 
 new entry "MAG_FIRE_DIPPED_HELLFIRE"
 type "StatusData"
