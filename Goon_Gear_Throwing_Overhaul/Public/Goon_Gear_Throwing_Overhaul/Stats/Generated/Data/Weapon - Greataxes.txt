@@ -67,6 +67,32 @@ using "UND_DuergarRaft_PestKillerAxe_Passive"
 // Deals an additional [1] to Plants, Spiders or small creatures.
 data "Description" "h1a63b3cdge895g484agb702g3b5c616e13dd;1"
 
+// ==================================== Very Heavy Greataxe ====================================
+// Bug Fix: Gargantuan Cleave's tooltip no longer states that is does full weapon damage when it does half weapon damage.
+// Changes: Gargantuan Cleave moved from a guaranteed unlock to Main Hand, for the eventual case of dual wielding 2 handed weapons.
+
+new entry "UNI_SuperheavyWeapon"
+type "Weapon"
+// using "WPN_Greataxe_1"
+using "UNI_SuperheavyWeapon"
+// data "RootTemplate" "b3ed22d9-dd32-46c3-928a-e7253a843dfc"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "Weight" "9"
+// data "Boosts" "UnlockSpell(Zone_UNI_SuperheavyWeapon_Spell)"
+data "Boosts" ""
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Zone_UNI_SuperheavyWeapon_Spell);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing)"
+// data "Unique" "1"
+
+new entry "Zone_UNI_SuperheavyWeapon_Spell"
+type "SpellData"
+data "SpellType" "Zone"
+// using "Zone_Cleave"
+using "Zone_UNI_SuperheavyWeapon_Spell"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+1d6, MainMeleeWeaponDamageType)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainWeaponDamageType);DealDamage(1d6, MainMeleeWeaponDamageType)"
+
 // ==================================== Hellfire Greataxe ====================================
 // Bug Fix: The weapon's sources of Fire damage now ignore resistance and/or immunity as was intended by Larian.
 // Bug Fix: Hellflame Cleave is no longer considered a spell with a somatic component.
