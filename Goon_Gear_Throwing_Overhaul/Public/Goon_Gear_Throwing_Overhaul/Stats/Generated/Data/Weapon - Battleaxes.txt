@@ -60,6 +60,7 @@ data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Witchbreaker ====================================
+// Bug Fix: Witchbreaker description now states that it provides Advantage on all Attack Rolls against concentrating targets.
 // Changes: Hush You! now does additional strength damage instead of proficiency bonus.
 // TODO: Make the passive only work for attacks/throws with the weapon, but in exchange give it something like Mage slayer's reaction attack.
 
@@ -76,12 +77,15 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// new entry "MAG_Spellbreaker_Battleaxe_Passive"
-// type "PassiveData"
-// // Witchbreaker
+new entry "MAG_Spellbreaker_Battleaxe_Passive"
+type "PassiveData"
+using "MAG_Spellbreaker_Battleaxe_Passive"
+// Witchbreaker
 // data "DisplayName" "h5e85903bgd3e9g4f3egb807g9a2ea59456f0;2"
-// // You gain <LSTag Tooltip="Advantage">Advantage</LSTag> on <LSTag Tooltip="AttackRoll">Attack Rolls</LSTag> against <LSTag Tooltip="Concentration">concentrating</LSTag> creatures. 
+// You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.
 // data "Description" "ha0521bfcg71aeg437egacc1ga5d47f8a9ead;2"
+// You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.
+data "Description" "h6c9f3c93g7e68g4969gb60cg809a96ce9a65;1"
 // data "Boosts" "IF(IsConcentrating(context.Target)):Advantage(AttackRoll)"
 
 new entry "Target_MAG_WeaponAction_SilencingBlade"
