@@ -2,6 +2,22 @@
 // Bug Fix: Tooltip is no longer filled with misinformation inherited from Primal Stampede.
 // Note: Reference fields do not reflect otherwise changes to Primal Stampede in Goon's Spell Overhaul.
 
+// new entry "MAG_BarbMonk_Offensive_Cloth"
+// type "Armor"
+// using "ARM_Cloth_Body_1"
+// data "RootTemplate" "48215bcb-b4a2-48cb-bfbe-8b601e678032"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Rush_MAG_Barbarian_Armor_Trample)"
+// data "PassivesOnEquip" "MAG_BarbMonk_Armor_Offensive_Passive;MAG_BarbMonk_Strength_Passive"
+// data "StatusOnEquip" "MAG_BULLS_STRENGTH"
+// data "Unique" "1"
+
+new entry "GOON_THEMIGHTYCLOTH_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Rush_MAG_Barbarian_Armor_Trample"
 type "SpellData"
 data "SpellType" "Rush"
@@ -14,4 +30,93 @@ data "ExtraDescription" ""
 data "TooltipDamageList" ""
 // data "TooltipStatusApply" "ApplyStatus(PRONE,100,2)"
 data "TooltipStatusApply" ""
+
+// ==================================== The Protecty Sparkswall ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_ChargedLightning_BonusAC_Robe"
+// type "Armor"
+// using "ARM_Robe_Body"
+// data "RootTemplate" "f28c3264-8cdb-46c1-800f-a47a01e49efc"
+// data "ItemGroup" ""
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive;MAG_ChargedLightning_ArmorMagicBoost_Passive"
+// data "StatusOnEquip" "MAG_CHARGED_LIGHTNING_AC_BONUS_TECHNICAL"
+// data "Unique" "1"
+
+new entry "GOON_THEPROTECTYSPARKSWALL_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
