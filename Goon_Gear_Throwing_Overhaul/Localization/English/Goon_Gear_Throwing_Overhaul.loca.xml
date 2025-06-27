@@ -30,7 +30,6 @@
 	<!-- "5E_RECKLESS_ATTACKED", "5E_RECKLESS_ATTACK_VISUALS" --> <content contentuid="hff0cda90gb8f0g426eg805bgc23a08bd440b" version="1">Affected entity has &lt;LSTag Tooltip="Advantage"&gt;advantage&lt;/LSTag&gt; on Melee and Throwing &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; on their turn, and any Attack Roll against them has Advantage.</content>
 
 	<!-- WEAPON ACTIONS -->
-
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
 	<!-- "Goon_Zone_Cleave_Offhand" --> <content contentuid="h046d806egc13fg403fgb220g8cdbd04778c0" version="1">Cleave (Offhand)</content>
 	<!-- "Interrupt_Overwhelm", "Overwhelm" --> <content contentuid="h3ff15630ga20cg4697gabaeg7909acd8b811" version="1">When you miss a main hand &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, deal [1] regardless.</content>
@@ -72,7 +71,6 @@
 	<!-- "" --> <content contentuid="" version="1"></content>
 
 	<!-- GEAR -->
-
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h25079358ge7c4g4432ga420g15082c7bc167" version="1">Justiciar's Scimitar</content>
 	<!-- "Goon_IllusionBlade_Proficiency_Passive" --> <content contentuid="h747d6411g48f7g4263g97d0gc5491113dd94" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it.</content>
 	<!-- "MAG_ShadowBlinding_Weapon_Passive", "GOON_SHADOW_BLINDING_TECHNICAL" --> <content contentuid="h2c526f46g60f2g4c49g9262g26baa6b6af4a" version="1">If you attack with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;, you have a chance of &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; your target for [1] turns.</content>
@@ -105,7 +103,6 @@
 	<!-- "Goon_DefenderOfEasthaven_Passive" --> <content contentuid="hc6b5cac7g7c3bg433ega63fge3d40cec5ccf" version="1">Defender of Easthaven</content>
 	<!-- "Goon_DefenderOfEasthaven_Passive" --> <content contentuid="h6af7fa47g660dg4433ga045g91c420bf9357" version="1">Reduce incoming Bludgeoning, Piercing, and Slashing damage by half your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; of [1] (rounded down).</content>
 	<!-- "MAG_BG_OfAges_Flail_Passive" --> <content contentuid="hfb2ddac5g62b0g4163g9bc9g5ce124e96ceb" version="1">Depending on what kind of damage this weapon does, it may also inflict the &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slowed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilled&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; conditions for [1] turns. If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.</content>
-
 	<!-- "MAG_Infernal_Weapon_Passive", "GOON_INFERNAL_WEAPON_TECHNICAL_APPLIER" --> <content contentuid="hc4d3de99ge275g4176gb149g91a4e61e5488" version="1">On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt; for [1] turns.</content>
 	<!-- "Goon_Handmaidens_Mace_Poison", "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_POISON" --> <content contentuid="hfcd23470g262egc00bg7ea1g1e61d525af6f" version="1">Spider Queen's Bite</content>
 	<!-- "Goon_Handmaidens_Mace_Frightened", "GOON_HANDMAIDENS_MACE_TECHNICAL_APPLIER_FRIGHTENED" --> <content contentuid="hf83a70f0gba55g4957gacfbgfd40404f8fe9" version="1">On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt; for [1] turns.</content>
@@ -124,6 +121,14 @@
 	<!-- "DEN_CapturedGoblin_MurderDagger_Passive" --> <content contentuid="h6588a557g31bcg45c4g95e0g7d32ebd9968a" version="1">Deals an additional [1] to creatures that are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="UNCONSCIOUS"&gt;Unconscious&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Spellbreaker_Battleaxe_Passive	" --> <content contentuid="h6c9f3c93g7e68g4969gb60cg809a96ce9a65" version="1">You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.</content>
 	<!-- "MAG_TheHunters_Dagger_Passive", "GOON_HUNTERSDAGGER_RUPTURE_TECHNICAL_APPLIER" --> <content contentuid="hf38c5a04g2bb3g4a65g9cbdg3ee366e57242" version="1">When you deal damage with this weapon, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+
+	<!-- NEW GEAR -->
+	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1">Pendant Of Animal Speech</content>
+	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="h1276696cg0997g4e4bg8b7cg9312f9039a84" version="1">An Amulet in the shape of a small paw, adorned by a simple gemstone.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
