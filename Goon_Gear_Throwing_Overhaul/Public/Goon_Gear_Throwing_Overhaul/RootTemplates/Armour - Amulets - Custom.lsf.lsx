@@ -46,7 +46,6 @@
 						<!-- Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
-								</node>
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="GOON_PENDANTOFANIMALSPEECH_ARMOUR_TECHNICAL" />
 								</node>
