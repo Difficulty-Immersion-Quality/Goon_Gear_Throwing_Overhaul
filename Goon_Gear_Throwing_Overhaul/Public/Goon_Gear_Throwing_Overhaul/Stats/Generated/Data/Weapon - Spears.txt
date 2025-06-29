@@ -41,7 +41,8 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand)"
 // ==================================== Vision of the Absolute ====================================
 // Bug Fix: All effects now work with throwing.
 // Bug Fix: Absolute Night now displays properly in the combat log.
-// Changes: Description now states the duration of Blinded.
+// Changes: Description now states the duration of Blinded. Added +1 weapon enchantment.
+// TODO: Change the name, this weapon aint got jack to do with The Absolute.
 
 new entry "FOR_TrueSoul_Spear"
 type "Weapon"
@@ -55,8 +56,14 @@ using "FOR_TrueSoul_Spear"
 // data "WeaponFunctors" "IF(not SavingThrow(Ability.Dexterity, 11)):ApplyStatus(BLINDED, 100, 2)"
 data "WeaponFunctors" ""
 // data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "PassivesOnEquip" "FOR_TrueSoul_SpearPassive"
 // data "Unique" "1"
+
+new entry "GOON_VISIONOFTHEABSOLUTE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "FOR_TrueSoul_SpearPassive"
 type "PassiveData"
@@ -93,3 +100,84 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
 data "OnApplyFunctors" ""
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
