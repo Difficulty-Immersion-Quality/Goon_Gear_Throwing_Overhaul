@@ -36,16 +36,96 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PostureBreaker_Offhand);Unl
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
 
-// ==================================== Pactbound Rapier ====================================
+// ==================================== Pactbound Warhammer ====================================
 // Bug Fix: No longer gives proficiency with the weapon type, the Pact Blade status on the weapon provides intrinsic proficiency already.
 
-new entry "WPN_Rapier_Pact"
+new entry "WPN_Warhammer_Pact"
 type "Weapon"
-// using "WPN_Rapier"
-using "WPN_Rapier_Pact"
-// data "RootTemplate" "705662e8-2a7f-4c7e-b0a0-e505395a45e3"
+// using "WPN_Warhammer"
+using "WPN_Warhammer_Pact"
+// data "RootTemplate" "fdaf8461-4d1a-4364-8d7d-4dd9ce824a1e"
 // data "ValueUUID" "8b2ad47c-891e-4a19-bab8-43cd5e964cb1"
-// data "Boosts" "Proficiency(Rapiers)"
+// data "Boosts" "Proficiency(Warhammers)"
 data "Boosts" ""
-// data "Weapon Properties" "Finesse;Melee;Dippable;Magical"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
