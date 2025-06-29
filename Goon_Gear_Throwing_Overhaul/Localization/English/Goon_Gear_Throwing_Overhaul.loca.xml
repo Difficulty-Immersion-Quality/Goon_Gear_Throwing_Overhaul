@@ -121,7 +121,7 @@
 	<!-- "DEN_CapturedGoblin_MurderDagger_Passive" --> <content contentuid="h6588a557g31bcg45c4g95e0g7d32ebd9968a" version="1">Deals an additional [1] to creatures that are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="UNCONSCIOUS"&gt;Unconscious&lt;/LSTag&gt;.</content>
 	<!-- "MAG_Spellbreaker_Battleaxe_Passive	" --> <content contentuid="h6c9f3c93g7e68g4969gb60cg809a96ce9a65" version="1">You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt; creatures.</content>
 	<!-- "MAG_TheHunters_Dagger_Passive", "GOON_HUNTERSDAGGER_RUPTURE_TECHNICAL_APPLIER" --> <content contentuid="hf38c5a04g2bb3g4a65g9cbdg3ee366e57242" version="1">When you deal damage with this weapon, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.</content>
-	<!-- "MAG_TheCrimson_Vicious_Passive" --> <content contentuid="hc5b54a05g5b17g4ad2g9774g69f540a70f3a" version="1">Attacks with this weapon deal an additional [1], if you attacked  with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
+	<!-- "MAG_TheCrimson_Vicious_Passive" --> <content contentuid="hc5b54a05g5b17g4ad2g9774g69f540a70f3a" version="1">Attacks with this weapon deal an additional [1], if you attacked with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

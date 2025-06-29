@@ -37,16 +37,28 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);Unlo
 // ==================================== Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blinding works with the Honour Ruleset.
 // Bug Fix: The Shadow Blade passive is now visible.
+// Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
 // Bug Fix: The weapon is now considered a Scimitar, the wielder gets innate proficiency with Scimitars.
+// Changes: Shadow-Blinding applies when thrown.
 
 new entry "MAG_Justiciar_Scimitar"
 type "Weapon"
 // using "WPN_Scimitar_2"
 using "MAG_Justiciar_Scimitar"
+// data "RootTemplate" "74ecc6e4-ee5d-4cd8-96cb-dd677a4acc82"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_PostureBreaker);UnlockSpell(Target_MAG_WeaponAction_ShadowBlade)"
 // data "PassivesOnEquip" "MAG_ShadowBlinding_Weapon_Passive;MAG_IllusionBlade_Passive"
 data "PassivesOnEquip" "MAG_ShadowBlinding_Weapon_Passive;MAG_IllusionBlade_Passive;Goon_IllusionBlade_Proficiency_Passive"
+// data "Unique" "1"
 // data "Proficiency Group" ""
 data "Proficiency Group" "Scimitars;MartialWeapons"
+
+new entry "GOON_JUSTICIARSSCIMITAR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_IllusionBlade_Passive"
 type "PassiveData"
@@ -72,10 +84,9 @@ data "Description" "h2c526f46g60f2g4c49g9262g26baa6b6af4a;1"
 data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"
 // data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, 14)):ApplyStatus(BLINDED,100,2)"
-data "StatsFunctors" "ApplyStatus(GOON_SHADOWBLINDING_TECHNICAL, 100, 0)"
+data "StatsFunctors" "ApplyStatus(GOON_SHADOWBLINDING_TECHNICAL_APPLIER, 100, 0)"
 
-// TODO: Use this for throwing too
-new entry "GOON_SHADOWBLINDING_TECHNICAL"
+new entry "GOON_SHADOWBLINDING_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Shadow-Blinding
@@ -87,3 +98,84 @@ data "DescriptionParams" "2"
 data "TooltipSave" "Constitution"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 14)"
 data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+weapon entry
+
+new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
