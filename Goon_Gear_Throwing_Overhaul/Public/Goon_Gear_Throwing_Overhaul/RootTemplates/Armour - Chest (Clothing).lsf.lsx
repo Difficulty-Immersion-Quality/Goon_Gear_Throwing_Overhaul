@@ -50,8 +50,6 @@
 							<children>
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="GOON_THEMIGHTYCLOTH_ARMOUR_TECHNICAL" />
-										</node>
-									</children>
 								</node>
 							</children>
 						</node>
@@ -571,14 +569,13 @@
 						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
-								</node>
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="GOON_THEPROTECTYSPARKSWALL_ARMOUR_TECHNICAL" />
 								</node>
 							</children>
 						</node>
 						<!-- The Protecty Sparkswall Alternative Model start -->
-						<node id="GameMaster" />
+							<node id="GameMaster" />
 						<!-- The Protecty Sparkswall Alternative Model end -->
 					</children>
 				</node>
