@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Trepan +1 -->
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="8fee8eb3-f16b-4b9a-85a0-d46a9cd4937e" />
+					<attribute id="Name" type="LSString" value="MAG_Surgeon_Trepan" />
+					<attribute id="ParentTemplateId" type="FixedString" value="764dcd70-9206-457c-9366-7aa9e3370514" />
+					<attribute id="Stats" type="FixedString" value="MAG_Surgeon_Trepan" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_TREPAN_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Vicious Shortsword -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="h81375557g090eg4065gaee1g0f576c4d3f80" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_GTY_Shortsword_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="0d3a133c-038c-48c6-a1a0-0faf22ce04cb" />
+					<attribute id="Name" type="LSString" value="MAG_Vicious_Shortsword" />
+					<!-- Quest_SHA_Darkblade -->
+					<attribute id="ParentTemplateId" type="FixedString" value="a27b505a-ab5b-4714-bee1-5f0435014741" />
+					<attribute id="Stats" type="FixedString" value="MAG_Vicious_Shortsword" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_VICIOUSSHORTSWORD_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Knife of the Undermountain King -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hed4c9549gb168g4029g8e08g182847664caf" version="2" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb3066974g8a50g4fdcg86abg78c7d8e82cea" version="3" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_Duergar_Sword_KingsKnife_GLOW" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="025e162a-45ec-4f4c-89da-04d8e8dfe606" />
+					<attribute id="Name" type="LSString" value="MAG_Duergar_Sword_KingsKnife" />
+					<attribute id="ParentTemplateId" type="FixedString" value="5908898d-5d9e-40de-ab07-3f8fb5f0174c" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144818875517632512" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Crimson Mischief -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h8ccaff71gf114g4729g995dgceb86deef6ae" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h62dcdcc5g1085g4ac6ga86fg4589de831c96" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_TheCrimson_Shortsword" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="5961d027-75fd-4ad7-964c-8b786b5839fb" />
+					<attribute id="Name" type="LSString" value="MAG_TheCrimson_Shortsword" />
+					<attribute id="ParentTemplateId" type="FixedString" value="5908898d-5d9e-40de-ab07-3f8fb5f0174c" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="19275164-40ba-a42e-6ad9-6e894defa0e4" />
+					<attribute id="Stats" type="FixedString" value="MAG_TheCrimson_Shortsword" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="3d7ffe66-7905-2028-a5bf-55058cc689a1" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540922158" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.06520624 0.036525387 0.2214657" />
+									<attribute id="Min" type="fvec3" value="-0.065438576 -0.01378284 -0.65139556" />
+									<attribute id="Radius" type="float" value="0.212115" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.06520624 0.036525387 0.2214657" />
+									<attribute id="Min" type="fvec3" value="-0.065438576 -0.01378284 -0.65139556" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.06520624 0.036525387 0.2214657" />
+									<attribute id="Min" type="fvec3" value="-0.065438576 -0.01378284 -0.65139556" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_NECROTIC_NECROTIC_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_THE_CRIMSON_VICIOUS" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_NECROTIC_NECROTIC_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_THE_CRIMSON_VICIOUS" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_CRIMSONMISCHIEF_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
