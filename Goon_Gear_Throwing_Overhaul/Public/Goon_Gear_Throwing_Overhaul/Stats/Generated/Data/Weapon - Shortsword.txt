@@ -37,78 +37,6 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);Unlo
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Finesse;Light;Melee;Dippable;Magical"
 
-// ==================================== Crimson Mischief ====================================
-// Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
-// Changes: Redvein Savagery description updated for clarity.
-// TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.
-// TODO: Throwing support!!!
-
-new entry "MAG_TheCrimson_Shortsword"
-type "Weapon"
-// using "WPN_Shortsword_2"
-using "MAG_TheCrimson_Shortsword"
-// data "RootTemplate" "5961d027-75fd-4ad7-964c-8b786b5839fb"
-// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
-// data "Rarity" "Legendary"
-// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing)"
-// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
-data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
-// data "PassivesOnEquip" "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
-// data "PassivesMainHand" "MAG_TheCrimson_Vicious_Passive"
-// data "PassivesOffHand" "MAG_TheCrimson_TwoWeapon_Passive"
-// data "Unique" "1"
-// data "Proficiency Group" "Shortswords;MartialWeapons;Scimitars"
-
-new entry "GOON_CRIMSONMISCHIEF_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// Force Honour rules, removing DRS
-new entry "MAG_TheCrimson_Vicious_Passive"
-type "PassiveData"
-using "MAG_TheCrimson_Vicious_Passive"
-// Redvein Savagery
-// data "DisplayName" "h73e1c4edgce5cg4baagbbb2g76f7ff37c688;1"
-// When you make an attack with <LSTag Tooltip="Advantage">Advantage</LSTag>, the target takes an additional 7 Piercing damage.
-// data "Description" "h772b28f0gd5c3g495dg8026g116269f94870;1"
-// Attacks with this weapon deal an additional [1], if you attacked  with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
-data "Description" "hc5b54a05g5b17g4ad2g9774g69f540a70f3a;1"
-data "DescriptionParams" "DealDamage(7,Piercing)"
-// data "StatsFunctorContext" "OnDamage"
-data "StatsFunctorContext" ""
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
-data "Conditions" ""
-// data "StatsFunctors" "DealDamage(7, Piercing,Magical)"
-data "StatsFunctors" ""
-
-// ==================================== Knife of the Undermountain King ====================================
-// Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
-// TODO: Get Organ Rearranger's damage reroll to work with throwing, could be tricky maybe if it can't go into spell properties.
-
-// new entry "MAG_Duergar_Sword_KingsKnife"
-// type "Weapon"
-// using "WPN_Shortsword_2"
-// data "RootTemplate" "025e162a-45ec-4f4c-89da-04d8e8dfe606"
-// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
-// data "Rarity" "VeryRare"
-// data "PassivesOnEquip" "MAG_TheClover_Rearrangement_Passive;ShadowBlade_Passive"
-// data "Unique" "1"
-
-new entry "GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// new entry "MAG_TheClover_Rearrangement_Passive"
-// type "PassiveData"
-// Organ Rearranger
-// data "DisplayName" "h15c46cc7g164fg41ffga02ege59329268c58;2"
-// Reduce the number you need to roll a <LSTag Tooltip="CriticalHit">Critical Hit</LSTag> while attacking by 1. This effect can stack. When you roll [1] damage or less, reroll the dice, taking the highest result.
-// data "Description" "h6984b8aagbb23g46b3g8c29g1a65974e4bcb;4"
-// data "DescriptionParams" "2;19;18"
-// data "Boosts" "ReduceCriticalAttackThreshold(1);IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"
-
 // ==================================== Trepan & Trepan +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.
@@ -181,6 +109,78 @@ new entry "GOON_VICIOUSSHORTSWORD_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Knife of the Undermountain King ====================================
+// Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
+// TODO: Get Organ Rearranger's damage reroll to work with throwing, could be tricky maybe if it can't go into spell properties.
+
+// new entry "MAG_Duergar_Sword_KingsKnife"
+// type "Weapon"
+// using "WPN_Shortsword_2"
+// data "RootTemplate" "025e162a-45ec-4f4c-89da-04d8e8dfe606"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_TheClover_Rearrangement_Passive;ShadowBlade_Passive"
+// data "Unique" "1"
+
+new entry "GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "MAG_TheClover_Rearrangement_Passive"
+// type "PassiveData"
+// Organ Rearranger
+// data "DisplayName" "h15c46cc7g164fg41ffga02ege59329268c58;2"
+// Reduce the number you need to roll a <LSTag Tooltip="CriticalHit">Critical Hit</LSTag> while attacking by 1. This effect can stack. When you roll [1] damage or less, reroll the dice, taking the highest result.
+// data "Description" "h6984b8aagbb23g46b3g8c29g1a65974e4bcb;4"
+// data "DescriptionParams" "2;19;18"
+// data "Boosts" "ReduceCriticalAttackThreshold(1);IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"
+
+// ==================================== Crimson Mischief ====================================
+// Bug Fix: Prey Upon the Weak now functions with the Honour ruleset.
+// Changes: Redvein Savagery description updated for clarity.
+// TODO: Adjust "MAG_TheCrimson_TwoWeapon_Passive" with custom functionality for stacking with the "TwoWeaponFighting" function, while also removing the damage from ranged weapon offhand.
+// TODO: Throwing support!!!
+
+new entry "MAG_TheCrimson_Shortsword"
+type "Weapon"
+// using "WPN_Shortsword_2"
+using "MAG_TheCrimson_Shortsword"
+// data "RootTemplate" "5961d027-75fd-4ad7-964c-8b786b5839fb"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Rarity" "Legendary"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing)"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasHPPercentageEqualOrLessThan(50, context.Target)):WeaponDamage(1d4, Piercing);IF(HasStatus('MAG_THE_CRIMSON_VICIOUS', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) and HasAdvantage() and not HasDisadvantage()):WeaponDamage(7, Piercing)"
+// data "PassivesOnEquip" "MAG_WYR_Orin_Bhaalist_Dagger_Passive"
+// data "PassivesMainHand" "MAG_TheCrimson_Vicious_Passive"
+// data "PassivesOffHand" "MAG_TheCrimson_TwoWeapon_Passive"
+// data "Unique" "1"
+// data "Proficiency Group" "Shortswords;MartialWeapons;Scimitars"
+
+new entry "GOON_CRIMSONMISCHIEF_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// Force Honour rules, removing DRS
+new entry "MAG_TheCrimson_Vicious_Passive"
+type "PassiveData"
+using "MAG_TheCrimson_Vicious_Passive"
+// Redvein Savagery
+// data "DisplayName" "h73e1c4edgce5cg4baagbbb2g76f7ff37c688;1"
+// When you make an attack with <LSTag Tooltip="Advantage">Advantage</LSTag>, the target takes an additional 7 Piercing damage.
+// data "Description" "h772b28f0gd5c3g495dg8026g116269f94870;1"
+// Attacks with this weapon deal an additional [1], if you attacked  with&lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+data "Description" "hc5b54a05g5b17g4ad2g9774g69f540a70f3a;1"
+data "DescriptionParams" "DealDamage(7,Piercing)"
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasAdvantage() and not HasDisadvantage()"
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(7, Piercing,Magical)"
+data "StatsFunctors" ""
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
