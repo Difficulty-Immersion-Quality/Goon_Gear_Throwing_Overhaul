@@ -236,9 +236,6 @@
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="GOON_VICIOUSBATTLEAXE_WEAPON_TECHNICAL" />
 								</node>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_VICIOUS_WEAPON_THROW_TECHNICAL" />
-								</node>
 							</children>
 						</node>
 					</children>

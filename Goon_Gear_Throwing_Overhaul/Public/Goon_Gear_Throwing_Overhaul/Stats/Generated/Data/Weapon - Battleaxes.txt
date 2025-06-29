@@ -115,8 +115,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Thermodynamo Axe ====================================
-// Changes: Thermodynamo works when thrown. Hidden once per-attack cooldown removed.
-// TODO: Is removing the cooldown gonna be cooked af or what? Don't want it applying for all the damage riders. (Applies to Hellfire Greataxe too)
+// Changes: Thermodynamo works when thrown.
 
 // new entry "MAG_Fire_HeatOnWeaponDamage_Battleaxe"
 // type "Weapon"
@@ -132,15 +131,20 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "MAG_Fire_HeatOnWeaponDamage_Passive"
-type "PassiveData"
-using "MAG_Fire_HeatOnWeaponDamage_Passive"
-// data "Properties" "OncePerAttack"
-data "Properties" ""
+new entry "GOON_THERMODYNAMO_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Thermodynamo
+data "DisplayName" "h6d7bd506g0399g40d8g9ccbgf2cbb415a1d1;2"
+// Whenever you deal damage with this weapon, you gain [1] turns of  &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.
+data "Description" "h000d4a79ge387g43d7ga7eeg22c52d2fc408;4"
+data "DescriptionParams" "2"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL', context.Source)):ApplyStatus(SWAP, MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT, 100, 2);IF(Character()):ApplyStatus(SWAP,MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== Vicious Battleaxe ====================================
 // Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
-// Bug Fix: The Dolor Amarus passive applies when throwing the weapon.
+// Changes: Dolor Amarus passive now works when thrown.
 // Changes: The additional damage only applies to attacking with or throwing the weapon itself.
 
 // new entry "MAG_Vicious_Battleaxe"
@@ -186,7 +190,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
 // data "StatsFunctors" "IF(IsCritical()):ApplyStatus(SELF, MAG_CRITICAL_DONE_CRITICAL, 100, 1)"
 
-new entry "GOON_CRITICALVIRTUOSO_APPLIER"
+new entry "GOON_CRITICALVIRTUOSO_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 // Critical Virtuoso
