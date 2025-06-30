@@ -1,0 +1,206 @@
+// ========================== Boots of Stormy Clamour ==========================
+// Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
+// Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition. It can only trigger once per attack.
+
+new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
+type "Armor"
+// using "_Foot_Magic"
+using "MAG_Thunder_ReverberationOnStatusApply_Boots"
+// data "RootTemplate" "3908725d-29d1-4c9a-be46-4e03c8c65238"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+new entry "GOON_BOOTSOFSTORMYCLAMOUR_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
+type "PassiveData"
+// Arcane Echomalefaction
+data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
+// When the wearer inflicts a condition upon a hostile creature, they also inflict [1] turns of <LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION">Reverberation</LSTag>.
+// data "Description" "hdec25ee2gb8b0g4e21ga3f4g181253f20364;4"
+// When the wearer damages a hostile creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of <LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION">Reverberation</LSTag>.
+data "Description" "h32a0f3eag3e64g4a05g9f2eg074b79b4d589;1"
+// data "DescriptionParams" "2"
+data "DescriptionParams" "1"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
+data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnStatusApply"
+data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
+data "Conditions" "Enemy() and IsSpellAttack() and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
+// data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
+
+// ==================================== Boots of Genial Striding ====================================
+// Bug Fix: Genial Strider now provides immunity to all Difficult Terrain, per what is implied in the description.
+
+// new entry "MAG_TerrainWalkers_Boots"
+// type "Armor"
+// using "_Foot_Magic"
+// data "RootTemplate" "0624ccf0-1b77-448f-8da9-d8a04efa4935"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_TerrainWalker_Passive"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+new entry "GOON_BOOTSOFGENIALSTRIDING_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_TerrainWalker_Passive"
+type "PassiveData"
+using "MAG_TerrainWalker_Passive"
+// Genial Strider
+// data "DisplayName" "h0e3d6cdag1a40g40a0g9ee8gcd8143ba362c;2"
+// The wearer's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is unimpeded by &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN"&gt;Difficult Terrain&lt;/LSTag&gt;.
+// data "Description" "h03849378g0d8fg4048gb2b8gd85d30aca3e7;2"
+// data "Boosts" "StatusImmunity(DIFFICULT_TERRAIN);StatusImmunity(DIFFICULT_TERRAIN_WEB);StatusImmunity(DIFFICULT_TERRAIN_MUD);StatusImmunity(DIFFICULT_TERRAIN_VINES);StatusImmunity(DIFFICULT_TERRAIN_OVERGROWTH);StatusImmunity(DIFFICULT_TERRAIN_LAVA);"
+data "Boosts" "StatusImmunity(SG_DifficultTerrain)"
+
+// ==================================== Boots of Speed ====================================
+// Bug Fix: Click Heels no longer gives the wearer Disadvantage on their Reaction attacks for the status duration, and instead attackers have Disadvantage as was intended.
+// Bug Fix: Click Heels no longer multiplies the Movement Speed granted from Dash, instead stacking exactly as Dash does when used multiple times in a turn.
+// Bug Fix: The descriptions are overhauled to specify that attackers have Disadvantage to all attacks using Reactions, not just Opportunity Attacks specifically.
+// Changes: Click Heels now synergises with Mobile: Evade Difficult Terrain as Dash is being applied instead of of the Movement Speed being applied via the Click Heels status.
+// Note: The only vanilla thing I could find specifying "Shout_Dash" was the "ShadowCurseUndead" function, which is not relevant for "Shout_BootsOfSpeed". Everything should synergise except mods specifying "Shout_Dash" as a SpellID. UseSpell could be used I guess, but eh.
+
+new entry "ARM_BootsOfSpeed"
+type "Armor"
+// using "_Foot_Magic"
+using "ARM_BootsOfSpeed"
+// data "RootTemplate" "8b22d15a-85bb-4c8d-90cf-a773fc451eac"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+data "PassivesOnEquip" "Goon_BootsOfSpeed_Passive"
+// data "Boosts" "UnlockSpell(Shout_BootsOfSpeed)"
+
+new entry "GOON_BOOTSOFSPEED_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Goon_BootsOfSpeed_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Conditions" "SpellID('Shout_BootsOfSpeed')"
+data "StatsFunctorContext" "OnCast"
+data "StatsFunctors" "ApplyStatus(CLICK_HEELS,100,1)"
+
+new entry "Shout_BootsOfSpeed"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_Dash_BonusAction"
+using "Shout_Dash"
+// data "SpellProperties" "ApplyStatus(CLICK_HEELS,100,1)"
+// Click Heels
+data "DisplayName" "h477b3130ge61dg4619g9f20g4e2f90643f12;1"
+// Click the heels of your boots to gain speed and freedom of movement. 
+// data "Description" "ha3c9ead5g93cbg47a1g9562g189a30a92943;9"
+// Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;, and gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.
+data "Description" "h08ad2972g6548g48a1gbed1gfc5a0f49c42d;1"
+data "DescriptionParams" "1"
+// Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; doubles, and enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you.
+// data "ExtraDescription" "ha17a6ea5g8276g472dg8624g3f4188bc4ec7;1"
+data "Icon" "Action_Dash_Bonus"
+// data "TooltipStatusApply" "ApplyStatus(CLICK_HEELS,100,1)"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "CLICK_HEELS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CLICK_HEELS"
+// Click Heels
+// data "DisplayName" "h77d2f152g6be8g4d86gb7abgec21ba40a8c7;2"
+// &lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; is doubled. Enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against them.
+// data "Description" "h34da5a92g4959g4701gaccfg742c78514a26;2"
+// &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; against this creature.
+data "Description" "h9269dec6ge278g4d82ga7ccg01814ea8bcc0;1"
+// data "Icon" "Action_Dash_Bonus"
+// data "StackId" "CLICK_HEELS"
+// data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackRoll)"
+data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
