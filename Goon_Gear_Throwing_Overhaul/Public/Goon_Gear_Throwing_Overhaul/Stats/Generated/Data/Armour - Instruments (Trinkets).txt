@@ -1,47 +1,26 @@
 // ==================================== Base entry ====================================
 
-// new entry "WPN_Pike"
-// type "Weapon"
-// using "_BaseWeapon"
-// data "RootTemplate" "baa5b139-42ad-40fd-b6c3-6b52b092c48e"
-// data "Damage Type" "Piercing"
-// data "Damage" "1d10"
-// data "WeaponRange" "250"
-// data "ValueScale" "0.3"
-// data "Weight" "8.1"
-// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Shout_Steady)"
-// data "Weapon Group" "MartialMeleeWeapon"
-// data "Weapon Properties" "Reach;Melee;Twohanded;Heavy;Dippable"
-// data "Proficiency Group" "Pikes;MartialWeapons"
-
-// ==================================== Magical variants ====================================
-
-// new entry "WPN_Pike_1"
-// type "Weapon"
-// using "WPN_Pike"
-// data "RootTemplate" "40fa8049-b6c1-4463-b212-52ad13b5d687"
-// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+new entry "_Instruments"
+type "Armor"
+using "_Instruments"
+// data "Level" "1"
+// data "Slot" "MusicalInstrument"
+// data "UseCosts" "ActionPoint:1"
+// data "ValueLevel" "1"
+// data "ValueUUID" "4c5217d8-0232-4592-9e32-2fd729123f53"
 // data "ValueScale" "1"
-// data "Rarity" "Uncommon"
-// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-// data "Weapon Properties" "Reach;Melee;Twohanded;Heavy;Dippable;Magical"
+// data "ValueRounding" "1"
+// data "Proficiency Group" "MusicalInstrument"
+data "DefaultBoosts" "HiddenDuringCinematic()"
 
-// new entry "WPN_Pike_2"
-// type "Weapon"
-// using "WPN_Pike"
-// data "RootTemplate" "50ffcd8e-eaa2-479c-b8ed-117ef5436b49"
-// data "ValueUUID" "71191c11-966f-4c19-b4ee-eb36d31c4944"
-// data "ValueScale" "1"
-// data "Rarity" "Rare"
-// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
-// data "Weapon Properties" "Reach;Melee;Twohanded;Heavy;Dippable;Magical"
+// ==================================== Something ====================================
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -49,9 +28,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -59,9 +38,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -69,9 +48,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -79,9 +58,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -89,9 +68,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -99,9 +78,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -109,9 +88,9 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// gear entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
