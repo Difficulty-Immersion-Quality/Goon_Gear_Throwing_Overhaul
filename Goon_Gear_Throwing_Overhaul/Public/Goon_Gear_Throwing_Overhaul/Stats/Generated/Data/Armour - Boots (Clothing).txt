@@ -96,7 +96,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "Goon_BootsOfSpeed_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
-data "Conditions" "SpellID('Shout_BootsOfSpeed')"
+data "Conditions" "SpellId('Shout_BootsOfSpeed')"
 data "StatsFunctorContext" "OnCast"
 data "StatsFunctors" "ApplyStatus(CLICK_HEELS,100,1)"
 
