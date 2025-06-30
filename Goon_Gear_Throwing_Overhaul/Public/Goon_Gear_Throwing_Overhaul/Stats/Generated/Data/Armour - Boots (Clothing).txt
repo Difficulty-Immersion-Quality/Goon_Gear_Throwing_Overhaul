@@ -74,8 +74,8 @@ data "Boosts" "StatusImmunity(SG_DifficultTerrain)"
 // ==================================== Boots of Speed ====================================
 // Bug Fix: Click Heels no longer gives the wearer Disadvantage on their Reaction attacks for the status duration, and instead attackers have Disadvantage as was intended.
 // Bug Fix: Click Heels no longer multiplies the Movement Speed granted from Dash, instead stacking exactly as Dash does when used multiple times in a turn.
-// Bug Fix: The descriptions are overhauled to specify that attackers have Disadvantage to all attacks using Reactions, not just Opportunity Attacks specifically.
-// Changes: Click Heels now synergises with Mobile: Evade Difficult Terrain as Dash is being applied instead of of the Movement Speed being applied via the Click Heels status.
+// Bug Fix: Click Heels description now states that attackers have Disadvantage to all attacks using Reactions, not just Opportunity Attacks specifically.
+// Changes: Click Heels now synergises with Mobile: Evade Difficult Terrain as the Dash status is being applied instead of of the Movement Speed being applied via the Click Heels status. (Will inherit SpellProperties from "Shout_Dash", maximum compatibility.)
 // Note: The only vanilla thing I could find specifying "Shout_Dash" was the "ShadowCurseUndead" function, which is not relevant for "Shout_BootsOfSpeed". Everything should synergise except mods specifying "Shout_Dash" as a SpellID. UseSpell could be used I guess, but eh.
 
 new entry "ARM_BootsOfSpeed"
