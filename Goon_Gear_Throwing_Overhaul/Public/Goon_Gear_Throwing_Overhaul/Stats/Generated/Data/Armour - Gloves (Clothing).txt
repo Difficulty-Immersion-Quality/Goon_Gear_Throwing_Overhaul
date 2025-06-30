@@ -1,0 +1,247 @@
+// ========================== Fleetfingers ==========================
+// Bug Fix: Tooltip hyperlinks.
+// Changes: Now grants Advantage on Acrobatics Skill Checks.
+// Changes: Instead of granting an additional spell, it uses a spell variants of the base Jump spell. (Glowing icon.) - Thanks to Lumaterian for this implementation with "Fleetfingers Enhanced"
+// Changes: Running Jump no longer requires the wearer to be in combat.
+
+new entry "MAG_Mobility_JumpOnDash_Gloves"
+type "Armor"
+// using "_Hand_Magic"
+using "MAG_Mobility_JumpOnDash_Gloves"
+// data "RootTemplate" "df7093d7-efdd-4153-bfb6-b2a6350fb3c2"
+// data "ItemGroup" ""
+// data "Rarity" "Uncommon"
+data "Boosts" "Advantage(Skill,Acrobatics)"
+// data "PassivesOnEquip" "MAG_Mobility_JumpOnDash_Passive"
+// data "Unique" "1"
+
+new entry "GOON_FLEETFINGERS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Mobility_JumpOnDash_Passive"
+type "PassiveData"
+using "MAG_Mobility_JumpOnDash_Passive"
+// Running Jump
+// data "DisplayName" "h14cd10b2g11dag4739g9ca8g966c3e9ed2da;2"
+// Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a bonus action.
+// data "Description" "h1cd0e28ag2928g4c1cgb780gb8fc634fa0e9;3"
+// Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.
+data "Description" "h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d;1"
+// data "Boosts" "UnlockSpell(Projectile_MAG_Mobility_JumpOnDash_Action)"
+data "Boosts" ""
+data "Properties" "OncePerTurn"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "SpellCategoryIs(SpellCategory.Dash) and Combat()"
+data "Conditions" "SpellCategoryIs(SpellCategory.Dash)"
+// data "StatsFunctors" "ApplyStatus(SELF,MAG_MOBILITY_JUMPONDASH_TECHNICAL,100,1)"
+
+new entry "MAG_MOBILITY_JUMPONDASH_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_MOBILITY_JUMPONDASH_TECHNICAL"
+// Running Jump
+// data "DisplayName" "h14cd10b2g11dag4739g9ca8g966c3e9ed2da;2"
+// Once per turn, after the wearer &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dashes&lt;/LSTag&gt; or takes a similar action, they can &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; without using a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;.
+data "Description" "h7cfb0f31geb19g48afgb7b6g5560f3bf9e9d;1"
+// data "StackId" "MAG_MOBILITY_JUMPONDASH_TECHNICAL"
+data "Boosts" "UnlockSpellVariant(Goon_IsJumpSpellCategory(),ModifyIconGlow(),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint))"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "RemoveEvents" "OnSpellCast"
+data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategoryIs(SpellCategory.Jump)"
+
+// ========================== Luminous Gloves ==========================
+// Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
+
+new entry "MAG_Radiant_RadiatingOrb_Gloves"
+type "Armor"
+// using "_Hand_Magic_Metal"
+using "MAG_Radiant_RadiatingOrb_Gloves"
+// data "RootTemplate" "e8a72355-b81f-484e-bc7d-945ec81c04a3"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Gloves_Passive"
+// data "Unique" "1"
+
+new entry "GOON_LUMINOUSGLOVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of The Duellist ====================================
+// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+
+// new entry "MAG_OfTheDuelist_Gloves"
+// type "Armor"
+// using "ARM_Gloves_Leather"
+// data "RootTemplate" "97e362b2-e2aa-4703-9840-6824d7068334"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_OfTheDuelist_Gloves_Passive"
+// data "Unique" "1"
+
+new entry "GOON_GLOVESOFTHEDUELLIST_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_OfTheDuelist_Gloves_Passive"
+type "PassiveData"
+using "MAG_OfTheDuelist_Gloves_Passive"
+// Duelling Gloves
+// data "DisplayName" "hce96a4f3g52deg4a86gafb7g8bc85bb71c2c;2"
+// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
+// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
+// You can wield a shield and still receive this bonus.
+data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
+// data "DescriptionParams" "2"
+// data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"
+
+// ==================================== Gloves of Battlemage's Power ====================================
+// Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
+// Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks. 
+
+// new entry "MAG_Gish_ArcaneAcuity_Gloves"
+// type "Armor"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "15381544-e616-46e6-a881-0af793971863"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// data "Unique" "1"
+
+new entry "GOON_GLOVESOFBATTLEMAGESPOWER_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+type "PassiveData"
+using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// Battlemage's Power
+// data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
+// When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "hbae6c94bg09c9g45e6ga267gef7984d501be;11"
+// When you hit a target with a melee spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "ArcaneAcuityGlovesCondition();"
+data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
+
+// ==================================== The Sparkle Hands ====================================
+// Changes: Extra description added to Conductive Strikes, stating that it works while Polymorphed.
+
+// new entry "MAG_ChargedLightning_AbilityCheckBoost_Gloves"
+// type "Armor"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "a0bbe602-ffc1-45f1-9a09-de7d11575465"
+// data "ItemGroup" ""
+// data "Rarity" "Rare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive;MAG_ChargedLightning_UnarmedAttackAdvantage_Passive"
+// data "Unique" "1"
+
+new entry "GOON_THESPRAKLEHANDS_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
+type "PassiveData"
+using "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
+// Conductive Strikes
+// data "DisplayName" "hac8abcf8g463dg4248g9d55gffed09bed9c2;1"
+// On a hit with an unarmed attack, the wearer gains [1] <LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING">Lightning Charges</LSTag>.
+// data "Description" "hdad11166g75bfg4f45gb1c7g14af36afffc5;1"
+// data "DescriptionParams" "2"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsUnarmedAttack()"
+// data "StatsFunctors" "IF(not HasStatus('MAG_CHARGED_LIGHTNING', context.Source)):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_LIGHTNING_DAMAGE_ONCE_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_GENERATE_CHARGE_FX, 100, 0);IF(Character() and not IsDischargingLightning(context.Source)):ApplyStatus(SELF, MAG_CHARGED_LIGHTNING,100, 2);ApplyStatus(SELF, MAG_CHARGED_LIGHTNING_DURATION_TECHNICAL, 100, 1)"
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect is &lt;b&gt;also&lt;/b&gt; active while Polymorphed, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
+data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
