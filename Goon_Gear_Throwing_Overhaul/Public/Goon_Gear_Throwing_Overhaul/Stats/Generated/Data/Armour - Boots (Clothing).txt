@@ -110,7 +110,7 @@ using "Shout_Dash"
 data "DisplayName" "h477b3130ge61dg4619g9f20g4e2f90643f12;1"
 // Click the heels of your boots to gain speed and freedom of movement. 
 // data "Description" "ha3c9ead5g93cbg47a1g9562g189a30a92943;9"
-// Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;, and gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.
+// Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;. You gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.
 data "Description" "h08ad2972g6548g48a1gbed1gfc5a0f49c42d;1"
 data "DescriptionParams" "1"
 // Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; doubles, and enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against you.
