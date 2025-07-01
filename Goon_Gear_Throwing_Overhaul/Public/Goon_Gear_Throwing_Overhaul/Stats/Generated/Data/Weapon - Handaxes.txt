@@ -12,39 +12,127 @@ using "WPN_Handaxe"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_Slash_New)"
 data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_Slash_New_Offhand)"
 // data "Weapon Group" "SimpleMeleeWeapon"
+data "VersatileDamage" "1d8"
 // data "Weapon Properties" "Light;Thrown;Melee;Dippable"
+data "Weapon Properties" "Light;Thrown;Melee;Dippable;Versatile"
 // data "Proficiency Group" "Handaxes;SimpleWeapons"
 
 // ==================================== Magical variants ====================================
 
-// new entry "WPN_Handaxe_1"
-// type "Weapon"
+new entry "WPN_Handaxe_1"
+type "Weapon"
 // using "WPN_Handaxe"
+using "WPN_Handaxe_1"
 // data "RootTemplate" "7a05135d-b285-4186-8a32-a870f1684b60"
 // data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
 // data "ValueScale" "1"
 // data "Rarity" "Uncommon"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Weapon Properties" "Light;Thrown;Melee;Dippable;Magical"
+data "Weapon Properties" "Light;Thrown;Melee;Dippable;Versatile;Magical"
+
+// ==================================== Comeback Handaxe ====================================
+// TODO: Something/anything.
+
+// new entry "WYR_Circus_HandaxeReturning"
+// type "Weapon"
+// using "WPN_Handaxe_1"
+// data "RootTemplate" "82999790-f80d-47f7-9383-9bb6cf57a10b"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "ValueOverride" "1"
+// data "Unique" "1"
+
+new entry "GOON_COMEBACKHANDAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dragon's Grasp ====================================
+// Changes: Forcing Honour ruleset changes to DRS. Additional 1d4 Slashing damage is now dealt when the target has one of many conditions or tags related to being on fire, instead of just Burning.
+
+new entry "MAG_Fire_IncreaseSlashingDamageToBurning_Handaxe"
+type "Weapon"
+// using "WPN_Handaxe_1"
+using "MAG_Fire_IncreaseSlashingDamageToBurning_Handaxe"
+// data "RootTemplate" "4f67b6cb-ccc4-497e-b5d3-2804726e8706"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(Goon_HasBurningConditionOrTag(context.Target)):WeaponDamage(1d4, Slashing)"
+// data "PassivesOnEquip" "MAG_Fire_IncreaseSlashingDamageToBurning_Passive"
+// data "ObjectCategory" "MagicWeapons"
+// data "Unique" "1"
+
+new entry "GOON_DRAGONSGRASP_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Fire_IncreaseSlashingDamageToBurning_Passive"
+type "PassiveData"
+using "MAG_Fire_IncreaseSlashingDamageToBurning_Passive"
+// Burned Alive
+// data "DisplayName" "h8efbd602g745cg4762gbc03g0b851b017ab7;1"
+// Deals an additional [1] to Burning targets.
+// data "Description" "h2e700f64g9b47g4043g97a8gbbddc9b0d85e;1"
+// Deals an additional [1] to &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; targets.
+data "Description" "h9e6d65f8g03f7g4899g8471g7e61ec54afa7;1"
+// data "DescriptionParams" "DealDamage(1d4,Slashing)"
+// data "TooltipConditionalDamage" "DealDamage(1d4,Slashing)"
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "Conditions" ""
+// data "StatsFunctors" "IF(HasStatus('BURNING',context.Target)):DealDamage(1d4,Slashing,Magical)"
+data "StatsFunctors" ""
 
 // ==================================== Ritual Axe ====================================
 // Bug Fix: The Scourge Mistress' Bane now states that attacks are guaranteed to apply Bane, instead of it being a chance to apply.
 // Bug Fix: The wielder does not take self inflicted damage if the target dies, is downed or knocked out, or is already afflicted with Bane.
 // Changes: If you attack a target already afflicated with Bane you increase the duration of the condition by 1 turn.
+// TODO: Throwing support?
+
+// new entry "GOB_PainPriest_Handaxe"
+// type "Weapon"
+// using "WPN_Handaxe_1"
+// data "RootTemplate" "5c996c03-99e9-40c1-8acf-d761550d26f5"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "ValueOverride" "280"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "PassivesOnEquip" "GOB_PainPriest_Axe_Passive"
+// data "Unique" "1"
+
+new entry "GOON_RITUALAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "GOB_PainPriest_Axe_Passive"
 type "PassiveData"
 using "GOB_PainPriest_Axe_Passive"
+// The Scourge Mistress' Bane
+// data "DisplayName" "heae55645g011eg402dgbd4egcbda7a22eabb;3"
 // Chance to inflict upon the target a 1d4 penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, they take [1] themselves.
 // data "Description" "h285f8848g4997g4ac5gb35ag9178dd91f49c;8"
-// Attacks with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns, if the target is afflicted with &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; already increase the duration by [2]. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [3].
+// Attacks with this weapon inflict &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; upon the target for [1] turns. If the attacker still has 50% or more &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; is inflicted on the target, they take [2].
 data "Description" "h5695a236g1ba7g4577gb2dcg5c7631abe8da;1"
 // data "DescriptionParams" "DealDamage(1d6,Piercing)"
-data "DescriptionParams" "2;1;DealDamage(1d6,Piercing)"
+data "DescriptionParams" "2;DealDamage(1d6,Piercing)"
 // A Baned creature receives a 1d4 penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
 // data "ExtraDescription" "hac996f86g8e10g453fga993g6aaf77a0760e;1"
 data "ExtraDescription" ""
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "AttackedWithPassiveSourceWeapon()"
 data "Conditions" "AttackedWithPassiveSourceWeapon() and not (HasHPLessThan(1) or IsKillingBlow() or IsDowned() or HasStatus('KNOCKED_OUT') or HasStatus('KNOCKED_OUT_TEMPORARILY') or HasStatus('KNOCKED_OUT_PERMANENTLY'))"
 // data "StatsFunctors" "ApplyStatus(BANE,100,2);IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source)):DealDamage(SELF,1d6,Piercing,Magical)"
-data "StatsFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SELF,1d6,Piercing,Magical);IF(not HasStatus('BANE', context.Target)):ApplyStatus(BANE,100,2);IF(HasStatus('BANE', context.Target)):SetStatusDuration(BANE,1,Add)"
+data "StatsFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SELF,1d6,Piercing,Magical);ApplyStatus(BANE,100,2)"
+
+new entry "GOON_RITUALAXE_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyConditions" "not HasHPLessThan(1) or IsKillingBlow() or IsDowned() or HasStatus('KNOCKED_OUT') or HasStatus('KNOCKED_OUT_TEMPORARILY') or HasStatus('KNOCKED_OUT_PERMANENTLY')"
+data "OnApplyFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SWAP,1d6,Piercing,Magical);ApplyStatus(BANE,100,2)"
