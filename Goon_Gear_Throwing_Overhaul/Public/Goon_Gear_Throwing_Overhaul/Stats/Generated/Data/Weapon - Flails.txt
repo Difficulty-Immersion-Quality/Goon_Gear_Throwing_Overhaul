@@ -66,15 +66,6 @@ data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 // using "WPN_Flail"
 // data "RootTemplate" "4c86f6ac-5829-41f2-a3f0-d3e893334961"
 
-// ==================================== Myrkulite Scourge ====================================
-// Bug Fix: Additional 1d6 Necrotic damage works with throwing.
-
-// new entry "WPN_SkullFlail_1"
-// type "Weapon"
-// using "WPN_Flail_1"
-// data "RootTemplate" "05ca18da-41f4-4385-b370-0f75a989e119"
-// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d6, Necrotic)"
-
 // ==================================== Flail of the Vortex ====================================
 // Bug Fix: Wild Shape: Air Myrmidon's Flail of the Vortex's 1d8 Lightning damage now formatted correctly.
 // Myrmidon forms can't use the versatile animations or basic weapon actions.
@@ -103,6 +94,20 @@ data "DefaultBoosts" "WeaponDamage(1d8,Lightning);WeaponEnchantment(3);WeaponPro
 // data "RootTemplate" "8f8ad4f1-ee45-45f5-9368-3da979ada65a"
 // data "DefaultBoosts" "WeaponDamage(1d8,Lightning);WeaponEnchantment(3);WeaponProperty(Magical)"
 
+// ==================================== Myrkulite Scourge ====================================
+// Bug Fix: Additional 1d6 Necrotic damage works with throwing.
+
+// new entry "WPN_SkullFlail_1"
+// type "Weapon"
+// using "WPN_Flail_1"
+// data "RootTemplate" "05ca18da-41f4-4385-b370-0f75a989e119"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d6, Necrotic)"
+
+new entry "GOON_MYRKULITESCOURGE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Corrosive Flail ====================================
 // Changes: Now deals an additional 1d4 Acid damage, works when thrown.
 // TODO: This weapon is pretty lame all in all, further rework it probably.
@@ -121,6 +126,11 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);Un
 data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4,Acid)"
 // data "Unique" "1"
 
+new entry "GOON_CORROSIVEFLAIL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Goon_Target_MAG_WeaponAction_CorrosiveStrike_Offhand"
 type "SpellData"
 data "SpellType" "Target"
@@ -137,7 +147,7 @@ data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Defender Flail ====================================
-// Changes: Made a custom passive to replace Steel Physiology. The new passive Defender of Easthaven provides damage reduction equal to your Proficiency Bonus, instead of a flat 1.
+// Changes: Made a custom passive to replace Steel Physiology. The new passive Defender of Easthaven provides damage reduction equal to half your Proficiency Bonus (rounded down), instead of a flat 1.
 
 new entry "MAG_BG_OfEasthaven_Defender_Flail"
 type "Weapon"
@@ -151,11 +161,16 @@ using "MAG_BG_OfEasthaven_Defender_Flail"
 data "PassivesOnEquip" "Goon_DefenderOfEasthaven_Passive"
 // data "Unique" "1"
 
+new entry "GOON_DEFENDERFLAIL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Goon_DefenderOfEasthaven_Passive"
 type "PassiveData"
 // Defender of Easthaven
 data "DisplayName" "hc6b5cac7g7c3bg433ega63fge3d40cec5ccf;1"
-// Reduce incoming Bludgeoning, Piercing, and Slashing damage by half your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; of [1] (rounded down).
+// Reduce incoming Bludgeoning, Piercing, and Slashing damage by half your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; (rounded down).
 data "Description" "h6af7fa47g660dg4433ga045g91c420bf9357;1"
 data "DescriptionParams" "ProficiencyBonus"
 data "Boosts" "DamageReduction(Piercing, Flat, ProficiencyBonus/2);DamageReduction(Bludgeoning, Flat, ProficiencyBonus/2);DamageReduction(Slashing, Flat, ProficiencyBonus/2)"
@@ -226,7 +241,7 @@ type "PassiveData"
 using "Goon_FlailOfAges_Acid"
 data "StatsFunctors" "IF(HasStatus('SLOW',context.Target)):SetStatusDuration(SLOW,1,Add);IF(HasStatus('SLOW',context.Target)):ApplyStatus(SLOW,100,2)"
 
-new entry "GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL"
+new entry "GOON_FLAILOFAGES_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
@@ -295,3 +310,62 @@ data "StatusType" "BOOST"
 using "GOON_FLAILOFAGES_ACID_VFX"
 data "OnRemoveFunctors" "ApplyStatus(GOON_FLAILOFAGES_ACID_VFX,100,1)"
 data "StatusEffect" "e92003cd-6622-4a82-a3c7-69d6222f0ba0"
+
+// ==================================== Chaos Flail (Inaccessible/Cut content) ====================================
+// TODO: Make it unwieldy, interesting, and accessible without disarm. Same as ogre clubs and shiii.
+
+// new entry "WPN_Gnoll_Flind_Flail"
+// type "Weapon"
+// using "WPN_Flail"
+// data "RootTemplate" "608e265d-f81b-4c13-a786-e5602852fcf4"
+// data "ItemGroup" "Flail_Flind"
+// data "UseConditions" "Tagged('GNOLL', context.Source)"
+// data "Weapon Group" "SimpleMeleeWeapon"
+
+new entry "GOON_CHAOSFLAIL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Flail of Dread Skulls (Inaccessible/Cut content) ====================================
+// TODO: Fix the whole damn thang up, if it's worth it.
+// Wiki trivia:
+// This weapon looks to be an earlier version of the Shattered Flail
+// This weapon also looks to be unfinished.
+// The in-game quote is more like a description which is higly unusual.
+// The quote says it may deal Psychic damage or Paralyse. This is false it can only apply madness.
+// The Psychic damage is also not shown in the tooltip outside of the quote.
+// The calculation for the saving throw shown in the tooltip may be wrong, but always results in 13.
+// It may for example say 8 + 3 + 3 = 13 and state modifiers for other abilities than wisdom.
+
+// new entry "PLA_WPN_DreadedSkullsFlail"
+// type "Weapon"
+// using "WPN_Flail_2"
+// data "RootTemplate" "b551469c-5a53-4df3-a2c9-91516ef55695"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "WeaponFunctors" "ApplyStatus(MADNESS,100,1,,,,not SavingThrow(Ability.Wisdom,13))"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Unique" "1"
+
+new entry "GOON_FLAILOFDREADSKULLS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Planeslayer Flail (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+// TODO: Throwing support if I restore it
+
+// new entry "MAG_LC_ChainDevil_Flail"
+// type "Weapon"
+// using "WPN_Flail_2"
+// data "RootTemplate" "8c733d14-6cbc-4227-9d87-0e42ce0965c4"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "PassivesOnEquip" "MAG_OuterEntitySlayer_Passive"
+// data "Unique" "1"
+
+new entry "GOON_PLANESLAYERFLAIL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

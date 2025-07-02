@@ -75,11 +75,11 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Added technical status for throwing -->
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_NECROTIC_THROW_D6" />
+									<attribute id="Object" type="FixedString" value="GOON_MYRKULITESCOURGE_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>
@@ -126,11 +126,11 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Added technical status for throwing -->
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_ACID_THROW" />
+									<attribute id="Object" type="FixedString" value="GOON_CORROSIVEFLAIL_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>
@@ -178,6 +178,14 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_DEFENDERFLAIL_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
 					</children>
 				</node>
 				<!-- Flail of Ages -->
@@ -222,20 +230,212 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Added technical statuses for throwing -->
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_FLAILOFAGES_WEAPON_THROW_TECHNICAL" />
+									<attribute id="Object" type="FixedString" value="GOON_FLAILOFAGES_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Chaos Flail -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h6bc9c326g91bbg42f9g977fg46172ec0c94c" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hddb39ffdg875eg419cg976dg2be29090abb8" version="1" />
+					<attribute id="EquipmentTypeID" type="guid" value="ccab7523-374c-49b4-96c7-8bf3e5b9c1ca" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_GNO_Flail_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="608e265d-f81b-4c13-a786-e5602852fcf4" />
+					<attribute id="Name" type="LSString" value="WPN_GNO_Flail_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="baaa7f02-a9a1-4b8d-bde9-28ed7828b531" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="84adf417-ef48-3bad-663e-8efa7089c696" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="WPN_Gnoll_Flind_Flail" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="8b54f2c4-61a8-6567-9094-4124df905fac" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115198813274112" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="IsIgnoringScale" type="bool" value="False" />
+									<attribute id="Max" type="fvec3" value="0.9170532 0.13833556 0.1353209" />
+									<attribute id="Min" type="fvec3" value="-0.936548 -0.1638816 -1.9326081" />
+									<attribute id="Radius" type="float" value="0.182241" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="IsIgnoringScale" type="bool" value="False" />
+									<attribute id="Max" type="fvec3" value="0.07199401 0.11440852 0.11278498" />
+									<attribute id="Min" type="fvec3" value="-0.07199401 -0.11227327 -0.42318434" />
+									<attribute id="Radius" type="float" value="0.0911205" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0483273" />
+									<attribute id="IsIgnoringScale" type="bool" value="False" />
+									<attribute id="Max" type="fvec3" value="0.14398801 0.11440852 0.22556996" />
+									<attribute id="Min" type="fvec3" value="-0.14398801 -0.11227327 -0.8463687" />
+									<attribute id="Radius" type="float" value="0.182241" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_CHAOSFLAIL_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Flail of Dread Skulls -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h48d777acg8be0g4dccga058ge6df98e3f662" version="2" />
+					<attribute id="DisplayName" type="TranslatedString" handle="he0a4ddf7ge316g41feg8388ged83f4cb5ed9" version="1" />
+					<attribute id="EquipmentTypeID" type="guid" value="ccab7523-374c-49b4-96c7-8bf3e5b9c1ca" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Flail_A_1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="b551469c-5a53-4df3-a2c9-91516ef55695" />
+					<attribute id="Name" type="LSString" value="QUEST_WPN_Flail_DreadedSkulls" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9076abf1-1029-4be9-a7cf-428d2b6fdea5" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="84adf417-ef48-3bad-663e-8efa7089c696" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="PLA_WPN_DreadedSkullsFlail" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="b353980b-d950-e119-2233-46d6d1db1029" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_FLAILOFDREADSKULLS_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Planeslayer Flail -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h185cc788g90f8g4476g9ae6gc6275c7dafc9" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h062bbda8g494bg425cg8eadg07a9985d6b83" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="8c733d14-6cbc-4227-9d87-0e42ce0965c4" />
+					<attribute id="Name" type="LSString" value="MAG_LC_ChainDevil_Flail" />
+					<attribute id="ParentTemplateId" type="FixedString" value="23ab9011-ef66-463e-a8ee-012321be6d1c" />
+					<attribute id="Stats" type="FixedString" value="MAG_LC_ChainDevil_Flail" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="TechnicalDescriptionParams" type="LSString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="bd608dd1-1b88-218b-a30a-53f009c7e2be" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_OUTER_ENTITY_SLAYER_BLESS" />
 								</node>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_FIRE_THROW" />
-								</node>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_ACID_THROW" />
-								</node>
-								<node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_COLD_THROW" />
+									<attribute id="Object" type="FixedString" value="GOON_PLANESLAYERFLAIL_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>
