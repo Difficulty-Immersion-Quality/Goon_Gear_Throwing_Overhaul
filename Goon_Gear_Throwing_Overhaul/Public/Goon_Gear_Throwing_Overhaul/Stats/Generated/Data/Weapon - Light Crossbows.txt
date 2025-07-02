@@ -17,6 +17,7 @@
 // data "Proficiency Group" "LightCrossbows;SimpleWeapons"
 
 // ==================================== Magical variants ====================================
+// Note: Light Crossbow +2 is cut content, but seems perfectly functional.
 
 // new entry "WPN_LightCrossbow_1"
 // type "Weapon"
@@ -36,3 +37,86 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Ammunition;Loading;Twohanded;Dippable;Magical"
 
+// ==================================== Sharran Crossbow ====================================
+// Trivia: If picking it up from the chest, it is necessary to pass a DC 10  Intelligence saving throw History to notice it is actually a Sharran Crossbow.
+// TODO: Something edgy with obscurity or something rather typical of the emos. Listen to Marilyn Manson if inspiration for a rework is lacking, but try to forget how lame his set was back when I saw him 12 years ago omg I'm getting old.
+
+// new entry "UND_SharranCrossbow"
+// type "Weapon"
+// using "WPN_LightCrossbow_1"
+// data "RootTemplate" "43b7fbf5-7f6e-4e9e-bce7-c679eea44593"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Unique" "1"
+
+new entry "GOON_SHARRANCROSSBOW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Light Crossbow of Speed (Inaccessible/Cut content) ====================================
+// Changes: Now Legendary instead of Rare. Weapon enchant increased from +1 to +2.
+// Changes: Added a custom passive, Lethal Swiftness; once per turn when landing a critical hit or killing blow on an enemy you can Dash using a bonus action.
+
+new entry "MAG_BG_OfSpeed_LightCrossbow"
+type "Weapon"
+// using "WPN_LightCrossbow_2"
+using "MAG_BG_OfSpeed_LightCrossbow"
+// data "RootTemplate" "664ff469-770a-4597-9be2-506465e5486f"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+data "Rarity" "Legendary"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack)"
+data "PassivesOnEquip" "Goon_Lethal_Swiftness_Passive"
+// data "Unique" "1"
+
+new entry "GOON_LIGHTCROSSBOWOFSPEED_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// new entry "Projectile_MAG_BG_OfSpeed_LightCrossbow_BonusAttack"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Projectile_MainHandAttack"
+// data "Cooldown" "OncePerTurn"
+// Blink-of-an-eye Bolt
+// data "DisplayName" "h1eb4a116g1e71g4bbbgb343gb1125c02f74a;3"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellFlags" "IsAttack;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanDualWield;Temporary"
+
+new entry "Goon_Lethal_Swiftness_Passive"
+type "PassiveData"
+// Lethal Swiftness
+data "DisplayName" "h2768d915g07aag486dga7e9g53ddcaa5adf0;1"
+// After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.
+data "Description" "h565e4a63g2355g46bfgb4c5g0a650b7704a7;1"
+data "Properties" "OncePerTurn"
+data "Icon" "Action_Dash"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "(not Self() and Character() and Enemy()) and IsKillingBlow() or IsCritical() and (IsRangedWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and IsProficientWithEquippedWeapon())"
+data "StatsFunctors" "ApplyStatus(SELF, GOON_LETHAL_SWIFTNESS_UNLOCK,100,1)"
+
+new entry "GOON_LETHAL_SWIFTNESS_UNLOCK"
+type "StatusData"
+data "StatusType" "BOOST"
+// Lethal Swiftness
+data "DisplayName" "h2768d915g07aag486dga7e9g53ddcaa5adf0;1"
+// After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.
+data "Description" "h565e4a63g2355g46bfgb4c5g0a650b7704a7;1"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableCombatlog;IgnoreResting;ApplyToDead"
+data "Boosts" "UnlockSpell(Goon_Shout_Dash_Lethal_Swiftness)"
+
+new entry "Goon_Shout_Dash_Lethal_Swiftness"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Dash"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "ReactionActionPoint:1"
+// data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove"
+data "SpellFlags" "IgnoreSilence;Stealth;Invisible;NoCameraMove;Temporary"
+data "Cooldown" "OncePerTurn"

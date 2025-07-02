@@ -127,10 +127,28 @@
 	<!-- "Shout_BootsOfSpeed" --> <content contentuid="h08ad2972g6548g48a1gbed1gfc5a0f49c42d" version="1">Click the heels of your boots to &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; as a &lt;LSTag Tooltip="BonusAction"&gt;Bonus Action&lt;/LSTag&gt;. You gain &lt;LSTag Type="Status" Tooltip="CLICK_HEELS"&gt;Click Heels&lt;/LSTag&gt; for [1] turn.</content>
 	<!-- "CLICK_HEELS" --> <content contentuid="h9269dec6ge278g4d82ga7ccg01814ea8bcc0" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; using &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt; have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; against this creature.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 
-	<!-- NEW GEAR -->
+	<!-- NEW ENTRIES -->
 	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="haa29c2f4g9eecg46eeg96c9g3efbe30a1c48" version="1">Pendant Of Animal Speech</content>
 	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="h1276696cg0997g4e4bg8b7cg9312f9039a84" version="1">An Amulet in the shape of a small paw, adorned by a simple gemstone.</content>
+	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h2768d915g07aag486dga7e9g53ddcaa5adf0" version="1">Lethal Swiftness</content>
+	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h565e4a63g2355g46bfgb4c5g0a650b7704a7" version="1">After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
