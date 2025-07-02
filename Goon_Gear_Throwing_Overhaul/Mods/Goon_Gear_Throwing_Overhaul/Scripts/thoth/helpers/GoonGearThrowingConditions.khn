@@ -77,6 +77,12 @@ end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
 
+-- Wulbren's Hammer
+function WBongleThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & Item(context.Target) or Tagged('CONSTRUCT', context.Target)
+end
+
 -- Dragon's Grasp
 function DragonsGraspThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
