@@ -139,8 +139,8 @@
 	<!-- "Goon_Pendant_Animal_Speech_Amulet" --> <content contentuid="h1276696cg0997g4e4bg8b7cg9312f9039a84" version="1">An Amulet in the shape of a small paw, adorned by a simple gemstone.</content>
 	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h2768d915g07aag486dga7e9g53ddcaa5adf0" version="1">Lethal Swiftness</content>
 	<!-- "Goon_Lethal_Swiftness_Passive", "GOON_LETHAL_SWIFTNESS_UNLOCK" --> <content contentuid="h565e4a63g2355g46bfgb4c5g0a650b7704a7" version="1">After landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature with a &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attack&lt;/LSTag&gt;, you can &lt;LSTag Type="Spell" Tooltip="Shout_Dash"&gt;Dash&lt;/LSTag&gt; using a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt;.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="hef699771g3a4cg40edg9a7cg0dd3c7bc229d" version="1">Structural Decommission</content>
+	<!-- "Goon_WulbrenHammer_Structural_Decommission_Passive" --> <content contentuid="h5be62e5dgc35ag4cb6g8336g32028740eb62" version="1">Deals an additional [1] to Constructs, and inanimate objects.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

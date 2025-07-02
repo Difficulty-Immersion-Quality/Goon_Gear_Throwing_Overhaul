@@ -62,6 +62,220 @@
 						</node>
 					</children>
 				</node>
+				<!-- Skybreaker -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h9da5ac53g1969g49d3g88d0g50d6eb3aac7e" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h14424035gd954g49aeg83cdg42190ae27ae5" version="3" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="733a70a1-2e0f-46f4-aca1-037c0335dc72" />
+					<attribute id="Name" type="LSString" value="UNI_UND_DuergarBlacksmithHammer" />
+					<attribute id="ParentTemplateId" type="FixedString" value="20e6fc7e-a9d1-403b-a725-e3fe781521bb" />
+					<attribute id="Stats" type="FixedString" value="UND_DuergarBlacksmithHammer" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="557dbb15-2fde-be0d-999c-dd77b6a67013" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SKYBREAKER_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Wulbren's Hammer -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h2fb65908g182eg44f3g94ffgc355feac8ded" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hee7328fbg7dedg4037g810egc5ee3f92f5a7" version="2" />
+					<attribute id="Flag" type="int32" value="1" />
+					<attribute id="LevelName" type="FixedString" value="SCL_Main_A" />
+					<attribute id="MapKey" type="FixedString" value="b6925b99-4b14-48a1-89ca-eb328bb746df" />
+					<attribute id="Name" type="LSString" value="S_MOO_JailbreakHammer" />
+					<attribute id="Stats" type="FixedString" value="MOO_WulbrenHammer" />
+					<attribute id="TemplateName" type="FixedString" value="d0bf4aef-e423-49ab-9177-c86b2a8efc9a" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209007" />
+					<children>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="FixedString" value="SCL_Main_A" />
+											<children>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="eb3fa5f9-f73d-24a5-c27a-506ccc571403" />
+												</node>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="84930bb1-a014-8060-9792-d2421768ed26" />
+												</node>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="6803ee3e-7fdf-f20b-e214-c787dc405fd6" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Transform">
+							<attribute id="Position" type="fvec3" value="574.6313 33.7944 -645.6711" />
+							<attribute id="RotationQuat" type="fvec4" value="0 0.9730963 0 -0.23039882" />
+							<attribute id="Scale" type="float" value="1" />
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_WULBRENSHAMMER_WEAPON_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SHININGSTAVEROFSKULLS_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Brewing Ladle -->
+				<node id="GameObjects">
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="Description" type="TranslatedString" handle="h94e7f078g4e72g49eaga2e3g8ab836dbdde4" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h2f69ca46gfaacg4482ga87dg19d4e5d24610" version="1" />
+					<attribute id="EquipmentTypeID" type="guid" value="2fc3e6f9-120c-4adf-b7c3-7890aed7c312" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_BREWER_BrewingLadle_A" />
+					<attribute id="IsInspector" type="bool" value="True" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LevelOverride" type="int32" value="-1" />
+					<attribute id="MapKey" type="FixedString" value="96df6fd6-a688-47ab-b448-0b6d27d1cf1d" />
+					<attribute id="Name" type="LSString" value="WPN_BREWER_BrewingLadle_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="494f21ac-5a1b-4e91-bd30-551b79532516" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="dc62dacb-7e4e-76bf-d9c2-77c66b017a42" />
+					<attribute id="Race" type="int8" value="0" />
+					<attribute id="Stats" type="FixedString" value="WPN_LightHammer_1" />
+					<attribute id="Tooltip" type="uint8" value="2" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="70649386-ae02-f53d-71ea-93818804049a" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="InventoryList">
+							<children>
+								<node id="InventoryItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="OnDestroyActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="26" />
+									<children>
+										<node id="Attributes">
+											<attribute id="ActivateSoundEvent" type="FixedString" value="3ea82655-5140-4287-9ab8-794559f182d3" />
+											<attribute id="Animation" type="FixedString" value="" />
+											<attribute id="Conditions" type="LSString" value="" />
+											<attribute id="PlayOnHUD" type="bool" value="False" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BREWINGLADLE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 			</children>
 		</node>
 	</region>

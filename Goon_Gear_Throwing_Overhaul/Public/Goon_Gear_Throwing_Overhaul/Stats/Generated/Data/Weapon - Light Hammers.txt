@@ -35,7 +35,7 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand)"
 // data "Weapon Properties" "Thrown;Light;Melee;Dippable;Magical"
 
 // ==================================== Shining Staver-of-Skulls ====================================
-// Bug Fix: The Light status on the weapon is now custom, and cannot be overwritten then lost permanently 
+// Bug Fix: The Light status on the weapon is now custom, and cannot be overwritten then lost permanently.
 
 // new entry "MAG_Radiant_Radiating_Hammer"
 // type "Weapon"
@@ -44,12 +44,88 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_ConcussiveSmash_Offhand)"
 // data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
 // data "Unique" "1"
 
+new entry "GOON_SHININGSTAVEROFSKULLS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // New custom Light status
 new entry "GOON_LIGHT_SHINING_STAVER_OF_SKULLS"
 type "StatusData"
 data "StatusType" "BOOST"
 using "LIGHT"
-data "StackPriority" "20"
+data "StackPriority" "69"
 data "StackType" "Ignore"
 // data "StatusGroups" "SG_Light;SG_RemoveOnRespec"
 data "StatusGroups" "SG_Light"
+
+// ==================================== Skybreaker ====================================
+// Changes: Forced Honour ruleset for DRS on Searing Smite.
+// TODO: Something/anything.
+
+// new entry "UND_DuergarBlacksmithHammer"
+// type "Weapon"
+// using "WPN_LightHammer_1"
+// data "RootTemplate" "733a70a1-2e0f-46f4-aca1-037c0335dc72"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "Boosts" "UnlockSpell(Target_UND_Smite_Searing_DuergarBlacksmithHammer)"
+// data "Unique" "1"
+
+new entry "GOON_SKYBREAKER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Target_UND_Smite_Searing_DuergarBlacksmithHammer"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Smite_Searing"
+using "Target_UND_Smite_Searing_DuergarBlacksmithHammer"
+// data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); DealDamage(1d6, Fire,Magical); ApplyStatus(SEARING_SMITE, 100, 10)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); DealDamage(1d6, Fire,Magical,,0,,true,false); ApplyStatus(SEARING_SMITE, 100, 10)"
+// data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1"
+// data "MemoryCost" ""
+
+// ==================================== Wulbren's Hammer ====================================
+// Bug Fix: The 2d4 Force damage to items is now visible via a custom passive, "Structural Decommissioning".
+// Changes: Now deals 2d4 Force damage to Constructs, in addition to inanimate items. Also works when the hammer is thrown.
+// Changes: The 2d4 Force damage will no longer trigger damage riders as a damage rider source.
+
+new entry "MOO_WulbrenHammer"
+type "Weapon"
+// using "WPN_LightHammer_1"
+using "MOO_WulbrenHammer"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "WeaponFunctors" "IF(Item()):DealDamage(2d4,Force)"
+data "WeaponFunctors" ""
+// data "Unique" "1"
+
+new entry "GOON_WULBRENSHAMMER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Goon_WulbrenHammer_Structural_Decommission_Passive"
+type "PassiveData"
+// Structural Decommission
+data "DisplayName" "hef699771g3a4cg40edg9a7cg0dd3c7bc229d;1"
+// Deals an additional [1] to Constructs, and inanimate objects.
+data "Description" "h5be62e5dgc35ag4cb6g8336g32028740eb62;1"
+data "DescriptionParams" "DealDamage(2d4,Force)"
+data "TooltipConditionalDamage" "DealDamage(2d4,Force)"
+data "BoostContext" "OnAttack"
+data "BoostConditions" "AttackedWithPassiveSourceWeapon() and HasDamageEffectFlag(DamageFlags.Hit)"
+data "Boosts" "IF(Item() or Tagged('CONSTRUCT', context.Target)):WeaponDamage(2d4,Force)"
+
+// ==================================== Brewing Ladle (Inaccessible/Cut content) ====================================
+// TODO: Needs a custom entry, the model resizing, all that shit. But could be a fun item.
+// Trivia: The model of this weapon is the same as the weapon wielded by Thisobald Thorm, including it's size, despite being classed as a Light Hammer.
+
+// WPN_LightHammer_1
+
+new entry "GOON_BREWINGLADLE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
