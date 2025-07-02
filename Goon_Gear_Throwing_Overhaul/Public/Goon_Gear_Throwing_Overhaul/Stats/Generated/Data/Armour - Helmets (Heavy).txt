@@ -1,0 +1,21 @@
+// ==================================== Grymskull Helm ====================================
+// Changes: Now grants halved damage to Critical Hits instead of Immunity.
+
+new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet"
+type "Armor"
+// using "_Head_Magic_Metal"
+using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Helmet"
+// data "RootTemplate" "6b1c4d55-e0d1-4b58-a26d-57d807bca488"
+// data "ItemGroup" ""
+// data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Rarity" "VeryRare"
+// data "Boosts" "CriticalHit(AttackTarget,Success,Never);Resistance(Fire, Resistant);UnlockSpell(Target_MAG_HuntersMark_Grymskull)"
+data "Boosts" "UnlockSpell(Target_MAG_HuntersMark_Grymskull)"
+data "PassivesOnEquip" "Goon_Critical_Hit_Resistance"
+// data "Unique" "1"
+// data "Proficiency Group" "HeavyArmor"
+
+new entry "GOON_GRYMSKULLHELM_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
