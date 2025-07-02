@@ -37,6 +37,23 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);Unlo
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Finesse;Light;Melee;Dippable;Magical"
 
+// ==================================== Yurgir's Shortsword ====================================
+// TODO: Make it unwieldy, interesting, and accessible without disarm. Same as ogre clubs and shiii.
+
+// new entry "WPN_Orthon_ShortSword"
+// type "Weapon"
+// using "WPN_Shortsword"
+// data "RootTemplate" "0d5e17a5-510d-468a-8607-77a326bc453c"
+// data "UseConditions" "IsNotHumanoid(context.Source)"
+// data "Damage" "2d4"
+// data "Boosts" ""
+// data "BoostsOnEquipMainHand" ""
+
+new entry "GOON_YURGIRSSHORTSWORD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Trepan & Trepan +1 ====================================
 // Bug Fix: Weapon actions can now be used by playable character wielding the weapons.
 // Bug Fix: Conditional 1d6 Necrotic damage for the nurses no longer incorrectly displays "1d6" in the tooltip.

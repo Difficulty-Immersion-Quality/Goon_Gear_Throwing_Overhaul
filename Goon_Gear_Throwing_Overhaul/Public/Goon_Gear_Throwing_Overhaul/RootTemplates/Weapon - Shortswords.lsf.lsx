@@ -4,6 +4,29 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Yurgir's Shortsword -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="h4decd223g1573g4f8bg9fe9gce8111cebd93" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_ORTHON_Shortsword_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="0d5e17a5-510d-468a-8607-77a326bc453c" />
+					<attribute id="Name" type="LSString" value="WPN_ORTHON_Shortsword_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9ddcb3b2-14fb-48d7-9047-cd2ee34de51c" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="8fc96e13-64e6-35e3-1e4f-287c204a17af" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="b508299e-c837-e7f7-f3e7-d4306588bd37" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115205255725060" />
+					<children>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_YURGIRSSHORTSWORD_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 				<!-- Trepan +1 -->
 				<node id="GameObjects">
 					<attribute id="LevelName" type="FixedString" value="" />
