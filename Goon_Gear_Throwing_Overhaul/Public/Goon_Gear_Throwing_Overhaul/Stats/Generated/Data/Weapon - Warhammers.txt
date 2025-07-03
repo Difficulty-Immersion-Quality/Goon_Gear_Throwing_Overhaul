@@ -49,83 +49,294 @@ using "WPN_Warhammer_Pact"
 data "Boosts" ""
 // data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Azer Warhammer ====================================
 
-weapon entry
+// new entry "WPN_Warhammer_Azer"
+// type "Weapon"
+// using "WPN_Warhammer"
+// data "RootTemplate" "22baa548-56a4-494c-a9d0-4880d6f1da91"
+// data "DefaultBoosts" "WeaponDamage(1d6, Fire)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_PostureBreaker);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash);UnlockSpell(Shout_Overheat_Azer)"
+// data "Weapon Properties" "Melee;Dippable;Versatile"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_AZERWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Ceremonial Warhammer ====================================
+// Changes: Ceremonial Warhammer uses the entry for generic +1 Warhammer in vanilla, it now has its own.
+// TODO: Something cooler than a +1 weapon?
 
-weapon entry
+new entry "Goon_WPN_Warhammer_Ceremonial"
+type "Weapon"
+using "WPN_Battleaxe_1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_CEREMONIALWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Faithbreaker ====================================
+// Changes: Added an offhand version of the Absolute Power weapon action.
 
-weapon entry
+new entry "GOB_GoblinKing_Warhammer"
+type "Weapon"
+// using "WPN_Warhammer_1"
+using "GOB_GoblinKing_Warhammer"
+// data "RootTemplate" "37a29c63-3fcd-43bd-8021-c363dcc852bc"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "ValueOverride" "300"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Target_GOB_GoblinKing_ForceAttack_WeaponAttack)"
+data "Boosts" ""
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_PostureBreaker);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_PostureBreaker);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_HinderingSmash);UnlockSpell(Target_GOB_GoblinKing_ForceAttack_WeaponAttack)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PostureBreaker_Offhand);UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HinderingSmash_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_PostureBreaker_Offhand);UnlockSpell(Goon_Target_ConcussiveSmash_Offhand);UnlockSpell(Goon_Target_HinderingSmash_Offhand);UnlockSpell(Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand)"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_FAITHBREAKER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_GOB_GoblinKing_ForceAttack_WeaponAttack"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "DealDamage(OffhandMeleeWeapon+StrengthModifier, OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand);DealDamage(1d6, Force);IF(not SavingThrow(Ability.Strength, SourceSpellDC())):Force(5)"
+// Absolute Power (Offhand)
+data "DisplayName" "h20447d6cg9d12g46f3gbee6gd5d1e3048737;1"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon+StrengthModifier, OffhandMeleeWeaponDamageType); DealDamage(1d6, Force)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+data "SpellFlags" "IsAttack;IsMelee;IsHarmful;IsDefaultWeaponAction"
 
-weapon entry
+// ==================================== Intransigent Warhammer ====================================
+// Bug Fix: Impulse Blast works when thrown.
+// Changes: Impulse Blast no longer has a hidden DC 14 Dexterity Saving Throw. The duration of Prone is reduced from 2 turns to 1 turn.
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// new entry "UND_DuergarRaft_GruesomeHammer"
+// type "Weapon"
+// using "WPN_Warhammer_1"
+// data "RootTemplate" "4d1f9bce-1884-47d0-a420-69417f397139"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "PassivesOnEquip" "UND_DuergarRaft_Hammer_Passive"
+// data "Unique" "1"
+
+new entry "GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "UND_DuergarRaft_Hammer_Passive"
+type "PassiveData"
+using "UND_DuergarRaft_Hammer_Passive"
+// Impulse Blast
+// data "DisplayName" "hd2d91fd1g134bg4a5fgb59cg81e4cfded8e0;2"
+// You knock nearby foes &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; after killing a hostile target or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+// data "Description" "h4e73d255g2835g4acbgb141g95d3aef9bd85;5"
+// Knock nearby foes &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turns, after killing a hostile target or landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon.
+data "Description" "h03de4225g96deg49aag9a14gd1a3af9b0986;1"
+data "DescriptionParams" "1"
+data "TooltipSave" "Dexterity"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and not IsCriticalMiss() and Character() and Enemy() and (IsCritical() or IsKillingBlow())"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and not IsMiss() and Enemy() and (IsCritical() or IsKillingBlow())"
+// data "StatsFunctors" "CreateExplosion(Projectile_UND_DuergarRaft_Hammer_Explosion)"
 
-weapon entry
+new entry "Projectile_UND_DuergarRaft_Hammer_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_UND_DuergarRaft_Hammer_Explosion"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "TargetRadius" "18"
+// data "AreaRadius" "3"
+// data "ExplodeRadius" "3"
+data "SpellProperties" "ApplyStatus(PRONE, 100, 1)"
+// data "SpellRoll" "not SavingThrow(Ability.Dexterity, 14)"
+data "SpellRoll" ""
+// data "SpellSuccess" "ApplyStatus(PRONE, 100, 2)"
+data "SpellSuccess" ""
+// data "SpellFail" ""
+// data "TargetConditions" "Character() and not Self() and Enemy()"
+// data "Trajectories" "2f137707-3e08-43cb-9362-ffc23c3e069e"
+// data "Icon" "PassiveFeature_Generic_Explosion"
+// data "SpellAnimation" "303ebd17-5b4e-46c6-ac4a-315c2aa29c6d,,;97e3b980-9905-428b-b682-68462777d628,,;f43888ef-1069-40d8-9159-ca0bc413fd5f,,;29574072-3390-485e-8257-5a65d6703e5f,,;,,;,,;,,;,,;,,"
+// data "SpellFlags" "HasHighGroundRangeExtension;AddFallDamageOnLand;IsSpell;RangeIgnoreVerticalThreshold;IsHarmful"
+// data "TargetEffect" "2a9586ab-5569-49cb-a182-d08d4eddb491"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// ==================================== Charge-Bound Warhammer ====================================
+// TODO: If this weapon is bound by an Eldritch Knight or Pact of the Blade Warlock, this weapon will permanently retain the lightning damage bonus from Galvanic Currents even if the character binds another weapon. The weapon will even retain this passive if the weapon is used by another character, different from the one who bound it.
+
+// new entry "MAG_Bonded_Shocking_Warhammer"
+// type "Weapon"
+// using "WPN_Warhammer_1"
+// data "RootTemplate" "50940e05-ba59-4569-a71f-79af34b605a8"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_BoundToBeBonded_Passive;MAG_ShockingBound_Passive"
+// data "Unique" "1"
+
+new entry "GOON_CHARGEBOUNDWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Clown Hammer ====================================
+// Bug Fix: Grim Irony will be properly displayed for Saving Throws.
 
-weapon entry
+// new entry "UNI_WYR_Circus_ClownHammer"
+// type "Weapon"
+// using "WPN_Warhammer_2"
+// data "RootTemplate" "72207448-c6b6-42fc-b9ef-a34fdd3c1265"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "PassivesOnEquip" "UNI_WYR_Circus_ClownHammer_Passive"
+// data "Unique" "1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_CLOWNHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "UNI_WYR_Circus_ClownHammer_Passive"
+type "PassiveData"
+using "UNI_WYR_Circus_ClownHammer_Passive"
+// Grim Irony
+// data "DisplayName" "hc85d5e63g2483g46begada9gebdd99d02c0a;1"
+// Whenever this weapon lands a critical hit, both target and attacker have to succeed a Wisdom Saving Throw, or be affected by <LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER">fits of laughter</LSTag>.
+// data "Description" "h2a73f220g161ag479agb8cfg2d0aff20c314;2"
+// Whenever this weapon lands a critical hit, both target and attacker have to succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, or be affected by &lt;LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER"&gt;fits of laughter&lt;/LSTag&gt; for [1] turns.
+data "Description" "h2ef43338g970ag42cfga983g22037d203ff2;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Wisdom"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
+// data "StatsFunctors" "IF(Tagged('HUMANOID',context.Source) and not SavingThrow(Ability.Wisdom,17, false, false, context.Source)):ApplyStatus(SELF,HIDEOUS_LAUGHTER,100, 2); IF(Tagged('HUMANOID', context.Target) and not SavingThrow(Ability.Wisdom,17, false, false, context.Target)):ApplyStatus(HIDEOUS_LAUGHTER,100, 2)"
+data "StatsFunctors" "ApplyStatus(GOON_GRIM_IRONY_TECHNICAL_APPLIER, 100, 0)"
 
-weapon entry
+new entry "GOON_GRIM_IRONY_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "ApplyStatus(SWAP,GOON_GRIM_IRONY_TECHNICAL_APPLIER_APPLIED, 100, 0);ApplyStatus(GOON_GRIM_IRONY_TECHNICAL_APPLIER_APPLIED, 100, 0)"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_GRIM_IRONY_TECHNICAL_APPLIER_APPLIED"
+type "StatusData"
+data "StatusType" "BOOST"
+// Grim Irony
+data "DisplayName" "hc85d5e63g2483g46begada9gebdd99d02c0a;1"
+// Whenever this weapon lands a critical hit, both target and attacker have to succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, or be affected by &lt;LSTag Type="Status" Tooltip="HIDEOUS_LAUGHTER"&gt;Hideous Laughter&lt;/LSTag&gt; for [1] turns.
+data "Description" "h2ef43338g970ag42cfga983g22037d203ff2;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "2"
+data "TooltipSave" "Wisdom"
+data "OnApplyRoll" "Tagged('HUMANOID') and not SavingThrow(Ability.Wisdom, 17)"
+data "OnApplySuccess" "ApplyStatus(HIDEOUS_LAUGHTER, 100, 2)"
+
+// ==================================== Hammer of the Just ====================================
+// Bug Fix: Slay the Wicked's 1d6 Bludgeoning damage now only applies to attacks made with the weapon.
+// Bug Fix: Slay the Wicked's 1d6 Bludgeoning damage applies when the weapon is thrown.
+
+// new entry "MAG_Tyrrant_Warhammer"
+// type "Weapon"
+// using "WPN_Warhammer_2"
+// data "RootTemplate" "d0b0b019-5954-4e80-97f5-4206ac1bc0db"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Boosts" "UnlockSpell(Shout_MAG_DetectThoughts)"
+// data "PassivesOnEquip" "MAG_Tyr_OfJustice_WarHammer_Passive"
+// data "Unique" "1"
+
+new entry "GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "MAG_Tyr_OfJustice_WarHammer_Passive"
+type "PassiveData"
+// using "MAG_WYRM_UndeadBane_GreatAxe_Passive"
+using "MAG_Tyr_OfJustice_WarHammer_Passive"
+// data "DescriptionParams" "DealDamage(1d6, Bludgeoning)"
+data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
+// data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('UNDEAD') or Tagged('FIEND'))):DamageBonus(1d6, Bludgeoning, false)"
+data "Boosts" "IF(IsMeleeWeaponAttack() and UndeadOrFiend()):DamageBonus(1d6, Bludgeoning, false)"
 
-weapon entry
+// ==================================== Ketheric's Warhammer ====================================
+// TODO: This is pretty fucking lame. Gotta be edgy and Myrkul themed, regret is a good theme for Ketheric. 
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// new entry "MAG_Ketheric_Warhammer"
+// type "Weapon"
+// using "WPN_Warhammer_1"
+// data "RootTemplate" "1f8252a3-3227-48a3-b500-996e571cac68"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "Unique" "1"
+
+new entry "GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Dwarven Thrower ====================================
+// TODO: Halfing and Gnomes should get a small bonus (not as good as Dwarves) because short king lives matter.
+
+// new entry "MAG_PHB_DwarvenThrower_Warhammer"
+// type "Weapon"
+// using "WPN_Warhammer_2"
+// data "RootTemplate" "596202a9-7d6b-4bcf-8748-dbf6aa55b002"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_HomingWeapon_Passive;MAG_PHB_DwarvenThrower_Passive"
+// data "Unique" "1"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Thrown"
+
+new entry "GOON_DWARVENTHROWER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Orphic Hammer ====================================
+// TODO: Something/anything.
+
+// new entry "LOW_OrphicHammer"
+// type "Weapon"
+// using "WPN_Warhammer_2"
+// data "RootTemplate" "9ff968d4-08ff-4da1-a288-959ac8d7abe1"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "Legendary"
+// data "WeaponFunctors" "IF(Tagged('ACT3_END_ORPHEUS_SHACKLES')):ApplyStatus(END_ORPHICHAMMER_BREAKSHACKLES)"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+// data "Boosts" "UnlockSpell(Target_MAG_OrphicHammer_ChainBreaker)"
+// data "PassivesOnEquip" "MAG_SpellResistance_Passive"
+// data "Unique" "1"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Thrown"
+
+new entry "GOON_ORPHICHAMMER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Infernal Warhammer (Inaccessible/cut content) ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Infernal_Warhammer"
+// type "Weapon"
+// using "WPN_Warhammer_1"
+// data "RootTemplate" "855f49c9-5724-4df9-a23d-0af82116af76"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_InfernalWeapon_Lesser_WeaponBoost_Passive"
+
+new entry "GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

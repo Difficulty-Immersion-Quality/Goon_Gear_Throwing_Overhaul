@@ -71,7 +71,7 @@ end
 
 function d4PsychicThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC','UND_NERE_SWORD_PSYCHIC_DAMAGE','GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- TODO: Confirm that this actually sets the thrower on fire with non-light objects
@@ -81,6 +81,19 @@ function BurnThrow(entity)
 end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
+
+-- Clown Hammer
+function ClownHammerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_CLOWNHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & IsCritical()
+end
+
+
+-- Intransigent Warhammer
+function IntransigentWarhammerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_INTRANSIGENTWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & (IsCritical() or IsKillingBlow())
+end
 
 -- Trident of the Waves
 function TridentOfTheWavesThrow(entity)
@@ -187,12 +200,6 @@ function HandmaidenThrow(entity)
 	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HANDMAIDENS_MACE_THROW_TECHNICAL'}, {}, {}, entity)
 end
 
--- Infernal Weapons
-function InfernalThrow(entity)
-    local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_INFERNAL_WEAPON','MAG_LESSER_INFERNAL_WEAPON'}, {}, {}, entity)
-end
-
 -- Dwarven Thrower shortening
 function IsDwarf(entity)
 	local entity = entity or context.Source
@@ -260,7 +267,7 @@ end
 -- Magical variant for Venomous Revenge and d6 poison weapons
 function d6PoisThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_LESSER_INFERNAL_WEAPON'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_DIPPED_POISON_BROODMOTHERS_REVENGE','MAG_POISON_POISON_WEAPON','MAG_LESSER_INFERNAL_WEAPON','GOON_INFERNALWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Wyvern Toxin
