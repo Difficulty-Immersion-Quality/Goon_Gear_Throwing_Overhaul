@@ -250,9 +250,9 @@ data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeapon
 data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
 data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(MAG_FROSTBITE_CREATURE,100,3);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Cold);ExecuteWeaponFunctors(OffHand)"
 // Frigid Blade (Offhand)
-data "DisplayName" "h7fcebe32gabffg45bag8efdg273049876c9b;2"
+data "DisplayName" "h64942341ge9c3g4a3bg8d9bg03f61c3f4360;1"
 // You add your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; as Cold damage.&lt;br&gt;&lt;br&gt;When the attack hits, apply &lt;LSTag Type="Status" Tooltip="MAG_INCREASED_DAMAGE_COLD"&gt;Frostbite&lt;/LSTag&gt;. The creature takes [1] when making a weapon attack.
-data "Description" "h6fd81774ge628g4fd4gabddg9624013af22c;2"
+data "Description" "h1bd20310g7f97g4f53gb0d5g6428947da15f;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Cold)"
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
