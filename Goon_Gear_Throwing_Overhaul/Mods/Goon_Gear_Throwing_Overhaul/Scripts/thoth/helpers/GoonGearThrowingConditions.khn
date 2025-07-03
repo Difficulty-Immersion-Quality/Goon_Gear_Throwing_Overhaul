@@ -6,10 +6,15 @@ function SlingShoesThrow(entity)
 	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PROJECTILE_SHOES_TECHNICAL'}, {}, {}, entity)
 end
 
--- 'MAG_THE_THORNS_WEAPON_BOND' for vanilla weapon
-function NyrulnaThrow(entity)
+-- Nyrulna
+function NyrulnaOnThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, entity)
+end
+
+function NyrulnaOffThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF'}, entity)
 end
 
 function d4FireThrow(entity)
@@ -25,7 +30,7 @@ end
 
 function d4ColdThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_COLD_THROW','ELEMENTAL_WEAPON_COLD','MAG_FROST_FROST_WEAPON','MAG_FROST_FROST_SMALL_WEAPON','GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_COLD_THROW','ELEMENTAL_WEAPON_COLD','MAG_FROST_FROST_WEAPON','MAG_FROST_FROST_SMALL_WEAPON','GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL','GOON_ALLANDRASWHELM_WEAPON_TECHNICAL','GOON_FLAILOFAGES_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 function d4LightningThrow(entity)
@@ -76,6 +81,24 @@ function BurnThrow(entity)
 end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
+
+-- Trident of the Waves
+function TridentOfTheWavesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- The Undead Bane
+function TheUndeadBaneThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THEUNDEADBANE_WEAPON_TECHNICAL'}, {}, {}, entity) & UndeadOrFiend(context.Target)
+end
+
+-- Hammer of the Just
+function HammerOfTheJustThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL'}, {}, {}, entity) & UndeadOrFiend(context.Target)
+end
 
 -- Wulbren's Hammer
 function WBongleThrow(entity)
@@ -185,6 +208,12 @@ end
 function d4RadiantThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
 	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON','GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE'}, {}, {}, entity)
+end
+
+-- Trident of the Depths
+function d6ColdThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_TRIDENTOFTHEDEPTHS_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- ==================================== Larger than d4 bonuses (and not poison) ====================================

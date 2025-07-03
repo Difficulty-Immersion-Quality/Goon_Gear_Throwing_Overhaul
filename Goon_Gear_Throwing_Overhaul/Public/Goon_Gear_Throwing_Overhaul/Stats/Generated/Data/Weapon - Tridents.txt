@@ -38,14 +38,6 @@ data "VersatileDamage" "1d10"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Thrown;Melee;Dippable;Versatile;Magical"
 
-// ==================================== Rusty Trident ====================================
-
-// new entry "WPN_Trident_Rusty"
-// type "Weapon"
-// using "WPN_Trident"
-// data "RootTemplate" "27ef84b1-ea40-4f06-a013-f6281511f0e9"
-// data "ValueScale" "0.1"
-
 // ==================================== Pactbound Trident ====================================
 // Bug Fix: No longer gives proficiency with the weapon type, the Pact Blade status on the weapon provides intrinsic proficiency already.
 
@@ -59,9 +51,17 @@ using "WPN_Trident_Pact"
 data "Boosts" ""
 // data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
 
+// ==================================== Other ====================================
+
+// new entry "WPN_Trident_Rusty"
+// type "Weapon"
+// using "WPN_Trident"
+// data "RootTemplate" "27ef84b1-ea40-4f06-a013-f6281511f0e9"
+// data "ValueScale" "0.1"
+
 // ==================================== Trident of the Depths ====================================
 // Bug Fix: Wild Shape: Water Myrmidon's Trident of the Depths' 1d6 Cold damage now formatted correctly.
-// Changes: Basic weapon actions added. The 1d6 bonus damage for the Conjure Elemental variant is now magical.
+// Bug Fix: 1d6 Cold damage applies when thrown.
 // TODO: Create an offhand version of Hiemal Strike (Target_FreezingStrike_Myrmidon_Water) and replace the static DC.
 // TODO: Create variants of basic weapon actions with functional animations for Myrmidon forms.
 
@@ -79,6 +79,11 @@ data "Boosts" ""
 // data "RootTemplate" "ba86b029-9232-4ad2-9e2d-9edcdd1d728b"
 // data "DefaultBoosts" "WeaponDamage(1d6,Cold);WeaponEnchantment(3);WeaponProperty(Magical)"
 
+new entry "GOON_TRIDENTOFTHEDEPTHS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "WPN_Trident_Water_Myrmidon_WildShape"
 type "Weapon"
 // using "WPN_Trident_Water_Myrmidon"
@@ -88,6 +93,7 @@ data "DefaultBoosts" "WeaponDamage(1d6,Cold);WeaponEnchantment(3);WeaponProperty
 
 // ==================================== The Sparky Points ====================================
 // Changes: Added a +1 enchantment. Electric Blood works with throwing.
+// Note: Technical applier is a shared status.
 
 new entry "MAG_ChargedLightning_Trident"
 type "Weapon"
@@ -102,8 +108,13 @@ data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "PassivesOnEquip" "MAG_ChargedLightning_Charge_OnDamage_Passive"
 // data "Unique" "1"
 
+new entry "GOON_THESPARKYPOINTS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Trident of the Waves ====================================
-// Changes: The Water Caller now functions with throwing.
+// Changes: The Water Caller works when thrown.
 
 // new entry "MAG_LC_Wave_Trident"
 // type "Weapon"
@@ -113,6 +124,11 @@ data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
 // data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_LC_Wave_Trident_Passive"
 // data "Unique" "1"
+
+new entry "GOON_TRIDENTOFTHEWAVES_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // Status applied to target when thrown
 new entry "GOON_WAVE_TRIDENT_TECHNICAL_APPLIER"
@@ -141,6 +157,11 @@ using "MAG_TheThorns_Trident"
 data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Rush_MAG_ZephyrFlash);UnlockSpell(Zone_MAG_ZephyrBreak)"
 // data "PassivesOnEquip" "MAG_TheThorns_ExplosiveThrowing_Passive;MAG_TheThorns_VeilOfTheWind_Passive;MAG_Light_TheThorns_Passive"
 // data "Unique" "1"
+
+new entry "GOON_NYRULNA_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // Renovated passive
 new entry "MAG_TheThorns_ExplosiveThrowing_Passive"
@@ -196,20 +217,16 @@ data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndi
 data "StackId" "GOON_NYRULNA_EXPLOSION_TOGGLE"
 data "StackType" "Overwrite"
 
-// TODO: This is a shitty and abusable implementation
 new entry "GOON_NYRULNA_EXPLOSION_TOGGLE_OFF_CHARACTER"
 type "StatusData"
 data "StatusType" "BOOST"
-// Nyrulna
-data "DisplayName" "h9abafab1g7844g4ac7gaf1fgdf984991d934;1"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 data "StackId" "GOON_NYRULNA_EXPLOSION_TOGGLE"
 data "StackType" "Overwrite"
-data "Boosts" "IF(IsRangedUnarmedAttack()):DamageBonus(3d4,Thunder,Magical)"
 
-// ==================================== Allandra's Whelm (Cut content) ====================================
-// Changes: Swapped Piercing Strike for Disarming, as it is with other Tridents.
-// TODO: Offhand Frigid Blade
+// ==================================== Allandra's Whelm (Inaccessible/Cut content) ====================================
+// Bug Fix: 1d4 Cold damage works when thrown.
+// Changes: Swapped Piercing Strike for Disarming, as it is with other Tridents. Added an offhand version of the Frigid Blade spell.
 
 new entry "MAG_LC_Frigid_Trident"
 type "Weapon"
@@ -217,3 +234,27 @@ type "Weapon"
 using "MAG_LC_Frigid_Trident"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
 data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_DisarmingStrike);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand);UnlockSpell(Goon_Target_DisarmingStrike_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand);UnlockSpell(Goon_Target_DisarmingStrike_Offhand);UnlockSpell(Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand)"
+
+new entry "GOON_ALLANDRASWHELM_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_WeaponAction_FrigidBlade"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(MAG_FROSTBITE_CREATURE,100,3);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Cold);ExecuteWeaponFunctors(OffHand)"
+// Frigid Blade (Offhand)
+data "DisplayName" "h7fcebe32gabffg45bag8efdg273049876c9b;2"
+// You add your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; as Cold damage.&lt;br&gt;&lt;br&gt;When the attack hits, apply &lt;LSTag Type="Status" Tooltip="MAG_INCREASED_DAMAGE_COLD"&gt;Frostbite&lt;/LSTag&gt;. The creature takes [1] when making a weapon attack.
+data "Description" "h6fd81774ge628g4fd4gabddg9624013af22c;2"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Cold)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
