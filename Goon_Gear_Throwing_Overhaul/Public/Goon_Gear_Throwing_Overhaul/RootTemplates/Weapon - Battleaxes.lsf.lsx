@@ -12,7 +12,8 @@
 					<attribute id="LevelName" type="FixedString" value="CRE_Main_A" />
 					<attribute id="MapKey" type="FixedString" value="0698b266-b7f8-4593-9063-f1189082c6e1" />
 					<attribute id="Name" type="LSString" value="S_CRE_Abbot4_Weapon" />
-					<attribute id="Stats" type="FixedString" value="WPN_Battleaxe_1" />
+					<!-- <attribute id="Stats" type="FixedString" value="WPN_Battleaxe_1" /> -->
+					<attribute id="Stats" type="FixedString" value="Goon_WPN_Battleaxe_Ceremonial" />
 					<attribute id="TemplateName" type="FixedString" value="c17ee133-cbb5-418f-88be-5ef27991cf50" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="_OriginalFileVersion_" type="int64" value="144115209550692452" />

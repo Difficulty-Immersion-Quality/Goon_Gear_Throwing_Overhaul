@@ -50,7 +50,7 @@ data "Boosts" ""
 // Changes: Ceremonial Battleaxe uses the entry for generic +1 Battleaxe in vanilla, it now has its own.
 // TODO: Something cooler than a +1 weapon?
 
-new entry "Goon_Ceremonial_Battleaxe"
+new entry "Goon_WPN_Battleaxe_Ceremonial"
 type "Weapon"
 using "WPN_Battleaxe_1"
 
