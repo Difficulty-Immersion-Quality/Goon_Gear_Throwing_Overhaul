@@ -48,3 +48,124 @@ using "WPN_Glaive_Pact"
 // data "Boosts" "Proficiency(Glaives)"
 data "Boosts" ""
 // data "Weapon Properties" "Heavy;Reach;Twohanded;Melee;Dippable;Magical"
+
+// ==================================== Drakethroat Glaive ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_BG_DragonsBreath_Glaive"
+// type "Weapon"
+// using "WPN_Glaive_2"
+// data "RootTemplate" "89f511d6-6d36-4480-9ee8-6e0145c960ef"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Boosts" "UnlockSpell(Target_MAG_ElementalWeapon)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Zone_Cleave)"
+// data "PassivesOnEquip" "MAG_BG_DragonsBreath_Glaive_Passive"
+// data "Unique" "1"
+
+new entry "GOON_DRAKETHROATGLAIVE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Monster Slayer Glaive ====================================
+// Bug Fix: Monsterslayer's additional 1d4 to attack and damage rolls only applies to attacks made with the weapon, including thrown attacks.
+
+// new entry "MAG_MonsterSlayer_Glaive"
+// type "Weapon"
+// using "WPN_Glaive_1"
+// data "RootTemplate" "0c3fcc8d-bf4b-4f65-95ec-a5d1030afe66"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_MonsterSlayer_Passive;MAG_JumpBoost_Passive"
+// data "Unique" "1"
+
+new entry "GOON_MONSTERSLAYERGLAIVE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_MonsterSlayer_Passive"
+type "PassiveData"
+using "MAG_MonsterSlayer_Passive"
+// Monsterslayer
+// data "DisplayName" "hd2aaad87g00b3g48d6gbe9cg8ed4dbe0fa5d;1"
+// This weapon deals an additional [1] damage against monstrosity type foes.
+// data "Description" "h2ab5363agd533g4636g9e74g7a73e27f01f6;2"
+// This weapon gains an additional [1] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and damage rolls against Monstrosities.
+data "Description" "ha182c382g58c5g4428g97c1g5a07c761aaa8;1"
+// data "DescriptionParams" "1d4"
+data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
+// data "Boosts" "IF(Tagged('MONSTROSITY', context.Target)):CharacterWeaponDamage(1d4);IF(Tagged('MONSTROSITY', context.Target)):RollBonus(Attack, 1d4)"
+
+// ==================================== Moonlight Glaive ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Moonlight_Glaive"
+// type "Weapon"
+// using "WPN_Glaive_1"
+// data "RootTemplate" "24f276e7-f08f-44f1-ab97-3df34fd52add"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4, Radiant)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_Steady);;UnlockSpell(Target_MAG_WeaponAction_MoonlightButterfly)"
+// data "PassivesOnEquip" "MAG_Light_MoonlightGlaive_Passive"
+// data "Unique" "1"
+
+new entry "GOON_MOONLIGHTGLAIVE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Sorrow ====================================
+// TODO: Something/anything.
+
+// new entry "DEN_HalsinBlade"
+// type "Weapon"
+// using "WPN_Glaive_1"
+// data "RootTemplate" "0de9e072-7048-4d07-8bbe-79e0591674c2"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Target_MAG_ThornWhip_Sorrow)"
+// data "Unique" "1"
+
+new entry "GOON_SORROW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Dancing Breeze ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Finesse_Glaive"
+// type "Weapon"
+// using "WPN_Glaive_2"
+// data "RootTemplate" "0a6e5a22-414d-4f4e-b9e1-6083822648c4"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_Steady);UnlockSpell(Shout_MAG_WhirlwindAttack)"
+// data "Unique" "1"
+// data "Weapon Properties" "Heavy;Reach;Twohanded;Melee;Dippable;Finesse"
+
+// new entry "GOON_THEDANCINGBREEZE_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Scythe of Myrkul (Inaccessible/Cut content) ====================================
+// TODO: Make a custom drop for humanoids, or just use a downscaled model for something new.
+
+// new entry "WPN_Apostle_Scythe"
+// type "Weapon"
+// using "WPN_Glaive"
+// data "RootTemplate" "3112f0f5-4073-45d2-8e37-eeafa1558896"
+// data "UseConditions" "Tagged('APOSTLE_OF_MYRKUL', context.Source)"
+// data "Damage" "2d12"
+// data "WeaponRange" "500"
+// data "Boosts" "UnlockSpell(Zone_Cleave_Apostle)"
+// data "BoostsOnEquipMainHand" ""
+// data "BoostsOnEquipOffHand" ""
+
+new entry "GOON_SCYTHEOFMYRKUL_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

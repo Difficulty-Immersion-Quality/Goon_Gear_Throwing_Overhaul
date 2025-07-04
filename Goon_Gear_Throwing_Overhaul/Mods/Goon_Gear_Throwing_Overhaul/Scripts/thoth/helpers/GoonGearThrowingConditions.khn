@@ -82,6 +82,12 @@ end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
 
+-- Monster Slayer Glaive
+function MonsterSlayerGlaiveThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_MONSTERSLAYERGLAIVE_WEAPON_TECHNICAL'}, {}, {}, entity) & Tagged('MONSTROSITY', context.Target)
+end
+
 -- The Impaler
 function TheImpalerThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
@@ -121,7 +127,7 @@ end
 -- Wulbren's Hammer
 function WBongleThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & Item(context.Target) or Tagged('CONSTRUCT', context.Target)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_WULBRENSHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity) & (Item(context.Target) or Tagged('CONSTRUCT', context.Target))
 end
 
 // TODO: Fix this one.
@@ -226,7 +232,7 @@ end
 -- Radiant not covered in vanilla for d4 bonuses
 function d4RadiantThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON','GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_RADIANT_RADIANCE_WEAPON','GOON_ELEMENTAL_RESONANCE_RADIANT_DAMAGE','GOON_MOONLIGHTGLAIVE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- Trident of the Depths
