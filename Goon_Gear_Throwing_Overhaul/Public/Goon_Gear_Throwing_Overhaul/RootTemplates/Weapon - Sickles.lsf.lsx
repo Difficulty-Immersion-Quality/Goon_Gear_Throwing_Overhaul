@@ -4,7 +4,242 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Sickle of BOOOAL -->
 				<node id="GameObjects">
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="Description" type="TranslatedString" handle="h9b7ac0b7g5e1fg4307ga7a8gc911787a28ad" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h246e8b9dg04a4g4701g872bg87ccc3542778" version="1" />
+					<attribute id="DropSound" type="FixedString" value="a77249ac-7929-43de-b1a2-9690a7a71024" />
+					<attribute id="Faction" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Icon" type="FixedString" value="Item_DEC_HAG_Totem_Props_Dagger_A" />
+					<attribute id="InventoryMoveSound" type="FixedString" value="a77249ac-7929-43de-b1a2-9690a7a71024" />
+					<attribute id="IsInspector" type="bool" value="False" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LevelOverride" type="int32" value="0" />
+					<attribute id="MapKey" type="FixedString" value="a07f2e91-e084-4fe5-9dbb-ef7de76a3c0a" />
+					<attribute id="Name" type="LSString" value="UNI_SickleOfBOOOAL" />
+					<attribute id="ParentTemplateId" type="FixedString" value="cd50dd17-b1ed-4e8d-8825-ffc1e3cc19e0" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="ff671682-947b-4430-a8fb-9b1afa82f77c" />
+					<attribute id="PickupSound" type="FixedString" value="92550df7-e13e-4474-8a7e-a59825eaa805" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="UNI_SickleOfBOOOAL" />
+					<attribute id="Tooltip" type="uint8" value="2" />
+					<attribute id="TreasureOnDestroy" type="bool" value="True" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="7c2a4f10-2647-b640-7046-a30272b3ede5" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.057894103" />
+									<attribute id="Max" type="fvec3" value="0.095460095 0.028164329 0.08217926" />
+									<attribute id="Min" type="fvec3" value="-0.053415813 -0.00064347126 -0.19788094" />
+									<attribute id="Radius" type="float" value="0.31010747" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.057894103" />
+									<attribute id="Max" type="fvec3" value="0.19092019 0.028164329 0.16435856" />
+									<attribute id="Min" type="fvec3" value="-0.106831625 -0.00064347126 -0.39576197" />
+									<attribute id="Radius" type="float" value="0.31010747" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.057894103" />
+									<attribute id="Max" type="fvec3" value="0.19092019 0.028164329 0.19440576" />
+									<attribute id="Min" type="fvec3" value="-0.106831625 -0.00064347126 -0.42580917" />
+									<attribute id="Radius" type="float" value="0.31010747" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<node id="InventoryList" />
+						<node id="OnDestroyActions" />
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SICKLEOFBOOOAL_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Sussur Sickle -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h4dfb7163gf3f5g42e4ga39ege8e25bd316dd" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hf9d58539gc31fg4b02gb3d6g36f0134571b8" version="1" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="Icon" type="FixedString" value="Item_QUEST_FOR_SussurSickle" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="6b95bb45-41c3-4954-ac2f-ef1aa169b0b6" />
+					<attribute id="Name" type="LSString" value="QUEST_FOR_SussurSickle" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50d677ed-3a0e-40e9-8291-ee6823af5672" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="653a28d0-111c-be3d-78d0-3a21f5ed6988" />
+					<attribute id="ReadinessFlags" type="uint32" value="16" />
+					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurSickle" />
+					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="hee463fd8g6dedg4d6aga45cgf81509b49ca8" version="1" />-->
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="95eff74b-1dc2-bbd4-85d3-ba2a0c4ed2e6" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540921856" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.21458146 0.06110602 0.18579999" />
+									<attribute id="Min" type="fvec3" value="-0.108311206 -0.009765528 -0.4110826" />
+									<attribute id="Radius" type="float" value="0.0833395" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.21458146 0.06110602 0.18579999" />
+									<attribute id="Min" type="fvec3" value="-0.108311206 -0.009765528 -0.4110826" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0374908" />
+									<attribute id="Max" type="fvec3" value="0.21458146 0.06110602 0.18579999" />
+									<attribute id="Min" type="fvec3" value="-0.108311206 -0.009765528 -0.4110826" />
+									<attribute id="Radius" type="float" value="0.166679" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SUSSURSICKLE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Wavemother's Sickle -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h8e6943fagb792g4598g86fcgd7c1bd0dc10c" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h74856d42gb077g486fg878cga70643ddc8c7" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_QUEST_FOR_SussurSickle" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="5b4b10cd-089f-4675-8392-5bfa6749d79c" />
+					<attribute id="Name" type="LSString" value="MAG_LC_Umberlee_Cold_Sickle" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50d677ed-3a0e-40e9-8291-ee6823af5672" />
+					<attribute id="Stats" type="FixedString" value="MAG_LC_Umberlee_Cold_Sickle" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="5a69b6ad-5ea1-327a-20b1-7fcc4881a609" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_FROST_FROST_SMALL_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_WAVEMOTHERSSICKLE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
 				</node>
 			</children>
 		</node>

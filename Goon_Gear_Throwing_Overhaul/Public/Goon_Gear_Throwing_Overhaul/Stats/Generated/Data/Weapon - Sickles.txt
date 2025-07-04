@@ -42,83 +42,102 @@ data "Damage" "1d4"
 data "Boosts" ""
 // data "Weapon Properties" "Light;Melee;Dippable;Magical"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Sickle (Redcap) ====================================
+// Changes: Now has the same damage as a regular Sickle, 1d4 instead of 2d4.
+// Changes: A new passive, "Feyvourite Weapon", allows Redcaps to deal an additional 1d4 Slashing damage.
 
-weapon entry
+new entry "WPN_Redcap_Sickle"
+type "Weapon"
+using "WPN_Sickle"
+data "PassivesOnEquip" "Goon_Redcap_Sickle_Bonus"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "Goon_Redcap_Sickle_Bonus"
+type "PassiveData"
+// Feyvourite Weapon
+data "DisplayName" "hd50a1576gf04ag4d04gab36g2a0353418307;1"
+// Redcaps deal an additional [1] with this weapon.
+data "Description" "h56660f2ag14bag46abgb5f3gf55d976e2bbc;1"
+data "DescriptionParams" "DealDamage(1d4,Slashing)"
+data "Boosts" "IF(Tagged('REDCAP',context.Source)):WeaponDamage(1d4,Slashing)"
+
+// ==================================== Sickle of BOOOAL ====================================
+// Bug Fix: BOOOAL's Blessing isn't removed from the weapon after a long rest.
+// Changes: Added +1 weapon enchantment.
+
+new entry "UNI_SickleOfBOOOAL"
+type "Weapon"
+// using "WPN_Sickle_1"
+using "UNI_SickleOfBOOOAL"
+// data "RootTemplate" "a07f2e91-e084-4fe5-9dbb-ef7de76a3c0a"
+// data "ItemGroup" ""
+// data "Damage" "2d4"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "Unique" "1"
+
+new entry "GOON_SICKLEOFBOOOAL_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+new entry "UND_BOOOALGIFT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "UND_BOOOALGIFT"
+// BOOOAL's Blessing
+// data "DisplayName" "h9626d720gffd1g45e9g9f71gbbff57279c93;3"
+// The wielder has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; creatures, as long as there are kuo-toa to worship BOOOAL.
+// data "Description" "h060a4ec6gd5dfg4e62g8c18g0bd7c14ef9f7;4"
+// data "Icon" "statIcons_BoooalsBenediction"
+data "StatusPropertyFlags" "IgnoreResting;ApplyToDead"
+// data "Boosts" "UseBoosts(IF(HasStatus('BLEEDING',context.Target)):Advantage(AttackRoll))"
 
-weapon entry
+// ==================================== Sussur Sickle ====================================
+// Bug Fix: Description is now accurate and states a Saving Throw.
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "FOR_IncompleteMasterwork_SussurSickle"
+type "Weapon"
+// using "WPN_Sickle_1"
+using "FOR_IncompleteMasterwork_SussurSickle"
+// data "RootTemplate" "6b95bb45-41c3-4954-ac2f-ef1aa169b0b6"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueOverride" "120"
+// data "Rarity" "Rare"
+// data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(SILENCED,100, 2)"
+data "PassivesOnEquip" "Goon_Sussur_Silence_Passive"
+// data "Unique" "1"
+
+new entry "GOON_SUSSURSICKLE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Wavemother's Sickle ====================================
+// Bug Fix: 1d4 Cold damage applies when thrown.
 
-weapon entry
+// new entry "MAG_LC_Umberlee_Cold_Sickle"
+// type "Weapon"
+// using "WPN_Sickle_1"
+// data "RootTemplate" "5b4b10cd-089f-4675-8392-5bfa6749d79c"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "PassivesOnEquip" "MAG_LC_Umberlee_Cold_Sickle_Passive"
+// data "Unique" "1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// TODO: Wiki doesn't mention it, but pretty sure this buffs ALL attacks and not just when using the weapon.
+// new entry "MAG_LC_Umberlee_Cold_Sickle_Passive"
+// type "PassiveData"
+// Watery Guidance
+// data "DisplayName" "h04c27da9g92f0g4caag9936gbd73fbd0b092;2"
+// This weapon has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against &lt;LSTag Type="Status" Tooltip="WET"&gt;Wet&lt;/LSTag&gt; creatures.
+// data "Description" "h2519e7d8gf845g448fg8097g2b67969a34f0;2"
+// data "Boosts" "IF(HasStatus('WET', context.Target)):Advantage(AttackRoll)"
+
+new entry "GOON_WAVEMOTHERSSICKLE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-

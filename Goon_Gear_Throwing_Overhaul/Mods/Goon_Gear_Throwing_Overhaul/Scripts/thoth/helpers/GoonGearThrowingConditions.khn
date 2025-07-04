@@ -139,7 +139,7 @@ end
 -- Sussur Weapons
 function SussurThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_SUSSUR_WEAPON_THROW_TECHNICAL'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL','GOON_SUSSURDAGGER_WEAPON_TECHNICAL','GOON_SUSSURSICKLE_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- TODO: Check for if damage was dealt prior to application

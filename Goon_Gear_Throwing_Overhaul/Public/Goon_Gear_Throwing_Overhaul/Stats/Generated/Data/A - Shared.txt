@@ -1,10 +1,42 @@
-// ==================================== Shadow Blade ====================================
-// Bug Fix: Advantage against obscured targets is only applied to attacks with Shadow Blade itself.
+// ==================================== Sussur weapons ====================================
+
+new entry "Goon_Sussur_Silence_Passive"
+type "PassiveData"
+// Sussur Silence
+data "DisplayName" "h9546f680ge839g4e56g8c66g7c4497ebc1a1;1"
+// Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for [1] turns.
+data "Description" "hb51441aag0602g4421g8b9cg27b31a9a781c;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Constitution"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "StatsFunctors" "ApplyStatus(GOON_SUSSUR_TECHNICAL_APPLIER,100,0)"
+
+new entry "GOON_SUSSUR_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Sussur Silence
+data "DisplayName" "h9546f680ge839g4e56g8c66g7c4497ebc1a1;1"
+// Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.
+data "Description" "hb51441aag0602g4421g8b9cg27b31a9a781c;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Constitution"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+// data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 12)"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)"
+data "OnApplySuccess" "ApplyStatus(SILENCED,100,2)"
+data "OnApplyFail" ""
+
+// ==================================== Shadow Blade - Knife of the Undermountain King, Justiciar's Scimitar ====================================
+// Bug Fix: Shadow Blade's Advantage against obscured targets is only applied to attacks with the weapon itself.
 // Note: Necessary to include here as it's a passive used by multiple weapons and not just the summon itself.
+// TODO: List all weapons above!
 
 new entry "ShadowBlade_Passive"
 type "PassiveData"
 using "ShadowBlade_Passive"
+// Shadow Blade
+// data "DisplayName" "h0160e9efg8974g43d6gb3fcg8d4e9d200a3c;4"
 // You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against Lightly or Heavily Obscured targets when using this blade.
 // data "Description" "ha672fd65g0fe4g4596g9529gce372c013ca1;6"
 // Your &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this blade have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Lightly or Heavily Obscured targets.
@@ -12,9 +44,9 @@ data "Description" "h1eec2cd1gc17dg48cdg8982g879f95483b05;1"
 // data "Boosts" "IF(not HasObscuredState(ObscuredState.Clear) and IsMeleeAttack() and IsWeaponAttack()):Advantage(AttackRoll);"
 data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and HasStatus('SHADOWBLADE_TECHNICAL', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source) and not HasObscuredState(ObscuredState.Clear))):Advantage(AttackRoll)"
 
-// ==================================== Vicious weapons "Dolor Amarus" ====================================
+// ==================================== Vicious weapons - Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow ====================================
 // Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
-// Bug Fix: The Dolor Amarus passive applies when throwing the weapon.
+// Changes: Dolor Amarus passive now works when thrown.
 // Changes: The additional damage only applies to attacking with or throwing the weapon itself.
 
 new entry "MAG_Vicious_Weapon_Passive"
@@ -29,12 +61,6 @@ data "DescriptionParams" "7"
 data "BoostContext" ""
 data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
 data "Boosts" "IF(IsWeaponAttack() and IsCritical()):DamageBonus(7,,false)"
-
-// Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow
-new entry "GOON_VICIOUS_WEAPON_THROW_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Infernal weapons ====================================
 // Changes: Lesser infernal weapons deal 1d6 Poison damage instead of a flat 3. 
