@@ -1,4 +1,334 @@
-// ==================================== Sentient Amulet ====================================
+// ==================================== Aberration Hunters' Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Absolute Confidence Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Absolute's Talisman ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Elemental Torment ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Misty Step ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Selûne's Chosen ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Silvanus ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of the Unworthy ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Beastmaster's Chain ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Broodmother's Revenge ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Fireheart ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Frost Prince ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hammergrim Mist Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Kill Collar ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Komira's Locket ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Moondrop Pendant ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Necklace of Elemental Augmentation ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Pearl of Power Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Psychic Spark ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shar's Temptation ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Silver Pendant ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spineshudder Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Tarnished Charm ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Blast Pendant ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Ever-Seeing Eye ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Branding ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Restoration ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of the Drunkard ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of the Harpers ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Champion's Chain ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Chancer's Carcanet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Envoy's Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Periapt of Wound Closure ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Sentient Amulet (Rare) ====================================
 // Bug Fix: Shatter is now shown as a level 3 spell.
 
 // new entry "UND_MonkAmulet_Amulet"
@@ -39,83 +369,272 @@ using "Target_WYR_SentientAmulet_AmuletAfterCombat"
 // data "Level" "2"
 data "Level" "3"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Spell Savant Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Strange Tendril Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Surgeon's Subjugation Amulet ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== The Amulet of Lost Voices ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Uncovered Mysteries ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Amulet of Greater Health ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Amulet of the Devout ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Amulet of Windrider ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Corvid Token ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Fey Semblance Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Khalid's Gift ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Sentient Amulet (Very Rare) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spellcrux Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Spectator Eyes ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Tressym Collar ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Unflinching Protector Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Amulet of Bhaal ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bloody Amulet ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Brass Locket ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Mayrina's Locket ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dauntless Amulet (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Synaptic Needle Amulet (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Scarab of Protection (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Treacleflow Amulet (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Lofty Sorcerer's Amulet (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ilmater's Aid (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Kruznabir's Asylum Amulet (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
