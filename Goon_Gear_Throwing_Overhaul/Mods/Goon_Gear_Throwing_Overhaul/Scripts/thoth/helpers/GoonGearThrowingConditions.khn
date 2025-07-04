@@ -9,12 +9,12 @@ end
 -- Nyrulna
 function NyrulnaOnThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_ON'}, {}, entity)
 end
 
 function NyrulnaOffThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF'}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({}, {'GOON_NYRULNA_WEAPON_TECHNICAL','GOON_NYRULNA_EXPLOSION_TOGGLE_OFF'}, {}, entity)
 end
 
 function d4FireThrow(entity)
