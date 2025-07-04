@@ -4,7 +4,265 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Magical Pike -->
 				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="h464abc97gcff4g4c97g9cc4g8feb534ae339" version="1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="c6323431-6efc-4fb6-af72-75f0a056a449" />
+					<attribute id="Name" type="LSString" value="MAG_Generic_02_Pike_1" />
+					<attribute id="ParentTemplateId" type="FixedString" value="40fa8049-b6c1-4463-b212-52ad13b5d687" />
+					<!-- <attribute id="Stats" type="FixedString" value="WPN_Pike_1" /> -->
+					<attribute id="Stats" type="FixedString" value="Goon_WPN_Magical_Pike" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209017" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_MAGICALPIKE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Returning Pike -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h9836c60ag8993g46d8gb2e0g5c9ddf49303b" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h788d91f4g6dfeg4e40g9ed0gd19b1519ccfe" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="1047ac9f-7860-44fd-9154-0f06fe64936c" />
+					<attribute id="Name" type="LSString" value="MAG_Throwable_Pike" />
+					<attribute id="ParentTemplateId" type="FixedString" value="40fa8049-b6c1-4463-b212-52ad13b5d687" />
+					<attribute id="Stats" type="FixedString" value="MAG_Throwable_Pike" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_THROWING_RETURN_TO_OWNER" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_RETURNINGPIKE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Breaching Pikestaff -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h2301ce7dg393ag4e94gb749g61930ae62773" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h322c8889gbe9eg48b8g9e37g55de2a6909bd" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="661ac892-ee92-46ca-b1b4-1c1df10c7bf0" />
+					<attribute id="Name" type="LSString" value="MAG_Generic_01_Pike_1" />
+					<attribute id="ParentTemplateId" type="FixedString" value="40fa8049-b6c1-4463-b212-52ad13b5d687" />
+					<attribute id="Stats" type="FixedString" value="MAG_Force_Pike" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Unseen Menace -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hf455caa6gc4c4g4b78gb386g9bb2d8fa1f5b" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h2a08b068g277cg428agb5b3g3e330e4c4b0b" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_Invisible_Pike_GLOW" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="cd6c6adc-8792-4378-8c63-8169cfad6c55" />
+					<attribute id="Name" type="LSString" value="MAG_Invisible_Pike" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50ffcd8e-eaa2-479c-b8ed-117ef5436b49" />
+					<attribute id="Stats" type="FixedString" value="MAG_Invisible_Pike" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="1b5efdf0-47bc-c735-e453-2495e1245302" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144818875517632512" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_UNSEENMENACE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- The Impaler -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h85cbc64fgcc10g483eg9a32g8d52587a0f3c" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h0427cd3cga481g47a5g8ec7gecf2892b9c03" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="53023726-12bd-4871-805a-66744321dfdb" />
+					<attribute id="Name" type="LSString" value="MAG_Generic_01_Pike_2" />
+					<attribute id="ParentTemplateId" type="FixedString" value="50ffcd8e-eaa2-479c-b8ed-117ef5436b49" />
+					<attribute id="Stats" type="FixedString" value="MAG_TheImpaler_Pike" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THEIMPALER_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
 				</node>
 			</children>
 		</node>

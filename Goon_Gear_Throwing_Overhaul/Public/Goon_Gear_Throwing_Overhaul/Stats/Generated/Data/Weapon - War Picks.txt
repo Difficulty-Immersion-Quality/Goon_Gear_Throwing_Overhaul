@@ -39,80 +39,80 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_CripplingStrike_Offhand);Un
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 

@@ -36,83 +36,114 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Reach;Melee;Twohanded;Heavy;Dippable;Magical"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Magical Pike ====================================
+// Changes: Now has a unique stat entry instead of just using the +1 variant.
+// TODO: Make it do something cool.
 
-weapon entry
+new entry "Goon_WPN_Magical_Pike"
+type "Weapon"
+using "WPN_Pike_1"
+data "RootTemplate" "c6323431-6efc-4fb6-af72-75f0a056a449"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_MAGICALPIKE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Returning Pike ====================================
 // TODO: Something/anything.
 
-weapon entry
+// new entry "MAG_Throwable_Pike"
+// type "Weapon"
+// using "WPN_Pike_1"
+// data "RootTemplate" "1047ac9f-7860-44fd-9154-0f06fe64936c"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "PassivesOnEquip" "MAG_HomingWeapon_Passive"
+// data "Unique" "1"
+// data "Weapon Properties" "Reach;Melee;Twohanded;Heavy;Dippable;Thrown"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// new entry "MAG_Throwable_Pike"
+// type "Weapon"
+// using "MAG_Throwable_Pike"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ValueScale" "1.3"
+// data "Rarity" "Rare"
+
+new entry "GOON_RETURNINGPIKE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Breaching Pikestaff ====================================
+// Bug Fix: 1d4 Force damage applies when thrown.
 
-weapon entry
+// new entry "MAG_Force_Pike"
+// type "Weapon"
+// using "WPN_Pike_2"
+// data "RootTemplate" "661ac892-ee92-46ca-b1b4-1c1df10c7bf0"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4, Force)"
+// data "Unique" "1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Unseen Menace ====================================
 // TODO: Something/anything.
 
-weapon entry
+// new entry "MAG_Invisible_Pike"
+// type "Weapon"
+// using "WPN_Pike_2"
+// data "RootTemplate" "cd6c6adc-8792-4378-8c63-8169cfad6c55"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Shout_Steady)"
+// data "PassivesOnEquip" "MAG_InvisiblePike_Passive"
+// data "StatusOnEquip" "MAG_INVISIBLE_WEAPON_BUFF_TECHNICAL"
+// data "Unique" "1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// new entry "MAG_Invisible_Pike"
+// type "Weapon"
+// using "MAG_Invisible_Pike"
+// data "ValueLevel" "3"
+
+new entry "GOON_UNSEENMENACE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== The Impaler (Inaccessible/Cut content) ====================================
+// Bug Fix: Break the Unbroken's 1d10 Piercing damage applies when thrown.
+// Changes: Forcing Honour ruleset changes to DRS.
 
-weapon entry
+new entry "MAG_TheImpaler_Pike"
+type "Weapon"
+// using "WPN_Pike_2"
+using "MAG_TheImpaler_Pike"
+// data "RootTemplate" "53023726-12bd-4871-805a-66744321dfdb"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);IF(HasMaxHPWithoutTemporaryHP(context.Target)):WeaponDamage(1d10, Piercing)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Shout_Steady);UnlockSpell(Target_MAG_WeaponAction_Bloodrend)"
+// data "PassivesOnEquip" "MAG_ImpalerDamageBonus_Passive;MAG_ImpalerTempHP_Passive"
+// data "Unique" "1"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "MAG_ImpalerDamageBonus_Passive"
+type "PassiveData"
+// using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+using "MAG_ImpalerDamageBonus_Passive"
+// data "DescriptionParams" "DealDamage(1d10,Piercing)"
+// data "TooltipConditionalDamage" "DealDamage(1d10,Piercing)"
+// data "StatsFunctorContext" "OnAttack"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasMaxHP() and IsAttack() and not IsMiss()"
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d10,Piercing)"
+data "StatsFunctors" ""
+
+new entry "GOON_THEIMPALER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-

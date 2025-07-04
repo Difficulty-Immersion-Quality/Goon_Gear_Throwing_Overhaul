@@ -66,7 +66,7 @@ end
 
 function d4ForceThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FORCE_THROW','ELEMENTAL_WEAPON_FORCE','MAG_FORCE_FORCE_WEAPON_LESSER'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_FORCE_THROW','ELEMENTAL_WEAPON_FORCE','MAG_FORCE_FORCE_WEAPON_LESSER','GOON_BREACHINGPIKESTAFF_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 function d4PsychicThrow(entity)
@@ -81,6 +81,12 @@ function BurnThrow(entity)
 end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
+
+-- The Impaler
+function TheImpalerThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_THEIMPALER_WEAPON_TECHNICAL'}, {}, {}, entity) & HasMaxHPWithoutTemporaryHP(context.Target)
+end
 
 -- Clown Hammer
 function ClownHammerThrow(entity)
