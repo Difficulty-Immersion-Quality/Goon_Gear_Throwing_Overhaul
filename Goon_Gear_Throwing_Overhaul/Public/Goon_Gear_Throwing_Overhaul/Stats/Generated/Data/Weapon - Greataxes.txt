@@ -49,23 +49,70 @@
 
 // ==================================== Exterminator's Axe ====================================
 // Bug Fix: Scourge of Insects no longer specifies that is deals additional damage to insects when it's not actually something the functionality checks for.
-// Changes: Now specifies spiders instead of insects, and checks for the "SPIDER" tag in the functionality. +1 weapon enchantment added. Conditional 1d6 Fire damage is now magical.
+// Changes: Now specifies spiders instead of insects, and checks for the "SPIDER" tag in the functionality. +1 weapon enchantment added. Conditional 1d6 Fire damage is now magical. Forced Honour ruleset changes to DRS.
 // TODO: If there's other fitting creature types add them to the functionality. 
+
 
 new entry "UND_DuergarRaft_PestKillerAxe"
 type "Weapon"
 // using "WPN_Greataxe_1"
 using "UND_DuergarRaft_PestKillerAxe"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
 // data "DefaultBoosts" "WeaponProperty(Magical);IF(TargetSizeEqualOrSmaller(Size.Small) or Tagged('PLANT',context.Target) or Tagged('MYCONID',context.Target)):WeaponDamage(1d6, Fire)"
 data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(TargetSizeEqualOrSmaller(Size.Small) or Tagged('PLANT',context.Target) or Tagged('MYCONID',context.Target) or Tagged('SPIDER',context.Target)):WeaponDamage(1d6, Fire,Magical)"
+
+new entry "GOON_EXTERMINATORSAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "UND_DuergarRaft_PestKillerAxe_Passive"
 type "PassiveData"
 using "UND_DuergarRaft_PestKillerAxe_Passive"
+// Scourge of Pests
+// data "DisplayName" "hf8f561dege677g4bf9gabf7gcfce17dc0c21;2"
 // Deals an additional [1] to Plants, Insects or Small creatures.
 // data "Description" "h756389c9g6148g4fa7g90fbg449a3fac7dbc;3"
 // Deals an additional [1] to Plants, Spiders or small creatures.
 data "Description" "h1a63b3cdge895g484agb702g3b5c616e13dd;1"
+// data "DescriptionParams" "DealDamage(1d6,Fire)"
+// data "TooltipConditionalDamage" "DealDamage(1d6,Fire)"
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and (TargetSizeEqualOrSmaller(Size.Small) or Tagged('PLANT',context.Target) or Tagged('MYCONID',context.Target) )"
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d6,Fire,Magical)"
+data "StatsFunctors" ""
+
+// ==================================== The Undead Bane ====================================
+// Bug Fix: Slay the Wicked's 1d6 Slashing damage now only applies to attacks made with the weapon.
+// Bug Fix: Slay the Wicked's 1d6 Slashing damage applies when the weapon is thrown.
+
+// new entry "MAG_WYRM_UndeadBane_GreatAxe"
+// type "Weapon"
+// using "WPN_Greataxe_1"
+// data "RootTemplate" "9a81cb70-6a5c-465b-b4b9-0931d544095c"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing);UnlockSpell(Target_MAG_WeaponAction_UndyingSubjugation)"
+// data "PassivesOnEquip" "MAG_WYRM_UndeadBane_GreatAxe_Passive"
+// data "Unique" "1"
+
+new entry "MAG_WYRM_UndeadBane_GreatAxe_Passive"
+type "PassiveData"
+using "MAG_WYRM_UndeadBane_GreatAxe_Passive"
+// Slay the Wicked
+// data "DisplayName" "h81c05b30g45acg4903g8514gd7f0980d990c;2"
+// This weapon deals an additional [1] against Fiends and Undead.
+// data "Description" "hd3a76ca8g7ae3g4a60gb0a7gca1001f7e08c;2"
+// data "DescriptionParams" "DealDamage(1d6, Slashing)"
+data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
+// data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('UNDEAD') or Tagged('FIEND'))):DamageBonus(1d6, Slashing, false)"
+data "Boosts" "IF(IsMeleeWeaponAttack() and UndeadOrFiend()):DamageBonus(1d6, Slashing, false)"
+
+new entry "GOON_THEUNDEADBANE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Very Heavy Greataxe ====================================
 // Bug Fix: Gargantuan Cleave's tooltip no longer states that is does full weapon damage when it does half weapon damage.
@@ -85,6 +132,11 @@ data "Boosts" ""
 data "BoostsOnEquipMainHand" "UnlockSpell(Zone_UNI_SuperheavyWeapon_Spell);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing)"
 // data "Unique" "1"
 
+new entry "GOON_VERYHEAVYGREATAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "Zone_UNI_SuperheavyWeapon_Spell"
 type "SpellData"
 data "SpellType" "Zone"
@@ -93,15 +145,85 @@ using "Zone_UNI_SuperheavyWeapon_Spell"
 // data "TooltipDamageList" "DealDamage(MainMeleeWeapon+1d6, MainMeleeWeaponDamageType)"
 data "TooltipDamageList" "DealDamage(MainMeleeWeapon/2, MainWeaponDamageType);DealDamage(1d6, MainMeleeWeaponDamageType)"
 
+// ==================================== Blooded Greataxe ====================================
+// Bug Fix: Relentless Revenge works when the weapon is thrown.
+// Changes: Forced Honour ruleset changes to DRS.
+
+new entry "MAG_LowHP_IncreaseDamage_Greataxe"
+type "Weapon"
+// using "WPN_Greataxe_1"
+using "MAG_LowHP_IncreaseDamage_Greataxe"
+// data "RootTemplate" "e1e090ec-ab8c-4db4-a0c3-8b7ab24bb181"
+// data "ItemGroup" ""
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Source)):WeaponDamage(1d4,Slashing)"
+// data "PassivesOnEquip" "MAG_LowHP_IncreaseDamage_Passive"
+// data "ObjectCategory" "MagicWeapons"
+// data "Unique" "1"
+
+new entry "GOON_BLOODEDGREATAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_LowHP_IncreaseDamage_Passive"
+type "PassiveData"
+using "MAG_LowHP_IncreaseDamage_Passive"
+// Relentless Revenge
+// data "DisplayName" "h1cc1a903g3f66g4a95g9763g3e3a2b1ddfed;1"
+// When the wielder has 50% &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they deal an additional [1].
+// data "Description" "h2f240a51g20b4g4f7cg8842gef50ca571e03;1"
+// data "DescriptionParams" "DealDamage(1d4,Slashing)"
+// data "TooltipConditionalDamage" "DealDamage(1d4,Slashing)"
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Source)"
+data "Conditions" ""
+// data "StatsFunctors" "DealDamage(1d4,Slashing,Magical)"
+data "StatsFunctors" ""
+
+// ==================================== Defender Greataxe ====================================
+// TODO: This is an interesting idea but pretty fucking useless, wouldn't be hard to make something cooler and/or more viable that's on theme.
+// Instead of a drawback, maybe tie the defense to attacking with the weapon.
+
+// new entry "MAG_PHB_Defender_Greataxe"
+// type "Weapon"
+// using "WPN_Greataxe_2"
+// data "RootTemplate" "560fa90c-942b-4661-a86b-e20f9362c9ba"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "PassivesOnEquip" "MAG_Defender_DefensiveStance_Passive"
+// data "Unique" "1"
+
+new entry "MAG_Defender_DefensiveStance_Passive"
+type "PassiveData"
+// Defensive Attack
+data "DisplayName" "hb842e1f3gf3d9g46afg8d0bg290abf0e5b73;2"
+// When making your first attack of the round, you can reduce this weapon's enchantment by [1] to increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; bonus by [1].
+data "Description" "hfc1795e9gea2eg4cb6gb4ffg2c92e6558887;5"
+data "DescriptionParams" "1"
+data "Boosts" "UnlockInterrupt(Interrupt_MAG_Defender_Weapon)"
+data "StatsFunctorContext" "OnAttack"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "StatsFunctors" "ApplyStatus(SELF, MAG_DEFENDER_FIRST_ATTACK, 100, 1)"
+
+new entry "GOON_DEFENDERGREATAXE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Hellfire Greataxe ====================================
 // Bug Fix: The weapon's sources of Fire damage now ignore resistance and/or immunity as was intended by Larian.
 // Bug Fix: Hellflame Cleave is no longer considered a spell with a somatic component.
 // Changes: Rarity swapped from Very Rare to Legendary. The bonus 1d6 Fire damage is increased to 2d6, is now magical, and ignores immunity to Fire damage in addition to resistance; as is befitting of hellfire.
 // Changes: 2d6 Fire damage works with throwing.
-// Changes: The passive feature "Thermodynamo" has been renamed to "Heat of the Hells". It's no longer restricted to applying a single turn of Heat in an attack, and will give multiple turns of Heat when cleaving etc.
+// Changes: The passive feature "Thermodynamo" has been renamed to "Heat of the Hells". // TODO: Rework this so it's not identical to Thermodynamo.
 // TODO: Figure out the best means of correlating Hellfire status immunity to Fire damage immunity.
 // TODO: and not StatusImmunity('BURNING_HELLFIRE', context.Target) --- Damage dealt with this weapon ignores &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1], and also ignores &lt;LSTag Tooltip="Immune"&gt;Immunity&lt;/LSTag&gt; unless the target is otherwise immune to &lt;LSTag Type="Status" Tooltip="BURNING_HELLFIRE"&gt;Roiling Hellfire&lt;/LSTag&gt;.
-// Note: Due to the way the resistance ignore shit works this one is staying inside the Throw_Throw spell for its bonus damage.
+// Note: Due to the way the resistance ignore shit works, this one is staying inside the Throw_Throw spell for its bonus damage.
 
 new entry "MAG_WATCHER_Human_Greataxe"
 type "Weapon"
@@ -112,23 +234,43 @@ using "MAG_WATCHER_Human_Greataxe"
 // data "Rarity" "VeryRare"
 data "Rarity" "Legendary"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing);UnlockSpell(Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave)"
-data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
-data "Unique" "1"
-
-new entry "MAG_WATCHER_Human_Greataxe"
-type "Weapon"
-// using "WPN_Greataxe_2"
-using "MAG_WATCHER_Human_Greataxe"
-// data "Rarity" "VeryRare"
-data "Rarity" "Legendary"
-data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing);UnlockSpell(Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave)"
 // data "PassivesOnEquip" "MAG_Fire_HeatOnWeaponDamage_Passive"
 data "PassivesOnEquip" "Goon_HellfireGreataxe_Heat;Goon_HellfireGreataxe_Ignore_Fire_Resistance"
+// data "Unique" "1"
 
-new entry "GOON_THERMODYNAMO_WEAPON_THROW_TECHNICAL"
+new entry "GOON_HELLFIREGREATAXE_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Goon_HellfireGreataxe_Heat"
+type "PassiveData"
+using "MAG_Fire_HeatOnWeaponDamage_Passive"
+// Thermodynamo
+// data "DisplayName" "h6d7bd506g0399g40d8g9ccbgf2cbb415a1d1;2"
+// Heat of the Hells
+data "DisplayName" "hbadb0982g1593g457fg9cdegc3af5eca4fe8;1"
+
+new entry "GOON_HEATOFTHEHELLS_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Heat of the Hells
+data "DisplayName" "hbadb0982g1593g457fg9cdegc3af5eca4fe8;1"
+// Whenever you deal damage with this weapon, you gain [1] turns of  &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.
+data "Description" "h000d4a79ge387g43d7ga7eeg22c52d2fc408;4"
+data "DescriptionParams" "2"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "IF(Character() and not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL', context.Source)):ApplyStatus(SWAP, MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL,100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT, 100, 2);IF(Character()):ApplyStatus(SWAP,MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);IF(Character()):ApplyStatus(SWAP, MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
+
+new entry "MAG_FIRE_DIPPED_HELLFIRE"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_FIRE_ALWAYS_DIPPED_FIRE"
+using "MAG_FIRE_DIPPED_HELLFIRE"
+// Hellfire Greataxe
+data "DisplayName" "hdd74d694g4366g43fcg8f04g9b7e914b9e82;1"
+// data "Boosts" "WeaponDamage(1d6, Fire);IF(Item(context.Source)):WeaponProperty(Unstowable);IgnoreResistance(Fire,Resistant)"
+data "Boosts" "WeaponDamage(2d6,Fire,Magical);IF(Item(context.Source)):WeaponProperty(Unstowable)"
 
 new entry "Goon_HellfireGreataxe_Ignore_Fire_Resistance"
 type "PassiveData"
@@ -138,14 +280,6 @@ data "DisplayName" "h04df3d99g0a07g4d1eg9e8fg252de8e6f1d5;1"
 data "Description" "hfe535863g017cg4643g9febg92f7e1e34df4;1"
 data "DescriptionParams" "DealDamage(,Fire)"
 data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('MAG_FIRE_DIPPED_HELLFIRE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):IgnoreResistance(Fire,Resistant);IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('MAG_FIRE_DIPPED_HELLFIRE', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source))):IgnoreResistance(Fire,Immune);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and HasStatus('MAG_FIRE_DIPPED_HELLFIRE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):IgnoreResistance(Fire,Resistant);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack) and HasStatus('MAG_FIRE_DIPPED_HELLFIRE', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source))):IgnoreResistance(Fire,Immune)"
-
-new entry "Goon_HellfireGreataxe_Heat"
-type "PassiveData"
-using "MAG_Fire_HeatOnWeaponDamage_Passive"
-// Thermodynamo
-// data "DisplayName" "h6d7bd506g0399g40d8g9ccbgf2cbb415a1d1;2"
-// Heat of the Hells
-data "DisplayName" "hbadb0982g1593g457fg9cdegc3af5eca4fe8;1"
 
 // Hellflame Cleave - Hellfire Greataxe
 new entry "Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave"
@@ -162,12 +296,29 @@ data "SpellFail" "DealDamage((MainMeleeWeapon)/2, MainMeleeWeaponDamageType);Dea
 // data "SpellFlags" "HasSomaticComponent;HasVerbalComponent;IsSpell;IsHarmful;CanAreaDamageEvade"
 data "SpellFlags" "HasSomaticComponent;IsHarmful;CanAreaDamageEvade"
 
-new entry "MAG_FIRE_DIPPED_HELLFIRE"
+// ==================================== Sethan ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_SpiritualStand_Greataxe"
+// type "Weapon"
+// using "WPN_Greataxe_2"
+// data "RootTemplate" "7bbc2408-14de-4129-bab0-db29927b7f43"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Zone_Cleave);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_FullSwing);UnlockSpell(Target_MAG_SpiritualStand_Greataxe);UnlockSpell(Target_MAG_SpiritualStand_Reduce)"
+// data "Unique" "1"
+
+new entry "GOON_SETHAN_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
-// using "MAG_FIRE_ALWAYS_DIPPED_FIRE"
-using "MAG_FIRE_DIPPED_HELLFIRE"
-// Hellfire Greataxe
-data "DisplayName" "hdd74d694g4366g43fcg8f04g9b7e914b9e82;1"
-// data "Boosts" "WeaponDamage(1d6, Fire);IF(Item(context.Source)):WeaponProperty(Unstowable);IgnoreResistance(Fire,Resistant)"
-data "Boosts" "WeaponDamage(2d6,Fire,Magical);IF(Item(context.Source)):WeaponProperty(Unstowable)"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Doom Axe (Inaccessible/cut content) ====================================
+// No longer exists in the game files.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
