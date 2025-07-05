@@ -266,9 +266,8 @@ type "PassiveData"
 // using "MAG_WYRM_UndeadBane_GreatAxe_Passive"
 using "MAG_Tyr_OfJustice_WarHammer_Passive"
 // data "DescriptionParams" "DealDamage(1d6, Bludgeoning)"
-data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
 // data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('UNDEAD') or Tagged('FIEND'))):DamageBonus(1d6, Bludgeoning, false)"
-data "Boosts" "IF(IsMeleeWeaponAttack() and UndeadOrFiend()):DamageBonus(1d6, Bludgeoning, false)"
+data "Boosts" "IF(HasStatus('GOON_HAMMEROFTHEJUST_WEAPON_TECHNICAL',GetAttackWeapon(context.Source)) and UndeadOrFiend()):DamageBonus(1d6, Bludgeoning, false)"
 
 // ==================================== Ketheric's Warhammer ====================================
 // TODO: This is pretty fucking lame. Gotta be edgy and Myrkul themed, regret is a good theme for Ketheric. 

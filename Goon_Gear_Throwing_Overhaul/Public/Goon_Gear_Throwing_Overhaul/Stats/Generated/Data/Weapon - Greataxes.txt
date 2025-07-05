@@ -97,6 +97,11 @@ data "StatsFunctors" ""
 // data "PassivesOnEquip" "MAG_WYRM_UndeadBane_GreatAxe_Passive"
 // data "Unique" "1"
 
+new entry "GOON_THEUNDEADBANE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 new entry "MAG_WYRM_UndeadBane_GreatAxe_Passive"
 type "PassiveData"
 using "MAG_WYRM_UndeadBane_GreatAxe_Passive"
@@ -105,14 +110,8 @@ using "MAG_WYRM_UndeadBane_GreatAxe_Passive"
 // This weapon deals an additional [1] against Fiends and Undead.
 // data "Description" "hd3a76ca8g7ae3g4a60gb0a7gca1001f7e08c;2"
 // data "DescriptionParams" "DealDamage(1d6, Slashing)"
-data "BoostConditions" "AttackedWithPassiveSourceWeapon()"
 // data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('UNDEAD') or Tagged('FIEND'))):DamageBonus(1d6, Slashing, false)"
-data "Boosts" "IF(IsMeleeWeaponAttack() and UndeadOrFiend()):DamageBonus(1d6, Slashing, false)"
-
-new entry "GOON_THEUNDEADBANE_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+data "Boosts" "IF(HasStatus('GOON_THEUNDEADBANE_WEAPON_TECHNICAL',GetAttackWeapon(context.Source)) and UndeadOrFiend()):DamageBonus(1d6, Slashing, false)"
 
 // ==================================== Very Heavy Greataxe ====================================
 // Bug Fix: Gargantuan Cleave's tooltip no longer states that is does full weapon damage when it does half weapon damage.
