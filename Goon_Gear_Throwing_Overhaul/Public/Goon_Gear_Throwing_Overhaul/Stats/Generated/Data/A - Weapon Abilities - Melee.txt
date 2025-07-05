@@ -47,6 +47,8 @@ data "SpellType" "Projectile"
 using "Projectile_Headcrack"
 data "Cooldown" "OncePerCombat"
 
+// TODO: Refine approach for implementing spellcasting modifiers where relevant via functions in Library.
+// TODO: Figure out how to get accurate TooltipDamageList for spells not just using weapon information.
 // ==================================== Backbreaker ====================================
 // Changes: Can target corpses.
 
@@ -105,7 +107,6 @@ data "SpellSuccess" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageTy
 data "DisplayName" "h046d806egc13fg403fgb220g8cdbd04778c0;1"
 data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon/2, OffhandMeleeWeaponDamageType)"
 data "CastTextEvent" "CastOffhand"
-data "SpellAnimation" "a09de2c8-ec46-4c27-a502-bc92cf293fe5,,;711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46,711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46,711781fb-5f5a-4b9a-bd8b-e0b4ff9dec46;a17a7bf3-7381-4191-83f4-304d37c738e0,a17a7bf3-7381-4191-83f4-304d37c738e0,a17a7bf3-7381-4191-83f4-304d37c738e0;1172e0b6-08d1-4f28-a651-a01681b84ee6,1172e0b6-08d1-4f28-a651-a01681b84ee6,1172e0b6-08d1-4f28-a651-a01681b84ee6;244b53cb-dc0f-4932-afd0-ab19c6df1b34,,;0002afee-5ad9-4109-ae64-9b2571601226,0002afee-5ad9-4109-ae64-9b2571601226,0002afee-5ad9-4109-ae64-9b2571601226;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
 
 // ==================================== Concussive Smash ====================================
@@ -407,6 +408,7 @@ data "CombatAIOverrideSpell" ""
 // ==================================== Tenacity ====================================
 // Bug Fix: Now works with Druid's Air Myrmidon form without the need to use Disguise Self first, as it has a mace. Expansion's "Beast Spells" forms included.
 // Changes: Now uses the weapon's damage type instead of being fixed to Bludgeoning.
+// Changes: Can now be used by Invisible player characters.
 
 new entry "Overwhelm"
 type "PassiveData"
@@ -428,11 +430,12 @@ data "Description" "h3ff15630ga20cg4697gabaeg7909acd8b811;1"
 // data "DescriptionParams" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "DescriptionParams" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
 // data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsMeleeWeaponAttack() and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
-data "Conditions" "Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
+data "Conditions" "(Player(context.Observer) or not IsInvisibleState(context.Observer)) and Self(context.Source,context.Observer) and (IsCriticalMiss() or IsMiss()) and IsAttackType(AttackType.MeleeWeaponAttack) and IsProficientWithEquippedWeapon() and not AnyEntityIsItem()"
 // data "Properties" "DealDamage(max(1,StrengthModifier), Bludgeoning)"
 data "Properties" "DealDamage(max(1,StrengthModifier), MainMeleeWeaponDamageType)"
 // data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
-data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'}) or (Tagged('MYRMIDON_AIR'))"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus() or (Tagged('MYRMIDON_AIR'))"
+data "InterruptFlags" "InterruptWhileInvisible"
 
 // Custom offhand version
 new entry "Goon_Overwhelm_Offhand"
@@ -498,5 +501,30 @@ data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThro
 data "TooltipDamageList" "DealDamage(1d4+max(DexterityModifier,StrengthModifier), OffhandMeleeWeaponDamageType);"
 data "CastTextEvent" "CastOffhand"
 data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Whirlwind Attack ====================================
+
+new entry "Shout_MAG_WhirlwindAttack"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_Whirlwind"
+using "Shout_MAG_WhirlwindAttack"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "SpellFlags" "IsMelee;IsHarmful;IsDefaultWeaponAction"
+// data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon()"
+
+new entry "Goon_Shout_MAG_WhirlwindAttack_Offhand"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_WhirlwindAttack"
+// Whirlwind Attack (Offhand)
+data "DisplayName" "hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b;1"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "DealDamage(max(1,OffhandMeleeWeapon), OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
 data "DualWieldingSpellAnimation" ""
 data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
