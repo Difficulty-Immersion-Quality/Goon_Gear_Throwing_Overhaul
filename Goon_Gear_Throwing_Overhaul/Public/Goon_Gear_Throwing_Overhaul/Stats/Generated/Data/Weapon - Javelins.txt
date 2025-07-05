@@ -43,3 +43,13 @@ using "WPN_Javelin_2"
 // data "Weapon Properties" "Thrown;Melee;Dippable;Magical"
 data "Weapon Properties" "Versatile;Thrown;Melee;Dippable;Magical"
 
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+

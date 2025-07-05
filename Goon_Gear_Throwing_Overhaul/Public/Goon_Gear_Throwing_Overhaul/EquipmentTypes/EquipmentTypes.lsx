@@ -285,7 +285,7 @@
                     <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
                     <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
 					<!-- <attribute id="BoneVersatileSheathed" type="FixedString" value=""/> -->
-					<attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+					<attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
                     <!-- <attribute id="BoneVersatileUnsheathed" type="FixedString" value=""/> -->
                     <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
                     <attribute id="Name" type="FixedString" value="Javelin"/>
