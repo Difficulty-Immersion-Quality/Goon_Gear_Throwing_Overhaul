@@ -65,6 +65,11 @@
 	<!-- "Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand" --> <content contentuid="h20447d6cg9d12g46f3gbee6gd5d1e3048737" version="1">Absolute Power (Offhand)</content>
 	<!-- "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand" --> <content contentuid="h363f39e6g26fbg4bd4gb638g499b914d3c41" version="1">Searing Blood (Offhand)</content>
 	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" --> <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
+	<!-- "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand" --> <content contentuid="hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2" version="1">Ensnaring Strike (Melee - Offhand)</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
@@ -143,6 +148,11 @@
 	<!-- "MAG_LC_RadiantLight_Rapier_Passive" --> <content contentuid="h0eabeda1gcbb7g40e1g9fbcgb723d25f613e" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Fiends and Undead.</content>
 	<!-- "MAG_TheDueller_ImprovedDuelist_Passive" --> <content contentuid="hf1abc2bfg8c26g4622ga84cga2bf91f45dac" version="1">While your off-hand is empty, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.</content>
 	<!-- "Interrupt_TheDueller_WitheringCut" --> <content contentuid="h5868da46g8004g4201g9772gb8219c021e1b" version="1">When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional [1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.</content>
+	<!-- "MAG_LC_BurnOnDamage_Scimitar_Passive", "GOON_CAUTERISER_TECHNICAL_APPLIER" --> <content contentuid="h8cf8a632g4752g4594ga41cg1afad576ba9a" version="1">Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 

@@ -82,6 +82,18 @@ end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
 
+-- Kurwin's Cauteriser
+function CauteriserThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Speedy Reply
+function SpeedyReplyThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_SPEEDYREPLY_WEAPON_TECHNICAL'}, {}, {}, entity) & Enemy(context.Target)
+end
+
 -- Monster Slayer Glaive
 function MonsterSlayerGlaiveThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject

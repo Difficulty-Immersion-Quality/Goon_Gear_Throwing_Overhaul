@@ -4,6 +4,420 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Kurwin's Cauteriser  -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h2189fd56ga22ag4115gbe2dgcc81917e71cf" version="4" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hced85d29g58dfg4652ga938g3698180141b1" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="d5b4619a-c65f-42eb-b5bb-055aa1249a38" />
+					<attribute id="Name" type="LSString" value="MAG_LC_BurnOnDamage_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7cc7a0e1-d0b8-4569-afb2-d538e8941894" />
+					<attribute id="Stats" type="FixedString" value="MAG_LC_BurnOnDamage_Scimitar" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="ba739f51-0092-c0c5-bc21-a48dbc2898b4" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_FIRE_ALWAYS_DIPPED_FIRE" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Speedy Reply -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h7006c903g546ag44d3g926fg858ceebc6153" version="2" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h6927d81ageb25g4592gac42g41259f7f8e68" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_Mobility_MomentumOnAttack_Scimitar" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="4456e2ec-ba1f-4f53-aab8-847249cabc09" />
+					<attribute id="Name" type="LSString" value="MAG_Mobility_MomentumOnAttack_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7cc7a0e1-d0b8-4569-afb2-d538e8941894" />
+					<attribute id="Stats" type="FixedString" value="MAG_Mobility_MomentumOnAttack_Scimitar" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="45006107-bdcc-2b26-2194-1ebde9029f09" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SPEEDYREPLY_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Sylvan Scimitar -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h9a84136bgf785g4b61g9e7fgdee432817f8a" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h13b721f8ge73bg4555g8b5fg0bda3b7493eb" version="3" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="b9656931-da39-4024-92a2-f45264593b14" />
+					<attribute id="Name" type="LSString" value="MAG_HAV_Sylvan_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7cc7a0e1-d0b8-4569-afb2-d538e8941894" />
+					<attribute id="Stats" type="FixedString" value="MAG_HAV_Sylvan_Scimitar" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="b75b6daa-a57a-9093-652e-dbd5f0ebef13" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_MELEE_CASTER_BOON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SYLVANSCIMITAR_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Adamantine Scimitar -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h7d602510gdffag45cfga535g67508dab20f4" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h39b84902g3f14g4041gb6c8g4cad6ce53857" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Scimitar_Adamantine_A" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="503b4f8d-da61-4fc1-a4b7-cad124a10c69" />
+					<attribute id="Name" type="LSString" value="WPN_HUM_Scimitar_Adamantine_A" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7cc7a0e1-d0b8-4569-afb2-d538e8941894" />
+					<attribute id="Stats" type="FixedString" value="MAG_MeleeDebuff_AttackDebuff1_OnDamage_Scimitar" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="238323eb-451a-858f-1ccc-6860228d61f1" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_DIAMONDSBANE_TECHNICAL" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_ADAMANTINESCIMITAR_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Salty Scimitar(rrr) -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hd3c72658ge3f7g4d52g9f67g2b0ad82accf4" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hda5c39ecgba9cg4dfag80c4g4dd0f2ff3a46" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="f9100179-19f6-49f9-8ad5-bda4d21220bc" />
+					<attribute id="Name" type="LSString" value="MAG_LC_PirateCommander_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="5193af64-48c1-406f-90bf-87f7f01b4684" />
+					<attribute id="Stats" type="FixedString" value="MAG_LC_PirateCommander_Scimitar" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="318ef84e-3d23-1ea8-2c23-9e97d05e2f83" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SALTRYSCIMITARRRR_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Thorn Blade -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hdadff295g89ebg47a6gae9bgff6ceb5c20e7" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h05944f47ged27g49efg9dd1g9bb36ca59326" version="2" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="3b44007e-eb36-4c03-b367-6619299b6994" />
+					<attribute id="Name" type="LSString" value="MAG_HAV_ThornBlade_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="7cc7a0e1-d0b8-4569-afb2-d538e8941894" />
+					<attribute id="Stats" type="FixedString" value="MAG_HAV_ThornBlade_Scimitar" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="58d0bb24-4e4e-7701-1b3c-7bae1431897d" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209024" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THORNBLADE_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Belm -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h72a4e79cgfa9ag47b1g9464g402307909c3a" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h745b7e39gaf4eg40aeg8277g1076b66b7751" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_TheClover_Scimitar" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="d60524f4-583e-4b16-91b2-871221d441cf" />
+					<attribute id="Name" type="LSString" value="MAG_PHB_OfSpeed_Scimitar" />
+					<!-- <attribute id="ParentTemplateId" type="FixedString" value="517231eb-e812-43ed-9ce3-482ba7ed31e6" /> -->
+					<attribute id="ParentTemplateId" type="FixedString" value="dcd46d13-d316-492a-a350-8e7492bce9c4" />
+					<attribute id="Stats" type="FixedString" value="MAG_PHB_OfSpeed_Scimitar" />
+					<!-- <attribute id="PhysicsTemplate" type="FixedString" value="" /> -->
+					<attribute id="PhysicsTemplate" type="FixedString" value="669e8a9a-0b50-81b7-8b1f-a7527bc66e8f" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<!-- <attribute id="VisualTemplate" type="FixedString" value="" /> -->
+					<attribute id="VisualTemplate" type="FixedString" value="9b9763fc-50a2-5d32-de45-3e0765f11ae7" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.212115" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_BELM_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 				<!-- Justiciar's Scimitar -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hd107b904g4050g4a21g8da5gf95b729e3fff" version="1" />
@@ -50,6 +464,88 @@
 							<children>
 								<node id="Status">
 									<attribute id="Object" type="FixedString" value="GOON_JUSTICIARSSCIMITAR_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- The Clover -->
+				<node id="GameObjects">
+					<attribute id="DisplayName" type="TranslatedString" handle="hd3b452b6g1061g46e6gbde1g9145c2faf813" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_TheClover_Scimitar" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="517231eb-e812-43ed-9ce3-482ba7ed31e6" />
+					<attribute id="Name" type="LSString" value="MAG_TheClover_Scimitar" />
+					<attribute id="ParentTemplateId" type="FixedString" value="dcd46d13-d316-492a-a350-8e7492bce9c4" />
+					<!-- <attribute id="Stats" type="FixedString" value="WPN_Scimitar" /> -->
+					<attribute id="Stats" type="FixedString" value="MAG_TheClover_Scimitar" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="669e8a9a-0b50-81b7-8b1f-a7527bc66e8f" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="9b9763fc-50a2-5d32-de45-3e0765f11ae7" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.212115" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.163168" />
+									<attribute id="Max" type="fvec3" value="0.1335989 0.04110551 0.2032795" />
+									<attribute id="Min" type="fvec3" value="-0.11215657 -0.009355072 -0.6995245" />
+									<attribute id="Radius" type="float" value="0.42423" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_THECLOVER_WEAPON_TECHNICAL" />
 								</node>
 							</children>
 						</node>

@@ -34,6 +34,221 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);Unlo
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Finesse;Light;Melee;Dippable;Magical"
 
+// ==================================== Kurwin's Cauteriser ====================================
+// Bug Fix: 1d4 Fire damage applies when thrown.
+// Bug Fix: Cauteriser applies when the weapon is thrown.
+// Bug Fix: Burning Saving Throw is properly displayed in the combat log.
+
+// new entry "MAG_LC_BurnOnDamage_Scimitar"
+// type "Weapon"
+// using "WPN_Scimitar_1"
+// data "RootTemplate" "d5b4619a-c65f-42eb-b5bb-055aa1249a38"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "PassivesOnEquip" "MAG_LC_BurnOnDamage_Scimitar_Passive"
+// data "Unique" "1"
+
+new entry "GOON_KURWINSCAUTERISER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_LC_BurnOnDamage_Scimitar_Passive"
+type "PassiveData"
+using "MAG_LC_BurnOnDamage_Scimitar_Passive"
+// Cauteriser
+// data "DisplayName" "hbc228ac0gd7e8g4338g885eg563538390696;2"
+// Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+// data "Description" "h4060707fg3939g4f92gbed7g0fe2d8003d8c;4"
+// Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h8cf8a632g4752g4594ga41cg1afad576ba9a;1"
+// data "DescriptionParams" "DealDamage(1d4,Fire)"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(BURNING, 100, 2,,,,not SavingThrow(Ability.Constitution,13))"
+data "StatsFunctors" "ApplyStatus(GOON_CAUTERISER_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_CAUTERISER_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Cauteriser
+data "DisplayName" "hbc228ac0gd7e8g4338g885eg563538390696;2"
+// Deals an additional [1].&lt;br&gt;&lt;br&gt;On a hit, the target starts &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; unless it succeeds a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h8cf8a632g4752g4594ga41cg1afad576ba9a;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "DealDamage(1d4,Fire)"
+data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 13)"
+data "OnApplySuccess" "ApplyStatus(BURNING, 100, 2)"
+
+// ==================================== Speedy Reply ====================================
+// Bug Fix: Nimble Attack applies when the weapon is thrown.
+
+// new entry "MAG_Mobility_MomentumOnAttack_Scimitar"
+// type "Weapon"
+// using "WPN_Scimitar_1"
+// data "RootTemplate" "4456e2ec-ba1f-4f53-aab8-847249cabc09"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "PassivesOnEquip" "MAG_Mobility_MomentumOnDamage_Passive"
+// data "Unique" "1"
+
+new entry "GOON_SPEEDYREPLY_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOON_NIMBLEATTACK_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Nimble Attack
+data "DisplayName" "h1a620d7agae50g4a2fg91bfgcc1754232cd1;2"
+// When the wielder hits an enemy with this weapon, they gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; for 2 turns.
+data "Description" "hfc11e4e5gaaf9g47cbg8386g81e09dac0c44;3"
+data "StatusPropertyFlags" "ExcludeFromPortraitRendering;InitiateCombat;DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
+data "OnApplyFunctors" "ApplyStatus(SWAP, MAG_MOMENTUM,100,2);ApplyStatus(SWAP, MAG_MOMENTUM_DURATION_TECHNICAL,100, 1)"
+
+// ==================================== Sylvan Scimitar ====================================
+// TODO: Something/anything.
+
+new entry "MAG_HAV_Sylvan_Scimitar"
+type "Weapon"
+// using "WPN_Scimitar_1"
+using "MAG_HAV_Sylvan_Scimitar"
+// data "RootTemplate" "b9656931-da39-4024-92a2-f45264593b14"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Zone_Cleave)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Zone_Cleave_Offhand)"
+// data "PassivesOnEquip" "MAG_MeleeCaster_Passive"
+
+new entry "GOON_SYLVANSCIMITAR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Adamantine Scimitar ====================================
+// Bug Fix: Lethal Weapon now only ignores resistance for damage dealt by the weapon itself, including when it's thrown.
+// Changes: Increased weapon enchantment from +1 to +2.
+
+new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Scimitar"
+type "Weapon"
+// using "WPN_Scimitar_1"
+// data "RootTemplate" "503b4f8d-da61-4fc1-a4b7-cad124a10c69"
+// data "ItemGroup" ""
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "PassivesOnEquip" "UNI_Adamantine_CriticalVsItems_Passive;MAG_IgnoreSlashingResistance_Passive"
+
+new entry "GOON_ADAMANTINESCIMITAR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Salty Scimitar(rrr) ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_LC_PirateCommander_Scimitar"
+// type "Weapon"
+// using "WPN_Scimitar_2"
+// data "RootTemplate" "f9100179-19f6-49f9-8ad5-bda4d21220bc"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Boosts" "UnlockSpell(Target_MAG_Command_Container)"
+// data "Unique" "1"
+
+new entry "GOON_SALTRYSCIMITARRRR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Thorn Blade ====================================
+// Changes: Forced Honour ruleset changes to DRS.
+// Changes: Added offhand version of Ensnaring Strike. Both it and the main hand version are now usable once per combat instead of once per short rest.
+
+new entry "MAG_HAV_ThornBlade_Scimitar"
+type "Weapon"
+// using "WPN_Scimitar_1"
+using "MAG_HAV_ThornBlade_Scimitar"
+// data "RootTemplate" "3b44007e-eb36-4c03-b367-6619299b6994"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);IF(IsConcentrating(context.Source)):WeaponDamage(1d4,Poison)"
+// data "Boosts" "UnlockSpell(Target_MAG_Thorn_Blade_EnsnaringStrike)"
+data "Boosts" ""
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_Slash_New)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Target_MAG_Thorn_Blade_EnsnaringStrike)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand)"
+// data "PassivesOnEquip" "MAG_Thorn_Blade_Passive"
+
+new entry "GOON_THORNBLADE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Thorn_Blade_Passive"
+type "PassiveData"
+using "MAG_Thorn_Blade_Passive"
+// Poisonous Synergy
+// data "DisplayName" "h320d2231g0d94g4478gbdadg5bffef3ef9cb;4"
+// While &lt;LSTag Tooltip="Concentration"&gt;concentrating&lt;/LSTag&gt;, your melee weapon attacks deal an additional [1].
+// data "Description" "h10ae3c2cgececg4b08g8be1gcaf08079a311;4"
+// data "DescriptionParams" "DealDamage(1d4, Poison)"
+// data "BoostContext" "OnCreate"
+data "BoostContext" ""
+// data "Boosts" "IF(IsConcentrating(context.Source) and IsMeleeWeaponAttack()):CharacterWeaponDamage(1d4,Poison)"
+data "Boosts" ""
+// data "StatsFunctorContext" "OnDamage"
+data "StatsFunctorContext" ""
+
+new entry "Target_MAG_Thorn_Blade_EnsnaringStrike"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_EnsnaringStrike"
+using "Target_MAG_Thorn_Blade_EnsnaringStrike"
+// data "SpellContainerID" ""
+// data "Cooldown" "OncePerRestPerItem"
+data "Cooldown" "OncePerCombat"
+// data "HitCosts" "BonusActionPoint:1"
+
+new entry "Goon_Target_MAG_Thorn_Blade_EnsnaringStrike_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Thorn_Blade_EnsnaringStrike"
+// Ensnaring Strike (Melee - Offhand)
+data "DisplayName" "hef72f4dage8d5g4a3cg8ed5gf6fab5d484b2;1"
+data "SpellProperties" "GROUND:DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)"
+data "SpellRoll" "Attack(AttackType.MeleeOffHandWeaponAttack)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Strength, SourceSpellDC(),AdvantageOnRestrained(),DisadvantageOnRestrained())):ApplyStatus(ENSNARING_STRIKE,100,10);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);ExecuteWeaponFunctors(OffHand)"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Belm ====================================
+// TODO: Something/anything.
+
+new entry "MAG_PHB_OfSpeed_Scimitar"
+type "Weapon"
+// using "WPN_Scimitar_2"
+using "MAG_PHB_OfSpeed_Scimitar"
+// data "RootTemplate" "d60524f4-583e-4b16-91b2-871221d441cf"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Target_MAG_PHB_ScimitarOfSpeed_BonusAttack)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_Slash_New);UnlockSpell(Shout_MAG_WhirlwindAttack)"
+// data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_Slash_New_Offhand);UnlockSpell(Goon_Shout_MAG_WhirlwindAttack_Offhand)"
+// data "Unique" "1"
+
+new entry "GOON_BELM_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Justiciar's Scimitar ====================================
 // Bug Fix: Shadow Blinding works with the Honour Ruleset.
 // Bug Fix: The Shadow Blade passive is now visible.
@@ -99,83 +314,24 @@ data "TooltipSave" "Constitution"
 data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 14)"
 data "OnApplySuccess" "ApplyStatus(BLINDED, 100, 2)"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== The Clover (Inaccessible/Cut content) ====================================
 // TODO: Something/anything.
 
-weapon entry
+// new entry "MAG_TheClover_Scimitar"
+// type "Weapon"
+// using "WPN_Scimitar_2"
+// data "RootTemplate" "517231eb-e812-43ed-9ce3-482ba7ed31e6"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Rarity" "Legendary"
+// data "Boosts" "UnlockSpell(Target_MAG_TrueStrike)"
+// data "BoostsOnEquipOffHand" "AC(1)"
+// data "PassivesOnEquip" "MAG_TheClover_Rearrangement_Passive"
+// data "PassivesMainHand" "MAG_TheClover_Mainhand_Passive"
+// data "PassivesOffHand" "MAG_TheClover_OffHand_Passive"
+// data "Unique" "1"
+// data "Proficiency Group" "MartialWeapons;Shortswords;Scimitars"
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+new entry "GOON_THECLOVER_WEAPON_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
