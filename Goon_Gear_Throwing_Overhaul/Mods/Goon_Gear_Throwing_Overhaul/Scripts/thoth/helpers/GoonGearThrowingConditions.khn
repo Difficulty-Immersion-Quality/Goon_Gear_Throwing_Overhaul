@@ -82,6 +82,18 @@ end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
 
+-- Blightbringer
+function PreyDeceleratorThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_BLIGHTBRINGER_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
+-- Bow of the Banshee
+function BloodCurdlingEmissionThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_BOWOFTHEBANSHEE_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
 -- Kurwin's Cauteriser
 function CauteriserThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject

@@ -39,3 +39,231 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Ammunition;Twohanded;Dippable;Magical"
 
+// ==================================== Bow of Awareness ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_OfAwareness_Bow"
+// type "Weapon"
+// using "WPN_Shortbow_1"
+// data "RootTemplate" "c57ba806-b340-4307-9c37-170792052b8d"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "PassivesOnEquip" "MAG_InitiativeBonus_1_Passive"
+// data "Unique" "1"
+
+// new entry "MAG_OfAwareness_Bow"
+// type "Weapon"
+// using "MAG_OfAwareness_Bow"
+// data "ValueScale" "2"
+
+new entry "GOON_BOWOFAWARENESS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hunting Shortbow ====================================
+// TODO: Feller of Monsters specifies "YOU", and not the item itself, so probably don't need to change it to be weapon specific.
+
+// new entry "MAG_Hunting_Shortbow"
+// type "Weapon"
+// using "WPN_Shortbow_1"
+// data "RootTemplate" "a1d1634c-02e6-4428-a822-7603e9163264"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Boosts" "UnlockSpell(Target_MAG_HuntersMark)"
+// data "PassivesOnEquip" "MAG_LC_MonsterHunter_Passive"
+// data "Unique" "1"
+
+new entry "GOON_HUNTINGSHORTBOW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bow of the Banshee ====================================
+// Bug Fix: Blood-Curdling Emission will display properly in the combat log.
+// Bug Fix: Blood-Curdling Emission applies when the weapon is thrown.
+// Changes: Blood-Curdling Emission now uses ManeuverSaveDC instead of a static DC of 12.
+
+new entry "MAG_BG_OfTheBanshee_Bow"
+type "Weapon"
+// using "WPN_Shortbow_1"
+using "MAG_BG_OfTheBanshee_Bow"
+// data "RootTemplate" "c040d1fc-4804-4774-8367-6dfa397e27e2"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "WeaponFunctors" "ApplyStatus(FRIGHTENED, 100, 2,,,,not SavingThrow(Ability.Wisdom, 12))"
+data "WeaponFunctors" ""
+// data "PassivesOnEquip" "MAG_BansheeBless_Passive"
+// data "Unique" "1"
+
+new entry "GOON_BOWOFTHEBANSHEE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_BansheeBless_Passive"
+type "PassiveData"
+using "MAG_BansheeBless_Passive"
+// Blood-Curdling Emission
+// data "DisplayName" "h18b2e6adg7043g4fbbg91e9ge40520c0cb7c;2"
+// On a hit, possibly inflict &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;. Gain a +[1] bonus to attack and damage against Frightened creatures.
+// data "Description" "hf0690e21g6b01g4b0ag9cd8g24431d7fbe95;3"
+// On a hit, possibly &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frighten&lt;/LSTag&gt; your target for [1]. Gain a +[2] bonus to attack and damage against Frightened creatures.
+data "Description" "h4d85aea3g3449g4afag874bg7372c516d55c;1"
+// data "DescriptionParams" "1d4"
+data "DescriptionParams" "2;1d4"
+data "TooltipSave" "Wisdom"
+// data "Boosts" "IF(HasStatus('SG_Frightened', context.Target)):CharacterWeaponDamage(1d4);IF(HasStatus('SG_Frightened', context.Target)):RollBonus(Attack, 1d4)"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "StatsFunctors" "ApplyStatus(GOON_BLOODCURDLINGEMISSION_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_BLOODCURDLINGEMISSION_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Blood-Curdling Emission
+data "DisplayName" "h18b2e6adg7043g4fbbg91e9ge40520c0cb7c;2"
+// On a hit, possibly &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frighten&lt;/LSTag&gt; your target for [1]. Gain a +[2] bonus to attack and damage against Frightened creatures.
+data "Description" "h4d85aea3g3449g4afag874bg7372c516d55c;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "1d4;2"
+data "OnApplyRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC())"
+data "OnApplySuccess" "ApplyStatus(FRIGHTENED, 100, 2)"
+
+// ==================================== Darkfire Shortbow ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_BG_Darkfire_Shortbow"
+// type "Weapon"
+// using "WPN_Shortbow_2"
+// data "RootTemplate" "9b5d79a8-98ad-4d67-9730-ba0453eee488"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Boosts" "Resistance(Fire, Resistant);Resistance(Cold, Resistant);UnlockSpell(Target_MAG_Haste)"
+// data "Unique" "1"
+
+// new entry "MAG_BG_Darkfire_Shortbow"
+// type "Weapon"
+// using "MAG_BG_Darkfire_Shortbow"
+// data "ValueLevel" "5"
+// data "ValueScale" "1.3"
+
+new entry "GOON_DARKFIRESHORTBOW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Least Expected ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Shadow_Blinding_Bow"
+// type "Weapon"
+// using "WPN_Shortbow_2"
+// data "RootTemplate" "2199a407-0ae8-4ada-b3cd-b19df5adeadd"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Projectile_HamstringShot);UnlockSpell(Projectile_MAG_WeaponAction_BlindingShot)"
+// data "PassivesOnEquip" "MAG_Shadow_Blinding_Bow_Passive"
+// data "StatusOnEquip" "MAG_SHADOW_OBSCURITY_ATTACK_BONUS_OWNER_TECHNICAL"
+// data "Unique" "1"
+
+new entry "GOON_LEASTEXPECTED_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Vicious Shortbow ====================================
+// Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
+// Changes: Dolor Amarus passive now works when thrown.
+// Changes: The additional damage only applies to attacking with or throwing the weapon itself.
+
+// new entry "MAG_Vicious_Shortbow"
+// type "Weapon"
+// using "WPN_Shortbow_2"
+// data "RootTemplate" "0a17e147-25bf-4ae5-b24a-3307db4bec56"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "PassivesOnEquip" "MAG_Vicious_Weapon_Passive"
+// data "Unique" "1"
+
+new entry "GOON_VICIOUSSHORTBOW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Blightbringer ====================================
+// Bug Fix: Prey Decelerator applies when the weapon is thrown, description states duration.
+// Changes: Description specifies the 1d4 bonus to Attack and Damage rolls is when the weapon is fired.
+
+// new entry "MAG_BG_BlightBringer_Shortbow"
+// type "Weapon"
+// using "WPN_Shortbow_1"
+// data "RootTemplate" "9eed107f-ff11-4f50-ac7a-6a8b8344e148"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_BG_BlightBringer_Passive;MAG_BG_SlowedOnCrit_Passive"
+// data "Unique" "1"
+
+// new entry "MAG_BG_BlightBringer_Shortbow"
+// type "Weapon"
+// using "MAG_BG_BlightBringer_Shortbow"
+// data "ValueLevel" "4"
+
+new entry "GOON_BLIGHTBRINGER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_BG_SlowedOnCrit_Passive"
+type "PassiveData"
+using "MAG_BG_SlowedOnCrit_Passive"
+data "DescriptionParams" "2"
+
+new entry "MAG_BG_BlightBringer_Passive"
+type "PassiveData"
+// using "MAG_UndeadSlayer_Passive"
+using "MAG_BG_BlightBringer_Passive"
+// Blightbringer
+// data "DisplayName" "h6525a5bfg162cg4b3bg96b2gc0531e7b0edb;1"
+// Attacking gnomes or dwarves with this weapon receives a +[1] bonus to Attack and Damage rolls.
+// data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// This weapon has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage Rolls when fired at Gnomes or Dwarves.
+data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):RollBonus(RangedWeaponAttack, 1d4)"
+
+new entry "MAG_SMALL_CREATURE_SLAYER_BLESS"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_UNDEAD_SLAYER_BLESS"
+using "MAG_SMALL_CREATURE_SLAYER_BLESS"
+// Blightbringer
+// data "DisplayName" "hab5ce2b2g7984g4a3ag8e30g62b8ab525400;1"
+// When used against gnomes or dwarves, this weapon has a +[1] bonus to Attack and Damage Rolls.
+// data "Description" "h81255ea0gc7b9g404ag831dg351149e99a54;1"
+// This weapon has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage Rolls when fired at Gnomes or Dwarves.
+data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
+// data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
+// data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
+
+new entry "MAG_BG_SlowedOnCrit_Passive"
+type "PassiveData"
+// using "MAG_Vicious_Weapon_Passive"
+// Prey Decelerator
+// data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.
+// data "Description" "ha7341f13g5c89g4cd0g8f8dga2e245777df0;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [2].
+data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "2"
+// data "BoostContext" ""
+// data "Boosts" ""
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
+// data "StatsFunctors" "ApplyStatus(SLOW, 100, 2)"
+
+new entry "GOON_PREYDECELERATOR_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Prey Decelerator
+data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
+// When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature for [2].
+data "Description" "h0a55d4d2gd718g4937ga98eg73c3a066c9ea;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "1d4;2"
+data "OnApplyFunctors" "ApplyStatus(SLOW, 100, 2)"
