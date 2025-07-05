@@ -1,9 +1,25 @@
-// ==================================== Damage reroll weapons - Twist of Fortune, Knife of the Undermountain King, The Clover ====================================
+// ==================================== Master passives for throwing functionality ====================================
 
-new entry "Goon_Damage_Reroll_Weapon_Passive"
+// Damage reroll: Twist of Fortune, Knife of the Undermountain King, The Clover
+new entry "Goon_DamageReroll_Throwing_Master_Passive"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "Boosts" "IF(HasStatus('GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) or HasStatus('GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) or HasStatus('GOON_THECLOVER_WEAPON_TECHNICAL',context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
+
+
+// TODO: Figure out how to allow advantage for throwing specific weapons
+// Advantage: Pelorsun Blade
+// new entry "Goon_Advantage_Throwing_Master_Passive"
+// type "PassiveData"
+// data "Properties" "IsHidden"
+// data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) and UndeadOrFiend()):Advantage(AttackRoll)"
+
+//  context.HitDescription.AttackType == AttackType.RangedUnarmedAttack
+
+// function IsThrowAttackRoll()
+//     local res = IsUnarmedAttack() & SpellTypeIs(SpellType.Throw) & HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)
+//     return ConditionResult(res.Result)
+// end
 
 // ==================================== Sussur weapons ====================================
 

@@ -48,3 +48,261 @@ using "WPN_Rapier_Pact"
 data "Boosts" ""
 // data "Weapon Properties" "Finesse;Melee;Dippable;Magical"
 
+// ==================================== Rupturing Blade ====================================
+// Changes: Added offhand version of Searing Blood.
+
+new entry "MAG_OfRupture_Rapier"
+type "Weapon"
+// using "WPN_Rapier_1"
+using "MAG_OfRupture_Rapier"
+// data "RootTemplate" "2d55309e-52ab-4270-9211-e432e4d8fc59"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_HinderingSmash);UnlockSpell(Target_MAG_WeaponAction_SearingBlood)"
+data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_OpeningAttack_Offhand);UnlockSpell(Goon_Target_PiercingThrust_Offhand);UnlockSpell(Goon_Target_HinderingSmash_Offhand);UnlockSpell(Goon_Target_MAG_WeaponAction_SearingBlood_Offhand)"
+// data "Unique" "1"
+
+new entry "GOON_RUPTURINGBLADE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_WeaponAction_SearingBlood"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BURNING,100,2);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLEEDING,100,2);DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Fire);DealDamage(SELF, 1d6, Slashing);DealDamage(1d6, Fire); ExecuteWeaponFunctors(OffHand);"
+// Searing Blood (Offhand)
+data "DisplayName" "h363f39e6g26fbg4bd4gb638g499b914d3c41;1"
+data "DescriptionParams" "DealDamage(OffhandMeleeWeapon+ProficiencyBonus, OffhandMeleeWeaponDamageType);DealDamage(1d6, Slashing); DealDamage(1d6, Fire)"
+data "TooltipDamageList" "DealDamage(OffhandMeleeWeapon, OffhandMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Fire)"
+data "CastTextEvent" "CastOffhand"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;c1df9aea-8be9-4de3-bcbc-4e4c1e44dc37,,;722df2d7-7898-4b0b-b930-5a850b55ccf0,,;a693a7c3-e7e7-4edb-98dd-db5fd700663f,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;35f5cba8-3706-46d5-9a1e-2def9ba22473,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "DualWieldingSpellAnimation" ""
+data "RequirementConditions" "CanUseWeaponActions() and IsProficientWithEquippedWeapon() and not Tagged('AI_BLOCKOFFHANDATTACK')"
+
+// ==================================== Sword of Screams ====================================
+// Bug Fix: 1d4 Psychic damage applies when thrown.
+
+// new entry "UND_Nere_Sword"
+// type "Weapon"
+// using "WPN_Rapier_1"
+// data "RootTemplate" "df6698d2-b690-4aea-be83-956d3b2ea97e"
+// data "ItemGroup" ""
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical);WeaponDamage(1d4, Psychic)"
+// data "Unique" "1"
+
+new entry "GOON_SWORDOFSCREAMS_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Harmonic Dueller ====================================
+// Changes: Mellow Harmony now costs a Bonus Action instead of an Action.
+
+// new entry "MAG_Harpers_Harmonizing_Rapier"
+// type "Weapon"
+// using "WPN_Rapier_1"
+// data "RootTemplate" "530a5c21-0f52-428f-bf41-ef33fd6c447b"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Shout_MAG_Harpers_HarmonizingRapier_Perfrom)"
+// data "StatusOnEquip" "MAG_HARPERS_HARMONIZING_RAPIER_TECHNICAL"
+// data "Unique" "1"
+
+new entry "GOON_HARMONICDUELLER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Shout_MAG_Harpers_HarmonizingRapier_Perfrom"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_SacredWeapon"
+using "Shout_MAG_Harpers_HarmonizingRapier_Perfrom"
+// data "SpellContainerID" ""
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" ""
+// data "SpellRoll" "SkillCheck(Skill.Performance, 15)"
+// data "SpellSuccess" "ApplyStatus(MAG_HARPERS_HARMONIZING_RAPIER_HARMONY, 100, 10)"
+// data "Icon" "Action_Mag_Harmonizing"
+// Mellow Harmony
+// data "DisplayName" "h4a5a7e3dg9172g413eg9b6ag6431747469d7;2"
+// You make a &lt;LSTag Tooltip="AbilityCheck"&gt;Performance Check&lt;/LSTag&gt;, success granting all your melee weapon attacks additional damage equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (minimum 1 additional damage).
+// data "Description" "hc6d7c440g00ccg4212g9869g74f234b52ac0;8"
+// data "TooltipStatusApply" "ApplyStatus(MAG_HARPERS_HARMONIZING_RAPIER_HARMONY, 100, 10)"
+// data "PrepareSound" "Action_Prepare_Item_Harmonizing"
+// data "PrepareLoopSound" "Action_Loop_Item_Harmonizing"
+// data "CastSound" "Action_Cast_Item_Harmonizing"
+// data "TargetSound" "Action_Impact_Item_Harmonizing"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+// data "VerbalIntent" "Buff"
+// data "SpellStyleGroup" "Intent"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent"
+// data "RequirementConditions" ""
+// data "PrepareEffect" "11d71353-34c6-4380-94d1-1b615f25ec7d"
+// data "CastEffect" "d60e1245-0db0-49df-b131-24def0cbe050"
+
+// ==================================== Infernal Rapier ====================================
+// TODO: Something/anything.
+
+// new entry "ORI_Wyll_Infernal_Rapier"
+// type "Weapon"
+// using "WPN_Rapier_2"
+// data "RootTemplate" "e925fb75-96a5-4634-9e0b-a239e48da115"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Target_ORI_Wyll_SummonCambion)"
+// data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive;MAG_MeleeCaster_Passive"
+// data "Unique" "1"
+
+new entry "GOON_INFERNALRAPIER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Pelorsun Blade ====================================
+// Bug Fix: 1d4 Radiant damage applies when thrown.
+// Changes: Undead Bane only grants Advantage to Attacks made with the weapon itself. // TODO: Including when thrown. - Master passives for throwing functionality
+
+// new entry "MAG_LC_RadiantLight_Rapier"
+// type "Weapon"
+// using "WPN_Rapier_1"
+// data "RootTemplate" "467b9a2e-b7e8-4c01-b744-fae8e3b960fd"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_LC_RadiantLight_Rapier_Passive"
+// data "Unique" "1"
+
+new entry "GOON_PELORSUNBLADE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_LC_RadiantLight_Rapier_Passive"
+type "PassiveData"
+using "MAG_LC_RadiantLight_Rapier_Passive"
+// Undead Bane
+// data "DisplayName" "h4b7e93b4g7d69g4ef8g8fa2g69d785cd46e2;3"
+// &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against undead.
+// data "Description" "hfb1a2ddfg4516g4fbfg9763gd7b24424317a;2"
+// &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Fiends and Undead.
+data "Description" "h0eabeda1gcbb7g40e1g9fbcgb723d25f613e;1"
+// data "Boosts" "IF(Tagged('UNDEAD', context.Target)):Advantage(AttackRoll)"
+data "Boosts" "IF(HasStatus('GOON_PELORSUNBLADE_WEAPON_TECHNICAL',GetAttackWeapon(context.Source)) and UndeadOrFiend()):Advantage(AttackRoll)"
+
+// ==================================== Duellist's Prerogative ====================================
+// Bug Fix: Challenge to Duel is no longer considered level 1 or of the Enchantment School. (The IsSpell SpellFlag was already removed though.)
+// Bug Fix: Like other critical hit threshold sources, Elegant Duellist now states that it stacks.
+// Bug Fix: Withering Cut applies to thrown attacks, description overhauled.
+
+// new entry "MAG_TheDueller_Rapier"
+// type "Weapon"
+// using "WPN_Rapier_2"
+// data "RootTemplate" "d49bf05e-4f94-4860-bd8c-ae63dae811be"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Rarity" "Legendary"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_OpeningAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_HinderingSmash);UnlockSpell(Target_MAG_Legendary_CompelledDuel);UnlockSpell(Target_MAG_TheDueller_BonusAttack)"
+// data "PassivesMainHand" "MAG_TheDueller_ImprovedDuelist_Passive;MAG_TheDueller_WitheringCut_Passive"
+// data "Unique" "1"
+
+new entry "GOON_DUELLISTSPREROGATIVE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_TheDueller_ImprovedDuelist_Passive"
+type "PassiveData"
+using "MAG_TheDueller_ImprovedDuelist_Passive"
+// Elegant Duellist
+// data "DisplayName" "h711045a1g2e51g4ca1gbed0g1f418fa12e6b;1"
+// While your off-hand is empty, you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; when rolling a 19. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
+// data "Description" "hd5a3914bgf8c8g4f2bg89c0gcca964daf305;2"
+// While your off-hand is empty, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack. Moreover, you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; per turn.
+data "Description" "hf1abc2bfg8c26g4622ga84cga2bf91f45dac;1"
+// data "DescriptionParams" "1"
+// data "BoostContext" "OnCreate;OnEquip"
+// data "BoostConditions" "IsOffHandSlotEmpty()"
+// data "Boosts" "ReduceCriticalAttackThreshold(1);ActionResource(ReactionActionPoint,1,0)"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and not HasStatus('BLEEDING') and HasStatus('MAG_LEGENDARY_COMPELLED_DUEL')"
+// data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 3,,,,not SavingThrow(Ability.Constitution,15))"
+
+new entry "Target_MAG_Legendary_CompelledDuel"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_CompelledDuel"
+using "Target_MAG_Legendary_CompelledDuel"
+// data "Level" "1"
+data "Level" ""
+// data "SpellSchool" "Enchantment"
+data "SpellSchool" ""
+// data "SpellRoll" "not SavingThrow(Ability.Wisdom, ManeuverSaveDC())"
+// data "SpellSuccess" "ApplyStatus(MAG_LEGENDARY_COMPELLED_DUEL, 100, 3)"
+// Challenge to Duel
+// data "DisplayName" "he437335bgcd18g467eg8248g73b61189295c;2"
+// Challenge an enemy to attack only you, inflicting <LSTag Type="Status" Tooltip="BLEEDING">Bleeding</LSTag> on the target.
+// data "Description" "hf54c5146g34c6g4b5ag9eaagcc06a9a77a2c;3"
+// data "TooltipStatusApply" "ApplyStatus(MAG_LEGENDARY_COMPELLED_DUEL, 100, 3)"
+// data "TooltipUpcastDescription" ""
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellStyleGroup" "Intent"
+// data "SpellFlags" "HasVerbalComponent;IsHarmful"
+// data "Sheathing" "Melee"
+
+new entry "Interrupt_TheDueller_WitheringCut"
+type "InterruptData"
+// using "Interrupt_Smite_Divine"
+using "Interrupt_TheDueller_WitheringCut"
+// Withering Cut
+// data "DisplayName" "hc61596f9gc801g4933gaf73g13269717f10e;1"
+// When you hit a creature with melee weapon, you can spend a reaction to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// data "Description" "h5ea742a7g0d9cg447cga012g95679912ce86;1"
+// When you hit a creature with melee or thrown weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can spend a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to deal additional [1] equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+data "Description" "h5868da46g8004g4201g9772gb8219c021e1b;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "DealDamage(,Necrotic)"
+// data "ExtraDescription" ""
+// data "ExtraDescriptionParams" ""
+// data "Icon" "GenericIcon_DamageType_Necrotic"
+// data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack()"
+data "Conditions" "IsAbleToReact(context.Observer) and not Item() and (IsMeleeAttack() and IsWeaponAttack() or IsRangedUnarmedAttack()) and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit)"
+// data "Properties" "DealDamage(ProficiencyBonus, Necrotic);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
+// data "Cost" "ReactionActionPoint:1"
+// data "Stack" ""
+// data "InterruptDefaultValue" "Enabled;Ask"
+
+// ==================================== Sanguine Blade (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Zhentarim_BloodfeederBlade_Rapier"
+// type "Weapon"
+// using "WPN_Rapier_1"
+// data "RootTemplate" "a8dc9927-1aa3-45ee-8fea-4106e431c194"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Boosts" "UnlockSpell(Shout_MAG_Zhentarim_Bloodfeeding)"
+// data "PassivesOnEquip" "MAG_Zhentarim_BloodfeederBlade_Rapier_Passive"
+// data "Unique" "1"
+
+new entry "GOON_SANGUINEBLADE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Verminsign (Inaccessible/Cut content) ====================================
+// Changes: Now has its own custom stat entry instead of just using the +1 variant.
+// TODO: A weapon themed around rats and disease, maybe summon a bunch of those mind rat things Ajax used as a terrorist device.
+
+new entry "Goon_WPN_Rapier_Verminsign"
+type "Weapon"
+using "WPN_Rapier_1"
+data "RootTemplate" "31a0245d-48fe-462e-b4bc-4bfe906e49fd"
+
+new entry "GOON_VERMINSIGN_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+

@@ -71,7 +71,7 @@ end
 
 function d4PsychicThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
-	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC','UND_NERE_SWORD_PSYCHIC_DAMAGE','GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'MAG_PSYCHIC_THROW','ELEMENTAL_WEAPON_PSYCHIC','UND_NERE_SWORD_PSYCHIC_DAMAGE','GOON_SWORDOFSCREAMS_WEAPON_TECHNICAL','GOON_KETHERICSWARHAMMER_WEAPON_TECHNICAL'}, {}, {}, entity)
 end
 
 -- TODO: Confirm that this actually sets the thrower on fire with non-light objects
