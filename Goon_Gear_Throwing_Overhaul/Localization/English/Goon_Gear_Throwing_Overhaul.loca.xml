@@ -64,7 +64,7 @@
 	<!-- "Goon_Target_MAG_WeaponAction_FrigidBlade_Offhand" --> <content contentuid="h1bd20310g7f97g4f53gb0d5g6428947da15f" version="1">You add your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; as Cold damage.&lt;br&gt;&lt;br&gt;When the attack hits, apply &lt;LSTag Type="Status" Tooltip="MAG_INCREASED_DAMAGE_COLD"&gt;Frostbite&lt;/LSTag&gt;. The creature takes [1] when making a weapon attack.</content>
 	<!-- "Goon_Target_GOB_GoblinKing_ForceAttack_WeaponAttack_Offhand" --> <content contentuid="h20447d6cg9d12g46f3gbee6gd5d1e3048737" version="1">Absolute Power (Offhand)</content>
 	<!-- "Goon_Target_MAG_WeaponAction_SearingBlood_Offhand" --> <content contentuid="h363f39e6g26fbg4bd4gb638g499b914d3c41" version="1">Searing Blood (Offhand)</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "Goon_Shout_MAG_WhirlwindAttack_Offhand" --> <content contentuid="hb7d7bddag6a14g4a51g82ddg46a9c0e69d0b" version="1">Whirlwind Attack (Offhand)</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
