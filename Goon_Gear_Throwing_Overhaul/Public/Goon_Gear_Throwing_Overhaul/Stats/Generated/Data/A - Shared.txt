@@ -1,3 +1,10 @@
+// ==================================== Damage reroll weapons - Twist of Fortune, Knife of the Undermountain King, The Clover ====================================
+
+new entry "Goon_Damage_Reroll_Weapon_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "IF(HasStatus('GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) or HasStatus('GOON_KNIFEOFTHEUNDERMOUNTAINKING_WEAPON_TECHNICAL',context.HitDescription.ThrownObject) or HasStatus('GOON_THECLOVER_WEAPON_TECHNICAL',context.HitDescription.ThrownObject)):Reroll(Damage,2,true)"
+
 // ==================================== Sussur weapons ====================================
 
 new entry "Goon_Sussur_Silence_Passive"
@@ -46,8 +53,8 @@ data "Boosts" "IF(IsAttackType(AttackType.MeleeWeaponAttack) and HasStatus('SHAD
 
 // ==================================== Vicious weapons - Dolor Amarus, Vicious Battleaxe, Vicious Shortsword, Vicious Shortbow ====================================
 // Bug Fix: The Dolor Amarus passive no longer states that it applies to melee attacks when it doesn't.
+// Bug Fix: The additional damage only applies to attacking with or throwing the weapon itself.
 // Changes: Dolor Amarus passive now works when thrown.
-// Changes: The additional damage only applies to attacking with or throwing the weapon itself.
 
 new entry "MAG_Vicious_Weapon_Passive"
 type "PassiveData"
