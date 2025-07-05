@@ -12,6 +12,7 @@ using "WPN_Morningstar"
 // data "BoostsOnEquipMainHand" "UnlockSpell(Target_HeartStopper);UnlockSpell(Target_ConcussiveSmash)"
 data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Target_HeartStopper_Offhand);UnlockSpell(Goon_Target_ConcussiveSmash_Offhand)"
 // data "PassivesMainHand" "Overwhelm"
+data "PassivesOffHand" "Goon_Overwhelm_Offhand"
 // data "Weapon Group" "MartialMeleeWeapon"
 data "VersatileDamage" "1d10"
 // data "Weapon Properties" "Melee;Dippable"
@@ -42,7 +43,27 @@ using "WPN_Morningstar_2"
 // data "Weapon Properties" "Melee;Dippable;Magical"
 data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 
+// ==================================== Ravengard's Scourger ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_LC_OfTheFist_MorningStar"
+// type "Weapon"
+// using "WPN_Morningstar_2"
+// data "RootTemplate" "83715b12-8d39-48b7-a981-fe50a4ec2d4e"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Boosts" "UnlockSpell(Target_MAG_CommanderStrike)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_HeartStopper);UnlockSpell(Target_ConcussiveSmash)"
+// data "Unique" "1"
+
+new entry "GOON_RAVENGUARDSSCOURGER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Twist of Fortune ====================================
+// Bug Fix: Twist of Fortune no longer rerolls damage for attacks not made with the weapon.
+// Bug Fix: Twist of Fortune rerolls damage when the weapon is thrown (if applicable, Thrown weapon property basically required).
+// TODO: Make Blood Money a lot less corny
 
 //new entry "MAG_TWN_Taxblade_Morningstar"
 //type "Weapon"
@@ -53,35 +74,68 @@ data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
 //data "BoostsOnEquipMainHand" "UnlockSpell(Target_HeartStopper);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_MAG_WeaponAction_Taxblade)"
 //data "PassivesOnEquip" "MAG_TWN_Tollhouse_Fortune_Morningstar_Passive"
 
-//new entry "MAG_TWN_Tollhouse_Fortune_Morningstar_Passive"
-//type "PassiveData"
+new entry "GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_TWN_Tollhouse_Fortune_Morningstar_Passive"
+type "PassiveData"
+using "MAG_TWN_Tollhouse_Fortune_Morningstar_Passive"
 // Twist of Fortune
 //data "DisplayName" "h5dcd6a81g1b94g466fga3ebg070d041b91ab;3"
 // When you roll [1] or less with this weapon's damage die, reroll it and take the new result.
 //data "Description" "hcadb0f40g8254g466dgb425g23c242bc1046;3"
 //data "DescriptionParams" "2"
 //data "Boosts" "IF(AttackingWithMeleeWeapon(context.Source)):Reroll(Damage,2,true)"
+data "Boosts" "IF(HasStatus('GOON_TWISTOFFORTUNE_WEAPON_TECHNICAL',GetAttackWeapon(context.Source))):Reroll(Damage,2,true)"
 
-// new entry "Target_MAG_WeaponAction_Taxblade"
-// type "SpellData"
-// data "SpellType" "Target"
-// using "Target_PiercingThrust"
-// data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, MainMeleeWeaponDamageType,Magical,,300,,true,false,true);ExecuteWeaponFunctors(MainHand)"
-// data "Icon" "Action_Mag_Taxblade"
-// Blood Money
-// data "DisplayName" "h77ab67c7gaaefg4e06gab9cg06422536b5e7;2"
-// Strike out greedily, dealing an additional [2] per [3] gold that the target possesses. The gold will be consumed.
-// data "Description" "h2847d4c0gdca3g45d3g9c56g308da84301a5;4"
-// data "DescriptionParams" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, MainMeleeWeaponDamageType);300"
-// data "ExtraDescription" ""
-// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, MainMeleeWeaponDamageType,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e);"
-// data "TooltipAttackSave" "MeleeWeaponAttack"
-// data "TooltipStatusApply" ""
-// data "PrepareSound" "Action_Prepare_Weapon_Taxblade"
-// data "PrepareLoopSound" "Action_Loop_Weapon_Taxblade"
-// data "CastSound" "Action_Cast_PommelStrike"
-// data "TargetSound" "Action_Impact_Weapon_Taxblade"
-// data "PrepareEffect" "e348e406-7cc9-49a2-aefb-887e4699482d"
-// data "CastEffect" "55beb7e1-5c2f-4da0-941a-458699e8cd60"
-// data "TargetEffect" ""
-// data "HitEffect" "f8eca7e6-5268-4be1-b4ab-c1727132b0c1"
+// ==================================== The Sacred Star ====================================
+// Bug Fix: 1d4 Radiant damage applies when thrown.
+// Changes: Dawnburst Strike is now single target, with an increased save DC for Blindness.
+// Cahoot: (original AoE wasn't working, hit allies and couldn't fix it myself so just changed the effect)
+
+// new entry "MAG_RadiantLight_Morningstar"
+// type "Weapon"
+// using "WPN_Morningstar_2"
+// data "RootTemplate" "5637bf93-ebd4-4170-a251-d77d9687c58a"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_HeartStopper);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_MAG_WeaponAction_FlashingDawn)"
+// data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Melee_OnDamage_Passive;MAG_UndeadTurning_Weapon_Passive"
+// data "Unique" "1"
+
+new entry "GOON_THESACREDSTAR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Target_MAG_WeaponAction_FlashingDawn"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_HeartStopper"
+using "Target_MAG_WeaponAction_FlashingDawn"
+// data "AreaRadius" "3"
+data "AreaRadius" ""
+// data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+// Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.
+data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "3"
+
+// ==================================== Tough Sunrises (Inaccessible/Cut content) ====================================
+// TODO: Something/anything.
+
+// new entry "MAG_Dawn_Morningstar"
+// type "Weapon"
+// using "WPN_Morningstar_1"
+// data "RootTemplate" "907df6ab-93ab-4f51-bf57-ac767d48e382"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Target_HeartStopper);UnlockSpell(Target_ConcussiveSmash);UnlockSpell(Target_MAG_WeaponAction_FlashingDawn)"
+// data "Unique" "1"
+
+new entry "GOON_TOUGHSUNRISES_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
