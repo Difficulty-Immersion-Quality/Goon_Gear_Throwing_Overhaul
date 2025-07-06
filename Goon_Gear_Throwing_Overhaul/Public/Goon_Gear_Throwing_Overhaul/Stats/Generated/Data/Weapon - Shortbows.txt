@@ -188,7 +188,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Blightbringer ====================================
 // Bug Fix: Prey Decelerator applies when the weapon is thrown, description states duration.
-// Bug Fix: Blightbringer now deals the weapon's damage, and not a fixed 1d4 Piercing.
+// Bug Fix: Blightbringer's 1d4 Damage bonus now uses the weapon's damage, and not a fixed 1d4 Piercing.
 // Changes: Description specifies the 1d4 bonus to Attack and Damage rolls is when the weapon is fired.
 
 // new entry "MAG_BG_BlightBringer_Shortbow"
