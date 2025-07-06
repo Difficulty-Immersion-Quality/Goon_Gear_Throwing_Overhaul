@@ -188,6 +188,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Blightbringer ====================================
 // Bug Fix: Prey Decelerator applies when the weapon is thrown, description states duration.
+// Bug Fix: Blightbringer now deals the weapon's damage, and not a fixed 1d4 Piercing.
 // Changes: Description specifies the 1d4 bonus to Attack and Damage rolls is when the weapon is fired.
 
 // new entry "MAG_BG_BlightBringer_Shortbow"
@@ -225,6 +226,7 @@ using "MAG_BG_BlightBringer_Passive"
 // This weapon has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage Rolls when fired at Gnomes or Dwarves.
 data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
 // data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):RollBonus(RangedWeaponAttack, 1d4)"
+data "Boosts" "IF(Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(IsRangedWeaponAttack() and (Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target))):CharacterWeaponDamage(1d4)"
 
 new entry "MAG_SMALL_CREATURE_SLAYER_BLESS"
 type "StatusData"
@@ -239,6 +241,7 @@ using "MAG_SMALL_CREATURE_SLAYER_BLESS"
 data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
 // data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
 // data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
+data "Boosts" ""
 
 new entry "MAG_BG_SlowedOnCrit_Passive"
 type "PassiveData"
