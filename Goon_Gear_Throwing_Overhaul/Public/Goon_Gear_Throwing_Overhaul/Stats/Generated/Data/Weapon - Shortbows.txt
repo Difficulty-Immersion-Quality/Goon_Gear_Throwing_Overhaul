@@ -223,7 +223,7 @@ using "MAG_BG_BlightBringer_Passive"
 // data "DisplayName" "h6525a5bfg162cg4b3bg96b2gc0531e7b0edb;1"
 // Attacking gnomes or dwarves with this weapon receives a +[1] bonus to Attack and Damage rolls.
 // data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
-// This weapon has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage Rolls when fired at Gnomes or Dwarves.
+// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
 data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
 // data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):RollBonus(RangedWeaponAttack, 1d4)"
 data "Boosts" "IF(Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(IsRangedWeaponAttack() and (Tagged('DWARF',context.Target) or Tagged('GNOME',context.Target))):CharacterWeaponDamage(1d4)"
@@ -237,7 +237,7 @@ using "MAG_SMALL_CREATURE_SLAYER_BLESS"
 // data "DisplayName" "hab5ce2b2g7984g4a3ag8e30g62b8ab525400;1"
 // When used against gnomes or dwarves, this weapon has a +[1] bonus to Attack and Damage Rolls.
 // data "Description" "h81255ea0gc7b9g404ag831dg351149e99a54;1"
-// This weapon has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage Rolls when fired at Gnomes or Dwarves.
+//  &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Gnomes and Dwarves.
 data "Description" "h7d50a449ga516g4137g9742g9d5835c8807d;1"
 // data "StackId" "MAG_SMALL_CREATURE_SLAYER_BLESS"
 // data "Boosts" "IF(Tagged('DWARF', context.Target) or Tagged('GNOME', context.Target)):WeaponDamage(1d4, Piercing)"
