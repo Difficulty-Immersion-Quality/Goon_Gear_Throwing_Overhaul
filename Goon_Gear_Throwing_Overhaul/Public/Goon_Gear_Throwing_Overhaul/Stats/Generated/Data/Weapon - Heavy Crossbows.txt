@@ -37,3 +37,334 @@
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Ammunition;Loading;Heavy;Twohanded;Dippable;Magical"
 
+// Githyanki Crossbow: Just a +1 variant, no need to get saucy.
+
+// new entry "WPN_HeavyCrossbow_Gith"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_1"
+// data "RootTemplate" "b674ea52-2b6f-4977-b6d5-98810304a98b"
+// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+// data "Weapon Properties" "Ammunition;Loading;Heavy;Twohanded;Dippable;Magical"
+
+// ==================================== Crossbow of Arcane Force ====================================
+// Changes: Arcane Ammunition is now a once per combat cooldown instead of once per short rest.
+
+// new entry "MAG_Githborn_TelekineticBolt_HeavyCrossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_1"
+// data "RootTemplate" "b11756a8-519a-406c-be36-c3603c3edae1"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Projectile_PiercingShot);UnlockSpell(Shout_SteadyRangedCrossbow);UnlockSpell(Shout_MAG_WeaponAction_TelekineticBolt)"
+// data "Unique" "1"
+
+new entry "GOON_CROSSBOWOFARCANEFORCE_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Shout_MAG_WeaponAction_TelekineticBolt"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_ActionSurge"
+using "Shout_MAG_WeaponAction_TelekineticBolt"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "AIFlags" ""
+// data "SpellProperties" "ApplyEquipmentStatus(RangedMainHand, MAG_WEAPON_ACTION_TELEKINETIC_BOLT,100,1)"
+// data "Icon" "Action_MagicItem_TelekineticBolt"
+// Arcane Ammunition
+// data "DisplayName" "hb87cde38g8710g4f88g826cg2757e4008a87;3"
+// Infuse your crossbow bolts with arcane energy. Your ranged weapon attacks deal an additional [1].
+// data "Description" "h14e278dfg2fbcg49c6ga5a0gae20baeb34f9;2"
+// Infuse your crossbow bolts with arcane energy. Your &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; deal an additional [1].
+data "Description" "h6ca84777g72e2g429bgb056g0e5b3d63bf9e;1"
+// data "DescriptionParams" "DealDamage(1d4, Force)"
+// data "TooltipStatusApply" "ApplyStatus(MAG_WEAPON_ACTION_TELEKINETIC_BOLT,100,1)"
+// data "PrepareSound" "Action_Prepare_Weapon_TelekineticBolt"
+// data "PrepareLoopSound" "Action_Loop_Weapon_TelekineticBolt"
+// data "CastSound" "Action_Cast_Weapon_TelekineticBolt"
+// data "TargetSound" "Action_Impact_Weapon_TelekineticBolt"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;,,;35b644cf-5c13-4407-9dc1-23bf4309216e,,;823e3ddf-c670-41ef-b7b4-9f4a4e38300b,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "VerbalIntent" "Buff"
+// data "SpellStyleGroup" "Intent"
+// data "WeaponTypes" "Ammunition"
+// data "SpellFlags" "IsDefaultWeaponAction"
+// data "Requirements" ""
+// data "PrepareEffect" "25a145db-f2c4-4993-b317-844f66652ead"
+// data "CastEffect" "469430a3-2d5f-4cc0-839c-68fcea35754a"
+
+// ==================================== Gandrel's Aspiration ====================================
+// Changes: Sacred Munitions is now a once per combat cooldown instead of once per short rest.
+// Changes: Sacred Munitions now provide an additional 1d4 Radiant damage to ranged weapon attacks against Fiends and Undead.
+// Changes: Sacred Munitions lasts for 10 turns instead of 1. (I'm pretty sure that was a mistake from Larian.)
+// TODO: Feller of Monsters specifies "YOU", and not the item itself, so probably don't need to change it to be weapon specific.
+
+// new entry "MAG_Gandrel_UndeadSlayer_HeavyCrossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_1"
+// data "RootTemplate" "12710611-6c85-4280-a597-8286e18f5740"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Projectile_PiercingShot);UnlockSpell(Shout_SteadyRangedCrossbow);UnlockSpell(Shout_MAG_WeaponAction_UndeadTurningBolt)"
+// data "PassivesOnEquip" "MAG_LC_MonsterHunter_Passive"
+// data "Unique" "1"
+
+new entry "GOON_GANDRELSASPIRATION_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Shout_MAG_WeaponAction_UndeadTurningBolt"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_MAG_WeaponAction_TelekineticBolt"
+using "Shout_MAG_WeaponAction_UndeadTurningBolt"
+// data "SpellProperties" "ApplyEquipmentStatus(RangedMainHand, MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT, 100, 1)"
+data "SpellProperties" "ApplyEquipmentStatus(RangedMainHand, MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT, 100, 10)"
+// data "Icon" "Action_Mag_UndeadTurningAmmunition"
+// Sacred Munitions
+// data "DisplayName" "hd0287c6dg2f6ag4b66gbcfeg127c4ab57577;2"
+// Infuse your crossbow bolts with holy energy. Your &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt; possibly inflict &lt;LSTag Type="Spell" Tooltip="Shout_TurnUndead"&gt;Turn Undead&lt;/LSTag&gt;.
+// data "Description" "h519af198g98a4g466cg81e1ga772f8295bf3;2"
+// Infuse your crossbow bolts with holy energy. Your &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; deal an additional [1] to Fiends and Undead. Additionally, they possibly afflict Undead targets with &lt;LSTag Type="Spell" Tooltip="Shout_TurnUndead"&gt;Turn Undead&lt;/LSTag&gt;.
+data "Description" "h46193702g6f3ag4816ga1f3g5299a2064c78;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "DealDamage(1d4,Radiant)"
+// data "TooltipStatusApply" "ApplyStatus(MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT,100,1)"
+data "TooltipStatusApply" "ApplyStatus(MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT, 100, 10)"
+data "TooltipDamageList" "DealDamage(1d4,Radiant,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
+// data "Sheathing" "Ranged"
+
+new entry "MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_WEAPON_ACTION_TELEKINETIC_BOLT"
+using "MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT"
+// Sacred Munitions
+// data "DisplayName" "h42e34b7eg1d6ag4ea5g971agc2b4abcd64cd;2"
+// Affected entity's &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt; possibly inflict &lt;LSTag Type="Spell" Tooltip="Shout_TurnUndead"&gt;Turn Undead&lt;/LSTag&gt; on a target.
+// data "Description" "hf1d3e2c0gcaf9g4a39g94e8ga11a7224cd15;2"
+// Affected entity's &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; deal an additional [1] to Fiends and Undead. Additionally, they possibly afflict Undead targets with &lt;LSTag Type="Spell" Tooltip="Shout_TurnUndead"&gt;Turn Undead&lt;/LSTag&gt;.
+data "Description" "h356647f0g769fg4635gaa04g501b34f614da;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "DealDamage(1d4,Radiant)"
+data "TooltipDamage" "DealDamage(1d4,Radiant,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
+// data "Icon" "GenericIcon_Intent_Buff"
+// data "StackId" "MAG_WEAPON_ACTION_UNDEAD_TURNING_BOLT"
+// data "Boosts" ""
+data "Boosts" "IF(UndeadOrFiend()):WeaponDamage(1d4, Radiant)"
+// data "Passives" "MAG_WeaponAction_UndeadTurning_Ammunition_Passive"
+
+new entry "MAG_WeaponAction_UndeadTurning_Ammunition_Passive"
+type "PassiveData"
+using "MAG_WeaponAction_UndeadTurning_Ammunition_Passive"
+// Sacred Munitions
+// data "DisplayName" "h48de3a2bg8a94g449cga5d4g2eca7851d7d6;2"
+// You can cast &lt;LSTag Type="Spell" Tooltip="Shout_MAG_WeaponAction_UndeadTurningBolt"&gt;Sacred Munitions&lt;/LSTag&gt;.
+// data "Description" "h93a2d49fg2e25g4870gb1a2gb05a0c47ca71;2"
+// Affected entity's &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; deal an additional [1] to Fiends and Undead. Additionally, they possibly afflict Undead targets with &lt;LSTag Type="Spell" Tooltip="Shout_TurnUndead"&gt;Turn Undead&lt;/LSTag&gt;.
+data "Description" "h356647f0g769fg4635gaa04g501b34f614da;1"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsRangedWeaponAttack() and Tagged('UNDEAD', context.Target) "
+// data "StatsFunctors" "ApplyStatus(TURNED, 100, 3)"
+
+// ==================================== Giantbreaker ====================================
+// TODO: A pull attack like "Target_MAG_RetrievingShot", but it can force targets one size bigger Prone.
+
+// new entry "MAG_MeleeDebuff_AttackDebuff2_OnDamage_HeavyCrossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_1"
+// data "RootTemplate" "260a44f7-9ce6-4c8c-bcc8-2eb018c00590"
+// data "ItemGroup" ""
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_MeleeDebuff_AttackDebuff2_OnDamage_Passive"
+// data "Unique" "1"
+
+new entry "GOON_GIANTBREAKER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Harold ====================================
+// Bug Fix: Haroldish Doom now displays correctly in the combat log.
+// Changes: Haroldish Doom now uses ManeuverSaveDC instead of a static DC of 13.
+// Changes: Haroldish Doom now continues to apply Bane even if the target already has the condition. (Additive stacking condition in Goon's Condition Overhaul.)
+
+new entry "MAG_BG_Harold_HeavyCrossbow"
+type "Weapon"
+// using "WPN_HeavyCrossbow_2"
+using "MAG_BG_Harold_HeavyCrossbow"
+// data "RootTemplate" "22bf3680-a37f-4a04-b036-2865805f3d60"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+// data "PassivesOnEquip" "MAG_BG_Harold_HeavyCrossbow_Passive"
+// data "Unique" "1"
+
+new entry "GOON_HAROLD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_BG_Harold_HeavyCrossbow_Passive"
+type "PassiveData"
+using "MAG_BG_Harold_HeavyCrossbow_Passive"
+// Haroldish Doom
+// data "DisplayName" "h28dd03c9ge7edg4a76g8723ga7461b2190df;2"
+// When you deal damage to a target with a ranged weapon, it must succeed a Charisma &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BANE"&gt;Baned&lt;/LSTag&gt; for [1] turns.
+// data "Description" "h2d531b5cgb394g4ff5gac56g51926564ef1e;2"
+// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; targets for [1] turns, unless they succeed a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hdbfec5ddg95ddg4d42gb3e6g81485251e3b0;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Charisma"
+data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsRangedWeaponAttack() and not HasStatus('BANE', context.Target)"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(BANE, 100, 2,,,,not SavingThrow(Ability.Charisma,13))"
+data "StatsFunctors" "ApplyStatus(GOON_HAROLDISHDOOM_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_HAROLDISHDOOM_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Haroldish Doom
+// data "DisplayName" "h28dd03c9ge7edg4a76g8723ga7461b2190df;2"
+// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; targets for [1] turns, unless they succeed a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hdbfec5ddg95ddg4d42gb3e6g81485251e3b0;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "2"
+data "TooltipSave" "Charisma"
+data "OnApplyRoll" "not SavingThrow(Ability.Charisma,ManeuverSaveDC())"
+data "OnApplySuccess" "ApplyStatus(BANE, 100, 2)"
+
+// ==================================== The Long Arm of the Gur ====================================
+// Bug Fix: Revenant Scourge's 1d4 Attack Roll bonus now functions.
+// Bug Fix: Revenant Scourge's 1d4 Damage bonus now uses the weapon's damage, and not a fixed 1d4 Piercing.
+
+// new entry "MAG_LC_UndeadSlayer_Crossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_2"
+// data "RootTemplate" "85f60e49-d868-4897-afc5-b22e965a0471"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "PassivesOnEquip" "MAG_UndeadSlayer_Passive"
+// data "Unique" "1"
+
+new entry "GOON_THELONGARMOFTHEGUR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_UndeadSlayer_Passive"
+type "PassiveData"
+using "MAG_UndeadSlayer_Passive"
+// Revenant Scourge
+// data "DisplayName" "hb1e1efaag886bg4cdbgad72g260c65a38e17;1"
+// When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
+// data "Description" "he543a58dgc4f9g4a25ga5e9gca44862ddc0b;1"
+// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
+data "Description" "h84bb0923g7d8ag4b3agaddag8e49930bb680;1"
+// data "DescriptionParams" "1d4"
+data "Boosts" "IF(Tagged('UNDEAD',context.Target)):RollBonus(RangedWeaponAttack, 1d4);IF(IsRangedWeaponAttack() and Tagged('UNDEAD',context.Target)):CharacterWeaponDamage(1d4)"
+
+new entry "MAG_UNDEAD_SLAYER_BLESS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_UNDEAD_SLAYER_BLESS"
+// Revenant Scourge
+// data "DisplayName" "h7fa313e9gb2cag42e7g8e54g268b629cfc6d;2"
+// When used against undead creatures this weapon has +[1] bonus to Attack and Damage rolls.
+// data "Description" "h72384fb0gfb27g4c21gbbb3ge9a9f73a6d38;1"
+// &lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.
+data "Description" "h84bb0923g7d8ag4b3agaddag8e49930bb680;1"
+// data "DescriptionParams" "1d4"
+// data "Icon" "GenericIcon_Intent_Buff"
+// data "StackId" "MAG_UNDEAD_SLAYER_BLESS"
+// data "Boosts" "IF(Tagged('UNDEAD', context.Target)):WeaponAttackRollBonus(1d4);IF(Tagged('UNDEAD', context.Target)):WeaponDamage(1d4, Piercing)"
+data "Boosts" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+
+// ==================================== Fabricated Arbalest ====================================
+// Changes: Dazzling Ray can now be used once per combat instead of once per short rest.
+// TODO: Illuminating Shot is pretty shitty.
+
+// new entry "MAG_Gortash_HeavyCrossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_2"
+// data "RootTemplate" "45d888b5-e002-4bb8-85d7-6df569aceaa4"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Zone_MAG_Automaton_SunbeamShot);IF(Tagged('PLAYABLE',context.Source)):UnlockSpell(Projectile_MAG_Automaton_LightTagging_Shot); IF(Tagged('ACT3_WYR_GORTASH',context.Source)):UnlockSpell(Zone_WYR_Automaton_SunbeamShot_Gortash)"
+// data "Unique" "1"
+
+new entry "GOON_FABRICATEDARBALEST_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Zone_MAG_Automaton_SunbeamShot"
+type "SpellData"
+data "SpellType" "Zone"
+// using "Zone_Sunbeam"
+using "Zone_MAG_Automaton_SunbeamShot"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "SpellProperties" "ApplyStatus(SELF, MAG_AUTOMATON_SUNBEAM_SHOT_OWNER,100,10)"
+// data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC())"
+// data "SpellSuccess" "DealDamage(2d10, Radiant,Magical);ApplyStatus(SUNBEAM,100,1)"
+// data "SpellFail" "DealDamage(1d10, Radiant,Magical)"
+// Dazzling Ray
+// data "DisplayName" "hb6c344ffg50d7g4778gb8e5gd87166ccf2ef;2"
+// Unleash a beam of brilliant light that &lt;LSTag Type="Status" Tooltip="SUNBEAM"&gt;Blinds&lt;/LSTag&gt; all creatures in its path.
+// data "Description" "hf9b2c054g0a98g4663g9b7bg6dcdf9fa0116;2"
+// Until the spell ends, you can recast the spell. Casting it again may possibly &lt;LSTag Type="Status" Tooltip="BURNING"&gt;burn&lt;/LSTag&gt; you each time you recast it.
+// data "ExtraDescription" "hf7bc8d1dg8171g43e9gbe6ege4456fb95cfe;7"
+// data "TooltipDamageList" "DealDamage(2d10, Radiant)"
+// data "TooltipAttackSave" "Dexterity"
+// data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,10);ApplyStatus(MAG_AUTOMATON_SUNBEAM_SHOT_OWNER,100,10)"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;9583ecee-cf6c-4735-86db-7ebf1df15eae,,;de006e3f-70fb-4eb7-a98d-d845d15b20e8,,;50696db7-d931-4734-915d-32d038ba99a5,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "WeaponTypes" "Ammunition"
+// data "SpellFlags" "HasSomaticComponent;IsConcentration;IsHarmful;IsDefaultWeaponAction"
+// data "RequirementConditions" "IsProficientWithEquippedWeapon()"
+// data "Sheathing" "Ranged"
+
+// ==================================== Hellfire Engine Crossbow ====================================
+// Changes: Reposition Malefactor's pull trajectory can be adjusted slightly based on cursor position over the target.
+
+// new entry "MAG_WATCHER_Human_Crossbow"
+// type "Weapon"
+// using "WPN_HeavyCrossbow_2"
+// data "RootTemplate" "f746397f-c489-4121-8499-40017981e290"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "UnlockSpell(Projectile_MAG_LightningArrow_Shot)"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Projectile_PiercingShot);UnlockSpell(Shout_SteadyRangedCrossbow);UnlockSpell(Target_MAG_RetrievingShot)"
+// data "Unique" "1"
+
+new entry "GOON_HELLFIREENGINECROSSBOW_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "Target_MAG_RetrievingShot"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_SteelWatcher_Biped_RetrievingShot"
+using "Target_MAG_RetrievingShot"
+// data "TargetRadius" "RangedMainWeaponRange"
+// data "SpellRoll" "not SavingThrow(Ability.Dexterity,15)"
+// data "SpellSuccess" "Force(-9,TargetToOrigin);DealDamage(MainRangedWeapon/2, MainRangedWeaponDamageType)"
+data "SpellSuccess" "Force(-9,OriginToTarget,Neutral);DealDamage(MainRangedWeapon/2, MainRangedWeaponDamageType)"
+// data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL,100,0)"
+// data "TargetConditions" "not Self() and not Grounded() and IsMovable()"
+// data "Icon" "Action_Monster_Gortash_ReelIn"
+// Pulls the creature [1] closer to you.
+// data "Description" "h5e4b24e3g089fg48f0gac9fgadc7bb4dffaf;1"
+// data "DescriptionParams" "Distance(9)"
+// data "TooltipDamageList" "DealDamage(MainRangedWeapon/2, MainRangedWeaponDamageType)"
+// data "SpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;9583ecee-cf6c-4735-86db-7ebf1df15eae,,;de006e3f-70fb-4eb7-a98d-d845d15b20e8,,;50696db7-d931-4734-915d-32d038ba99a5,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "DualWieldingSpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;7e67bfd0-2fc2-4d10-bed5-cfda9e660de5,,;eb054308-7fce-4b85-bf4c-7a0031fda7ac,,:4a789a60-04b8-4a26-b476-65cf26ca558b,,;a11b8bcb-ba24-417a-aa86-4e4379c41ee2,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;b2e9c771-3497-444c-b360-23b4441985a1,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;AddFallDamageOnLand;HasSomaticComponent;IsDefaultWeaponAction"
+// data "PrepareEffect" "4430007f-4300-445c-8f75-977b6a523974"
+// data "Sheathing" "Ranged"

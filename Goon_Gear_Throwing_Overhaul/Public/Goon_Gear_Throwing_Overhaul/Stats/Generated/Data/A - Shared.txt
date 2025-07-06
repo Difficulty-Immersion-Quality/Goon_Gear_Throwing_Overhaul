@@ -13,7 +13,7 @@ data "Properties" "IsHidden"
 data "Boosts" "IF(HasAnyStatus({'MAG_BYPASS_SLASHING_RESISTANCE_TECHNICAL'}, {}, {},context.HitDescription.ThrownObject)):IgnoreResistance(Slashing, Resistant)"
 
 // TODO: Figure out how to allow advantage for throwing specific weapons
-// Advantage: Pelorsun Blade
+// Advantage: Pelorsun Blade, Gandrel's Aspiration, Hunting Shortbow
 // new entry "Goon_Advantage_Throwing_Master_Passive"
 // type "PassiveData"
 // data "Properties" "IsHidden"
