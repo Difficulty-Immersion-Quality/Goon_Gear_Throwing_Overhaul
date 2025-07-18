@@ -199,6 +199,14 @@
 								</node>
 							</children>
 						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_CLOAKOFTHECUNNINGBRUME_ARMOUR_TECHNICAL" />
+								</node>
+							</children>
+						</node>
 					</children>
 				</node>
 				<!-- Fleshmelter Cloak -->
@@ -513,6 +521,14 @@
 								<node id="Tag">
 									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
 									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_FLESHMELTERCLOAK_ARMOUR_TECHNICAL" />
 								</node>
 							</children>
 						</node>
