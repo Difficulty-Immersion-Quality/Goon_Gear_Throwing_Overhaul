@@ -56,6 +56,21 @@ using "MAG_Fire_AlwaysDippedInFire_Greatsword"
 // data "DefaultBoosts" "HiddenDuringCinematic();WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponProperty(Magical)"
 
+// ==================================== Sussur Greatsword ====================================
+// Bug Fix: Description is now accurate and states a Saving Throw.
+
+new entry "FOR_IncompleteMasterwork_SussurGreatsword"
+type "Weapon"
+// using "WPN_Greatsword_1"
+using "FOR_IncompleteMasterwork_SussurGreatsword"
+// data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(SILENCED,100, 2)"
+
+new entry "GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ========================== Balduran's Giantlayer ==========================
 // Changes: Giant Form now costs a Bonus Action instead of an Action.
 
@@ -66,16 +81,6 @@ data "SpellType" "Shout"
 using "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// weapon entry
-
-// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
