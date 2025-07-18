@@ -1,0 +1,15 @@
+// ==================================== Savage Attacks - Half-Orc racial ====================================
+// Changes: Now applies to thrown and melee attacks.
+
+new entry "SavageAttacks"
+type "PassiveData"
+// Savage Attacks
+// data "DisplayName" "hb8d3cdb1gbe64g4483gaa79g39c6af9b9b38;2"
+// When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee weapon attack, you deal an extra dice of weapon damage.
+// data "Description" "h2821c66dg7775g4806g920bg9d563dfdd02e;4"
+// When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; you roll an extra damage die.
+data "Description" "h704c163cg9274g44c7g8a69g7f210ef0e37b;1"
+// data "Icon" "PassiveFeature_SavageAttacks"
+// data "Properties" "Highlighted"
+// data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack);CriticalHitExtraDice(1,MeleeOffHandWeaponAttack)"
+data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack);CriticalHitExtraDice(1,MeleeOffHandWeaponAttack);CriticalHitExtraDice(1,MeleeUnarmedAttack);CriticalHitExtraDice(1,RangedUnarmedAttack)"

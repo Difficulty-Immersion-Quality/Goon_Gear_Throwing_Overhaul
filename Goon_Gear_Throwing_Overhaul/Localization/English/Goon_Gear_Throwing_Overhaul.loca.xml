@@ -6,13 +6,10 @@
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="hb466f4f5g631cg4443g9a89g1485aad5a8a8" version="1">You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.</content>
 
 	<!-- Half-Orc racial - Savage Attacks -->
-	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack, you deal an extra dice of weapon damage.</content>
+	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; you roll an extra damage die.</content>
 
 	<!-- Wrath -->
 	<content contentuid="h2d9e2f62g409ag4b93g90f3g62b7c5c31a29" version="1">You have a +1 bonus to damage with melee and thrown weapons for every turn this condition has remaining.</content>
-
-	<!-- Band of the Mystic Scoundrel - Illusion Quickening -->
-	<content contentuid="h4ef7fcd3g137ag4adagabbagb5f6bbd3b7b9" version="1">After a successful attack with a weapon, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
@@ -146,7 +143,8 @@
 	<!-- "MAG_BG_Harold_HeavyCrossbow_Passive", "GOON_HAROLDISHDOOM_TECHNICAL_APPLIER" --> <content contentuid="hdbfec5ddg95ddg4d42gb3e6g81485251e3b0" version="1">&lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon &lt;LSTag Type="Status" Tooltip="BANE"&gt;Bane&lt;/LSTag&gt; targets for [1] turns, unless they succeed a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<!-- "MAG_UndeadSlayer_Passive", "MAG_UNDEAD_SLAYER_BLESS" --> <content contentuid="h84bb0923g7d8ag4b3agaddag8e49930bb680" version="1">&lt;LSTag Tooltip="RangedWeaponAttack"&gt;Ranged Weapon Attacks&lt;/LSTag&gt; with this weapon have a +[1] bonus to Attack and Damage rolls against Undead.</content>
 	<!-- "GOB_Torturer_Spear_Passive", "GOON_TORTUROUSEDGES_TECHNICAL_APPLIER" --> <content contentuid="hfdc70a99gdf3ag40e2g8dffgcc469bab5a66" version="1">Attacks with this weapon seemingly &lt;LSTag Type="Status" Tooltip="GOB_TORTURED"&gt;Torture&lt;/LSTag&gt; your target, forcing them to suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- MAG_ArcaneTrickster_Ring_Passive --> <content contentuid="h4ef7fcd3g137ag4adagabbagb5f6bbd3b7b9" version="1">After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
+	<!-- "MAG_ElementalGish_ArcaneAcuity_Helmet_Passive" --> <content contentuid="h1adb1860g647fg402egb774g1ff6be448951" version="1">Whenever you deal damage with a weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for 2 turns.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>

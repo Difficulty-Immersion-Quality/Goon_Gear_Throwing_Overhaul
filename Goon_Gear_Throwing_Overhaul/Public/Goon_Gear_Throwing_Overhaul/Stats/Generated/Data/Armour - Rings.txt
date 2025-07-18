@@ -1,3 +1,13 @@
+// ==================================== Bracing Band ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ========================== Callous Glow Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 
@@ -10,6 +20,16 @@ using "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring"
 data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring_Passive"
 // data "Unique" "1"
+
+// ==================================== Caustic Band ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ========================== Coruscation Ring ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
@@ -24,70 +44,215 @@ data "Rarity" "Rare"
 // data "PassivesOnEquip" "MAG_Radiant_RadiatingOrb_Ring_Passive"
 // data "Unique" "1"
 
-// ==================================== After Death Do Us Part ====================================
-// Bug Fix: Shadow Possession no longer clears itself instantly upon exiting the downed state.
+// ==================================== Crusher's Ring ====================================
+// TODO: Something/anything.
 
-// new entry "LOW_KerriRing_Ring"
-// type "Armor"
-// using "_Ring_Magic"
-// data "RootTemplate" "d874115c-6b92-4222-b1a2-594cf111b075"
-// data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
-// data "Rarity" "Rare"
-// data "PassivesOnEquip" "MAG_DeathDo_Shadow_Passive"
-// data "Unique" "1"
+// gear entry
 
-new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
-type "StatusData"
-data "StatusType" "DOWNED"
-// using "DOWNED"
-using "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
-// data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SG_Condition);StatusImmunity(SHOCKWAVE)"
-data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SHOCKWAVE)"
-// data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
-data "OnApplyFunctors" "RemoveStatus(SG_Rage);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
-// data "OnRemoveFunctors" "ResetCombatTurn();RestoreResource(Movement, 100%, 0);RestoreResource(BonusActionPoint, 100%, 0)"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Band of the Mystic Scoundrel ====================================
-// Bug Fix: Illusion Quickening no longer triggers when attacking items.
-// TODO: Make the bonus action cost for Illusion spells a temporary passive toggle unlocked via status
+// ==================================== Djinni Ring ====================================
+// TODO: Something/anything.
 
-// new entry "MAG_ArcaneTrickster_Ring"
-// type "Armor"
-// using "ARM_Ring_E_Gold_A"
-// data "RootTemplate" "5b74c9d8-cb88-4a29-99c4-25d98c7d88f7"
-// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
-// data "Rarity" "Rare"
-// data "PassivesOnEquip" "MAG_ArcaneTrickster_Ring_Passive"
-// data "Unique" "1"
+// gear entry
 
-new entry "MAG_ArcaneTrickster_Ring_Passive"
-type "PassiveData"
-using "MAG_ArcaneTrickster_Ring_Passive"
-// Illusion Quickening
-// data "DisplayName" "h114939dbg26e6g4852g9444g0de8a00a150a;2"
-// After hitting a creature with a weapon attack, you can cast illusion or enchantment spells as a <LSTag Type="ActionResource" Tooltip="BonusActionPoint">bonus action</LSTag>.
-// data "Description" "hf3fe1d3cgb568g4420ga71dg10c48187f73c;1"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsWeaponAttack()"
-data "Conditions" "IsWeaponAttack() and not Item()"
-// data "StatsFunctors" "ApplyStatus(SELF, MAG_ARCANE_TRICKSTER_ILLUSION_QUICKENING, 100, 1)"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Ring of Feywild Sparks ====================================
-// Bug Fix: The +1 Spell Save DC is now visible.
+// ==================================== Eversight Ring ====================================
+// TODO: Something/anything.
 
-new entry "MAG_OfFeywildSparks_Ring"
-type "Armor"
-// using "_Ring_Magic"
-using "MAG_OfFeywildSparks_Ring"
-// data "RootTemplate" "a4813d7b-2ff0-488b-8152-a27cb75e8d8e"
-// data "ValueUUID" "3e8b9d6e-7e83-4fd7-bc99-bb4956d67a2a"
-// data "Rarity" "VeryRare"
-// data "Boosts" "SpellSaveDC(1)"
-data "Boosts" ""
-// data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive"
-data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
-// data "StatusOnEquip" "MAG_FEYWILD_SPARKS_TECHNICAL"
-// data "Unique" "1"
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Explorer's Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Family Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Firzu's Ring of Trading ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Guild Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Mage's Friend ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Poisoner's Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Absolute Force ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Colour Spray ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Elemental Infusion ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Flinging ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Geniality ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Jumping ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Mental Inhibition ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Salving ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Self Immolation ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Shadows ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Spiteful Thunder ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Seemingly Gleaming Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Shadow Blade Ring ====================================
 // Bug Fix: Shadow Blade Ring no longer needlessly breaks concentration when unequipped.
@@ -113,6 +278,16 @@ using "MAG_SHADOW_BLADE_RING_TECHNICAL"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 // data "OnRemoveFunctors" "IF(HasStatus('MAG_SHADOW_BLADE_OWNER')):BreakConcentration()"
 data "OnRemoveFunctors" ""
+
+// ==================================== Shadow-Cloaked Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Shapeshifter's Boon Ring ====================================
 // Bug Fix: Mark of the Shifter is removed when the ring is unequipped.
@@ -149,6 +324,56 @@ data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndi
 data "OnApplyFunctors" "IF(HasStatus('SG_Polymorph') or HasStatus('SG_Polymorph_BeastShape')):ApplyStatus(MAG_SHAPESHIFTERS_BOON, 100, -1)"
 data "OnRemoveFunctors" "RemoveStatus(MAG_SHAPESHIFTERS_BOON)"
 
+// ==================================== Smuggler's Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Snowburst Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spurred Band ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Strange Conduit Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Sunwalker's Gift ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== "Tarnished Ring" > "Magic Ring" ====================================
 // Bug Fix: Now uses its appropriate template, recieving its proper name "Magic Ring".
 // Changes: Now provides a +1 to Spell Save DC instead of just being vendor fodder.
@@ -160,6 +385,16 @@ using "QUEST_WYR_RestoredMagicRing"
 // data "RootTemplate" "ecf4a8a4-7859-4a82-8c08-0c9526f29500"
 data "RootTemplate" "9030e638-b086-4e0d-aeb9-365b03470679"
 data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+
+// ==================================== The Sparkswall ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== The Whispering Promise ====================================
 // Bug Fix: Blessed Mercy now specifies that it applies Bless, instead of describing the functionality of Bless.
@@ -187,8 +422,326 @@ data "Description" "h1585ed41g588ag4ff4gad07gb09acc5e3792;1"
 // data "DescriptionParams" "1d4;2"
 data "DescriptionParams" "2"
 
+// ==================================== After Death Do Us Part ====================================
+// Bug Fix: Shadow Possession no longer clears itself instantly upon exiting the downed state.
 
-// ==================================== XXXXXXXXXXXX ====================================
+// new entry "LOW_KerriRing_Ring"
+// type "Armor"
+// using "_Ring_Magic"
+// data "RootTemplate" "d874115c-6b92-4222-b1a2-594cf111b075"
+// data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_DeathDo_Shadow_Passive"
+// data "Unique" "1"
+
+new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
+type "StatusData"
+data "StatusType" "DOWNED"
+// using "DOWNED"
+using "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
+// data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SG_Condition);StatusImmunity(SHOCKWAVE)"
+data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);CriticalHit(AttackTarget,Success,Always,2.5);IF(not DistanceToTargetGreaterThan(3)):Advantage(AttackTarget);IF(DistanceToTargetGreaterThan(3)):Disadvantage(AttackTarget);StatusImmunity(SG_Prone);StatusImmunity(SHOCKWAVE)"
+// data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
+data "OnApplyFunctors" "RemoveStatus(SG_Rage);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
+// data "OnRemoveFunctors" "ResetCombatTurn();RestoreResource(Movement, 100%, 0);RestoreResource(BonusActionPoint, 100%, 0)"
+
+// ==================================== Band of the Mystic Scoundrel ====================================
+// Bug Fix: Illusion Quickening no longer triggers when attacking items.
+// Changes: Illusion Quickening applies to thrown attacks.
+// TODO: Make the bonus action cost for Illusion spells a temporary passive toggle unlocked via status
+
+// new entry "MAG_ArcaneTrickster_Ring"
+// type "Armor"
+// using "ARM_Ring_E_Gold_A"
+// data "RootTemplate" "5b74c9d8-cb88-4a29-99c4-25d98c7d88f7"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_ArcaneTrickster_Ring_Passive"
+// data "Unique" "1"
+
+new entry "MAG_ArcaneTrickster_Ring_Passive"
+type "PassiveData"
+using "MAG_ArcaneTrickster_Ring_Passive"
+// Illusion Quickening
+// data "DisplayName" "h114939dbg26e6g4852g9444g0de8a00a150a;2"
+// After hitting a creature with a weapon attack, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.
+// data "Description" "hf3fe1d3cgb568g4420ga71dg10c48187f73c;1"
+// After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.
+data "Description" "h4b442883g3a5ag4813gbfabgdbfb7dbf2075;1"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsWeaponAttack()"
+data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_ARCANE_TRICKSTER_ILLUSION_QUICKENING, 100, 1)"
+
+// ==================================== Fetish of Callarduran Smoothhands ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Keepsake Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Arcane Synergy ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Blink ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Exalted Marrow ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Free Action ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Mind-Shielding ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Poison Resistance ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Protection ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Truthfulness ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Twilight ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Risky Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Shifting Corpus Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Till Death Do Us Part ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== True Love's Caress ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== True Love's Embrace ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Burnished Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Crypt Lord Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Killer's Sweetheart ====================================
+// Bug Fix: Executioner now works with all attacks as the tooltip states.
+
+// new entry "MAG_Critical_CriticalExecution_Ring"
+// type "Armor"
+// using "_Ring_Magic"
+// data "RootTemplate" "2f2d4bf3-6a14-43f5-81fe-e14aa9871215"
+// data "ValueUUID" "3e8b9d6e-7e83-4fd7-bc99-bb4956d67a2a"
+// data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_Critical_CriticalExecution_Passive"
+// data "StatusOnEquip" "MAG_CRITICAL_CRITICAL_EXECUTION_OWNER"
+// data "Unique" "1"
+
+// Killer's Sweetheart - Executioner
+new entry "Interrupt_MAG_CriticalExecution"
+type "InterruptData"
+// using "Interrupt_MAG_ParalyzingCritical"
+using "Interrupt_MAG_CriticalExecution"
+// data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(context.Source,context.Observer) and IsWeaponAttack() and not IsCritical()"
+data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(context.Source,context.Observer) and IsAttack() and not IsCritical()"
+
+// ==================================== Orphic Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Evasion ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ring of Feywild Sparks ====================================
+// Bug Fix: The +1 Spell Save DC is now visible.
+
+new entry "MAG_OfFeywildSparks_Ring"
+type "Armor"
+// using "_Ring_Magic"
+using "MAG_OfFeywildSparks_Ring"
+// data "RootTemplate" "a4813d7b-2ff0-488b-8152-a27cb75e8d8e"
+// data "ValueUUID" "3e8b9d6e-7e83-4fd7-bc99-bb4956d67a2a"
+// data "Rarity" "VeryRare"
+// data "Boosts" "SpellSaveDC(1)"
+data "Boosts" ""
+// data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive"
+data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+// data "StatusOnEquip" "MAG_FEYWILD_SPARKS_TECHNICAL"
+// data "Unique" "1"
+
+// ==================================== Ring of Regeneration ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Guiding Light ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Guild Ring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Szarr Family Ring ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -268,3 +821,12 @@ data "DescriptionParams" "2"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
