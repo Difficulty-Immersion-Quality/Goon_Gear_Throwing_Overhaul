@@ -139,68 +139,78 @@ data "Boosts" "IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
+// ==================================== Briskwind Boots ====================================
+// Bug Fix: Critical Swiftness no longer triggers when killing non-hostile creatures.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+new entry "MAG_Critical_CriticalSwiftness_Passive"
+type "PassiveData"
+using "MAG_Critical_CriticalSwiftness_Passive"
+// Critical Swiftness
+// data "DisplayName" "h4af7448ag6a0eg4259g8114g8eb297fec991;2"
+// After scoring a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing a hostile creature, &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is restored to maximum.
+// data "Description" "hb91d1e6bgf680g4749g84d9g601324202509;3"
+// data "StatsFunctorContext" "OnDamage"
+// data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF, Movement, 100%, 0)"
+data "StatsFunctors" "IF((IsCritical() or IsKillingBlow()) and Enemy(context.Target)):RestoreResource(SELF, Movement, 100%, 0)"

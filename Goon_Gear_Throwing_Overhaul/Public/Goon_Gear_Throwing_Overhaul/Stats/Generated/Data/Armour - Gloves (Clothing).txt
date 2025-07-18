@@ -133,6 +133,29 @@ data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
 data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
 
+// ==================================== Stalker Gloves ====================================
+// Bug Fix: Now works with Rakish Sneak Attack.
+
+// gear entry
+
+new entry "GOON_STALKERGLOVES_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_ForcefulSneakAttack_Passive"
+type "PassiveData"
+using "MAG_ForcefulSneakAttack_Passive"
+// Skullduggery Attack
+// data "DisplayName" "h5593a398g9a3bg4272gaf2cga94278f772cd;1"
+// Your &lt;LSTag Type="Spell" Tooltip="Target_Sneak_Attack"&gt;Sneak Attack&lt;/LSTag&gt; deals an additional [1].
+// data "Description" "hfa1c8818g9301g48afgba5ege06d5bd04fbf;1"
+// data "DescriptionParams" "DealDamage(1d4, Force)"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "SpellId('Target_SneakAttack') or SpellId('Projectile_SneakAttack') or SpellId('Interrupt_SneakAttack')"
+data "Conditions" "Goon_IsSneakAttack()"
+// data "StatsFunctors" "DealDamage(1d4, Force,Magical)"
+
 // ==================================== The Sparkle Hands ====================================
 // Changes: Extra description added to Conductive Strikes, stating that it works while Polymorphed.
 
@@ -170,78 +193,68 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-// gear entry
-
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 

@@ -36,68 +36,68 @@ data "OnRemoveFunctors" "RemoveStatus(MAG_UNMOVABLE)"
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
 // gear entry
 
-new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 

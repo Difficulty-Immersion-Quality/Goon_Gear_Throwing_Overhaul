@@ -4,19 +4,22 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Handmaiden's Mace -->
+				<!-- The Joltshooter -->
 				<node id="GameObjects">
-					<attribute id="Description" type="TranslatedString" handle="h47b29563g2e16g491fgbf2egfe3bcff66353" version="2" />
-					<attribute id="DisplayName" type="TranslatedString" handle="hf603b674g3717g40begb7c9gf7b36697773a" version="4" />
+					<attribute id="Description" type="TranslatedString" handle="h99c118bdg2e83g469egb938g7fb5daec1adf" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h9e2deeb1gc734g4259ga600gfb0e75908db0" version="2" />
+					<attribute id="Icon" type="FixedString" value="Item_MAG_ChargedLightning_Longbow" />
 					<attribute id="LevelName" type="FixedString" value="" />
-					<attribute id="MapKey" type="FixedString" value="c31d6b30-2377-4e3c-a602-d5d527defc11" />
-					<attribute id="Name" type="LSString" value="MAG_Viconia_Mace" />
-					<attribute id="ParentTemplateId" type="FixedString" value="f203a318-ea9a-4117-8d27-299dabafd1d3" />
-					<attribute id="Stats" type="FixedString" value="MAG_Viconia_Mace" />
+					<attribute id="MapKey" type="FixedString" value="38b80bf8-9cf8-4495-8267-eb84c7779d0c" />
+					<attribute id="Name" type="LSString" value="MAG_ChargedLightning_Longbow" />
+					<attribute id="ParentTemplateId" type="FixedString" value="049173ec-636a-487e-a9ed-bfafeadf6bb7" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="MAG_ChargedLightning_Longbow" />
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="" version="0" />
 					<attribute id="Type" type="FixedString" value="item" />
-					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<attribute id="VisualTemplate" type="FixedString" value="f22175a4-5047-57df-3e33-365da9593488" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
 					<children>
-						<!-- Changes: Gale can eat it, Tressym can trade for it -->
 						<node id="OnUsePeaceActions">
 							<children>
 								<node id="Action">
@@ -49,11 +52,8 @@
 						<node id="StatusList">
 							<children>
 								<node id="Status">
-									<attribute id="Object" type="FixedString" value="GOON_HANDMAIDENS_MACE_THROW_TECHNICAL" />
+									<attribute id="Object" type="FixedString" value="GOON_THEJOLTSHOOTER_WEAPON_TECHNICAL" />
 								</node>
-								<!-- <node id="Status">
-									<attribute id="Object" type="FixedString" value="MAG_POISON_POISON_WEAPON" />
-								</node> -->
 							</children>
 						</node>
 					</children>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<!-- Sussur Greatsword -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h76b3b60fg8606g4204g83d2g925db719d5cc" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="he11cbd50gad99g4f4dgb6edg82b0174e0de2" version="1" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="Icon" type="FixedString" value="Item_QUEST_FOR_SussurGreatsword" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="44dedec0-df82-4ed3-b9ca-147bd830e312" />
+					<attribute id="Name" type="LSString" value="QUEST_FOR_SussurGreatsword" />
+					<attribute id="ParentTemplateId" type="FixedString" value="ecfb9f69-5bc3-402e-acd8-c91d57e28403" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="74eb44d4-f1a9-c08c-fd8a-4cc98285f2c2" />
+					<attribute id="Stats" type="FixedString" value="FOR_IncompleteMasterwork_SussurGreatsword" />
+					<!-- Bug Fix: Description is now accurate and stats a saving throw. -->
+					<!--<attribute id="TechnicalDescription" type="TranslatedString" handle="h17383768g7570g4082g80a0g075a77c7661b" version="1" />-->
+					<attribute id="TechnicalDescription" type="TranslatedString" handle="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="VisualTemplate" type="FixedString" value="7884a137-2365-2bee-c218-e75c88c7e28b" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144537400540921856" />
+					<children>
+						<node id="Bounds">
+							<children>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0783766" />
+									<attribute id="Max" type="fvec3" value="0.21514219 0.047554806 0.35112882" />
+									<attribute id="Min" type="fvec3" value="-0.22098804 -0.008609086 -1.523746" />
+									<attribute id="Radius" type="float" value="0.2330765" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="0" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0783766" />
+									<attribute id="Max" type="fvec3" value="0.21514219 0.047554806 0.35112882" />
+									<attribute id="Min" type="fvec3" value="-0.22098804 -0.008609086 -1.523746" />
+									<attribute id="Radius" type="float" value="0.466153" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="1" />
+								</node>
+								<node id="Bound">
+									<attribute id="Height" type="float" value="0.0783766" />
+									<attribute id="Max" type="fvec3" value="0.21514219 0.047554806 0.35112882" />
+									<attribute id="Min" type="fvec3" value="-0.22098804 -0.008609086 -1.523746" />
+									<attribute id="Radius" type="float" value="0.466153" />
+									<attribute id="Shape" type="uint8" value="1" />
+									<attribute id="Type" type="uint8" value="2" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_SUSSURGREATSWORD_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

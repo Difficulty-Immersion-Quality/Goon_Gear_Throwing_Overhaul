@@ -149,7 +149,7 @@
 								</node>
 							</children>
 						</node>
-						<!-- Changes: Added technical status for throwing -->
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
 						<node id="StatusList">
 							<children>
 								<node id="Status">

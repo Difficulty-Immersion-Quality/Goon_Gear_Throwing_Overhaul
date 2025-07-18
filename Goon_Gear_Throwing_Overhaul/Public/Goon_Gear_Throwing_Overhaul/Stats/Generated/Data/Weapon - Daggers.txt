@@ -215,7 +215,7 @@ using "MAG_TheHunters_Dagger_Passive"
 // On a hit, the target must succeed a &lt;LSTag Tooltip="DifficultyClass"&gt; DC&lt;/LSTag&gt; 13 Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Ruptured&lt;/LSTag&gt;.
 // data "Description" "h22dfabc8g69a0g4965g829dgd2a1e7542524;2"
 // When you deal damage with this weapon, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.
-data "Description" "h22dfabc8g69a0g4965g829dgd2a1e7542524;2"
+data "Description" "hf38c5a04g2bb3g4a65g9cbdg3ee366e57242;1"
 data "DescriptionParams" "3"
 data "TooltipSave" "Constitution"
 data "StatsFunctorContext" "OnDamage"
@@ -229,7 +229,7 @@ data "StatusType" "BOOST"
 // Rupturing
 data "DisplayName" "hb035c3e1g199bg4175g9d5ag6c0652fc55b1;3"
 // On a hit, possibly &lt;LSTag Type="Status" Tooltip="BARBED_ARROW"&gt;Rupture&lt;/LSTag&gt; your target for [1] turns.
-data "Description" "h22dfabc8g69a0g4965g829dgd2a1e7542524;2"
+data "Description" "hf38c5a04g2bb3g4a65g9cbdg3ee366e57242;1"
 data "DescriptionParams" "3"
 data "TooltipSave" "Constitution"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
@@ -240,80 +240,80 @@ data "OnApplySuccess" "ApplyStatus(BARBED_ARROW, 100, 3)"
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== XXXXXXXXXXXX ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== XXXXXXXXXXXX ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
