@@ -5,9 +5,6 @@
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="he5c48cdcg3690g4ec2ga8cbgd453b402bc17" version="1">This weapon will return to your hand when thrown. You cannot be forced to drop the trident. When thrown, Nyrulna's additional [1] explodes outward in a [2] blast centred on the target.</content>
 	<!-- "MAG_TheThorns_ExplosiveThrowing_Passive" --> <content contentuid="hb466f4f5g631cg4443g9a89g1485aad5a8a8" version="1">You may toggle this feature off. When toggled off, Nyrulna's additional [1] is dealt to the target instead of exploding. When Nyrulna returns to your hand it is toggled on again.</content>
 
-	<!-- Smites -->
-	<content contentuid="h33da1120g3c94g48d1g9a65g60d95da01749" version="1">Automatically cast &lt;LSTag Type="Spell" Tooltip="Target_Smite_Divine"&gt;Divine Smite&lt;/LSTag&gt; when you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack. &lt;br&gt;&lt;Br&gt;The highest available &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; will be used to maximise damage.</content>
-
 	<!-- Half-Orc racial - Savage Attacks -->
 	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown weapon attack, you deal an extra dice of weapon damage.</content>
 
@@ -17,17 +14,8 @@
 	<!-- Band of the Mystic Scoundrel - Illusion Quickening -->
 	<content contentuid="h4ef7fcd3g137ag4adagabbagb5f6bbd3b7b9" version="1">After a successful attack with a weapon, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 
-	<!-- Barbarian - Brutal Critical -->
-	<content contentuid="h42b6f824ge50cg45c7gaaa4ga454fc3e8486" version="1">You've trained to strike swift and true. When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with your melee or thrown main hand attack, you roll an extra damage die as well as the normal additional critical dice.</content>
-
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
-
-	<!-- Barbarian - Reckless Attack -->
-	<!-- "RECKLESS_ATTACK" --> <content contentuid="haf358f05g511eg45d6gbe12ga887810e74b2" version="1">Attacking Recklessly</content>
-	<!-- "RecklessAttack", "Interrupt_RecklessAttack" --> <content contentuid="hfc92c4e0g549fg4e2cgbe0ega95a16d7e7d7" version="1">Gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Melee and Throwing &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; until the end of your turn, but enemies also have Advantage against you.</content>
-	<!-- "5eRecklessAttack_Toggle" --> <content contentuid="h165683bdgb77cg4e2bgb66dgfaf56a86f9e9" version="1">When you make your first &lt;LSTag Tooltip="AttackRoll"&gt;attack&lt;/LSTag&gt; on your turn, you can decide to attack recklessly. Doing so gives you &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Melee and Throwing Attack Rolls during this turn, but Attack Rolls against you have Advantage until your next turn.</content>
-	<!-- "5E_RECKLESS_ATTACKED", "5E_RECKLESS_ATTACK_VISUALS" --> <content contentuid="hff0cda90gb8f0g426eg805bgc23a08bd440b" version="1">Affected entity has &lt;LSTag Tooltip="Advantage"&gt;advantage&lt;/LSTag&gt; on Melee and Throwing &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; on their turn, and any Attack Roll against them has Advantage.</content>
 
 	<!-- WEAPON ACTIONS -->
 	<!-- "Goon_Target_PostureBreaker_Offhand" --> <content contentuid="haad96815g5d0dg4285ga31eg0da094df82d1" version="1">Backbreaker (Offhand)</content>
