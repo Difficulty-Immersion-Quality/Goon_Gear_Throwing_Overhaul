@@ -1,5 +1,12 @@
 // ==================================== Master passives for throwing functionality ====================================
 
+// Finesse throwing for all, to an extent. It's the best I can do with stats I believe
+new entry "Goon_Finesse_Throwing_Master_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "BoostConditions" "IsDexterityGreaterThanStrength() and IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse)"
+data "Boosts" "MonkWeaponAttackOverride()"
+
 // Damage reroll: Twist of Fortune, Knife of the Undermountain King, The Clover
 new entry "Goon_DamageReroll_Throwing_Master_Passive"
 type "PassiveData"
