@@ -1,8 +1,0 @@
-// ==================================== Shadowsoaked Blow ====================================
-// This ability is abusable if made per combat. Restored to short rest.
-
-new entry "Target_MAG_WeaponAction_ShadowBlade"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_MAG_WeaponAction_ShadowBlade"
-data "Cooldown" "OncePerShortRest"
