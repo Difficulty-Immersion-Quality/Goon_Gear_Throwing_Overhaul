@@ -4,6 +4,117 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
+				<!-- Jagged Spear -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="h74f27475g758ag4473gb6dcg5b2df323f242" version="3" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h544c3a35g538bg4ca0gbdabga9213a9ebdc4" version="1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="1fea9dfa-96a6-43c5-bce8-34452baa073e" />
+					<attribute id="Name" type="LSString" value="GOB_Torturer_Spear" />
+					<attribute id="ParentTemplateId" type="FixedString" value="81b017b5-d185-4026-8871-a053aca8648c" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="Stats" type="FixedString" value="GOB_Torturer_Spear" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209023" />
+					<children>
+						<!-- Gale can eat it, Tressym can trade for it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="GOON_JAGGEDSPEAR_WEAPON_TECHNICAL" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				<!-- Lightning Jabber -->
+				<node id="GameObjects">
+					<attribute id="Description" type="TranslatedString" handle="hf6ae4f36ga5e5g4f54g9375g50ad1c738cdb" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="heb9ab780g155dg4c30ga064g738a7b9d7603" version="3" />
+					<attribute id="ExamineRotation" type="fvec3" value="80 180 0" />
+					<attribute id="Icon" type="FixedString" value="Item_WPN_Kuotoa_Javelin_A_1" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="5dc55fa5-40df-4e67-ab78-d9320176e614" />
+					<attribute id="Name" type="LSString" value="MAG_Kuotoa_Lightning_Spear" />
+					<attribute id="ParentTemplateId" type="FixedString" value="8fdd7b33-6740-4d15-935c-9e54f54e16d4" />
+					<attribute id="Stats" type="FixedString" value="MAG_Kuotoa_Lightning_Spear" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209030" />
+					<children>
+						<!-- Changes: Gale can eat it -->
+						<node id="OnUsePeaceActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" type="int32" value="7" />
+									<children>
+										<node id="Attributes">
+											<attribute id="Animation" type="FixedString" value="06346da5-2ed5-4af1-b803-4066a505e662" />
+											<attribute id="Conditions" type="LSString" value="Tagged('REALLY_GALE', context.Source) and not Tagged('ORI_GALE_DONEWITHITEMS', context.Source)" />
+											<attribute id="Consume" type="bool" value="True" />
+											<attribute id="StatsId" type="FixedString" value="ORI_GALE_AVATAR_CONSUMEITEM" />
+											<attribute id="StatusDuration" type="int32" value="0" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<!-- ORI_GALE_CONSUMABLEARTEFACT -->
+									<attribute id="Object" type="guid" value="7b96246c-54ba-43ea-b01d-4e0b20ad35f1" />
+								</node>
+								<node id="Tag">
+									<!-- ACT3_LOW_TRESSYMTRADE_MAGICITEM -->
+									<attribute id="Object" type="guid" value="983087c8-c9d3-4a87-bc69-65f9329666c8" />
+								</node>
+							</children>
+						</node>
+						<!-- Changes: Added technical status for throwing, and any other purposes that might call for it -->
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_CHARGED_LIGHTNING_LIGHTNING_WEAPON" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_LIGHTNING_THROW" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString" value="MAG_LIGHTNING_THROW" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
 				<!-- Vision of the Absolute -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="hcdf42a60g1636g476egb7e2g7d12ea538f3c" version="1" />

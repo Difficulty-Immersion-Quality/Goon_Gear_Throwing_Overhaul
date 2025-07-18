@@ -38,6 +38,74 @@ data "BoostsOnEquipOffHand" "UnlockSpell(Goon_Rush_SpringAttack_Offhand)"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 // data "Weapon Properties" "Thrown;Melee;Dippable;Versatile;Magical"
 
+// ==================================== Jagged Spear ====================================
+// Bug Fix: Torturous Edges displays properly in the combat log.
+// Bug Fix: Torturous Edges applies when thrown.
+// Changes: Torturous Edges' Spell Save DC is now ManeuverSaveDC instead of a static DC of 10.
+
+// new entry "GOB_Torturer_Spear"
+// type "Weapon"
+// using "WPN_Spear_1"
+// data "RootTemplate" "1fea9dfa-96a6-43c5-bce8-34452baa073e"
+// data "ValueUUID" "86e7e503-a225-4b48-819e-2e24de1f904a"
+// data "Rarity" "Uncommon"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+// data "PassivesOnEquip" "GOB_Torturer_Spear_Passive"
+// data "Unique" "1"
+
+new entry "GOON_JAGGEDSPEAR_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "GOB_Torturer_Spear_Passive"
+type "PassiveData"
+using "GOB_Torturer_Spear_Passive"
+// Torturous Edges
+// data "DisplayName" "h089f4d25g7700g4ef8g840agbc39c0eb88d5;2"
+// Tortured creatures may receive &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h36357993gbe3dg4eb1g9d50g38456803910b;2"
+// Attacks with this weapon seemingly &lt;LSTag Type="Status" Tooltip="GOB_TORTURED"&gt;Torture&lt;/LSTag&gt; your target, forcing them to suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "hfdc70a99gdf3ag40e2g8dffgcc469bab5a66;1"
+data "DescriptionParams" "2"
+// data "TooltipSave" "Charisma"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "ApplyStatus(GOB_TORTURED,100,2,,,,not SavingThrow(Ability.Charisma,10))"
+data "StatsFunctors" "ApplyStatus(GOON_TORTUROUSEDGES_TECHNICAL_APPLIER, 100, 0)"
+
+new entry "GOON_TORTUROUSEDGES_TECHNICAL_APPLIER"
+type "StatusData"
+data "StatusType" "BOOST"
+// Torturous Edges
+data "DisplayName" "h089f4d25g7700g4ef8g840agbc39c0eb88d5;2"
+// Attacks with this weapon seemingly &lt;LSTag Type="Status" Tooltip="GOB_TORTURED"&gt;Torture&lt;/LSTag&gt; your target, forcing them to suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "hfdc70a99gdf3ag40e2g8dffgcc469bab5a66;1"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "DescriptionParams" "2"
+data "OnApplyRoll" "not SavingThrow(Ability.Charisma, ManeuverSaveDC())"
+data "OnApplySuccess" "ApplyStatus(GOB_TORTURED, 100, 2)"
+
+// ==================================== Lightning Jabber ====================================
+// TODO: I think I swapped it to be a Javelin in the template, check later.
+
+// weapon entry
+
+new entry "GOON_LIGHTNINGJABBER_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== The Watcher's Guide ====================================
+// TODO: Something/anything.
+
+// weapon entry
+
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Vision of the Absolute ====================================
 // Bug Fix: All effects now work with throwing.
 // Bug Fix: Absolute Night now displays properly in the combat log.
@@ -72,7 +140,7 @@ using "FOR_TrueSoul_SpearPassive"
 // data "DisplayName" "h53ca2dacge8a8g42a3ga31egdf4d4f01e402;5"
 // &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity saving throw. Deals an additional [1] to certain creatures that sport multiple sets of eyes.
 // data "Description" "hd25e7a3bg3808g444cga89fg461418d40823;4"
-// &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.
+// &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.
 data "Description" "h5a6da78fged78g49f3gbf86g13874a151320;1"
 // data "DescriptionParams" "DealDamage(2d6,Piercing)"
 data "DescriptionParams" "DealDamage(2d6,Piercing);2"
@@ -86,7 +154,7 @@ type "StatusData"
 data "StatusType" "BOOST"
 // Absolute Night
 data "DisplayName" "h3b06449bg3c92g4e40gb552ge0a8a8bd7d40;2"
-// &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.
+// &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; targets that fail a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; for [2] turns. Deals an additional [1] to certain creatures that sport multiple sets of eyes.
 data "Description" "h5a6da78fged78g49f3gbf86g13874a151320;1"
 data "DescriptionParams" "DealDamage(2d6,Piercing);2"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
@@ -101,83 +169,42 @@ data "StatusType" "BOOST"
 using "GOON_VISION_ABSOLUTE_TECHNICAL_APPLIER"
 data "OnApplyFunctors" ""
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Infernal Spear ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Spear of Night ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Selûne's Spear of Night ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Shar's Spear of Evening ====================================
 // TODO: Something/anything.
 
-weapon entry
+// weapon entry
 
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
-// ==================================== XXXXXXXXXXXX ====================================
-// TODO: Something/anything.
-
-weapon entry
-
-new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
-
+// new entry "GOON_XXXXXXXXXXXXX_WEAPON_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"

@@ -82,6 +82,12 @@ end
 
 -- ==================================== Custom throw stuff beyond this point ====================================
 
+-- Jagged Spear
+function TorturousEdgesThrow(entity)
+    local entity = entity or context.HitDescription.ThrownObject
+	return (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) & HasAnyStatus({'GOON_JAGGEDSPEAR_WEAPON_TECHNICAL'}, {}, {}, entity)
+end
+
 -- Blightbringer
 function PreyDeceleratorThrow(entity)
     local entity = entity or context.HitDescription.ThrownObject
