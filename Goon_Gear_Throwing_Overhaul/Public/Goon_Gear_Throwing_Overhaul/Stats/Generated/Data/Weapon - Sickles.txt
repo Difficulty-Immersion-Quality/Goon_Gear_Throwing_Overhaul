@@ -117,6 +117,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 // ==================================== Wavemother's Sickle ====================================
 // Bug Fix: 1d4 Cold damage applies when thrown.
+// TODO: Watery Guidance functionality doesn't match the description
 
 // new entry "MAG_LC_Umberlee_Cold_Sickle"
 // type "Weapon"
@@ -128,7 +129,6 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "PassivesOnEquip" "MAG_LC_Umberlee_Cold_Sickle_Passive"
 // data "Unique" "1"
 
-// TODO: Wiki doesn't mention it, but pretty sure this buffs ALL attacks and not just when using the weapon.
 // new entry "MAG_LC_Umberlee_Cold_Sickle_Passive"
 // type "PassiveData"
 // Watery Guidance

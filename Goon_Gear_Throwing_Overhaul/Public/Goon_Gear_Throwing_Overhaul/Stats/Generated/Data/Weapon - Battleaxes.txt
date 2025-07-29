@@ -233,6 +233,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 // data "StackId" "MAG_BONDED_THROWING"
 // data "Boosts" "WeaponProperty(Thrown)"
 
+// TODO: Consolidate statuses into a function?
 new entry "MAG_Bound_Throwing_Technical_Passive"
 type "PassiveData"
 // using "MAG_Bound_Throwing_Passive"
