@@ -1,11 +1,12 @@
 // ==================================== Master passives for throwing functionality ====================================
 
-// Finesse throwing for all, to an extent. It's the best I can do with stats I believe
-new entry "Goon_Finesse_Throwing_Master_Passive"
-type "PassiveData"
-data "Properties" "IsHidden"
-data "BoostConditions" "IsDexterityGreaterThanStrength()"
-data "Boosts" "IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):MonkWeaponAttackOverride()"
+// TODO: Figure out something, because MonkWeaponAttackOverride is just ignoring the conditions in boosts, and seemingly stays forever once active.
+// new entry "Goon_Finesse_Throwing_Master_Passive"
+// type "PassiveData"
+// data "Properties" "IsHidden"
+// data "BoostConditions" "IsDexterityGreaterThanStrength()"
+// data "BoostContext" "OnAttack"
+// data "Boosts" "IF(IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Finesse, context.HitDescription.ThrownObject)):MonkWeaponAttackOverride()"
 
 // Damage reroll: Twist of Fortune, Knife of the Undermountain King, The Clover
 new entry "Goon_DamageReroll_Throwing_Master_Passive"
