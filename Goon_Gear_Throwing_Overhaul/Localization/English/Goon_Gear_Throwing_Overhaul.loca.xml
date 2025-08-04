@@ -8,9 +8,6 @@
 	<!-- Half-Orc racial - Savage Attacks -->
 	<content contentuid="h704c163cg9274g44c7g8a69g7f210ef0e37b" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; you roll an extra damage die.</content>
 
-	<!-- Wrath -->
-	<content contentuid="h2d9e2f62g409ag4b93g90f3g62b7c5c31a29" version="1">You have a +1 bonus to damage with melee and thrown weapons for every turn this condition has remaining.</content>
-
 	<!-- Barbarian - Enraged Throw -->
 	<content contentuid="hca4be97fg0867g4346g8e2dg3c7d152047b0" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and potentially knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 
@@ -56,8 +53,11 @@
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
+
+	<!-- "Target_Bash" --> <content contentuid="h497fe29fg16bbg4e99gbc14g25a76f87c9c8" version="1">Bash your shield against a target to knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
+	<!-- "Target_ShieldBlow_Riposte", "Interrupt_ShieldBlow" --> <content contentuid="h0c55dbc7gccedg4ae3g94efg17167ffc09f9" version="1">When struck by a melee attack you may bash your shield against the attacker. They must succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or fall &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [1] turn.</content>
+	<!-- "MAG_Legendary_ShieldRiposte_Passive" --> <content contentuid="h6e9ec880gcdb6g4fa7g9f69ge0b3217482db" version="1">When a foe hits you with a melee attack, you can use your reaction, dealing it [1] and knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn unless they succeed a &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<!-- "Interrupt_Legendary_ShieldBlow" --> <content contentuid="hb31ab11dgeb62g42b9gb5dfg15a5d910bb7d" version="1">When a creature damages you, deal it [1] and possibly knock it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; for [2] turn.</content>
 
 	<!-- "GOON_UNWIELDY" --> <content contentuid="ha79285c6g3ef2g4e50gb631ge35822603e91" version="1">Unwieldy</content>
 	<!-- "GOON_UNWIELDY" --> <content contentuid="h27055e6fg27cag4506g9742g1e88d5d8b77f" version="1">The oversized weapon you have equipped takes everything you can muster to wield it. You suffer &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; to melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, as well as &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
