@@ -3,6 +3,7 @@
 
 new entry "SavageAttacks"
 type "PassiveData"
+using "SavageAttacks"
 // Savage Attacks
 // data "DisplayName" "hb8d3cdb1gbe64g4483gaa79g39c6af9b9b38;2"
 // When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a melee weapon attack, you deal an extra dice of weapon damage.

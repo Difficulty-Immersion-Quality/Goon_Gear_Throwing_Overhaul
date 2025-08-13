@@ -89,9 +89,8 @@ data "StatsFunctors" ""
 
 // ==================================== Ritual Axe ====================================
 // Bug Fix: The Scourge Mistress' Bane now states that attacks are guaranteed to apply Bane, instead of it being a chance to apply.
+// Bug Fix: The Scourge Mistress' Bane works when the weapon is thrown.
 // Bug Fix: The wielder does not take self inflicted damage if the target dies, is downed or knocked out, or is already afflicted with Bane.
-// Changes: If you attack a target already afflicated with Bane you increase the duration of the condition by 1 turn.
-// TODO: Throwing support?
 
 // new entry "GOB_PainPriest_Handaxe"
 // type "Weapon"
@@ -134,5 +133,5 @@ new entry "GOON_RITUALAXE_TECHNICAL_APPLIER"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog"
-data "OnApplyConditions" "not HasHPLessThan(1) or IsKillingBlow() or IsDowned() or HasStatus('KNOCKED_OUT') or HasStatus('KNOCKED_OUT_TEMPORARILY') or HasStatus('KNOCKED_OUT_PERMANENTLY')"
+data "OnApplyConditions" "not HasHPLessThan(1,context.Source) or IsKillingBlow(context.Source) or IsDowned(context.Source) or HasStatus('KNOCKED_OUT',context.Source) or HasStatus('KNOCKED_OUT_TEMPORARILY',context.Source) or HasStatus('KNOCKED_OUT_PERMANENTLY',context.Source)"
 data "OnApplyFunctors" "IF(HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(50, context.Source) and not HasStatus('BANE', context.Target)):DealDamage(SWAP,1d6,Piercing,Magical);ApplyStatus(BANE,100,2)"
