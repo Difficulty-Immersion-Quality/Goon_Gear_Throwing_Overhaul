@@ -1,6 +1,6 @@
 // ========================== Boots of Stormy Clamour ==========================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
-// Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition. It can only trigger once per attack.
+// Changes: Now applies Reverberation based on dealing damage with spell attacks, instead of applying a condition.
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
 type "Armor"
@@ -23,22 +23,23 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
 type "PassiveData"
+using "MAG_Thunder_ReverberationOnStatusApply_Boots_Passive"
 // Arcane Echomalefaction
-data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
-// When the wearer inflicts a condition upon a hostile creature, they also inflict [1] turns of <LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION">Reverberation</LSTag>.
+// data "DisplayName" "hdb19f00ag6138g4bc6gb174g1dff84d45a57;2"
+// When the wearer inflicts a condition upon a hostile creature, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 // data "Description" "hdec25ee2gb8b0g4e21ga3f4g181253f20364;4"
-// When the wearer damages a hostile creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of <LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION">Reverberation</LSTag>.
+// When the wearer damages a hostile creature with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee&lt;/LSTag&gt; or &lt;LSTag Tooltip="RangedSpellAttack"&gt;Ranged Spell Attack&lt;/LSTag&gt;, they also inflict [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;.
 data "Description" "h32a0f3eag3e64g4a05g9f2eg074b79b4d589;1"
 // data "DescriptionParams" "2"
-data "DescriptionParams" "1"
-// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
-data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
-data "Properties" "OncePerAttack"
 // data "StatsFunctorContext" "OnStatusApply"
 data "StatsFunctorContext" "OnAttack"
 // data "Conditions" "Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusDoesNotInvokeOnStatusApply()"
 data "Conditions" "Enemy() and IsSpellAttack() and (HasDamageEffectFlag(DamageFlags.Hit) or HasDamageEffectFlag(DamageFlags.Critical)) and not (IsCriticalMiss() or IsMiss())"
 // data "StatsFunctors" "ApplyStatus(MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
+
+// &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect can trigger &lt;b&gt;once&lt;/b&gt; per &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;.
+// data "TooltipPermanentWarnings" "f63b2f2d-b29b-40b8-86ea-9978c782c32e"
+// data "Properties" "OncePerAttack"
 
 // ==================================== Boots of Genial Striding ====================================
 // Bug Fix: Genial Strider now provides immunity to all Difficult Terrain, per what is implied in the description.
