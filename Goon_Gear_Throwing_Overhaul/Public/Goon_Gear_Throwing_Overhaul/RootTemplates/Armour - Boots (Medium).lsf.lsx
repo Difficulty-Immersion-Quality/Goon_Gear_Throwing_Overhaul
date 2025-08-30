@@ -4,7 +4,7 @@
 	<region id="Templates">
 		<node id="Templates">
 			<children>
-				<!-- Boots of Striding -->
+				<!-- Boots of Striding (Minthara) -->
 				<node id="GameObjects">
 					<attribute id="Description" type="TranslatedString" handle="h3c1a772age8bag4d5bgb7c6gc28bc48175d6" version="3" />
 					<attribute id="DisplayName" type="TranslatedString" handle="h9b29bd46g2b12g4988g80b6ge44c491d8b34" version="2" />
@@ -51,7 +51,8 @@
 										<node id="MaterialOverrides">
 											<attribute id="MaterialResource" type="FixedString" value="" />
 											<children>
-												<node id="MaterialPresets" />
+												<!-- Make her armour black start -->
+												<!-- <node id="MaterialPresets" />
 												<node id="Vector3Parameters">
 													<attribute id="Color" type="bool" value="False" />
 													<attribute id="Custom" type="bool" value="True" />
@@ -100,6 +101,57 @@
 													<attribute id="Enabled" type="bool" value="False" />
 													<attribute id="Parameter" type="FixedString" value="Metal_Tertiary" />
 													<attribute id="Value" type="fvec3" value="0.76862746 0.76862746 0.76862746" />
+												</node> -->
+												<node id="MaterialPresets" />
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Cloth_Primary" />
+													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Primary" />
+													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Leather_Tertiary" />
+													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Primary" />
+													<attribute id="Value" type="fvec3" value="0.28 0.28 0.3" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Metal_Secondary" />
+													<attribute id="Value" type="fvec3" value="0.2 0.2 0.2" />
+												</node>
+												<node id="Vector3Parameters">
+													<attribute id="Color" type="bool" value="False" />
+													<attribute id="Custom" type="bool" value="False" />
+													<attribute id="Enabled" type="bool" value="True" />
+													<attribute id="Parameter" type="FixedString" value="Custom_2" />
+													<attribute id="Value" type="fvec3" value="0.05 0.05 0.05" />
+												<!-- Make her armour black end -->
 												</node>
 											</children>
 										</node>
