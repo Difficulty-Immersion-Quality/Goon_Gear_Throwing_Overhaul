@@ -467,7 +467,7 @@ using "MAG_ArcaneTrickster_Ring_Passive"
 // After hitting a creature with a weapon attack, you can cast illusion or enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.
 // data "Description" "hf3fe1d3cgb568g4420ga71dg10c48187f73c;1"
 // After a successful weapon or thrown &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you can cast Illusion or Enchantment spells as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.
-data "Description" "h4b442883g3a5ag4813gbfabgdbfb7dbf2075;1"
+data "Description" "h2042de2fgc22fg4161g9050g59fffac63c85;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "IsWeaponAttack()"
 data "Conditions" "IsWeaponAttack() or IsRangedUnarmedAttack() and not Item()"
@@ -696,6 +696,7 @@ data "Conditions" "IsAbleToReact(context.Observer) and not Item() and Self(conte
 
 // ==================================== Ring of Feywild Sparks ====================================
 // Bug Fix: The +1 Spell Save DC is now visible.
+// TODO: Wild magic theme stuff, maybe more Tides of Chaos charges
 
 new entry "MAG_OfFeywildSparks_Ring"
 type "Armor"
