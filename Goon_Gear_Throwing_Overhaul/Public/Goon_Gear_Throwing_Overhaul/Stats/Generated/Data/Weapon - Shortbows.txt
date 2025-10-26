@@ -246,6 +246,7 @@ data "Boosts" ""
 new entry "MAG_BG_SlowedOnCrit_Passive"
 type "PassiveData"
 // using "MAG_Vicious_Weapon_Passive"
+using "MAG_BG_SlowedOnCrit_Passive"
 // Prey Decelerator
 // data "DisplayName" "h7e3535a2g34abg4447g9b25g72a21f735088;1"
 // When this weapon lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;, it also &lt;LSTag Type="Status" Tooltip="SLOW"&gt;Slows&lt;/LSTag&gt; the target creature.

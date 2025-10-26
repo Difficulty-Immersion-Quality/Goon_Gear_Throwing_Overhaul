@@ -354,6 +354,7 @@ data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC(
 
 // ==================================== Staff of Interruption ====================================
 // Bug Fix: Now uses the appropriate level of Counterspell, 5 instead of 3.
+// Changes: Counterspell cannot be used while under the effects of a spellcasting restricted polymorph.
 
 new entry "Interrupt_MAG_Counterspell"
 type "InterruptData"
@@ -365,7 +366,7 @@ data "DisplayName" "h5ca745ecg0d79g4621gaa12g1fe3e6164a69;1"
 data "Cost" "ReactionActionPoint:1;Interrupt_MAG_Counterspell:1"
 data "Cooldown" "OncePerRestPerItem"
 // data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source)"
-data "EnableCondition" "(HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and not HasStatus('SG_Polymorph')) or (HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'}))"
+data "EnableCondition" "HasActionResource('Interrupt_MAG_Counterspell', 1, 0, false, false, context.Source) and (not HasStatus('SG_Polymorph') or Goon_IsUnrestrictedPolymorphStatus())"
 // data "EnableContext" "OnActionResourcesChanged"
 data "EnableContext" "OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
 

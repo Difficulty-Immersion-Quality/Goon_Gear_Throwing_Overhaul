@@ -134,6 +134,7 @@ data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableComb
 new entry "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Scimitar"
 type "Weapon"
 // using "WPN_Scimitar_1"
+using "MAG_MeleeDebuff_AttackDebuff1_OnDamage_Scimitar"
 // data "RootTemplate" "503b4f8d-da61-4fc1-a4b7-cad124a10c69"
 // data "ItemGroup" ""
 // data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"

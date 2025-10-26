@@ -33,6 +33,7 @@ data "StatsFunctors" "CreateSurface(3,3,FogCloud,true)"
 
 // ==================================== Fleshmelter Cloak ====================================
 // Changes: Tooltip now specifies that damage is increased on a crit. The attacker no longer has to deal damage, instead the effects are triggered for landing a hit. In addition to the Acid damage, there's now a 50% chance for the attacker to be afflicted with the Acid condition for 1 turn, or have their existing Acid condition's duration increased by 1 turn.
+// TODO: An example of my early concept for increasing condition duration.
 
 // new entry "MAG_Acid_AcidMeleeCounter_Cloak"
 // type "Armor"
@@ -65,8 +66,6 @@ data "StatsFunctorContext" "OnAttacked"
 data "Conditions" "IsMeleeAttack() and not IsRedirectedDamage() and HasDamageEffectFlag(DamageFlags.Hit)"
 // data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical)"
 data "StatsFunctors" "DealDamage(SWAP, 1d4, Acid,Magical);ApplyStatus(SWAP,GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID,100,0)"
-
-If the target already has one of the aforementioned conditions, the duration is instead increased by [2] turn.
 
 new entry "GOON_FLESHMELTER_CLOAK_TECHNICAL_ACID"
 type "StatusData"
