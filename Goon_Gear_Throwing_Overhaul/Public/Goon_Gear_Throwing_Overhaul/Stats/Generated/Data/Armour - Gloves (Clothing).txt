@@ -1,3 +1,23 @@
+// ==================================== Braindrain Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dark Justiciar Gauntlets (Uncommon) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ========================== Fleetfingers ==========================
 // Bug Fix: Tooltip hyperlinks.
 // Changes: Now grants Advantage on Acrobatics Skill Checks.
@@ -51,7 +71,117 @@ data "Boosts" "UnlockSpellVariant(Goon_IsJumpSpellCategory(),ModifyIconGlow(),Mo
 data "RemoveEvents" "OnSpellCast"
 data "RemoveConditions" "IsStatusEvent(StatusEvent.OnSpellCast) and SpellCategoryIs(SpellCategory.Jump)"
 
-// ========================== Luminous Gloves ==========================
+// ==================================== Gloves of Archery ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Baneful Striking ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Belligerent Skies ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Hail of Thorns ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Heroism ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of the Growling Underdog ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Thievery ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hellrider's Pride ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Herbalist's Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Ichorous Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Knock Knuckle Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Luminous Gloves ====================================
 // Changes: Quality is now Rare instead of Uncommon, to reflect it being BiS endgame gear for some builds.
 
 new entry "MAG_Radiant_RadiatingOrb_Gloves"
@@ -69,36 +199,125 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== Gloves of The Duellist ====================================
-// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+// ==================================== Reason's Grasp ====================================
+// TODO: Something/anything.
 
-// new entry "MAG_OfTheDuelist_Gloves"
-// type "Armor"
-// using "ARM_Gloves_Leather"
-// data "RootTemplate" "97e362b2-e2aa-4703-9840-6824d7068334"
-// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
-// data "Rarity" "Rare"
-// data "PassivesOnEquip" "MAG_OfTheDuelist_Gloves_Passive"
-// data "Unique" "1"
+// gear entry
 
-new entry "GOON_GLOVESOFTHEDUELLIST_ARMOUR_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-new entry "MAG_OfTheDuelist_Gloves_Passive"
-type "PassiveData"
-using "MAG_OfTheDuelist_Gloves_Passive"
-// Duelling Gloves
-// data "DisplayName" "hce96a4f3g52deg4a86gafb7g8bc85bb71c2c;2"
-// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
-// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
-// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
-data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
-// You can wield a shield and still receive this bonus.
-data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
-// data "DescriptionParams" "2"
-// data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"
+// ==================================== Thermoarcanic Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Unlucky Thief's Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Winter's Clutches ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Bracers of Defence ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cerebral Citadel Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Cindersnap Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Craterflesh Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Daredevil Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dark Displacement Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Dark Justiciar Gauntlets (Rare) ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Flawed Helldusk Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== Gloves of Battlemage's Power ====================================
 // Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
@@ -133,6 +352,230 @@ data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
 data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack() and IsSpell())"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
 
+// ==================================== Gloves of Cinder and Sizzle ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Crushing ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Missile Snaring ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of the Automaton ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of the Balanced Hands ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of The Duellist ====================================
+// Bug Fix: Description now mirrors that of Duelling fighting style which was updated by Larian to accurately describe functionality.
+
+// new entry "MAG_OfTheDuelist_Gloves"
+// type "Armor"
+// using "ARM_Gloves_Leather"
+// data "RootTemplate" "97e362b2-e2aa-4703-9840-6824d7068334"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_OfTheDuelist_Gloves_Passive"
+// data "Unique" "1"
+
+new entry "GOON_GLOVESOFTHEDUELLIST_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_OfTheDuelist_Gloves_Passive"
+type "PassiveData"
+using "MAG_OfTheDuelist_Gloves_Passive"
+// Duelling Gloves
+// data "DisplayName" "hce96a4f3g52deg4a86gafb7g8bc85bb71c2c;2"
+// While only holding one weapon in your main hand and nothing in your free hand, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+// data "Description" "h475532cbg1c82g432aga91cg0ff9bd73eb58;4"
+// When you are wielding a melee weapon that is not Two-Handed in one hand, and no weapon in the other, gain a +[1] bonus to melee weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h8cd36b47g1094g48d9g8783g2684b3dca6ab;1"
+// You can wield a shield and still receive this bonus.
+data "ExtraDescription" "hebb849acge25fg4a37g821cga5092f299d70;1"
+// data "DescriptionParams" "2"
+// data "Boosts" "IF(FightingStyle_Dueling(context.Source) and IsMeleeWeaponAttack()):RollBonus(Attack, 2)"
+
+// ==================================== Gloves of Uninhibited Kushigo ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Jhannyl's Gloves ====================================
+// Bug Fix: Description now states that it triggers from diseases and Bloodless being applied, matching the functionality.
+// Changes: Added a once per turn cooldown.
+// TODO: Throwing thingo
+
+// new entry "MAG_Harpers_JhannylGloves"
+// type "Armor"
+// using "_Hand_Magic"
+// data "RootTemplate" "79741a3c-730a-4e9d-a3fe-ec39df64af0f"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "Boosts" "RollBonus(SavingThrow,1)"
+// data "PassivesOnEquip" "MAG_Harpers_JhannylGloves_Passive;"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+new entry "MAG_Harpers_JhannylGloves_Passive"
+type "PassiveData"
+using "MAG_Harpers_JhannylGloves_Passive"
+// Defy Villainy
+// data "DisplayName" "h4caf4a1fg526ag4627ga4c8g16f0360b2dae;2"
+// Defy Villainy
+data "DisplayName" "h4caf4a1fg526ag4627ga4c8g16f0360b2dae;2"
+// When the wearer becomes &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="PARALYZED"&gt;Paralysed&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;, they automatically cast &lt;LSTag Type="Spell" Tooltip="Target_LesserRestoration"&gt;Lesser Restoration&lt;/LSTag&gt; on themselves.
+// data "Description" "h145bba0cgcddcg48abga396g86793a533244;2"
+// Once per turn, when the wearer becomes &lt;LSTag Type="Status" Tooltip="DISEASED"&gt;Diseased&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="PARALYZED"&gt;Paralysed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="ASTARION_WEAK"&gt;Bloodless&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;, they automatically cast &lt;LSTag Type="Spell" Tooltip="Target_LesserRestoration"&gt;Lesser Restoration&lt;/LSTag&gt; on themselves.
+data "Description" "h145bba0cgcddcg48abga396g86793a533244;2"
+// data "StatsFunctorContext" "OnStatusApplied"
+data "StatsFunctorContext" "OnStatusApplied"
+// data "Properties" ""
+data "Properties" "OncePerTurn"
+// data "Conditions" "Player() and not Dead() and not StatusId('MAG_JHANNYL_GLOVES_LESSER_RESTORATION') and (StatusHasStatusGroup(context.StatusId, 'SG_Poisoned') or StatusHasStatusGroup(context.StatusId, 'SG_Disease') or StatusHasStatusGroup(context.StatusId, 'SG_Paralyzed') or StatusHasStatusGroup(context.StatusId, 'SG_Blinded') or StatusId('HOLD_PERSON') or StatusId('ASTARION_WEAK'));"
+data "Conditions" "Player() and not Dead() and not StatusId('MAG_JHANNYL_GLOVES_LESSER_RESTORATION') and (StatusHasStatusGroup(context.StatusId, 'SG_Poisoned') or StatusHasStatusGroup(context.StatusId, 'SG_Disease') or StatusHasStatusGroup(context.StatusId, 'SG_Paralyzed') or StatusHasStatusGroup(context.StatusId, 'SG_Blinded') or StatusId('ASTARION_WEAK'))"
+// data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)"
+data "StatsFunctors" "ApplyStatus(MAG_JHANNYL_GLOVES_LESSER_RESTORATION, 100, 0)"
+
+// This is the broken ass entry from Pedantic Fixes
+// new entry "MAG_Harpers_JhannylGloves_Passive"
+// type "PassiveData"
+// data "DisplayName" "h206965b4gae3agfd5agad53g43ede944be71;1"
+// data "Description" "h879fdcf6gc61cg8785gd4ebgab1a9205e4a9;3"
+// data "Properties" "OncePerLongRest"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "StatsFunctors" "DealDamage(7, Piercing,Magical)"
+
+// ==================================== Martial Exertion Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Nimblefinger Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Poisoner's Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Raven Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Seraphic Pugilist Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Servitor of the Black Hand Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Snow-Dusted Monastery Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spellseeking Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
 // ==================================== Stalker Gloves ====================================
 // Bug Fix: Now works with Rakish Sneak Attack.
 
@@ -155,6 +598,16 @@ using "MAG_ForcefulSneakAttack_Passive"
 // data "Conditions" "SpellId('Target_SneakAttack') or SpellId('Projectile_SneakAttack') or SpellId('Interrupt_SneakAttack')"
 data "Conditions" "Goon_IsSneakAttack()"
 // data "StatsFunctors" "DealDamage(1d4, Force,Magical)"
+
+// ==================================== Swordmaster Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 // ==================================== The Sparkle Hands ====================================
 // Changes: Extra description added to Conductive Strikes, stating that it works while Polymorphed.
@@ -188,7 +641,7 @@ using "MAG_ChargedLightning_Charge_OnUnarmedDamage_Passive"
 // &lt;LSTag Type="Image" Info="SoftWarning"/&gt; This effect is &lt;b&gt;also&lt;/b&gt; active while Polymorphed, including &lt;LSTag Type="Spell" Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;.
 data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Thunderpalm Strikers ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -198,7 +651,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Winkling Gloves ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -208,7 +661,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Wondrous Gloves ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -218,7 +671,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Abyss Beckoners ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -228,7 +681,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Bhaalist Gloves ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -238,7 +691,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Bonespike Gloves ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -248,7 +701,7 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
-// ==================================== XXXXXXXXXXXX ====================================
+// ==================================== Gauntlet of the Tyrant ====================================
 // TODO: Something/anything.
 
 // gear entry
@@ -258,3 +711,96 @@ data "TooltipPermanentWarnings" "28186bf3-e19b-43a9-8395-7dc31a6a211d"
 // data "StatusType" "BOOST"
 // data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
+// ==================================== Gauntlets of Hill Giant Strength ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gemini Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Dexterity ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Helldusk Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Hr'a'cknir Bracers ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Quickspell Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Spellmight Gloves ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// ==================================== Gloves of Soul Catching ====================================
+// TODO: Something/anything.
+
+// gear entry
+
+// new entry "GOON_XXXXXXXXXXXXXXXX_ARMOUR_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
+
+// TODO:
+// Legacy content
+//  Gloves of Fire Resistance - inaccessible
+//  Netherstone-Studded Gauntlet - inaccessible
+//  Pale Widow Gloves - inaccessible
+//  Deadly Channeller Gloves - inaccessible
+//  The Fork-Lightning Fingers - inaccessible
+//  Vampiric Gloves - inaccessible
+//  Nightsong Gloves - inaccessible
+//  Metallic Gloves (Dream Guardian) - inaccessible
+//  Oathbreaker Knight Gloves - inaccessible
+//  Gloves of Flint and Steel - inaccessible
+//  Gloves of Succour - unobtainable
