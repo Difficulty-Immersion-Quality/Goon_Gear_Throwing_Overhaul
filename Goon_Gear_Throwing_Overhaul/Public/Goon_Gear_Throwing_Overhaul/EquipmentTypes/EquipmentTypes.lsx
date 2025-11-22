@@ -29,14 +29,10 @@
                 <node id="EquipmentType">
                     <attribute id="BoneMainSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
                     <attribute id="BoneMainUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
-                    <!-- <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/> -->
-                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
-                    <!-- <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/> -->
-                    <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
-                    <!-- <attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/> -->
-                    <attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
-                    <!-- <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/> -->
-                    <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
+                    <attribute id="BoneOffHandSheathed" type="FixedString" value="Dummy_Sheath_Upper_L"/>
+                    <attribute id="BoneOffHandUnsheathed" type="FixedString" value="Dummy_L_Hand"/>
+                    <attribute id="BoneVersatileSheathed" type="FixedString" value="Dummy_Sheath_Upper_R"/>
+                    <attribute id="BoneVersatileUnsheathed" type="FixedString" value="Dummy_R_Hand"/>
                     <attribute id="Name" type="FixedString" value="Battleaxe"/>
                     <attribute id="SoundAttackType" type="FixedString" value="Slashing"/>
                     <attribute id="SoundEquipmentType" type="FixedString" value="Axe"/>
